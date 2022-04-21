@@ -47,7 +47,7 @@ var_data <- list()
 ## for plotting
 exp.y <- list(expression(10^-1), expression(10^-2), expression(10^-3), expression(10^-4), expression(10^-5), expression(10^-6), expression(10^-7), expression(10^-8), expression(10^-9), expression(10^-10), expression(10^-11), expression(10^-12), expression(10^-13), expression(10^-14))
 
-## english terms
+## English ngram terms
 TERMS <- c("human rights + human right", "rights", "liberty + liberties")
 
 var_data[[1]] <- ngram(TERMS[1], corpus = "eng_2019", year_start = 1800, year_end = 2020, smoothing = 3)
@@ -101,7 +101,7 @@ mtext(side=2, "Freqency of N-gram from Google Books Corpus (English Corpus)", li
 ## generate list to store ngram data
 var_data <- list()
 
-## english terms
+## French ngram terms
 TERMS <- c("droit de l'homme + droits de l'homme", "droits", "libertés + liberté")
 
 var_data[[1]] <- ngram(TERMS[1], corpus = "fre_2019", year_start = 1800, year_end = 2020, smoothing = 3)
@@ -154,7 +154,7 @@ mtext(side=2, "Freqency of N-gram from Google Books Corpus (French Corpus)", lin
 ## generate list to store ngram data
 var_data <- list()
 
-## english terms
+## Spanish ngram terms
 TERMS <- c("derechos humanos + derecho humano", "derechos", "libertad + libertades")
 
 var_data[[1]] <- ngram(TERMS[1], corpus = "spa_2019", year_start = 1800, year_end = 2020, smoothing = 3)
