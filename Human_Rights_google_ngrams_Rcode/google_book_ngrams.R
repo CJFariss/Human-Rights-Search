@@ -12,6 +12,7 @@
 ##  Copyright (c) 2022, under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License.
 ## For more information see: http://creativecommons.org/licenses/by-nc-sa/3.0/us/
 ##  All rights reserved. 
+##
 ##########################################################################
 ##
 ## This script generate Rplots based on data taken from the Google N-gram program available here: 
@@ -24,11 +25,21 @@
 ##
 ##########################################################################
 
+## Do this (set to TRUE) to load libraries using the version from when the scripts were originally run
+if(FALSE){
+  ## load an older version of the ngramr library
+  remotes::install_github('CredibilityLab/groundhog')
+  library(groundhog)
+  pkgs <- c("ngramr")
+  groundhog.library(pkgs,'2022-04-19')
+} else{
+  ## or load the more recent version of the ngramr library
+  install.packages("ngramr")
+  library(ngramr)
+}
+
 ## create graph file
 pdf("Rplots/Google_book_corpus_ngram.pdf", height=8, width=8)
-
-## load ngramr library
-library(ngramr)
 
 ## generate list to store ngram data
 var_data <- list()
@@ -63,7 +74,8 @@ abline(h=-8, lwd=.5, col=grey(.5), lty=2)
 
 for(i in 1:3){lines(log10(var_data[[i]]$Frequency), col=COLOR[i], lwd=2)}
 
-axis(side=1, at=1:length(1800:2008), labels=1800:2008)
+axis(side=1, at=1:length(1800:2020), labels=rep("",length(1800:2020)))
+axis(side=1, at=(seq(1800,2020,20)-1799), labels=seq(1800,2020,20), las=2)
 
 coord <- -1:-14
 for(i in 1:length(coord)){axis(side=2, at=c(coord[i]), labels=exp.y[[i]], font=1, cex.axis=1.35, padj=0, las=2)}
@@ -116,7 +128,8 @@ abline(h=-8, lwd=.5, col=grey(.5), lty=2)
 
 for(i in 1:3){lines(log10(var_data[[i]]$Frequency), col=COLOR[i], lwd=2)}
 
-axis(side=1, at=1:length(1800:2008), labels=1800:2008)
+axis(side=1, at=1:length(1800:2020), labels=rep("",length(1800:2020)))
+axis(side=1, at=(seq(1800,2020,20)-1799), labels=seq(1800,2020,20), las=2)
 
 coord <- -1:-14
 for(i in 1:length(coord)){axis(side=2, at=c(coord[i]), labels=exp.y[[i]], font=1, cex.axis=1.35, padj=0, las=2)}
@@ -168,7 +181,8 @@ abline(h=-8, lwd=.5, col=grey(.5), lty=2)
 
 for(i in 1:3){lines(log10(var_data[[i]]$Frequency), col=COLOR[i], lwd=2)}
 
-axis(side=1, at=1:length(1800:2008), labels=1800:2008)
+axis(side=1, at=1:length(1800:2020), labels=rep("",length(1800:2020)))
+axis(side=1, at=(seq(1800,2020,20)-1799), labels=seq(1800,2020,20), las=2)
 
 coord <- -1:-14
 for(i in 1:length(coord)){axis(side=2, at=c(coord[i]), labels=exp.y[[i]], font=1, cex.axis=1.35, padj=0, las=2)}
