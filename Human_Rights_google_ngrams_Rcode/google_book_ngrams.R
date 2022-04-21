@@ -8,7 +8,7 @@
 ## Contact Information: 
 ##  Christopher J. Fariss <cjf0006@gmail.com>
 ##  
-##  Copyright (c) 2020, under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License.
+##  Copyright (c) 2022, under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License.
 ## For more information see: http://creativecommons.org/licenses/by-nc-sa/3.0/us/
 ##  All rights reserved. 
 ##########################################################################
@@ -22,7 +22,7 @@
 ##https://books.google.com/ngrams/graph?content=human+rights+%2B+human+right%2Crights%2Cliberty+%2B+liberties&year_start=1800&year_end=2000&corpus=15&smoothing=3&share=&direct_url=t1%3B%2C%28human%20rights%20%2B%20human%20right%29%3B%2Cc0%3B.t1%3B%2Crights%3B%2Cc0%3B.t1%3B%2C%28liberty%20%2B%20liberties%29%3B%2Cc0
 ##########################################################################
 
-pdf("~/Dropbox/GOOGLEBOOK/SearchforRights 2/Human-Rights-Search//Human-Rights-Search/Rplots/Google_book_corpus_ngram.pdf", height=8, width=6)
+pdf("Rplots/Google_book_corpus_ngram.pdf", height=8, width=8)
 
 
 ## load ngramr library
@@ -42,7 +42,7 @@ var_data[[3]] <- ngram(TERMS[3], corpus = "eng_2019", year_start = 1800, year_en
 COLOR <- c("#7570b3", "#d95f02", "#1b9e77")
 
 ## Rplot
-par(mar=c(3,5,0.5,15))
+par(mar=c(3,5,0.5,12))
 plot(log10(var_data[[1]]$Frequency), type="l", ylim=c(-8,-3), col=COLOR[1],lwd=2, yaxt="n", xaxt="n", ylab="", xlab="")
 
 #abline(h=-2, lwd=.5, col=grey(.5), lty=2)
@@ -70,7 +70,7 @@ COLOR.TERMS <- COLOR
 ## add lables on the right-side axis
 for(i in c(1:3)) axis(side=4, at=log10(var_data[[i]]$Frequency[nrow(var_data[[i]])]), labels=TERMS[i], col.axis=COLOR[i], las=2, tick=F)
 
-mtext(side=2, "Freqency of N-gram from Google Books Corpus (English Corpus)", line=3.75, cex=1.25)
+mtext(side=2, "Freqency of N-gram from Google Books Corpus (English Corpus)", line=3.75, cex=1)
 
 
 
@@ -93,7 +93,7 @@ var_data[[3]] <- ngram(TERMS[3], corpus = "fre_2019", year_start = 1800, year_en
 COLOR <- c("#7570b3", "#d95f02", "#1b9e77")
 
 ## Rplot
-par(mar=c(3,5,0.5,15))
+par(mar=c(3,5,0.5,12))
 plot(log10(var_data[[1]]$Frequency), type="l", ylim=c(-8,-3), col=COLOR[1],lwd=2, yaxt="n", xaxt="n", ylab="", xlab="")
 
 #abline(h=-2, lwd=.5, col=grey(.5), lty=2)
@@ -121,7 +121,7 @@ COLOR.TERMS <- COLOR
 ## add lables on the right-side axis
 for(i in c(1:3)) axis(side=4, at=log10(var_data[[i]]$Frequency[nrow(var_data[[i]])]), labels=TERMS[i], col.axis=COLOR[i], las=2, tick=F)
 
-mtext(side=2, "Freqency of N-gram from Google Books Corpus (French Corpus)", line=3.75, cex=1.25)
+mtext(side=2, "Freqency of N-gram from Google Books Corpus (French Corpus)", line=3.75, cex=1)
 
 
 ##########################################################################
@@ -143,7 +143,7 @@ var_data[[3]] <- ngram(TERMS[3], corpus = "spa_2019", year_start = 1800, year_en
 COLOR <- c("#7570b3", "#d95f02", "#1b9e77")
 
 ## Rplot
-par(mar=c(3,5,0.5,15))
+par(mar=c(3,5,0.5,12))
 plot(log10(var_data[[1]]$Frequency), type="l", ylim=c(-8,-3), col=COLOR[1],lwd=2, yaxt="n", xaxt="n", ylab="", xlab="")
 
 #abline(h=-2, lwd=.5, col=grey(.5), lty=2)
@@ -171,7 +171,7 @@ COLOR.TERMS <- COLOR
 ## add lables on the right-side axis
 for(i in c(1:3)) axis(side=4, at=log10(var_data[[i]]$Frequency[nrow(var_data[[i]])]), labels=TERMS[i], col.axis=COLOR[i], las=2, tick=F)
 
-mtext(side=2, "Freqency of N-gram from Google Books Corpus (Spanish Corpus)", line=3.75, cex=1.25)
+mtext(side=2, "Freqency of N-gram from Google Books Corpus (Spanish Corpus)", line=3.75, cex=1)
 
 
 dev.off()
