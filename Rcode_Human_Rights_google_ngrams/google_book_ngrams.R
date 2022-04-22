@@ -1,7 +1,7 @@
 ## google_book_ngrams.R
 ##########################################################################
 ##
-## Authors: Geoff Dancy and Christophre J. Fariss
+## Authors: Geoff Dancy and Christopher J. Fariss
 ##
 ## Title: "The Search for Human Rights: A Global Analysis Using Google Data"
 ##
@@ -199,6 +199,7 @@ mtext(side=2, "Freqency of N-gram from Google Books Corpus (Spanish Corpus)", li
 ## close connection to graph file
 dev.off()
 
+## set today's date for saving files below
 current_date <- as.Date(Sys.time())
 current_date
 

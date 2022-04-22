@@ -1,7 +1,37 @@
-## Amnesty_article_coverage_scarpe.R
+## Amnesty_article_coverage_scrape.R
+##########################################################################
+##
+## Authors: Geoff Dancy and Christopher J. Fariss
+##
+## Title: "The Search for Human Rights: A Global Analysis Using Google Data"
+##
+## Contact Information: 
+##  Geoff Dancy <gdancy@tulane.edu>
+##  Christopher J. Fariss <cjf0006@gmail.com>
+##  
+##  Copyright (c) 2022, under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License.
+## For more information see: http://creativecommons.org/licenses/by-nc-sa/3.0/us/
+##  All rights reserved. 
+##
+##########################################################################
 
 
-library(rvest)
+## Do this (set to TRUE) to load libraries using the version from when the scripts were originally run
+if(FALSE){
+  ## load an older version of the ngramr library
+  remotes::install_github('CredibilityLab/groundhog')
+  library(groundhog)
+  pkgs <- c("rvest")
+  groundhog.library(pkgs,'2022-04-19')
+} else{
+  ## or load the more recent version of the ngramr library
+  install.packages("rvest")
+  library(rvest)
+}
+
+## set today's date for saving files below
+current_date <- as.Date(Sys.time())
+current_date
 
 pts <- read.csv("Data_input/PTS-2020.csv")
 
@@ -40,7 +70,7 @@ boxplot(sqrt(pts_2015$amnesty_report_count) ~ pts_2015$PTS_H)
 write.csv(pts_2015, "amnesty_report_count_2015.csv", row.names=F)
 
 
-data <- readRDS("HumanRightsProtectionScores_v4.01.Rdata")
+data <- readRDS("Data_input/HumanRightsProtectionScores_v4.01.Rdata")
 
 data$amnesty_report_count <- NA
 
@@ -83,7 +113,7 @@ dat
 plot(dat$year, dat$year_cor, type="l", ylim=c(-.7,0))
 points(dat$year, dat$year_cor,)
 
-write.csv(data, "/Users/christopherfariss/Dropbox/GOOGLEBOOK/SearchforRights\ 2/Data/HumanRightsProtectionScores_v4.01_amnesty_report_count.csv", row.names=FALSE)
+write.csv(data, paste("Data/HumanRightsProtectionScores_v4.01_amnesty_report_count",".csv"), row.names=FALSE)
 
 ctabs <- xtabs(data$amnesty_report_count ~ data$YEAR + data$country_name) 
 ctabs
