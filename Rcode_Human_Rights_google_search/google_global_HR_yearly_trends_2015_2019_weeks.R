@@ -15,6 +15,20 @@
 ##
 ##########################################################################
 
+## Do this (set to TRUE) to load libraries using the version from when the scripts were originally run
+if(FALSE){
+    ## load an older version of the libraries
+    remotes::install_github('CredibilityLab/groundhog')
+    library(groundhog)
+    pkgs <- c("gtrendsR", "countrycode", "bcp")
+    groundhog.library(pkgs,'2022-04-19')
+} else{
+    ## or load the more recent version of the libraries
+    install.packages("gtrendsR", "countrycode", "bcp")
+    library(gtrendsR)
+    library(countrycode)
+    library(bcp)
+}
 
 ## country codes
 data("countries")
