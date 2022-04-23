@@ -1,15 +1,38 @@
-## clean up workspace
-rm(list = ls(all.names = TRUE))
-gc()
+##
+##########################################################################
+##
+## Authors: Geoff Dancy and Christopher J. Fariss
+##
+## Title: "The Search for Human Rights: A Global Analysis Using Google Data"
+##
+## Contact Information: 
+##  Geoff Dancy <gdancy@tulane.edu>
+##  Christopher J. Fariss <cjf0006@gmail.com>
+##  
+##  Copyright (c) 2022, under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License.
+## For more information see: http://creativecommons.org/licenses/by-nc-sa/3.0/us/
+##  All rights reserved. 
+##
+##########################################################################
 
-## load libraries
-library(gtrendsR)
-library(countrycode)
-library(stm)
-library(tm)
-library(MASS)
-library(colorbrewer)
-library(bcp)
+## Do this (set to TRUE) to load libraries using the version from when the scripts were originally run
+if(FALSE){
+    ## load an older version of the libraries
+    remotes::install_github('CredibilityLab/groundhog')
+    library(groundhog)
+    pkgs <- c("gtrendsR", "countrycode", "stm", "tm", "MASS", "bcp")
+    groundhog.library(pkgs,'2022-04-19')
+} else{
+    ## or load the more recent version of the libraries
+    install.packages("gtrendsR", "countrycode", "stm", "tm", "MASS", "bcp")
+    library(gtrendsR)
+    library(countrycode)
+    library(stm)
+    library(tm)
+    library(MASS)
+    library(bcp)
+}
+
 
 ## country codes
 data("countries")
