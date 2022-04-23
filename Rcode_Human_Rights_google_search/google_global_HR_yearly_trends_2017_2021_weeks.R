@@ -65,13 +65,16 @@ TERMS_LABLES <- c("'human rights'", "'derechos humanos'", "'direitos humanos'", 
 
 TERMS_LABLES <- c("'human rights' (search term)", "'derechos humanos' (search term)", "'direitos humanos' (search term)", "'huquq al'iinsan' (search term)", "'droits' (search term)", "'human rights' (topic)")
 
+data_list <- list()
+
 #i <- 1
 for(i in 1:length(TERMS)){
     world <- gtrends(TERMS[i], time="2017-01-01 2021-12-31")$interest_over_time
-
-#if(i==4)
-#if(i==6) TERMS[i] <- "'human rights' (topic)"
-plot(world$hits, main=paste("Global:", TERMS_LABLES[i]), lwd=1, col=grey(.75), ylim=c(0, 100), xaxt="n", yaxt="n", type="n", ylab="", xlab="")
+    data_list[[i]] <- world
+    
+    #if(i==4)
+    #if(i==6) TERMS[i] <- "'human rights' (topic)"
+    plot(world$hits, main=paste("Global:", TERMS_LABLES[i]), lwd=1, col=grey(.75), ylim=c(0, 100), xaxt="n", yaxt="n", type="n", ylab="", xlab="")
     
     #id2013 <- which(as.Date(world$date) > as.Date("2012-12-31") & as.Date(world$date) <= as.Date("2013-12-31"))
     #id2014 <- which(as.Date(world$date) > as.Date("2013-12-31") & as.Date(world$date) <= as.Date("2014-12-31"))
@@ -131,6 +134,12 @@ plot(world$hits, main=paste("Global:", TERMS_LABLES[i]), lwd=1, col=grey(.75), y
 
 dev.off()
 
+## set today's date for saving files below
+current_date <- as.Date(Sys.time())
+current_date
 
+## save data.frame
+dat <- do.call("rbind", data_list)
+write.csv(dat, paste("Data_output/Google_search_world_2017_2021_weekly_", current_date, ".csv", sep=""), row.names=FALSE)
 
 
