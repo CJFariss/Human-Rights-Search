@@ -1,15 +1,35 @@
-## clean up workspace
-rm(list = ls(all.names = TRUE))
-gc()
+## google_global_HR_yearly_trends_2014_2018_months.R
+##########################################################################
+##
+## Authors: Geoff Dancy and Christopher J. Fariss
+##
+## Title: "The Search for Human Rights: A Global Analysis Using Google Data"
+##
+## Contact Information: 
+##  Geoff Dancy <gdancy@tulane.edu>
+##  Christopher J. Fariss <cjf0006@gmail.com>
+##  
+##  Copyright (c) 2022, under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License.
+## For more information see: http://creativecommons.org/licenses/by-nc-sa/3.0/us/
+##  All rights reserved. 
+##
+##########################################################################
 
-## load libraries
-library(gtrendsR)
-library(countrycode)
-library(stm)
-library(tm)
-library(MASS)
-library(colorbrewer)
-library(bcp)
+## Do this (set to TRUE) to load libraries using the version from when the scripts were originally run
+if(FALSE){
+    ## load an older version of the libraries
+    remotes::install_github('CredibilityLab/groundhog')
+    library(groundhog)
+    pkgs <- c("gtrendsR", "countrycode", "bcp")
+    groundhog.library(pkgs,'2022-04-19')
+} else{
+    ## or load the more recent version of the libraries
+    install.packages("gtrendsR", "countrycode", "bcp")
+    library(gtrendsR)
+    library(countrycode)
+    library(bcp)
+}
+
 
 ## country codes
 data("countries")
@@ -37,10 +57,8 @@ fit_lm <- list()
 #par(mfrow=c(3,3), mar=c(2,2.5,1,.5))
 #par(mfrow=c(1,1), mar=c(2,2.5,1,.5))
 
-#pdf("/Users/cjfariss/Dropbox/GOOGLEBOOK/SearchforRights\ 2/Figures/images/Global_search_hits_mean_CI_2013_2017.pdf", height=6, width=6)
-pdf("/Users/cjfariss/Dropbox/GOOGLEBOOK/SearchforRights\ 2/Figures/images/Global_search_hits_mean_CI_2014_2018.pdf", height=6, width=6)
-#pdf("/Users/cjfariss/Dropbox/GOOGLEBOOK/SearchforRights\ 2/Figures/images/Global_search_hits_mean_CI_2015_2019.pdf", height=6, width=6)
-#pdf("/Users/cjfariss/Dropbox/GOOGLEBOOK/SearchforRights\ 2/Figures/images/Global_search_hits_mean_CI_2016_2020.pdf", height=6, width=6)
+pdf("Rplots/Global_search_hits_mean_CI_2014_2018.pdf", height=6, width=6)
+
 
 par(mfrow=c(1,1), mar=c(2,2.5,1,.5))
 

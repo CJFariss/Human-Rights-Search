@@ -1,4 +1,4 @@
-##
+## google_global_HR_yearly_trends_2012_2020_months.R
 ##########################################################################
 ##
 ## Authors: Geoff Dancy and Christopher J. Fariss
@@ -20,16 +20,13 @@ if(FALSE){
     ## load an older version of the libraries
     remotes::install_github('CredibilityLab/groundhog')
     library(groundhog)
-    pkgs <- c("gtrendsR", "countrycode", "stm", "tm", "MASS", "bcp")
+    pkgs <- c("gtrendsR", "countrycode", "bcp")
     groundhog.library(pkgs,'2022-04-19')
 } else{
     ## or load the more recent version of the libraries
-    install.packages("gtrendsR", "countrycode", "stm", "tm", "MASS", "bcp")
+    install.packages("gtrendsR", "countrycode", "bcp")
     library(gtrendsR)
     library(countrycode)
-    library(stm)
-    library(tm)
-    library(MASS)
     library(bcp)
 }
 
@@ -60,11 +57,8 @@ fit_lm <- list()
 #par(mfrow=c(3,3), mar=c(2,2.5,1,.5))
 #par(mfrow=c(1,1), mar=c(2,2.5,1,.5))
 
-#pdf("/Users/cjfariss/Dropbox/GOOGLEBOOK/SearchforRights\ 2/Figures/images/Global_search_hits_mean_CI_2013_2017.pdf", height=6, width=6)
-#pdf("/Users/cjfariss/Dropbox/GOOGLEBOOK/SearchforRights\ 2/Figures/images/Global_search_hits_mean_CI_2014_2018.pdf", height=6, width=6)
-#pdf("/Users/cjfariss/Dropbox/GOOGLEBOOK/SearchforRights\ 2/Figures/images/Global_search_hits_mean_CI_2015_2019.pdf", height=6, width=6)
-#pdf("/Users/cjfariss/Dropbox/GOOGLEBOOK/SearchforRights\ 2/Figures/images/Global_search_hits_mean_CI_2016_2020.pdf", height=6, width=6)
-pdf("/Users/cjfariss/Dropbox/GOOGLEBOOK/SearchforRights\ 2/Figures/images/Global_search_hits_mean_CI_2012_2020.pdf", height=6, width=6)
+
+pdf("Rplots/Global_search_hits_mean_CI_2012_2021.pdf", height=6, width=6)
 
 par(mfrow=c(1,1), mar=c(2,2.5,1,.5))
 
@@ -77,7 +71,7 @@ for(i in 1:length(TERMS)){
     #world <- gtrends(TERMS[i], time="2013-01-01 2017-12-31")$interest_over_time
     #world <- gtrends(TERMS[i], time="2014-01-01 2018-12-31")$interest_over_time
     #world <- gtrends(TERMS[i], time="2015-01-01 2019-12-31")$interest_over_time
-    world <- gtrends(TERMS[i], time="2012-01-01 2020-12-31")$interest_over_time
+    world <- gtrends(TERMS[i], time="2012-01-01 2021-12-31")$interest_over_time
 
 #if(i==4)
 #if(i==6) TERMS[i] <- "'human rights' (topic)"
@@ -92,7 +86,8 @@ plot(world$hits, main=paste("Global:", TERMS_LABLES[i]), lwd=1, col=grey(.75), y
     id2018 <- which(as.Date(world$date) > as.Date("2017-12-31") & as.Date(world$date) <= as.Date("2018-12-31"))
     id2019 <- which(as.Date(world$date) > as.Date("2018-12-31") & as.Date(world$date) <= as.Date("2019-12-31"))
     id2020 <- which(as.Date(world$date) > as.Date("2019-12-31") & as.Date(world$date) <= as.Date("2020-12-31"))
-
+    id2021 <- which(as.Date(world$date) > as.Date("2020-12-31") & as.Date(world$date) <= as.Date("2021-12-31"))
+    
     polygon(x=c(min(id2013), min(id2013), max(id2013), max(id2013)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
     polygon(x=c(min(id2015), min(id2015), max(id2015), max(id2015)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
     polygon(x=c(min(id2017), min(id2017), max(id2017), max(id2017)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
@@ -100,6 +95,7 @@ plot(world$hits, main=paste("Global:", TERMS_LABLES[i]), lwd=1, col=grey(.75), y
     #polygon(x=c(min(id2016), min(id2016), max(id2016), max(id2016)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
     #polygon(x=c(min(id2018), min(id2018), max(id2018), max(id2018)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
     polygon(x=c(min(id2019), min(id2019), max(id2019), max(id2019)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
+    polygon(x=c(min(id2021), min(id2021), max(id2021), max(id2021)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
     box()
     
     lines(world$hits, lwd=1, col="#bdd7e7")
@@ -107,7 +103,7 @@ plot(world$hits, main=paste("Global:", TERMS_LABLES[i]), lwd=1, col=grey(.75), y
     #axis(side=1, at=c(median(id2013),  median(id2014), median(id2015), median(id2016), median(id2017)), labels=c(2013, 2014, 2015, 2016, 2017), las=1)
     #axis(side=1, at=c(median(id2014), median(id2015), median(id2016), median(id2017), median(id2018)), labels=c(2014, 2015, 2016, 2017, 2018), las=1)
     #axis(side=1, at=c(median(id2015), median(id2016), median(id2017), median(id2018), median(id2019)), labels=c(2015, 2016, 2017, 2018, 2019), las=1)
-    axis(side=1, at=c(median(id2012), median(id2013), median(id2014), median(id2015), median(id2016), median(id2017), median(id2018), median(id2019), median(id2020)), labels=c(2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020), las=1)
+    axis(side=1, at=c(median(id2012), median(id2013), median(id2014), median(id2015), median(id2016), median(id2017), median(id2018), median(id2019), median(id2020), median(id2021)), labels=c(2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021), las=1)
     model <- bcp(y=world$hits)
     lines(model$posterior.mean, lwd=.75, col="#08519c")
     
@@ -124,7 +120,8 @@ plot(world$hits, main=paste("Global:", TERMS_LABLES[i]), lwd=1, col=grey(.75), y
     polygon(c(min(id2018), min(id2018), max(id2018), max(id2018)), c(as.numeric(t.test(world$hits[id2018])$conf.int)[1:2], as.numeric(t.test(world$hits[id2018])$conf.int)[2:1]), col=grey(.75), lwd=1, border=F, density=30)
     polygon(c(min(id2019), min(id2019), max(id2019), max(id2019)), c(as.numeric(t.test(world$hits[id2019])$conf.int)[1:2], as.numeric(t.test(world$hits[id2019])$conf.int)[2:1]), col=grey(.75), lwd=1, border=F, density=30)
     polygon(c(min(id2020), min(id2020), max(id2020), max(id2020)), c(as.numeric(t.test(world$hits[id2020])$conf.int)[1:2], as.numeric(t.test(world$hits[id2020])$conf.int)[2:1]), col=grey(.75), lwd=1, border=F, density=30)
-
+    polygon(c(min(id2021), min(id2021), max(id2021), max(id2021)), c(as.numeric(t.test(world$hits[id2021])$conf.int)[1:2], as.numeric(t.test(world$hits[id2021])$conf.int)[2:1]), col=grey(.75), lwd=1, border=F, density=30)
+    
     lines(id2012, rep(mean(world$hits[id2012]),length(id2012)), col="darkorange4", lwd=2, lty=2)
     lines(id2013, rep(mean(world$hits[id2013]),length(id2013)), col="darkorange4", lwd=2, lty=2)
     lines(id2014, rep(mean(world$hits[id2014]),length(id2014)), col="darkorange4", lwd=2, lty=2)
@@ -134,6 +131,7 @@ plot(world$hits, main=paste("Global:", TERMS_LABLES[i]), lwd=1, col=grey(.75), y
     lines(id2018, rep(mean(world$hits[id2018]),length(id2018)), col="darkorange4", lwd=2, lty=2)
     lines(id2019, rep(mean(world$hits[id2019]),length(id2019)), col="darkorange4", lwd=2, lty=2)
     lines(id2020, rep(mean(world$hits[id2020]),length(id2020)), col="darkorange4", lwd=2, lty=2)
+    lines(id2021, rep(mean(world$hits[id2021]),length(id2021)), col="darkorange4", lwd=2, lty=2)
 #}
 
 }
