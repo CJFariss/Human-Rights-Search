@@ -197,6 +197,275 @@ for(i in c(1:3)) axis(side=4, at=log10(var_data[[i]]$Frequency[nrow(var_data[[i]
 mtext(side=2, "Freqency of N-gram from Google Books Corpus (Spanish Corpus)", line=3.75, cex=1)
 
 
+##########################################################################
+##
+## Specific Google N-gram search in Russian:
+##https://books.google.com/ngrams/graph?content=%D0%BF%D1%80%D0%B0%D0%B2%D0%B0+%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0%2C%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%2C%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%B0&year_start=1800&year_end=2020&corpus=36&smoothing=3
+##
+##########################################################################
+
+## generate list to store ngram data
+var_data <- list()
+
+## Russian ngram terms
+TERMS <- c("права человека","права","свобода")
+
+var_data[[1]] <- ngram(TERMS[1], corpus = "rus_2019", year_start = 1800, year_end = 2020, smoothing = 3)
+var_data[[2]] <- ngram(TERMS[2], corpus = "rus_2019", year_start = 1800, year_end = 2020, smoothing = 3)
+var_data[[3]] <- ngram(TERMS[3], corpus = "rus_2019", year_start = 1800, year_end = 2020, smoothing = 3)
+
+## update dataframe to save ngram data
+dat <- rbind(dat, var_data[[1]], var_data[[2]], var_data[[3]])
+
+## Color choice qualitative from colorbrewer2.org
+COLOR <- c("#7570b3", "#d95f02", "#1b9e77")
+
+## Rplot
+par(mar=c(3,5,0.5,12))
+plot(log10(var_data[[1]]$Frequency), type="l", ylim=c(-8,-3), col=COLOR[1],lwd=2, yaxt="n", xaxt="n", ylab="", xlab="")
+
+#abline(h=-2, lwd=.5, col=grey(.5), lty=2)
+abline(h=-3, lwd=.5, col=grey(.5), lty=2)
+abline(h=-4, lwd=.5, col=grey(.5), lty=2)
+abline(h=-5, lwd=.5, col=grey(.5), lty=2)
+abline(h=-6, lwd=.5, col=grey(.5), lty=2)
+abline(h=-7, lwd=.5, col=grey(.5), lty=2)
+abline(h=-8, lwd=.5, col=grey(.5), lty=2)
+
+for(i in 1:3){lines(log10(var_data[[i]]$Frequency), col=COLOR[i], lwd=2)}
+
+axis(side=1, at=1:length(1800:2020), labels=rep("",length(1800:2020)))
+axis(side=1, at=(seq(1800,2020,20)-1799), labels=seq(1800,2020,20), las=2)
+
+coord <- -1:-14
+for(i in 1:length(coord)){axis(side=2, at=c(coord[i]), labels=exp.y[[i]], font=1, cex.axis=1.35, padj=0, las=2)}
+
+axis(side=4, at=c(-3,-4,-5,-6,-7, -8), labels=c("0.001", "0.0001", "0.00001", "0.000001", "0.0000001", "0.00000001"), las=2)
+
+COLOR.TERMS <- COLOR
+
+## add lables on the right-side axis
+for(i in c(1:3)) axis(side=4, at=log10(var_data[[i]]$Frequency[nrow(var_data[[i]])]), labels=TERMS[i], col.axis=COLOR[i], las=2, tick=F)
+
+mtext(side=2, "Freqency of N-gram from Google Books Corpus (Russian Corpus)", line=3.75, cex=1)
+
+
+##########################################################################
+##
+## Specific Google N-gram search in Italian:
+##https://books.google.com/ngrams/graph?content=diritti+umani%2Clibert%C3%A0%2Cdiritti&year_start=1800&year_end=2019&corpus=33&smoothing=3&direct_url=t1%3B%2Cdiritti%20umani%3B%2Cc0%3B.t1%3B%2Clibert%C3%A0%3B%2Cc0%3B.t1%3B%2Cdiritti%3B%2Cc0
+##
+##########################################################################
+
+## generate list to store ngram data
+var_data <- list()
+
+## Italian ngram terms
+TERMS <- c("diritti umani","libertà","diritti")
+
+var_data[[1]] <- ngram(TERMS[1], corpus = "ita_2019", year_start = 1800, year_end = 2020, smoothing = 3)
+var_data[[2]] <- ngram(TERMS[2], corpus = "ita_2019", year_start = 1800, year_end = 2020, smoothing = 3)
+var_data[[3]] <- ngram(TERMS[3], corpus = "ita_2019", year_start = 1800, year_end = 2020, smoothing = 3)
+
+## update dataframe to save ngram data
+dat <- rbind(dat, var_data[[1]], var_data[[2]], var_data[[3]])
+
+## Color choice qualitative from colorbrewer2.org
+COLOR <- c("#7570b3", "#d95f02", "#1b9e77")
+
+## Rplot
+par(mar=c(3,5,0.5,12))
+plot(log10(var_data[[1]]$Frequency), type="l", ylim=c(-8,-3), col=COLOR[1],lwd=2, yaxt="n", xaxt="n", ylab="", xlab="")
+
+#abline(h=-2, lwd=.5, col=grey(.5), lty=2)
+abline(h=-3, lwd=.5, col=grey(.5), lty=2)
+abline(h=-4, lwd=.5, col=grey(.5), lty=2)
+abline(h=-5, lwd=.5, col=grey(.5), lty=2)
+abline(h=-6, lwd=.5, col=grey(.5), lty=2)
+abline(h=-7, lwd=.5, col=grey(.5), lty=2)
+abline(h=-8, lwd=.5, col=grey(.5), lty=2)
+
+for(i in 1:3){lines(log10(var_data[[i]]$Frequency), col=COLOR[i], lwd=2)}
+
+axis(side=1, at=1:length(1800:2020), labels=rep("",length(1800:2020)))
+axis(side=1, at=(seq(1800,2020,20)-1799), labels=seq(1800,2020,20), las=2)
+
+coord <- -1:-14
+for(i in 1:length(coord)){axis(side=2, at=c(coord[i]), labels=exp.y[[i]], font=1, cex.axis=1.35, padj=0, las=2)}
+
+axis(side=4, at=c(-3,-4,-5,-6,-7, -8), labels=c("0.001", "0.0001", "0.00001", "0.000001", "0.0000001", "0.00000001"), las=2)
+
+COLOR.TERMS <- COLOR
+
+## add lables on the right-side axis
+for(i in c(1:3)) axis(side=4, at=log10(var_data[[i]]$Frequency[nrow(var_data[[i]])]), labels=TERMS[i], col.axis=COLOR[i], las=2, tick=F)
+
+mtext(side=2, "Freqency of N-gram from Google Books Corpus (Italian Corpus)", line=3.75, cex=1)
+
+
+##########################################################################
+##
+## Specific Google N-gram search in German:
+##https://books.google.com/ngrams/graph?content=Menschenrechte%2CFreiheit%2CRechte&year_start=1800&year_end=2019&corpus=31&smoothing=3
+##
+##########################################################################
+
+## generate list to store ngram data
+var_data <- list()
+
+## German ngram terms
+TERMS <- c("Menschenrechte","Freiheit","Rechte")
+
+var_data[[1]] <- ngram(TERMS[1], corpus = "ger_2019", year_start = 1800, year_end = 2020, smoothing = 3)
+var_data[[2]] <- ngram(TERMS[2], corpus = "ger_2019", year_start = 1800, year_end = 2020, smoothing = 3)
+var_data[[3]] <- ngram(TERMS[3], corpus = "ger_2019", year_start = 1800, year_end = 2020, smoothing = 3)
+
+## update dataframe to save ngram data
+dat <- rbind(dat, var_data[[1]], var_data[[2]], var_data[[3]])
+
+## Color choice qualitative from colorbrewer2.org
+COLOR <- c("#7570b3", "#d95f02", "#1b9e77")
+
+## Rplot
+par(mar=c(3,5,0.5,12))
+plot(log10(var_data[[1]]$Frequency), type="l", ylim=c(-8,-3), col=COLOR[1],lwd=2, yaxt="n", xaxt="n", ylab="", xlab="")
+
+#abline(h=-2, lwd=.5, col=grey(.5), lty=2)
+abline(h=-3, lwd=.5, col=grey(.5), lty=2)
+abline(h=-4, lwd=.5, col=grey(.5), lty=2)
+abline(h=-5, lwd=.5, col=grey(.5), lty=2)
+abline(h=-6, lwd=.5, col=grey(.5), lty=2)
+abline(h=-7, lwd=.5, col=grey(.5), lty=2)
+abline(h=-8, lwd=.5, col=grey(.5), lty=2)
+
+for(i in 1:3){lines(log10(var_data[[i]]$Frequency), col=COLOR[i], lwd=2)}
+
+axis(side=1, at=1:length(1800:2020), labels=rep("",length(1800:2020)))
+axis(side=1, at=(seq(1800,2020,20)-1799), labels=seq(1800,2020,20), las=2)
+
+coord <- -1:-14
+for(i in 1:length(coord)){axis(side=2, at=c(coord[i]), labels=exp.y[[i]], font=1, cex.axis=1.35, padj=0, las=2)}
+
+axis(side=4, at=c(-3,-4,-5,-6,-7, -8), labels=c("0.001", "0.0001", "0.00001", "0.000001", "0.0000001", "0.00000001"), las=2)
+
+COLOR.TERMS <- COLOR
+
+## add lables on the right-side axis
+for(i in c(1:3)) axis(side=4, at=log10(var_data[[i]]$Frequency[nrow(var_data[[i]])]), labels=TERMS[i], col.axis=COLOR[i], las=2, tick=F)
+
+mtext(side=2, "Freqency of N-gram from Google Books Corpus (German Corpus)", line=3.75, cex=1)
+
+
+##########################################################################
+##
+## Specific Google N-gram search in Hebrew:
+##https://books.google.com/ngrams/graph?content=%D7%96%D7%9B%D7%95%D7%99%D7%95%D7%AA+%D7%90%D7%93%D7%9D%2C+%D7%97%D7%95%D6%B9%D7%A4%D6%B6%D7%A9+%2C%D7%96%D7%9B%D7%95%D7%99%D7%95%D7%AA&year_start=1800&year_end=2019&corpus=35&smoothing=3&direct_url=t1%3B%2C%D7%96%D7%9B%D7%95%D7%99%D7%95%D7%AA%20%D7%90%D7%93%D7%9D%3B%2Cc0%3B.t1%3B%2C%D7%97%D7%95%D7%A4%D7%A9%3B%2Cc0%3B.t1%3B%2C%D7%96%D7%9B%D7%95%D7%99%D7%95%D7%AA%3B%2Cc0#t1%3B%2C%D7%96%D7%9B%D7%95%D7%99%D7%95%D7%AA%20%D7%90%D7%93%D7%9D%3B%2Cc0%3B.t1%3B%2C%D7%97%D7%95%D7%A4%D7%A9%3B%2Cc0%3B.t1%3B%2C%D7%96%D7%9B%D7%95%D7%99%D7%95%D7%AA%3B%2Cc0
+##
+##########################################################################
+
+## generate list to store ngram data
+var_data <- list()
+
+## Hebrew ngram terms
+TERMS <- c()
+TERMS[1] <- "זכויות אדם"
+TERMS[2] <- "חוֹפֶשׁ"
+TERMS[3] <- "זכויות"
+
+var_data[[1]] <- ngram(TERMS[1], corpus = "heb_2019", year_start = 1800, year_end = 2020, smoothing = 3)
+var_data[[2]] <- ngram(TERMS[2], corpus = "heb_2019", year_start = 1800, year_end = 2020, smoothing = 3)
+var_data[[3]] <- ngram(TERMS[3], corpus = "heb_2019", year_start = 1800, year_end = 2020, smoothing = 3)
+
+## update dataframe to save ngram data
+dat <- rbind(dat, var_data[[1]], var_data[[2]], var_data[[3]])
+
+## Color choice qualitative from colorbrewer2.org
+COLOR <- c("#7570b3", "#d95f02", "#1b9e77")
+
+## Rplot
+par(mar=c(3,5,0.5,12))
+plot(log10(var_data[[1]]$Frequency), type="l", ylim=c(-8,-3), col=COLOR[1],lwd=2, yaxt="n", xaxt="n", ylab="", xlab="")
+
+#abline(h=-2, lwd=.5, col=grey(.5), lty=2)
+abline(h=-3, lwd=.5, col=grey(.5), lty=2)
+abline(h=-4, lwd=.5, col=grey(.5), lty=2)
+abline(h=-5, lwd=.5, col=grey(.5), lty=2)
+abline(h=-6, lwd=.5, col=grey(.5), lty=2)
+abline(h=-7, lwd=.5, col=grey(.5), lty=2)
+abline(h=-8, lwd=.5, col=grey(.5), lty=2)
+
+for(i in 1:3){lines(log10(var_data[[i]]$Frequency), col=COLOR[i], lwd=2)}
+
+axis(side=1, at=1:length(1800:2020), labels=rep("",length(1800:2020)))
+axis(side=1, at=(seq(1800,2020,20)-1799), labels=seq(1800,2020,20), las=2)
+
+coord <- -1:-14
+for(i in 1:length(coord)){axis(side=2, at=c(coord[i]), labels=exp.y[[i]], font=1, cex.axis=1.35, padj=0, las=2)}
+
+axis(side=4, at=c(-3,-4,-5,-6,-7, -8), labels=c("0.001", "0.0001", "0.00001", "0.000001", "0.0000001", "0.00000001"), las=2)
+
+COLOR.TERMS <- COLOR
+
+## add lables on the right-side axis
+for(i in c(1:3)) axis(side=4, at=log10(var_data[[i]]$Frequency[nrow(var_data[[i]])]), labels=TERMS[i], col.axis=COLOR[i], las=2, tick=F)
+
+mtext(side=2, "Freqency of N-gram from Google Books Corpus (Hebrew Corpus)", line=3.75, cex=1)
+
+
+
+##########################################################################
+##
+## Specific Google N-gram search in Chinese:
+##https://books.google.com/ngrams/graph?content=%E4%BA%BA%E6%9D%83%2C%E8%87%AA%E7%94%B1%2C%E6%9D%83%E5%88%A9&year_start=1800&year_end=2019&corpus=34&smoothing=3
+##
+##########################################################################
+
+## generate list to store ngram data
+var_data <- list()
+
+## Italian ngram terms
+TERMS <- c("人权","自由","权利")
+
+var_data[[1]] <- ngram(TERMS[1], corpus = "chi_sim_2019", year_start = 1800, year_end = 2020, smoothing = 3)
+var_data[[2]] <- ngram(TERMS[2], corpus = "chi_sim_2019", year_start = 1800, year_end = 2020, smoothing = 3)
+var_data[[3]] <- ngram(TERMS[3], corpus = "chi_sim_2019", year_start = 1800, year_end = 2020, smoothing = 3)
+
+## update dataframe to save ngram data
+dat <- rbind(dat, var_data[[1]], var_data[[2]], var_data[[3]])
+
+## Color choice qualitative from colorbrewer2.org
+COLOR <- c("#7570b3", "#d95f02", "#1b9e77")
+
+## Rplot
+par(mar=c(3,5,0.5,12))
+plot(log10(var_data[[1]]$Frequency), type="l", ylim=c(-8,-3), col=COLOR[1],lwd=2, yaxt="n", xaxt="n", ylab="", xlab="")
+
+#abline(h=-2, lwd=.5, col=grey(.5), lty=2)
+abline(h=-3, lwd=.5, col=grey(.5), lty=2)
+abline(h=-4, lwd=.5, col=grey(.5), lty=2)
+abline(h=-5, lwd=.5, col=grey(.5), lty=2)
+abline(h=-6, lwd=.5, col=grey(.5), lty=2)
+abline(h=-7, lwd=.5, col=grey(.5), lty=2)
+abline(h=-8, lwd=.5, col=grey(.5), lty=2)
+
+for(i in 1:3){lines(log10(var_data[[i]]$Frequency), col=COLOR[i], lwd=2)}
+
+axis(side=1, at=1:length(1800:2020), labels=rep("",length(1800:2020)))
+axis(side=1, at=(seq(1800,2020,20)-1799), labels=seq(1800,2020,20), las=2)
+
+coord <- -1:-14
+for(i in 1:length(coord)){axis(side=2, at=c(coord[i]), labels=exp.y[[i]], font=1, cex.axis=1.35, padj=0, las=2)}
+
+axis(side=4, at=c(-3,-4,-5,-6,-7, -8), labels=c("0.001", "0.0001", "0.00001", "0.000001", "0.0000001", "0.00000001"), las=2)
+
+COLOR.TERMS <- COLOR
+
+## add lables on the right-side axis
+for(i in c(1:3)) axis(side=4, at=log10(var_data[[i]]$Frequency[nrow(var_data[[i]])]), labels=TERMS[i], col.axis=COLOR[i], las=2, tick=F)
+
+mtext(side=2, "Freqency of N-gram from Google Books Corpus (Chinese (simplified) Corpus)", line=3.75, cex=1)
+
+
 ## close connection to graph file
 dev.off()
 
