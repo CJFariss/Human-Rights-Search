@@ -79,7 +79,7 @@ data$country_name_amnesty[data$country_name=="Myanmar (Burma) "] <- "Myanmar"
 
 #data$amnesty_report_count[data$country_name=="Myanmar (Burma) " & data$YEAR==2019] <- NA
 
-data <- try(read.csv("/Users/christopherfariss/Dropbox/GOOGLEBOOK/SearchforRights\ 2/Data/HumanRightsProtectionScores_v4.01_amnesty_report_count.csv"))
+#data <- try(read.csv("/Users/christopherfariss/Dropbox/GOOGLEBOOK/SearchforRights\ 2/Data/HumanRightsProtectionScores_v4.01_amnesty_report_count.csv"))
 
 count <- 0
 for(i in 1:nrow(data)){

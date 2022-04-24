@@ -196,6 +196,7 @@ for(i in c(1:3)) axis(side=4, at=log10(var_data[[i]]$Frequency[nrow(var_data[[i]
 
 mtext(side=2, "Freqency of N-gram from Google Books Corpus (Spanish Corpus)", line=3.75, cex=1)
 
+
 ## close connection to graph file
 dev.off()
 
@@ -205,3 +206,5 @@ current_date
 
 ## save data.frame
 write.csv(dat, paste("Data_output/Google_book_corpus_ngram_", current_date, ".csv", sep=""), row.names=FALSE)
+
+
