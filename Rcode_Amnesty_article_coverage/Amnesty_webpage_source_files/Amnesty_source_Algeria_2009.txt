@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>2 results for &quot;Gabon&quot; for the year 1991 written in English - Amnesty International</title>
+	<title>13 results for &quot;Algeria&quot; for the year 2009 written in English - Amnesty International</title>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="https://www.amnesty.org/en/wp-content/themes/amnesty-wp-theme/assets/favicons/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="https://www.amnesty.org/en/wp-content/themes/amnesty-wp-theme/assets/favicons/favicon-32x32.png">
@@ -18,19 +18,19 @@
 <script>(function(h){h.classList.remove('no-js');h.classList.add('js')})(document.documentElement);</script>
 	<meta property="og:locale" content="en" />
 	<meta property="og:type" content="article" />
-	<meta property="og:title" content="1991" />
-	<meta property="og:url" content="https://www.amnesty.org/en/search/Gabon/" />
+	<meta property="og:title" content="2009" />
+	<meta property="og:url" content="https://www.amnesty.org/en/search/Algeria/" />
 	<meta property="og:site_name" content="Amnesty International" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="1991 - Amnesty International" />
+	<meta name="twitter:title" content="2009 - Amnesty International" />
 	<meta name="twitter:site" content="@amnesty" />
-	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.amnesty.org/en/#organization","name":"Amnesty International","url":"https://www.amnesty.org/en/","sameAs":["https://www.facebook.com/amnesty","https://instagram.com/amnesty","https://www.youtube.com/user/AmnestyInternational","https://twitter.com/amnesty"],"logo":{"@type":"ImageObject","@id":"https://www.amnesty.org/en/#logo","inLanguage":"en","url":"https://www.amnesty.org/en/wp-content/uploads/2018/08/amnesty-international.jpg","contentUrl":"https://www.amnesty.org/en/wp-content/uploads/2018/08/amnesty-international.jpg","width":2167,"height":918,"caption":"Amnesty International"},"image":{"@id":"https://www.amnesty.org/en/#logo"}},{"@type":"WebSite","@id":"https://www.amnesty.org/en/#website","url":"https://www.amnesty.org/en/","name":"Amnesty International","description":"Inspiring people against injustice to bring the world closer to human rights &amp; dignity enjoyed by all.","publisher":{"@id":"https://www.amnesty.org/en/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.amnesty.org/en/search/{search_term_string}/"},"query-input":"required name=search_term_string"}],"inLanguage":"en"},{"@type":"CollectionPage","@id":"#webpage","url":"https://www.amnesty.org/en/?s=Gabon","name":"1991 - Amnesty International","isPartOf":{"@id":"https://www.amnesty.org/en/#website"},"breadcrumb":{"@id":"#breadcrumb"},"inLanguage":"en","potentialAction":[{"@type":"ReadAction","target":["https://www.amnesty.org/en/?s=Gabon"]}]},{"@type":"BreadcrumbList","@id":"#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.amnesty.org/en/"},{"@type":"ListItem","position":2,"name":"Archives for 1991"}]}]}</script>
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.amnesty.org/en/#organization","name":"Amnesty International","url":"https://www.amnesty.org/en/","sameAs":["https://www.facebook.com/amnesty","https://instagram.com/amnesty","https://www.youtube.com/user/AmnestyInternational","https://twitter.com/amnesty"],"logo":{"@type":"ImageObject","@id":"https://www.amnesty.org/en/#logo","inLanguage":"en","url":"https://www.amnesty.org/en/wp-content/uploads/2018/08/amnesty-international.jpg","contentUrl":"https://www.amnesty.org/en/wp-content/uploads/2018/08/amnesty-international.jpg","width":2167,"height":918,"caption":"Amnesty International"},"image":{"@id":"https://www.amnesty.org/en/#logo"}},{"@type":"WebSite","@id":"https://www.amnesty.org/en/#website","url":"https://www.amnesty.org/en/","name":"Amnesty International","description":"Inspiring people against injustice to bring the world closer to human rights &amp; dignity enjoyed by all.","publisher":{"@id":"https://www.amnesty.org/en/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.amnesty.org/en/search/{search_term_string}/"},"query-input":"required name=search_term_string"}],"inLanguage":"en"},{"@type":"CollectionPage","@id":"#webpage","url":"https://www.amnesty.org/en/?s=Algeria","name":"2009 - Amnesty International","isPartOf":{"@id":"https://www.amnesty.org/en/#website"},"breadcrumb":{"@id":"#breadcrumb"},"inLanguage":"en","potentialAction":[{"@type":"ReadAction","target":["https://www.amnesty.org/en/?s=Algeria"]}]},{"@type":"BreadcrumbList","@id":"#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.amnesty.org/en/"},{"@type":"ListItem","position":2,"name":"Archives for 2009"}]}]}</script>
 
 
 <link rel='dns-prefetch' href='//www.googletagmanager.com' />
 <link rel='dns-prefetch' href='//cc.cdn.civiccomputing.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel="alternate" type="application/rss+xml" title="Amnesty International &raquo; Search Results for &#8220;Gabon&#8221; Feed" href="https://www.amnesty.org/en/search/Gabon/feed/rss2/" />
+<link rel="alternate" type="application/rss+xml" title="Amnesty International &raquo; Search Results for &#8220;Algeria&#8221; Feed" href="https://www.amnesty.org/en/search/Algeria/feed/rss2/" />
 <link iecp-ignore rel='stylesheet' id='wp-block-library-css'  href='https://www.amnesty.org/en/wp-includes/css/dist/block-library/style.min.css?ver=5.7.6' media='all' />
 <link iecp-ignore rel='stylesheet' id='wc-blocks-vendors-style-css'  href='https://www.amnesty.org/en/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-vendors-style.css?ver=7.2.2' media='all' />
 <link iecp-ignore rel='stylesheet' id='wc-blocks-style-css'  href='https://www.amnesty.org/en/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-style.css?ver=7.2.2' media='all' />
@@ -64,7 +64,7 @@ gtag('consent','default',{'ad_storage':'denied','analytics_storage':'denied'});
 <link rel="https://api.w.org/" href="https://www.amnesty.org/en/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.amnesty.org/en/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.amnesty.org/en/wp-includes/wlwmanifest.xml" /> 
 <script>  var el_i13_login_captcha=null; var el_i13_register_captcha=null; </script><!-- Stream WordPress user activity plugin v3.9.0 -->
-<link rel="alternate" hreflang="es" href="https://www.amnesty.org/es/search/Gabon/"><link rel="alternate" hreflang="fr" href="https://www.amnesty.org/fr/search/Gabon/"><link rel="alternate" hreflang="ar" href="https://www.amnesty.org/ar/search/Gabon/"><link rel="alternate" hreflang="en" href="https://www.amnesty.org/en/search/Gabon/"><link rel="alternate" href="https://www.amnesty.org/en/search/Gabon/" hreflang="x-default">	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+<link rel="alternate" hreflang="es" href="https://www.amnesty.org/es/search/Algeria/"><link rel="alternate" hreflang="fr" href="https://www.amnesty.org/fr/search/Algeria/"><link rel="alternate" hreflang="ar" href="https://www.amnesty.org/ar/search/Algeria/"><link rel="alternate" hreflang="en" href="https://www.amnesty.org/en/search/Algeria/"><link rel="alternate" href="https://www.amnesty.org/en/search/Algeria/" hreflang="x-default">	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
 	</head>
 <body class="archive date search search-results wp-custom-logo theme-amnesty-wp-theme woocommerce-no-js ltr">
 <a class="skipLink" href="#main">Skip to main content</a>
@@ -144,8 +144,8 @@ gtag('consent','default',{'ad_storage':'denied','analytics_storage':'denied'});
 			<section class="searchbox tab-content is-selected" data-content="search" role="search" aria-hidden="false" aria-label="Search form">
 	<div class="searchform">
 	<form action="https://www.amnesty.org/en/search/" data-page-search>
-		<label for="search-59" class="u-hiddenVisually">Search input</label>
-		<input id="search-59" class="has-autofocus" type="text" name="s" role="searchbox" placeholder="What are you looking for?" value="Gabon">
+		<label for="search-e1" class="u-hiddenVisually">Search input</label>
+		<input id="search-e1" class="has-autofocus" type="text" name="s" role="searchbox" placeholder="What are you looking for?" value="Algeria">
 		<button class="btn" type="submit">Search</button>
 	</form>
 </div>
@@ -153,24 +153,24 @@ gtag('consent','default',{'ad_storage':'denied','analytics_storage':'denied'});
 			<section class="searchbox tab-content" data-content="advanced-search" aria-hidden="true" aria-label="Search form">
 	<form class="searchform is-advanced" action="https://www.amnesty.org/en/search/">
 		<p>
-			<label for="search-0b">Keyword or Title</label>
-			<input id="search-0b" type="text" name="s" role="searchbox" placeholder="What are you looking for?" value="Gabon">
+			<label for="search-84">Keyword or Title</label>
+			<input id="search-84" type="text" name="s" role="searchbox" placeholder="What are you looking for?" value="Algeria">
 		</p>
 
 		
 <p>
-	<label for="search-index-04" >Amnesty Index Number</label>
-	<input id="search-index-04" type="text" name="index" pattern="^[a-zA-Z]{3}\s[0-9]{2,4}\/[0-9]{2,4}\/[0-9]{4}$" placeholder="e.g. NWS 21/001/1961" value="">
+	<label for="search-index-c9" >Amnesty Index Number</label>
+	<input id="search-index-c9" type="text" name="index" pattern="^[a-zA-Z]{3}\s[0-9]{2,4}\/[0-9]{2,4}\/[0-9]{4}$" placeholder="e.g. NWS 21/001/1961" value="">
 </p>
 <div class="field-split">
 	<p>
-		<label for="search-date-04">Year</label>
-		<input id="search-date-04" type="number" min="1961" max="2022" step="1" name="year" placeholder="e.g 1961" value="1991">
+		<label for="search-date-c9">Year</label>
+		<input id="search-date-c9" type="number" min="1961" max="2022" step="1" name="year" placeholder="e.g 1961" value="2009">
 	</p>
 	<p>
-		<label for="search-language-04">Document Language</label>
+		<label for="search-language-c9">Document Language</label>
 		<span class="element-select">
-			<select id="search-language-04" name="language">
+			<select id="search-language-c9" name="language">
 							<option value="sq" >Albanian</option>
 							<option value="am" >Amharic</option>
 							<option value="ar" >Arabic</option>
@@ -347,8 +347,8 @@ gtag('consent','default',{'ad_storage':'denied','analytics_storage':'denied'});
 			<section class="searchbox tab-content is-selected" data-content="search" role="search" aria-hidden="false" aria-label="Search form">
 	<div class="searchform">
 	<form action="https://www.amnesty.org/en/search/" data-page-search>
-		<label for="search-3e" class="u-hiddenVisually">Search input</label>
-		<input id="search-3e" class="has-autofocus" type="text" name="s" role="searchbox" placeholder="What are you looking for?" value="Gabon">
+		<label for="search-16" class="u-hiddenVisually">Search input</label>
+		<input id="search-16" class="has-autofocus" type="text" name="s" role="searchbox" placeholder="What are you looking for?" value="Algeria">
 		<button class="btn" type="submit">Search</button>
 	</form>
 </div>
@@ -356,24 +356,24 @@ gtag('consent','default',{'ad_storage':'denied','analytics_storage':'denied'});
 			<section class="searchbox tab-content" data-content="advanced-search" aria-hidden="true" aria-label="Search form">
 	<form class="searchform is-advanced" action="https://www.amnesty.org/en/search/">
 		<p>
-			<label for="search-e3">Keyword or Title</label>
-			<input id="search-e3" type="text" name="s" role="searchbox" placeholder="What are you looking for?" value="Gabon">
+			<label for="search-2b">Keyword or Title</label>
+			<input id="search-2b" type="text" name="s" role="searchbox" placeholder="What are you looking for?" value="Algeria">
 		</p>
 
 		
 <p>
-	<label for="search-index-78" >Amnesty Index Number</label>
-	<input id="search-index-78" type="text" name="index" pattern="^[a-zA-Z]{3}\s[0-9]{2,4}\/[0-9]{2,4}\/[0-9]{4}$" placeholder="e.g. NWS 21/001/1961" value="">
+	<label for="search-index-bb" >Amnesty Index Number</label>
+	<input id="search-index-bb" type="text" name="index" pattern="^[a-zA-Z]{3}\s[0-9]{2,4}\/[0-9]{2,4}\/[0-9]{4}$" placeholder="e.g. NWS 21/001/1961" value="">
 </p>
 <div class="field-split">
 	<p>
-		<label for="search-date-78">Year</label>
-		<input id="search-date-78" type="number" min="1961" max="2022" step="1" name="year" placeholder="e.g 1961" value="1991">
+		<label for="search-date-bb">Year</label>
+		<input id="search-date-bb" type="number" min="1961" max="2022" step="1" name="year" placeholder="e.g 1961" value="2009">
 	</p>
 	<p>
-		<label for="search-language-78">Document Language</label>
+		<label for="search-language-bb">Document Language</label>
 		<span class="element-select">
-			<select id="search-language-78" name="language">
+			<select id="search-language-bb" name="language">
 							<option value="sq" >Albanian</option>
 							<option value="am" >Amharic</option>
 							<option value="ar" >Arabic</option>
@@ -493,7 +493,7 @@ gtag('consent','default',{'ad_storage':'denied','analytics_storage':'denied'});
 	<div class="container search-container">
 		<aside class="search-filters">
 		<h2 id="search-filter-title">Refine your search</h2>
-	<form id="filter-form" style="display:flex;flex-direction:column" action="https://www.amnesty.org/en/search/Gabon/?year=1991&#038;language=en" aria-labelledby="search-filter-title" aria-describedby="filter-description">
+	<form id="filter-form" style="display:flex;flex-direction:column" action="https://www.amnesty.org/en/search/Algeria/?year=2009&#038;language=en" aria-labelledby="search-filter-title" aria-describedby="filter-description">
 		<p id="filter-description" class="screen-reader-text">Refine your search results by targeting specific topics from the list of available taxonomies.</p>
 		<div class="taxonomyArchive-filters" aria-label="Filter results by topic">
 		<div class="checkbox-dropdownList-trigger" role="listbox" aria-labelledby="dropdown-category"><div id="dropdown-category" class="checkbox-dropdown" tabindex="0">Content Types</div><ul class="checkbox-dropdownList"><li tabindex="0"><label><input type="checkbox" name="qcategory[]" value="2133"><span>Campaigns</span></label></li><li tabindex="0"><label><input type="checkbox" name="qcategory[]" value="2132"><span>Education</span></label></li><li tabindex="0"><label><input type="checkbox" name="qcategory[]" value="2060"><span>Impact</span></label></li><li tabindex="0"><label><input type="checkbox" name="qcategory[]" value="1148"><span>News</span></label></li><li tabindex="0"><label><input type="checkbox" name="qcategory[]" value="1149"><span>Research</span></label></li></ul></div><div class="checkbox-dropdownList-trigger" role="listbox" aria-labelledby="dropdown-location"><div id="dropdown-location" class="checkbox-dropdown" tabindex="0">Countries</div><ul class="checkbox-dropdownList"><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1696"><span>Afghanistan</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1698"><span>Africa</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1713"><span>Albania</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1715"><span>Algeria</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1699"><span>Americas</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1931"><span>Andorra</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1717"><span>Angola</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1711"><span>Argentina</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1714"><span>Armenia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1697"><span>Asia and the Pacific</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1716"><span>Australia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1718"><span>Austria</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1712"><span>Azerbaijan</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1719"><span>Bahrain</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1723"><span>Bangladesh</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1727"><span>Belarus</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1730"><span>Belgium</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1720"><span>Benin</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1725"><span>Bolivia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1728"><span>Bosnia and Herzegovina</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1731"><span>Botswana</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1721"><span>Brazil</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1729"><span>Bulgaria</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1732"><span>Burkina Faso</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1722"><span>Burundi</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1816"><span>Cambodia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1737"><span>Cameroon</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1741"><span>Canada</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1744"><span>Central African Republic</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1705"><span>Central America and the Caribbean</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1734"><span>Chad</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1738"><span>Chile</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1742"><span>China</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1745"><span>Colombia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1735"><span>Congo</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1739"><span>Côte d&#039;Ivoire</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1743"><span>Croatia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1746"><span>Cuba</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1736"><span>Cyprus</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1740"><span>Czech Republic</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1747"><span>Democratic Republic of the Congo</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1942"><span>Denmark</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1786"><span>Dominican Republic</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1702"><span>East Africa, the Horn and Great Lakes</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1708"><span>East Asia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1800"><span>Ecuador</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2025"><span>Egypt</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1787"><span>El Salvador</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1771"><span>Equatorial Guinea</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1748"><span>Eritrea</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1944"><span>Estonia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1762"><span>Eswatini</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1749"><span>Ethiopia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1700"><span>Europe and Central Asia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1817"><span>Fiji</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1947"><span>Finland</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1949"><span>France</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1773"><span>Gambia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1951"><span>Georgia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1953"><span>Germany</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1774"><span>Ghana</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1956"><span>Greece</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1788"><span>Guatemala</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1775"><span>Guinea</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1790"><span>Haiti</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1791"><span>Honduras</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1959"><span>Hungary</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1961"><span>Iceland</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1811"><span>India</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1818"><span>Indonesia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2027"><span>Iran</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2029"><span>Iraq</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2167"><span>Ireland</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2031"><span>Israel and Occupied Palestinian Territories</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1962"><span>Italy</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1806"><span>Japan</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2033"><span>Jordan</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1964"><span>Kazakhstan</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1750"><span>Kenya</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1966"><span>Kosovo*</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2035"><span>Kuwait</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1968"><span>Kyrgyzstan</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1970"><span>Latvia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2037"><span>Lebanon</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1770"><span>Lesotho</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2039"><span>Libya</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1973"><span>Lithuania</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1763"><span>Madagascar</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1764"><span>Malawi</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1820"><span>Malaysia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1812"><span>Maldives</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1778"><span>Mali</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1976"><span>Malta</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1798"><span>Mexico</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1701"><span>Middle East and North Africa</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1978"><span>Moldova</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1807"><span>Mongolia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1981"><span>Montenegro</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2041"><span>Morocco and Western Sahara</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1765"><span>Mozambique</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1821"><span>Myanmar</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1766"><span>Namibia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1813"><span>Nepal</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1983"><span>Netherlands</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1823"><span>New Zealand</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1793"><span>Nicaragua</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1780"><span>Niger</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1781"><span>Nigeria</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1706"><span>North America</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1808"><span>North Korea</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1985"><span>North Macedonia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1987"><span>Norway</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2043"><span>Oman</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1814"><span>Pakistan</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2045"><span>Palestine (State of)</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1824"><span>Papua New Guinea</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1801"><span>Paraguay</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1802"><span>Peru</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1825"><span>Philippines</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1989"><span>Poland</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1991"><span>Portugal</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1795"><span>Puerto Rico</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2047"><span>Qatar</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1993"><span>Romania</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1995"><span>Russian Federation</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1751"><span>Rwanda</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2049"><span>Saudi Arabia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1782"><span>Senegal</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1998"><span>Serbia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1783"><span>Sierra Leone</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1826"><span>Singapore</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2000"><span>Slovakia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2002"><span>Slovenia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1753"><span>Somalia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1767"><span>South Africa</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1707"><span>South America</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1709"><span>South Asia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1710"><span>South East Asia and the Pacific</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1809"><span>South Korea</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1754"><span>South Sudan</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1703"><span>Southern Africa</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2004"><span>Spain</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1815"><span>Sri Lanka</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1755"><span>Sudan</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2006"><span>Sweden</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2008"><span>Switzerland</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2051"><span>Syria</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1810"><span>Taiwan</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2010"><span>Tajikistan</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1756"><span>Tanzania</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1827"><span>Thailand</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1784"><span>Togo</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1797"><span>Trinidad and Tobago</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2053"><span>Tunisia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2012"><span>Turkey</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2014"><span>Turkmenistan</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1757"><span>Uganda</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2016"><span>Ukraine</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2055"><span>United Arab Emirates</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2018"><span>United Kingdom</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1799"><span>United States of America</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1803"><span>Uruguay</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2020"><span>Uzbekistan</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1804"><span>Venezuela</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1829"><span>Viet Nam</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1704"><span>West and Central Africa</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="2057"><span>Yemen</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1768"><span>Zambia</span></label></li><li tabindex="0"><label><input type="checkbox" name="qlocation[]" value="1769"><span>Zimbabwe</span></label></li></ul></div><div class="checkbox-dropdownList-trigger" role="listbox" aria-labelledby="dropdown-resource-type"><div id="dropdown-resource-type" class="checkbox-dropdown" tabindex="0">Resource Types</div><ul class="checkbox-dropdownList"><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="1692"><span>Action</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="2134"><span>Annual Report</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="2135"><span>Article</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="2136"><span>Blog</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="1691"><span>Campaign</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="2137"><span>Gallery</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="2138"><span>Governance</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="2139"><span>Litigation Submission</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="2140"><span>Newsletter</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="2141"><span>Open Letter</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="2142"><span>Position</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="2143"><span>Press Release</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="2144"><span>Public Statement</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="2145"><span>Questions and Answers</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="2146"><span>Report</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="2219"><span>Research Briefing</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="2147"><span>Story</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="2148"><span>Urgent Action</span></label></li><li tabindex="0"><label><input type="checkbox" name="qresource-type[]" value="2149"><span>Video</span></label></li></ul></div><div class="checkbox-dropdownList-trigger" role="listbox" aria-labelledby="dropdown-topic"><div id="dropdown-topic" class="checkbox-dropdown" tabindex="0">Topics</div><ul class="checkbox-dropdownList"><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2063"><span>Armed Conflict</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2064"><span>Armed Groups</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2103"><span>Arms Trade</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2108"><span>Asylum</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2067"><span>Business and Human Rights</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2094"><span>Censorship and Freedom of Expression</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2075"><span>Child Labour</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2072"><span>Child Soldiers</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2071"><span>Children</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2131"><span>Climate change</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2110"><span>Corporal Punishment</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2069"><span>Corporate Accountability</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2130"><span>COVID-19</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2125"><span>Death in Custody</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2076"><span>Death Penalty</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2096"><span>Demonstrations</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2077"><span>Detention</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2120"><span>Disappearances</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2081"><span>Discrimination</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2115"><span>Domestic Violence</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2087"><span>Economic, Social and Cultural Rights</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2124"><span>EU</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2068"><span>Exploitation of Natural Resources</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2126"><span>Freedom of Association</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2098"><span>Freedom of Movement</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2116"><span>Honour Crimes</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2121"><span>Human Rights Defenders and Activists</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2102"><span>Impunity</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2085"><span>Indigenous People</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2106"><span>Internally Displaced People</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2100"><span>International Justice</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2122"><span>International Organizations</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2097"><span>Internet and Social Media</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2099"><span>Justice Systems</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2118"><span>Killings and Disappearances</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2082"><span>LGBTI Rights</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2117"><span>Maternal Health and Reproductive Rights</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2107"><span>Migrants</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2235"><span>NGOs</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2080"><span>Penal Institutions</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2128"><span>People Trafficking</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2216"><span>Police brutality</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2104"><span>Poverty</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2095"><span>Press Freedom</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2079"><span>Prisoners of Conscience</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2084"><span>Racial Discrimination</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2105"><span>Refugees</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2086"><span>Religious Groups</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2092"><span>Right to Education</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2089"><span>Right to Food</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2088"><span>Right to Health</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2090"><span>Right to Water</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2093"><span>Sexual Rights</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2113"><span>Sexual Violence</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2091"><span>Slums and the Right to Housing</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2211"><span>Solidarity</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2129"><span>Strategic Litigation</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2127"><span>Technology and Human Rights</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2065"><span>Terrorism</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2109"><span>Torture and other ill-treatment</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2070"><span>Trade</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2171"><span>UDHR</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2123"><span>UN</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2111"><span>UN Convention Against Torture</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2074"><span>UN Convention on the Rights of the Child</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2101"><span>Unfair Trials</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2078"><span>Unlawful Detention</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2119"><span>Unlawful Killings</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2066"><span>War Crimes and Crimes Against Humanity</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2112"><span>Women and Girls</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2083"><span>Women&#039;s Rights</span></label></li><li tabindex="0"><label><input type="checkbox" name="qtopic[]" value="2073"><span>Youth and Human Rights</span></label></li></ul></div>		</div>
@@ -505,7 +505,7 @@ gtag('consent','default',{'ad_storage':'denied','analytics_storage':'denied'});
 		
 <header class="postlist-header" aria-label="Results information">
 	<h2 class="postlist-headerTitle">
-		2 results for &#039;Gabon&#039; for the year 1991 written in English	</h2>
+		14 results for &#039;Algeria&#039; for the year 2009 written in English	</h2>
 	<div class="postlist-sort">
 		<label id="sort-description" for="sort-by">Sort by</label>
 		<div class="element-select">
@@ -519,30 +519,150 @@ gtag('consent','default',{'ad_storage':'denied','analytics_storage':'denied'});
 		</div>
 	</div>
 </header>
-
-<article class="post post--result" aria-label="Article: France / Gabon: Further Information On Summary Expulsion Of Refugee: Abdelmoumen Diouri, Refugee From Morocco">
-	<a class="floating-anchor" href="https://www.amnesty.org/en/documents/eur21/003/1991/en/" aria-hidden="true"></a>
-	<a class="post-category" href="https://www.amnesty.org/en/latest/campaigns/" tabindex="0">Campaigns</a>
-	<a class="post-location" href="https://www.amnesty.org/en/location/europe-and-central-asia/" tabindex="0">Europe and Central Asia</a>
-	<h1 class="post-title"><a href="https://www.amnesty.org/en/documents/eur21/003/1991/en/" tabindex="0">France / Gabon: Further information on Summary expulsion of refugee: Abdelmoumen Diouri, refugee from Morocco</a></h1>
-	<div class="post-excerpt">See below.</div>
-	<span class="post-byline" aria-label="Post published date">July 16, 1991</span>
+<article class="post post--result" aria-label="Article: Algeria">
+	<a class="floating-anchor" href="https://www.amnesty.org/en/location/middle-east-and-north-africa/algeria/" aria-hidden="true"></a>
+	<span class="post-category">Country Profile</span>
+	<h1 class="post-title"><a href="https://www.amnesty.org/en/location/middle-east-and-north-africa/algeria/" tabindex="0">Algeria</a></h1>
+	<div class="post-excerpt">The authorities continued to detain and prosecute peaceful protesters, journalists, activists and citizens for exercising their rights to peaceful assembly and expression relating to the mass protest movement known as Hirak. Legislative changes imposed further restrictions on freedoms of expression...</div>
 </article>
 
-<article class="post post--result" aria-label="Article: France / Gabon: Summary Expulsion Of Refugee: Abdelmoumen Diouri, Refugee From Morocco">
-	<a class="floating-anchor" href="https://www.amnesty.org/en/documents/eur21/002/1991/en/" aria-hidden="true"></a>
-	<a class="post-category" href="https://www.amnesty.org/en/latest/campaigns/" tabindex="0">Campaigns</a>
-	<a class="post-location" href="https://www.amnesty.org/en/location/europe-and-central-asia/" tabindex="0">Europe and Central Asia</a>
-	<a class="post-topic" href="https://www.amnesty.org/en/topic/human-rights-defenders-and-activists/" tabindex="0">Human Rights Defenders and Activists</a>
-	<h1 class="post-title"><a href="https://www.amnesty.org/en/documents/eur21/002/1991/en/" tabindex="0">France / Gabon: Summary expulsion of refugee: Abdelmoumen Diouri, refugee from Morocco</a></h1>
+<article class="post post--result" aria-label="Article: France Must Not Deport Terror Suspect To Algeria">
+	<a class="floating-anchor" href="https://www.amnesty.org/en/latest/news/2009/12/france-must-not-deport-terror-suspect-algeria-20091204-2/" aria-hidden="true"></a>
+	<a class="post-category" href="https://www.amnesty.org/en/latest/news/" tabindex="0">News</a>
+	<a class="post-location" href="https://www.amnesty.org/en/location/middle-east-and-north-africa/algeria/" tabindex="0">Algeria</a>
+	<a class="post-topic" href="https://www.amnesty.org/en/topic/detention/" tabindex="0">Detention</a>
+	<h1 class="post-title"><a href="https://www.amnesty.org/en/latest/news/2009/12/france-must-not-deport-terror-suspect-algeria-20091204-2/" tabindex="0">France must not deport terror suspect to Algeria</a></h1>
+	<div class="post-excerpt">France must not deport a man convicted of terrorist acts to Algeria where he may be at risk of incommunicado detention and torture or other ill-treatment, Amnesty International said on Thursday. According to a European Court of Human Rights’ judgement on Thursday, Kamel Daoudi’s expulsion to...</div>
+	<span class="post-byline" aria-label="Post published date">December 4, 2009</span>
+</article>
+
+<article class="post post--result" aria-label="Article: France Must Not Deport Terror Suspect To Algeria">
+	<a class="floating-anchor" href="https://www.amnesty.org/en/latest/news/2009/12/france-must-not-deport-terror-suspect-algeria-20091204/" aria-hidden="true"></a>
+	<a class="post-location" href="https://www.amnesty.org/en/location/europe-and-central-asia/france/" tabindex="0">France</a>
+	<a class="post-topic" href="https://www.amnesty.org/en/topic/detention/" tabindex="0">Detention</a>
+	<h1 class="post-title"><a href="https://www.amnesty.org/en/latest/news/2009/12/france-must-not-deport-terror-suspect-algeria-20091204/" tabindex="0">France must not deport terror suspect to Algeria</a></h1>
+	<div class="post-excerpt">France must not deport a man convicted of terrorist acts to Algeria where he may be at risk of incommunicado detention and torture or other ill-treatment, Amnesty International said today. According to a European Court of Human Rights’ judgement on 3 December Kamel Daoudi’s expulsion to Algeria...</div>
+	<span class="post-byline" aria-label="Post published date">December 4, 2009</span>
+</article>
+
+<article class="post post--result" aria-label="Article: Algeria/usa: Amnesty International Opposes Forcible Return To Algeria Of Algerian Nationals Detained By Us Authorities At Guantánamo Bay, Cuba">
+	<a class="floating-anchor" href="https://www.amnesty.org/en/documents/mde28/006/2009/en/" aria-hidden="true"></a>
+	<a class="post-category" href="https://www.amnesty.org/en/latest/research/" tabindex="0">Research</a>
+	<a class="post-location" href="https://www.amnesty.org/en/location/middle-east-and-north-africa/algeria/" tabindex="0">Algeria</a>
+	<a class="post-topic" href="https://www.amnesty.org/en/topic/refugees/" tabindex="0">Refugees</a>
+	<h1 class="post-title"><a href="https://www.amnesty.org/en/documents/mde28/006/2009/en/" tabindex="0">Algeria/USA: Amnesty International opposes forcible return to Algeria of Algerian nationals detained by US authorities at Guantánamo Bay, Cuba</a></h1>
 	<div class="post-excerpt">See below.</div>
-	<span class="post-byline" aria-label="Post published date">June 24, 1991</span>
+	<span class="post-byline" aria-label="Post published date">September 18, 2009</span>
+</article>
+
+<article class="post post--result" aria-label="Article: Algeria: Legacy Of Impunity Threatens Future">
+	<a class="floating-anchor" href="https://www.amnesty.org/en/documents/mde28/003/2009/en/" aria-hidden="true"></a>
+	<a class="post-category" href="https://www.amnesty.org/en/latest/research/" tabindex="0">Research</a>
+	<a class="post-location" href="https://www.amnesty.org/en/location/middle-east-and-north-africa/algeria/" tabindex="0">Algeria</a>
+	<a class="post-topic" href="https://www.amnesty.org/en/topic/armed-conflict/" tabindex="0">Armed Conflict</a>
+	<h1 class="post-title"><a href="https://www.amnesty.org/en/documents/mde28/003/2009/en/" tabindex="0">Algeria: Legacy of impunity threatens future</a></h1>
+	<div class="post-excerpt">Up to 200,000 people were killed during Algerian internal conflict in the 1990s. Thousands of people were victims of enforced disappearance, torture and sexual assault. Today, partly as a result of sweeping amnesty measures that have entrenched impunity, the security forces continue to violate...</div>
+	<span class="post-byline" aria-label="Post published date">August 28, 2009</span>
+</article>
+
+<article class="post post--result" aria-label="Article: Algeria: Clarify The Fate Of The Disappeared In Algeria [postcard]">
+	<a class="floating-anchor" href="https://www.amnesty.org/en/documents/mde28/005/2009/en/" aria-hidden="true"></a>
+	<a class="post-category" href="https://www.amnesty.org/en/latest/research/" tabindex="0">Research</a>
+	<a class="post-location" href="https://www.amnesty.org/en/location/middle-east-and-north-africa/algeria/" tabindex="0">Algeria</a>
+	<a class="post-topic" href="https://www.amnesty.org/en/topic/disappearances/" tabindex="0">Disappearances</a>
+	<h1 class="post-title"><a href="https://www.amnesty.org/en/documents/mde28/005/2009/en/" tabindex="0">Algeria: Clarify the fate of the disappeared in Algeria [postcard]</a></h1>
+	<div class="post-excerpt">See below.</div>
+	<span class="post-byline" aria-label="Post published date">August 1, 2009</span>
+</article>
+
+<article class="post post--result" aria-label="Article: Algeria&#8217;s Next President Urged To Address Past Human Rights Abuses">
+	<a class="floating-anchor" href="https://www.amnesty.org/en/latest/news/2009/04/algeria039s-next-president-urged-address-past-human-rights-abuses-20090408/" aria-hidden="true"></a>
+	<a class="post-category" href="https://www.amnesty.org/en/latest/news/" tabindex="0">News</a>
+	<a class="post-location" href="https://www.amnesty.org/en/location/middle-east-and-north-africa/algeria/" tabindex="0">Algeria</a>
+	<a class="post-topic" href="https://www.amnesty.org/en/topic/armed-conflict/" tabindex="0">Armed Conflict</a>
+	<h1 class="post-title"><a href="https://www.amnesty.org/en/latest/news/2009/04/algeria039s-next-president-urged-address-past-human-rights-abuses-20090408/" tabindex="0">Algeria&#8217;s next president urged to address past human rights abuses</a></h1>
+	<div class="post-excerpt">Algerians go to the polls on Thursday to vote for their next president. Amnesty International is calling on the new president to take concrete steps to address the legacy of gross human rights abuses committed during the internal conflict that wracked Algeria during the 1990s and to ensure justice...</div>
+	<span class="post-byline" aria-label="Post published date">April 8, 2009</span>
+</article>
+
+<article class="post post--result" aria-label="Article: Algeria: A Legacy Of Impunity: A Threat To Algeria’s Future">
+	<a class="floating-anchor" href="https://www.amnesty.org/en/documents/mde28/001/2009/en/" aria-hidden="true"></a>
+	<a class="post-category" href="https://www.amnesty.org/en/latest/research/" tabindex="0">Research</a>
+	<a class="post-location" href="https://www.amnesty.org/en/location/middle-east-and-north-africa/algeria/" tabindex="0">Algeria</a>
+	<a class="post-topic" href="https://www.amnesty.org/en/topic/disappearances/" tabindex="0">Disappearances</a>
+	<h1 class="post-title"><a href="https://www.amnesty.org/en/documents/mde28/001/2009/en/" tabindex="0">Algeria: A Legacy of Impunity: A Threat to Algeria’s Future</a></h1>
+	<div class="post-excerpt">This report is published in the hope that the next president of Algeria will take concrete steps to end impunity. The report highlights Amnesty International&#8217;s main concerns on the lack of investigations and public information into serious past and present human rights abuses and the impunity...</div>
+	<span class="post-byline" aria-label="Post published date">March 30, 2009</span>
+</article>
+
+<article class="post post--result" aria-label="Article: Algeria: Stop The Denial, Disclose The Truth">
+	<a class="floating-anchor" href="https://www.amnesty.org/en/latest/news/2009/03/algeria-stop-denial-disclose-truth-20090330/" aria-hidden="true"></a>
+	<a class="post-location" href="https://www.amnesty.org/en/location/middle-east-and-north-africa/algeria/" tabindex="0">Algeria</a>
+	<a class="post-topic" href="https://www.amnesty.org/en/topic/armed-conflict/" tabindex="0">Armed Conflict</a>
+	<h1 class="post-title"><a href="https://www.amnesty.org/en/latest/news/2009/03/algeria-stop-denial-disclose-truth-20090330/" tabindex="0">Algeria: Stop the denial, disclose the truth</a></h1>
+	<div class="post-excerpt">Ten days ahead of Algeria’s presidential elections, Amnesty International called on the next president to address the legacy of human rights abuses of the 1990’s internal conflict and respond to thousands of victims let down by the authorities. “Algeria&#8217;s next president should seize the...</div>
+	<span class="post-byline" aria-label="Post published date">March 30, 2009</span>
+</article>
+
+<article class="post post--result" aria-label="Article: Sahrawi Human Rights Activist Returns Home After Hunger Strike">
+	<a class="floating-anchor" href="https://www.amnesty.org/en/latest/news/2009/12/sahrawi-human-rights-activist-returns-home-after-hunger-strike-2009121/" aria-hidden="true"></a>
+	<a class="post-category" href="https://www.amnesty.org/en/latest/news/" tabindex="0">News</a>
+	<a class="post-location" href="https://www.amnesty.org/en/location/middle-east-and-north-africa/morocco-and-western-sahara/" tabindex="0">Morocco and Western Sahara</a>
+	<a class="post-topic" href="https://www.amnesty.org/en/topic/censorship-and-freedom-of-expression/" tabindex="0">Censorship and Freedom of Expression</a>
+	<h1 class="post-title"><a href="https://www.amnesty.org/en/latest/news/2009/12/sahrawi-human-rights-activist-returns-home-after-hunger-strike-2009121/" tabindex="0">Sahrawi human rights activist returns home after hunger strike</a></h1>
+	<div class="post-excerpt">Amnesty International has welcomed the news that Aminatou Haidar, a Sahrawi human rights activist who has spent the past month on hunger strike in Lanzarote airport, has returned home and been reunited with her children. Aminatou Haidar said that she was allowed to fly back to Western Sahara on a...</div>
+	<span class="post-byline" aria-label="Post published date">December 18, 2009</span>
+</article>
+
+<article class="post post--result" aria-label="Article: The Wire, August/september 2009. Vol. 39, Issue 004">
+	<a class="floating-anchor" href="https://www.amnesty.org/en/documents/nws21/004/2009/en/" aria-hidden="true"></a>
+	<a class="post-category" href="https://www.amnesty.org/en/latest/research/" tabindex="0">Research</a>
+	<a class="post-location" href="https://www.amnesty.org/en/location/middle-east-and-north-africa/algeria/" tabindex="0">Algeria</a>
+	<a class="post-topic" href="https://www.amnesty.org/en/topic/armed-conflict/" tabindex="0">Armed Conflict</a>
+	<h1 class="post-title"><a href="https://www.amnesty.org/en/documents/nws21/004/2009/en/" tabindex="0">The Wire, August/September 2009. Vol. 39, issue 004</a></h1>
+	<div class="post-excerpt">1) A wound that never heals: International Day of the Disappeared 2) Algeria: Long wait for justice 3) Livewire: Seeking justice at the UN Human Rights Council; Reaction to Youtube video of expulsion; Demanding Dignity with an E-action from Kenya 4) A cruel betrayal of women and girls 5) Congolese...</div>
+	<span class="post-byline" aria-label="Post published date">August 1, 2009</span>
+</article>
+
+<article class="post post--result" aria-label="Article: Death In Custody In France Highlights Police Abuse Accusations">
+	<a class="floating-anchor" href="https://www.amnesty.org/en/latest/news/2009/07/death-custody-france-highlights-police-abuse-accusations-20090717/" aria-hidden="true"></a>
+	<a class="post-category" href="https://www.amnesty.org/en/latest/news/" tabindex="0">News</a>
+	<a class="post-location" href="https://www.amnesty.org/en/location/europe-and-central-asia/france/" tabindex="0">France</a>
+	<a class="post-topic" href="https://www.amnesty.org/en/topic/impunity/" tabindex="0">Impunity</a>
+	<h1 class="post-title"><a href="https://www.amnesty.org/en/latest/news/2009/07/death-custody-france-highlights-police-abuse-accusations-20090717/" tabindex="0">Death in custody in France highlights police abuse accusations</a></h1>
+	<div class="post-excerpt">A young man of Algerian origin died in unclear circumstances in France last week, following a night in police custody. The death comes three months after the publication of an Amnesty International report detailing human rights violations committed by French police officers – frequently against...</div>
+	<span class="post-byline" aria-label="Post published date">July 17, 2009</span>
+</article>
+
+<article class="post post--result" aria-label="Article: Uk: Law Lords&#8217; Decision Opens Way For More Deportations">
+	<a class="floating-anchor" href="https://www.amnesty.org/en/latest/news/2009/02/uk-law-lords039-decision-opens-way-more-deportations-20090218/" aria-hidden="true"></a>
+	<a class="post-location" href="https://www.amnesty.org/en/location/europe-and-central-asia/united-kingdom/" tabindex="0">United Kingdom</a>
+	<h1 class="post-title"><a href="https://www.amnesty.org/en/latest/news/2009/02/uk-law-lords039-decision-opens-way-more-deportations-20090218/" tabindex="0">UK: Law Lords&#8217; decision opens way for more deportations</a></h1>
+	<div class="post-excerpt">Amnesty International is gravely concerned by the possible consequences of today&#8217;s decision by the Law Lords, the UK&#8217;s highest court, that authorizes the UK government to deport people to countries where they will be at A real risk of serious human rights violations, including torture...</div>
+	<span class="post-byline" aria-label="Post published date">February 18, 2009</span>
 </article>
 		</section>
 	</div>
 
 	<div class="container container--small">
-			</div>
+		
+<section class="section section--small post-pagination">
+	<nav class="post-paginationContainer" role="navigation" aria-label="Pagination">
+		<div class="post-paginationLink post-paginationPrevious">
+					<button disabled>
+				<span class="icon"></span>
+				<span>Previous</span>
+			</button>
+				</div>
+		<ul class="page-numbers" aria-label="Page numbers">
+					<li><span aria-label="Page 1" class="page-numbers current">1</span></li>
+					<li><a aria-label="Page 2" class="page-numbers" href="https://www.amnesty.org/en/search/Algeria/page/2/?year=2009&#038;language=en">2</a></li>
+				</ul>
+		<div class="post-paginationLink post-paginationNext">
+					<a href="https://www.amnesty.org/en/search/Algeria/page/2/?year=2009&#038;language=en"><span class="icon"></span><span>Next</span></a>				</div>
+	</nav>
+</section>
+	</div>
 
 </main>
 	<footer class="page-footer" aria-label="Footer">
@@ -576,11 +696,11 @@ gtag('consent','default',{'ad_storage':'denied','analytics_storage':'denied'});
 				<script type="text/javascript">
 				var el_i13_track_order_captcha=null;				
 				
-									var interval_6266e4d066a6b = setInterval(function() {
+									var interval_626707bef0178 = setInterval(function() {
 
 									if(document.readyState === 'complete') {
 
-										clearInterval(interval_6266e4d066a6b);
+										clearInterval(interval_626707bef0178);
 										
 																				if(jQuery("#woocommerce-order-tracking-nonce").length>0){
 																					
@@ -663,7 +783,7 @@ gtag('consent','default',{'ad_storage':'denied','analytics_storage':'denied'});
 window.lodash = _.noConflict();
 </script>
 <script id='global-scripts-js-extra'>
-var amnesty_data = {"archive_base_url":"https:\/\/www.amnesty.org\/en\/search\/Gabon\/?year=1991&language=en","domain":"www.amnesty.org","pop_in_timeout":"30","active_pop_in":"0"};
+var amnesty_data = {"archive_base_url":"https:\/\/www.amnesty.org\/en\/search\/Algeria\/?year=2009&language=en","domain":"www.amnesty.org","pop_in_timeout":"30","active_pop_in":"0"};
 var amnestyCoreI18n = {"listSeparator":", ","openDoubleQuote":"\u201c","closeDoubleQuote":"\u201d","openSingleQuote":"\u2018","closeSingleQuote":"\u2019","currentLocale":"en"};
 </script>
 <script src='https://www.amnesty.org/en/wp-content/themes/amnesty-wp-theme/assets/scripts/bundle.js?ver=1.18.4' id='global-scripts-js'></script>
