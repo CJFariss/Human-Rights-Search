@@ -1,0 +1,3 @@
+Error in file(con, "r") : 
+  cannot open the connection to 'https://www.amnesty.org/en/search/Gabon/?year=1979&language=en'
+

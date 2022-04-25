@@ -1,0 +1,3 @@
+Error in file(con, "r") : 
+  cannot open the connection to 'https://www.amnesty.org/en/search/Sierra Leone/?year=2011&language=en'
+
