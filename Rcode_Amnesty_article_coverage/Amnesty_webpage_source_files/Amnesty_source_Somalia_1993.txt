@@ -1,0 +1,3 @@
+Error in readLines(paste("https://www.amnesty.org/en/search/", COUNTRY,  : 
+  cannot read from connection
+

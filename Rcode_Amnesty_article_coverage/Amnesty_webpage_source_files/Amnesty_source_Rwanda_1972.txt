@@ -1,0 +1,3 @@
+Error in file(con, "r") : 
+  cannot open the connection to 'https://www.amnesty.org/en/search/Rwanda/?year=1972&language=en'
+
