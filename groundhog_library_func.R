@@ -5,11 +5,11 @@ groundhog_libray_func <- function(groundhog=FALSE){
     ## load an older version of the libraries
     remotes::install_github('CredibilityLab/groundhog')
     library(groundhog)
-    pkgs <- c("gtrendsR", "countrycode", "stm", "tm", "MASS", "bcp", "ngramr")
+    pkgs <- c("gtrendsR", "countrycode", "stm", "tm", "MASS", "bcp", "ngramr", "rvest")
     groundhog.library(pkgs,'2022-04-19')
   } else{
     ## or load the more recent version of the libraries
-    install.packages("gtrendsR", "countrycode", "stm", "tm", "MASS", "bcp", "ngramr")
+    install.packages("gtrendsR", "countrycode", "stm", "tm", "MASS", "bcp", "ngramr", "rvest")
     library(gtrendsR)
     library(countrycode)
     library(stm)
@@ -17,5 +17,6 @@ groundhog_libray_func <- function(groundhog=FALSE){
     library(MASS)
     library(bcp)
     library(ngramr)
+    library(rvest)
   }
 }

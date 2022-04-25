@@ -1,4 +1,4 @@
-## Amnesty_article_coverage_scrape.R
+## Amnesty_article_coverage_process.R
 ##########################################################################
 ##
 ## Authors: Geoff Dancy and Christopher J. Fariss
@@ -16,19 +16,6 @@
 ##########################################################################
 
 
-## Do this (set to TRUE) to load libraries using the version from when the scripts were originally run
-if(FALSE){
-  ## load an older version of the libraries
-  remotes::install_github('CredibilityLab/groundhog')
-  library(groundhog)
-  pkgs <- c("rvest")
-  groundhog.library(pkgs,'2022-04-19')
-} else{
-  ## or load the more recent version of the libraries
-  install.packages("rvest")
-  library(rvest)
-}
-
 ## set today's date for saving files below
 current_date <- as.Date(Sys.time())
 current_date
@@ -45,23 +32,27 @@ data$country_name_amnesty[data$country_name=="Myanmar (Burma) "] <- "Myanmar"
 
 #data$amnesty_report_count[data$country_name=="Myanmar (Burma) " & data$YEAR==2019] <- NA
 
-COUNTRY <- "Ukraine"
-YEAR <- 1999
-test <- try(readLines(paste("https://www.amnesty.org/en/search/",COUNTRY,"/?year=",YEAR,"&language=en", sep="")))
+
+file_list <- list.files("Rcode_Amnesty_article_coverage/Amnesty_webpage_source_files")
+
+length(file_list)
+
+file_list[1:6]
+
+YEAR <- data$YEAR[1]
+COUNTRY <- data$country_name_amnesty[1]
+
+
+test <- try(readLines(paste("Rcode_Amnesty_article_coverage/Amnesty_webpage_source_files/Amnesty_source_", COUNTRY,"_",YEAR,".txt",sep="")))
 
 ## inspect test object
 length(test)
 grep(paste("results for", sep=""), test)
 test[grep(paste("results for", sep=""), test)]
-try(writeLines(text=test, con=paste("Rcode_Amnesty_article_coverage/Amnesty_webpage_source_files/Amnesty_source_", COUNTRY,"_",YEAR,".txt",sep="")))
 
 
-#data[data$country_name=="Gabon",]
-
-## loop through COUNTRY-YEAR combinations for scrapping at https://www.amnesty.org
-## Warning: this code takes a while and generates quite a few errors and warnings, hence the try() function
 count <- 0
-out <- lapply(5995:nrow(data), function(i){
+out <- lapply(1:nrow(data), function(i){
   
   YEAR <- data$YEAR[i]
   COUNTRY <- data$country_name_amnesty[i]
@@ -75,8 +66,4 @@ out <- lapply(5995:nrow(data), function(i){
     }
   }
 })
-
-count
-#summary(data)
-
 
