@@ -39,8 +39,11 @@ length(file_list)
 
 file_list[1:6]
 
-YEAR <- data$YEAR[1]
-COUNTRY <- data$country_name_amnesty[1]
+YEAR <- 1999
+COUNTRY <- "Ukraine"
+
+YEAR
+COUNTRY
 
 
 test <- try(readLines(paste("Rcode_Amnesty_article_coverage/Amnesty_webpage_source_files/Amnesty_source_", COUNTRY,"_",YEAR,".txt",sep="")))
@@ -48,7 +51,32 @@ test <- try(readLines(paste("Rcode_Amnesty_article_coverage/Amnesty_webpage_sour
 ## inspect test object
 length(test)
 grep(paste("results for", sep=""), test)
-test[grep(paste("results for", sep=""), test)]
+step1 <- test[grep(paste("results for", sep=""), test)]
+step1
+
+## define a function to remove some characters using the gsub() function
+textEdit <- function(text.vector){
+  TEXT <- text.vector
+  ## ----- remove stuff ---------- #
+  TEXT <- gsub("\t", "", TEXT) # replace tabs
+  TEXT <- gsub("https:.*$", "", TEXT) # replace just the urls/http/www part
+  TEXT <- gsub("[[:punct:]]", "", TEXT) # remove all punctuation
+  TEXT <- gsub("[^\x20-\x7F\x0D\x0A]", "", TEXT) # remove all non-ascii characters
+  TEXT <- gsub("^\\s+|\\s+$", "", TEXT) # remove extra leading and trailing whitespace
+
+  ## ----- function return ---------- #
+  return(TEXT)
+} ## end function
+
+textEdit(step1)
+
+step2 <- gsub("\t", "", step1)
+step2
+
+step3 <- gsub("[[:alpha:]]", "", step2)
+step3
+
+
 
 
 count <- 0
@@ -59,9 +87,8 @@ out <- lapply(1:nrow(data), function(i){
   
   test <- temp <- temp2 <- c()
   if(is.na(data$amnesty_report_count[i]) & data$YEAR[i]>=1961 & data$YEAR[i]>=1961){
-    test <- try(readLines(paste("https://www.amnesty.org/en/search/",COUNTRY,"/?year=",YEAR,"&language=en", sep="")))
+    test <- try(readLines(paste("Rcode_Amnesty_article_coverage/Amnesty_webpage_source_files/Amnesty_source_", COUNTRY,"_",YEAR,".txt",sep="")))
     if(length(test)>0){
-      try(writeLines(text=test, con=paste("Rcode_Amnesty_article_coverage/Amnesty_webpage_source_files/Amnesty_source_", COUNTRY,"_",YEAR,".txt",sep="")))
       count <- count + 1
     }
   }
