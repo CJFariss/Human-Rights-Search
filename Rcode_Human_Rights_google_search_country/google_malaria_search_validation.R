@@ -1,15 +1,36 @@
-## clean up workspace
-rm(list = ls(all.names = TRUE))
-gc()
+## google_malaria_search_validation.R
+##########################################################################
+##
+## Authors: Geoff Dancy and Christopher J. Fariss
+##
+## Title: "The Search for Human Rights: A Global Analysis Using Google Data"
+##
+## Contact Information: 
+##  Geoff Dancy <gdancy@tulane.edu>
+##  Christopher J. Fariss <cjf0006@gmail.com>
+##  
+##  Copyright (c) 2022, under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License.
+## For more information see: http://creativecommons.org/licenses/by-nc-sa/3.0/us/
+##  All rights reserved. 
+##
+##########################################################################
 
-## load libraries
-library(gtrendsR)
-library(countrycode)
-library(stm)
-library(tm)
-library(MASS)
-#library(colorbrewer)
-library(ggplot2)
+## Do this (set to TRUE) to load libraries using the version from when the scripts were originally run
+if(FALSE){
+  ## load an older version of the libraries
+  remotes::install_github('CredibilityLab/groundhog')
+  library(groundhog)
+  pkgs <- c("gtrendsR", "countrycode", "bcp", "ggplot2")
+  groundhog.library(pkgs,'2022-04-19')
+} else{
+  ## or load the more recent version of the libraries
+  install.packages("gtrendsR", "countrycode", "bcp", "ggplot2")
+  library(gtrendsR)
+  library(countrycode)
+  library(bcp)
+  library(ggplot2)
+}
+
 
 
 TERMS <- c("malaria", "malária", "paludisme")
@@ -29,6 +50,8 @@ COLORS <- c("#feebe2", "#fbb4b9", "#f768a1", "#c51b8a", "#7a0177", "black")
 COLORS <- c("#ffffcc", "#c2e699", "#78c679", "#31a354", "#006837", "black")
 
 
+
+pdf("Rplots/Maps_google_malaria.pdf", height=3, width=6)
 
 
 ## ------------------------------------------------------------ ##
@@ -112,19 +135,19 @@ expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colo
 
 
 
-
-malaria_data <- read.csv("malaria_deaths_2017.csv")
+## load malaria and population data 
+malaria_data <- read.csv("Data_input/malaria_deaths_2017.csv")
 malaria_data$iso3c <- countrycode(malaria_data$country_2017, origin="country.name", destination="iso3c")
 
-wb_population <- read.csv("world_bank_population_data.csv", na.strings = c("NA", "..", ""))
+wb_population <- read.csv("Data_input/world_bank_population_data.csv", na.strings = c("NA", "..", ""))
 wb_population <- subset(wb_population, select=c(Country.Name, Country.Code, X2017..YR2017.))
 names(wb_population) <- c("country_wb", "iso3c", "population_2017")
 wb_population <- wb_population[!is.na(wb_population$population_2017),]
 
-
+## merge data
 data <- merge(wb_population, malaria_data, by=c("iso3c"), all=TRUE)
 
-
+## calcualte Malaria incidence rate
 data$rate <- 100000 * data$estimate/data$population_2017
 data$rate[is.na(data$rate)] <-0
 
@@ -134,7 +157,7 @@ data$country_wb <- as.character(data$country_wb)
 
 
 
-
+## Malaria incidence rate map
 map.world <- map_data("world")
 
 map_names <- unique(map.world$region)
@@ -159,20 +182,43 @@ coord_map("rectangular", lat0=0, xlim=c(-180,180), ylim=c(-60, 90)) +
 expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colours=COLORS, na.value=grey(.875), guide = "colourbar")
 
 
+dev.off()
 
+test_dat <- data.frame()
+test_dat
 
+## Correlation analysis
 english.world$iso3c <- countrycode(english.world$location, origin="country.name", destination="iso3c")
 enlish_data <- merge(data, english.world, by.x=c("iso3c"), by.y=c("iso3c"), all=TRUE)
-cor.test(enlish_data$rate, enlish_data$hits)
-cor.test(enlish_data$rate, enlish_data$hits, method="spearman")
+
+test_dat[1,1] <- cor.test(enlish_data$rate, enlish_data$hits)$estimate
+test_dat[1,2] <- cor.test(enlish_data$rate, enlish_data$hits, method="spearman")$estimate
+test_dat[1,3] <- nrow(subset(enlish_data, !is.na(hits) & !is.na(rate)))
 
 portugese.world$iso3c <- countrycode(portugese.world$location, origin="country.name", destination="iso3c")
 portugese_data <- merge(data, portugese.world, by.x=c("iso3c"), by.y=c("iso3c"), all=TRUE)
-cor.test(portugese_data$rate, portugese_data$hits)
-cor.test(portugese_data$rate, portugese_data$hits, method="spearman")
+
+test_dat[2,1] <- cor.test(portugese_data$rate, portugese_data$hits)$estimate
+test_dat[2,2] <- cor.test(portugese_data$rate, portugese_data$hits, method="spearman")$estimate
+test_dat[2,3] <- nrow(subset(portugese_data, !is.na(hits) & !is.na(rate)))
 
 french.world$iso3c <- countrycode(french.world$location, origin="country.name", destination="iso3c")
 french_data <- merge(data, french.world, by.x=c("iso3c"), by.y=c("iso3c"), all=TRUE)
-cor.test(french_data$rate, french_data$hits)
-cor.test(french_data$rate, french_data$hits, method="spearman")
 
+test_dat[3,1] <- cor.test(french_data$rate, french_data$hits)$estimate
+test_dat[3,2] <- cor.test(french_data$rate, french_data$hits, method="spearman")$estimate
+test_dat[3,3] <- nrow(subset(french_data, !is.na(hits) & !is.na(rate)))
+
+names(test_dat) <- c("Pearson", "Spearman", "N")
+test_dat
+
+## archive datasets
+
+## set today's date for saving files below
+current_date <- as.Date(Sys.time())
+current_date
+
+## save data.frame
+write.csv(enlish_data, paste("Data_output/Google_search_malaria_english", current_date, ".csv", sep=""), row.names=FALSE)
+write.csv(portugese_data, paste("Data_output/Google_search_malaria_portugese", current_date, ".csv", sep=""), row.names=FALSE)
+write.csv(french_data, paste("Data_output/Google_search_malaria_french", current_date, ".csv", sep=""), row.names=FALSE)
