@@ -48,11 +48,6 @@ COUNTRY
 
 test <- try(readLines(paste("Rcode_Amnesty_article_coverage/Amnesty_webpage_source_files/Amnesty_source_", COUNTRY,"_",YEAR,".txt",sep="")))
 
-## inspect test object
-length(test)
-grep(paste("results for", sep=""), test)
-step1 <- test[grep(paste("results for", sep=""), test)]
-step1
 
 ## define a function to remove some characters using the gsub() function
 textEdit <- function(text.vector){
@@ -63,34 +58,67 @@ textEdit <- function(text.vector){
   TEXT <- gsub("[[:punct:]]", "", TEXT) # remove all punctuation
   TEXT <- gsub("[^\x20-\x7F\x0D\x0A]", "", TEXT) # remove all non-ascii characters
   TEXT <- gsub("^\\s+|\\s+$", "", TEXT) # remove extra leading and trailing whitespace
-
+  TEXT <- gsub("[[:alpha:]]", "", TEXT)
+  
   ## ----- function return ---------- #
   return(TEXT)
 } ## end function
 
-textEdit(step1)
+## inspect test object
+length(test)
+grep(paste("results for", sep=""), test)
 
-step2 <- gsub("\t", "", step1)
+step1 <- test[grep(paste("results for", sep=""), test)]
+step1
+
+step2 <- textEdit(step1)
 step2
 
-step3 <- gsub("[[:alpha:]]", "", step2)
+step3 <- strsplit(step2, split=" ")
 step3
 
+step3[[1]]
+step3[[2]]
 
 
 
-count <- 0
+
 out <- lapply(1:nrow(data), function(i){
+  
+  #temp <- list()
   
   YEAR <- data$YEAR[i]
   COUNTRY <- data$country_name_amnesty[i]
   
-  test <- temp <- temp2 <- c()
-  if(is.na(data$amnesty_report_count[i]) & data$YEAR[i]>=1961 & data$YEAR[i]>=1961){
-    test <- try(readLines(paste("Rcode_Amnesty_article_coverage/Amnesty_webpage_source_files/Amnesty_source_", COUNTRY,"_",YEAR,".txt",sep="")))
+  #if(is.na(data$amnesty_report_count[i]) & data$YEAR[i]>=1961){
+    test <- try(readLines(paste("Rcode_Amnesty_article_coverage/Amnesty_webpage_source_files/Amnesty_source_", COUNTRY,"_",YEAR,".txt",sep="")), silent=TRUE)
     if(length(test)>0){
-      count <- count + 1
-    }
+      step1 <- test[grep(paste("results for", sep=""), test)]
+      step1
+      
+      step2 <- textEdit(step1)
+      step2
+      
+      step3 <- strsplit(step2, split=" ")
+      step3
+      
+      #temp <- step3
+      temp <- ifelse(length(step3)>0, step3[[1]][1], NA)
+      
+    #} 
   }
+  return(temp)
 })
 
+length(out)
+
+data$amnesty_report_count <- as.numeric(unlist(out))
+
+write.csv(data, "Data_output/HumanRightsProtectionScores_v4.01_amnesty_report_count_v2.csv")
+write.csv(data, "Data_input/HumanRightsProtectionScores_v4.01_amnesty_report_count_v2.csv")
+
+data2 <- read.csv("Data_input/HumanRightsProtectionScores_v4.01_amnesty_report_count.csv")
+
+cor(data$amnesty_report_count, data2$amnesty_report_count, use="pairwise")
+table(data$amnesty_report_count, data2$amnesty_report_count)
+table(data$amnesty_report_count - data2$amnesty_report_count)
