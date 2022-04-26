@@ -34,7 +34,7 @@ if(FALSE){
 
 pdf("Rplots/Maps_English_validation.pdf", height=3, width=6)
 
-#TERMS <- c("human rights", "derechos humanos", "direitos humanos", "حقوق الانسان", "права человека", "hak asasi Manusia", "人权", "droits")
+TERMS <- c("human rights", "derechos humanos", "direitos humanos", "حقوق الانسان", "права человека", "hak asasi Manusia", "人权", "droits")
 
 
 COLORS <- c("#ffffcc", "#a1dab4", "#41b6c4", "#2c7fb8", "#253494")
@@ -49,12 +49,14 @@ COLORS <- c("#ffffcc", "#a1dab4", "#41b6c4", "#2c7fb8", "#253494", "black")
 COLORS <- c("#feebe2", "#fbb4b9", "#f768a1", "#c51b8a", "#7a0177", "black")
 COLORS <- c("#ffffcc", "#c2e699", "#78c679", "#31a354", "#006837", "black")
 
+TIME <- "2015-01-01 2019-12-31"
+
 ## Notes
 ## We do not run the search together because we want the correlation to be precise and we only need the relative ordering for this because we are using a Spearman rank-order correlation. It's a precision issue with the significant digits in the google rate values.
 
 ## ------------------------------------------------------------ ##
 ## English "rights"
-english.world <- gtrends("rights")
+english.world <- gtrends("rights", time=TIME)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
@@ -80,7 +82,7 @@ ggplot(data, aes(map_id = region)) +
 
 ## ------------------------------------------------------------ ##
 ## English "human rights"
-english.world <- gtrends(TERMS[1])
+english.world <- gtrends(TERMS[1], time=TIME)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
@@ -107,7 +109,7 @@ dev.off()
 
 ## ------------------------------------------------------------ ##
 ## English "rights"
-english.world <- gtrends("rights")
+english.world <- gtrends("rights", time=TIME)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
@@ -117,7 +119,7 @@ dim(data)
 
 ## ------------------------------------------------------------ ##
 ## English "human rights"
-english.world <- gtrends("human rights")
+english.world <- gtrends("human rights", time=TIME)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)

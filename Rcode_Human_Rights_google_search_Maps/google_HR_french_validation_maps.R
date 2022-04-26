@@ -56,12 +56,13 @@ COLORS <- c("#ffffcc", "#c2e699", "#78c679", "#31a354", "#006837", "black")
 ## We do not run the search together because we want the correlation to be precise and we only need the relative ordering for this because we are using a Spearman rank-order correlation. It's a precision issue with the significant digits in the google rate values.
 
 
+TIME <- "2015-01-01 2019-12-31"
 
 TERMS <- c("droits humains", "droits de lhomme", "libertés", "droits")
 
 ## ------------------------------------------------------------ ##
 ## French "human rights"
-french.world <- gtrends(TERMS[1])
+french.world <- gtrends(TERMS[1], time=TIME)
 french.world <- subset(french.world$interest_by_country)
 french.world$hits[french.world$hits=="<1"] <- .5
 french.world$hits <- as.numeric(french.world$hits)
@@ -86,7 +87,7 @@ expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colo
 
 ## ------------------------------------------------------------ ##
 ## French alternative to "human rights"
-french.world <- gtrends(TERMS[2])
+french.world <- gtrends(TERMS[2],  time=TIME)
 french.world <- subset(french.world$interest_by_country)
 french.world$hits[french.world$hits=="<1"] <- .5
 french.world$hits <- as.numeric(french.world$hits)
@@ -111,7 +112,7 @@ ggplot(data, aes(map_id = region)) +
 
 ## ------------------------------------------------------------ ##
 ## French "liberties"
-french.world <- gtrends(TERMS[3])
+french.world <- gtrends(TERMS[3],  time=TIME)
 french.world <- subset(french.world$interest_by_country)
 french.world$hits[french.world$hits=="<1"] <- .5
 french.world$hits <- as.numeric(french.world$hits)
@@ -136,7 +137,7 @@ ggplot(data, aes(map_id = region)) +
 
 ## ------------------------------------------------------------ ##
 ## French "rights"
-french.world <- gtrends(TERMS[4])
+french.world <- gtrends(TERMS[4],  time=TIME)
 french.world <- subset(french.world$interest_by_country)
 french.world$hits[french.world$hits=="<1"] <- .5
 french.world$hits <- as.numeric(french.world$hits)

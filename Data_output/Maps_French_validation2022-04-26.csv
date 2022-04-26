@@ -9,18 +9,18 @@
 "Anguilla",NA,NA
 "Antarctica",NA,NA
 "Antigua & Barbuda",NA,NA
-"Argentina",0,1
+"Argentina",1,1
 "Armenia",NA,NA
 "Aruba",NA,NA
-"Australia",53,37
+"Australia",46,35
 "Austria",6,5
 "Azerbaijan",NA,NA
 "Bahamas",NA,NA
 "Bahrain",NA,NA
-"Bangladesh",16,16
+"Bangladesh",15,16
 "Barbados",NA,NA
 "Belarus",NA,NA
-"Belgium",10,10
+"Belgium",9,7
 "Belize",NA,NA
 "Benin",NA,NA
 "Bermuda",NA,NA
@@ -38,7 +38,7 @@
 "Burundi",NA,NA
 "Cambodia",NA,NA
 "Cameroon",NA,NA
-"Canada",43,34
+"Canada",38,32
 "Cape Verde",NA,NA
 "Caribbean Netherlands",NA,NA
 "Cayman Islands",NA,NA
@@ -59,23 +59,23 @@
 "Cuba",NA,NA
 "Curaçao",NA,NA
 "Cyprus",NA,NA
-"Czechia",0,4
-"Denmark",13,9
+"Czechia",0,2
+"Denmark",11,7
 "Djibouti",NA,NA
 "Dominica",NA,NA
 "Dominican Republic",NA,NA
 "Ecuador",NA,NA
-"Egypt",4,4
+"Egypt",5,3
 "El Salvador",NA,NA
 "Equatorial Guinea",NA,NA
 "Eritrea",NA,NA
 "Estonia",NA,NA
 "Eswatini",NA,NA
-"Ethiopia",0,58
+"Ethiopia",0,65
 "Falkland Islands (Islas Malvinas)",NA,NA
 "Faroe Islands",NA,NA
 "Fiji",NA,NA
-"Finland",8,6
+"Finland",7,6
 "France",3,2
 "French Guiana",NA,NA
 "French Polynesia",NA,NA
@@ -83,10 +83,10 @@
 "Gabon",NA,NA
 "Gambia",NA,NA
 "Georgia",NA,NA
-"Germany",5,4
+"Germany",5,3
 "Ghana",32,32
 "Gibraltar",NA,NA
-"Greece",5,4
+"Greece",5,5
 "Greenland",NA,NA
 "Grenada",NA,NA
 "Guadeloupe",NA,NA
@@ -99,30 +99,30 @@
 "Haiti",NA,NA
 "Heard & McDonald Islands",NA,NA
 "Honduras",NA,NA
-"Hong Kong",19,12
-"Hungary",0,3
+"Hong Kong",16,11
+"Hungary",0,2
 "Iceland",NA,NA
-"India",21,16
-"Indonesia",2,2
+"India",24,16
+"Indonesia",3,2
 "Iran",0,1
 "Iraq",NA,NA
-"Ireland",49,24
+"Ireland",42,25
 "Isle of Man",NA,NA
-"Israel",6,5
-"Italy",3,3
+"Israel",0,3
+"Italy",3,2
 "Jamaica",NA,NA
-"Japan",1,1
+"Japan",2,0.5
 "Jersey",NA,NA
-"Jordan",0,9
+"Jordan",NA,NA
 "Kazakhstan",NA,NA
-"Kenya",48,44
+"Kenya",42,40
 "Kiribati",NA,NA
 "Kosovo",NA,NA
 "Kuwait",NA,NA
 "Kyrgyzstan",NA,NA
 "Laos",NA,NA
 "Latvia",NA,NA
-"Lebanon",0,23
+"Lebanon",0,22
 "Lesotho",NA,NA
 "Liberia",NA,NA
 "Libya",NA,NA
@@ -139,9 +139,9 @@
 "Marshall Islands",NA,NA
 "Martinique",NA,NA
 "Mauritania",NA,NA
-"Mauritius",0,38
+"Mauritius",NA,NA
 "Mayotte",NA,NA
-"Mexico",3,2
+"Mexico",2,2
 "Micronesia",NA,NA
 "Moldova",NA,NA
 "Monaco",NA,NA
@@ -150,36 +150,36 @@
 "Montserrat",NA,NA
 "Morocco",NA,NA
 "Mozambique",NA,NA
-"Myanmar (Burma)",0,26
+"Myanmar (Burma)",NA,NA
 "Namibia",NA,NA
 "Nauru",NA,NA
-"Nepal",46,38
-"Netherlands",10,9
+"Nepal",44,36
+"Netherlands",9,8
 "New Caledonia",NA,NA
-"New Zealand",49,36
+"New Zealand",43,34
 "Nicaragua",NA,NA
 "Niger",NA,NA
-"Nigeria",28,34
+"Nigeria",27,37
 "Niue",NA,NA
 "Norfolk Island",NA,NA
 "North Korea",NA,NA
 "North Macedonia",NA,NA
 "Northern Mariana Islands",NA,NA
-"Norway",18,19
+"Norway",16,18
 "Oman",NA,NA
-"Pakistan",26,24
+"Pakistan",26,29
 "Palau",NA,NA
 "Palestine",NA,NA
 "Panama",NA,NA
 "Papua New Guinea",NA,NA
 "Paraguay",NA,NA
 "Peru",NA,NA
-"Philippines",48,41
+"Philippines",62,60
 "Pitcairn Islands",NA,NA
 "Poland",2,1
-"Portugal",5,5
+"Portugal",6,5
 "Puerto Rico",NA,NA
-"Qatar",0,18
+"Qatar",0,20
 "Réunion",NA,NA
 "Romania",0,2
 "Russia",2,1
@@ -192,18 +192,18 @@
 "Serbia",NA,NA
 "Seychelles",NA,NA
 "Sierra Leone",NA,NA
-"Singapore",24,9
+"Singapore",25,8
 "Sint Maarten",NA,NA
 "Slovakia",NA,NA
 "Slovenia",NA,NA
 "Solomon Islands",NA,NA
 "Somalia",NA,NA
-"South Africa",68,80
+"South Africa",61,86
 "South Georgia & South Sandwich Islands",NA,NA
 "South Korea",6,5
 "South Sudan",NA,NA
-"Spain",3,3
-"Sri Lanka",21,20
+"Spain",3,2
+"Sri Lanka",20,21
 "St. Barthélemy",NA,NA
 "St. Helena",NA,NA
 "St. Kitts & Nevis",NA,NA
@@ -214,38 +214,38 @@
 "Sudan",NA,NA
 "Suriname",NA,NA
 "Svalbard & Jan Mayen",NA,NA
-"Sweden",12,10
-"Switzerland",14,19
+"Sweden",10,8
+"Switzerland",11,16
 "Syria",NA,NA
-"Taiwan",2,1
+"Taiwan",3,1
 "Tajikistan",NA,NA
-"Tanzania",39,48
+"Tanzania",38,50
 "Thailand",3,2
 "Timor-Leste",NA,NA
 "Togo",NA,NA
 "Tokelau",NA,NA
 "Tonga",NA,NA
 "Trinidad & Tobago",NA,NA
-"Tunisia",0,8
+"Tunisia",NA,NA
 "Turkey",2,1
 "Turkmenistan",NA,NA
 "Turks & Caicos Islands",NA,NA
 "Tuvalu",NA,NA
 "U.S. Outlying Islands",NA,NA
 "U.S. Virgin Islands",NA,NA
-"Uganda",78,94
-"Ukraine",2,2
-"United Arab Emirates",20,9
-"United Kingdom",46,25
-"United States",54,13
+"Uganda",55,68
+"Ukraine",2,1
+"United Arab Emirates",20,8
+"United Kingdom",41,25
+"United States",49,12
 "Uruguay",NA,NA
 "Uzbekistan",NA,NA
 "Vanuatu",NA,NA
 "Vatican City",NA,NA
 "Venezuela",NA,NA
-"Vietnam",2,1
+"Vietnam",3,1
 "Wallis & Futuna",NA,NA
 "Western Sahara",NA,NA
 "Yemen",NA,NA
-"Zambia",86,100
-"Zimbabwe",100,96
+"Zambia",71,86
+"Zimbabwe",100,100

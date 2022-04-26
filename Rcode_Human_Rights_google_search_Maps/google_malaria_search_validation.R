@@ -53,10 +53,11 @@ COLORS <- c("#ffffcc", "#c2e699", "#78c679", "#31a354", "#006837", "black")
 
 pdf("Rplots/Maps_google_malaria.pdf", height=3, width=6)
 
+TIME <- "2015-01-01 2019-12-31"
 
 ## ------------------------------------------------------------ ##
 ## English (or Spanish) "malaria"
-english.world <- gtrends(TERMS[1])
+english.world <- gtrends(TERMS[1], time=TIME)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
@@ -83,7 +84,7 @@ expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colo
 
 ## ------------------------------------------------------------ ##
 ## Portuguese
-portugese.world <- gtrends(TERMS[2])
+portugese.world <- gtrends(TERMS[2], time=TIME)
 portugese.world <- subset(portugese.world$interest_by_country)
 portugese.world$hits[portugese.world$hits=="<1"] <- .5
 portugese.world$hits <- as.numeric(portugese.world$hits)
@@ -110,7 +111,7 @@ expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colo
 
 ## ------------------------------------------------------------ ##
 ## French "paludisme"
-french.world <- gtrends(TERMS[3])
+french.world <- gtrends(TERMS[3], time=TIME)
 french.world <- subset(french.world$interest_by_country)
 french.world$hits[french.world$hits=="<1"] <- .5
 french.world$hits <- as.numeric(french.world$hits)

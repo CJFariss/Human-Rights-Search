@@ -50,11 +50,12 @@ COLORS <- c("#feebe2", "#fbb4b9", "#f768a1", "#c51b8a", "#7a0177", "black")
 COLORS <- c("#ffffcc", "#c2e699", "#78c679", "#31a354", "#006837", "black")
 
 
+TIME <- "2015-01-01 2019-12-31"
 
 
 ## ------------------------------------------------------------ ##
 ## google Topic "human rights" (this is langauge agnostic)
-english.world <- gtrends("%2Fm%2F03ll3")
+english.world <- gtrends("%2Fm%2F03ll3", time=TIME)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
