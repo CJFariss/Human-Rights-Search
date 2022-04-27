@@ -50,7 +50,7 @@ TERMS <- list(c("facebook", "google"),
             c("human rights", "social justice"),
             c("human rights", "rule of law"),
             c("human rights", "populism"),
-            #c(URLdecode("%2Fm%2F03ll3"), "human rights"),
+            #c(URLdecode("%2Fm%2F03ll3"), "human rights"), ## can compare topics to topics and terms to terms but this generates an 200 and 400 error
             c("human rights", "climate change"),
             c("human rights", "right to health"),
             c("human rights", "right to food"),
@@ -60,12 +60,15 @@ TERMS <- list(c("facebook", "google"),
 )
 length(TERMS)
 
+#TIME <- "2013-01-01 2017-12-31"
+TIME <- "2015-01-01 2019-12-31"
+
 #par(mfrow=c(3,3), mar=c(2,2.5,1,.5))
 par(mfrow=c(1,1), mar=c(2,2.5,1,.5))
 
 for(i in 1:length(TERMS)){
 
-world <- gtrends(TERMS[[i]], time="2013-01-01 2017-12-31", low_search_volume=T)$interest_over_time
+world <- gtrends(TERMS[[i]], time=TIME, low_search_volume=T)$interest_over_time
 
     world$hits[world$hits=="<1"] <- .5
     world$hits <- as.numeric(world$hits)
@@ -80,17 +83,22 @@ world <- gtrends(TERMS[[i]], time="2013-01-01 2017-12-31", low_search_volume=T)$
     id2015 <- which(as.Date(world$date[world$keyword==TERMS[[i]][1]]) > as.Date("2014-12-31") & as.Date(world$date[world$keyword==TERMS[[i]][1]]) <= as.Date("2015-12-31"))
     id2016 <- which(as.Date(world$date[world$keyword==TERMS[[i]][1]]) > as.Date("2015-12-31") & as.Date(world$date[world$keyword==TERMS[[i]][1]]) <= as.Date("2016-12-31"))
     id2017 <- which(as.Date(world$date[world$keyword==TERMS[[i]][1]]) > as.Date("2016-12-31") & as.Date(world$date[world$keyword==TERMS[[i]][1]]) <= as.Date("2017-12-31"))
-    #id2018 <- which(as.Date(world$date[world$keyword==TERMS[[i]][1]]) > as.Date("2017-12-31") & as.Date(world$date[world$keyword==TERMS[[i]][1]]) <= as.Date("2018-12-31"))
-
+    id2018 <- which(as.Date(world$date[world$keyword==TERMS[[i]][1]]) > as.Date("2017-12-31") & as.Date(world$date[world$keyword==TERMS[[i]][1]]) <= as.Date("2018-12-31"))
+    id2019 <- which(as.Date(world$date[world$keyword==TERMS[[i]][1]]) > as.Date("2018-12-31") & as.Date(world$date[world$keyword==TERMS[[i]][1]]) <= as.Date("2019-12-31"))
+    id2020 <- which(as.Date(world$date[world$keyword==TERMS[[i]][1]]) > as.Date("2019-12-31") & as.Date(world$date[world$keyword==TERMS[[i]][1]]) <= as.Date("2020-12-31"))
+    id2021 <- which(as.Date(world$date[world$keyword==TERMS[[i]][1]]) > as.Date("2020-12-31") & as.Date(world$date[world$keyword==TERMS[[i]][1]]) <= as.Date("2021-12-31"))
+    
     polygon(x=c(min(id2013), min(id2013), max(id2013), max(id2013)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
     polygon(x=c(min(id2015), min(id2015), max(id2015), max(id2015)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
     polygon(x=c(min(id2017), min(id2017), max(id2017), max(id2017)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
+    polygon(x=c(min(id2019), min(id2019), max(id2019), max(id2019)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
+    polygon(x=c(min(id2021), min(id2021), max(id2021), max(id2021)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
     box()
-
+    
     lines(world$hits[world$keyword==TERMS[[i]][1]], lwd=1, col="#c2a5cf")
     lines(world$hits[world$keyword==TERMS[[i]][2]], lwd=1, col="#a6dba0")
     axis(side=2, at=c(0,25,50,75,100), las=2)
-    axis(side=1, at=c(median(id2013),  median(id2014), median(id2015), median(id2016), median(id2017)), labels=c(2013, 2014, 2015, 2016, 2017), las=1)
+    axis(side=1, at=c(median(id2013),  median(id2014), median(id2015), median(id2016), median(id2017), median(id2018), median(id2019), median(id2020), median(id2021)), labels=c(2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021), las=1)
     model <- bcp(y=world$hits[world$keyword==TERMS[[i]][1]])
     lines(model$posterior.mean, lwd=.75, col="#7b3294")
     model <- bcp(y=world$hits[world$keyword==TERMS[[i]][2]])

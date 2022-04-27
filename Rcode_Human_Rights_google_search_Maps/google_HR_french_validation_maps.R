@@ -164,6 +164,47 @@ ggplot(data, aes(map_id = region)) +
 dev.off()
 
 
+## ------------------------------------------------------------ ##
+## French ""
+english.world <- gtrends(TERMS[1], time=TIME)
+english.world <- subset(english.world$interest_by_country)
+english.world$hits[english.world$hits=="<1"] <- .5
+english.world$hits <- as.numeric(english.world$hits)
+data <- english.world[,1:2]
+names(data) <- c("region", "hits")
+dim(data)
+
+## ------------------------------------------------------------ ##
+## French ""
+english.world <- gtrends(TERMS[2], time=TIME)
+english.world <- subset(english.world$interest_by_country)
+english.world$hits[english.world$hits=="<1"] <- .5
+english.world$hits <- as.numeric(english.world$hits)
+data2 <- english.world[,1:2]
+names(data2) <- c("region", "hits")
+dim(data2)
+
+## ------------------------------------------------------------ ##
+## French ""
+english.world <- gtrends(TERMS[3], time=TIME)
+english.world <- subset(english.world$interest_by_country)
+english.world$hits[english.world$hits=="<1"] <- .5
+english.world$hits <- as.numeric(english.world$hits)
+data3 <- english.world[,1:2]
+names(data3) <- c("region", "hits")
+dim(data3)
+
+## ------------------------------------------------------------ ##
+## French ""
+english.world <- gtrends(TERMS[4], time=TIME)
+english.world <- subset(english.world$interest_by_country)
+english.world$hits[english.world$hits=="<1"] <- .5
+english.world$hits <- as.numeric(english.world$hits)
+data4 <- english.world[,1:2]
+names(data4) <- c("region", "hits")
+dim(data4)
+
+
 
 ## archive datasets
 
