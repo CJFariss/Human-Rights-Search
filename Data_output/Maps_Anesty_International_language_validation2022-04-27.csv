@@ -1,0 +1,251 @@
+"region","hits.x","hits.y"
+"Afghanistan",NA,NA
+"Åland Islands",NA,NA
+"Albania",NA,NA
+"Algeria",0,8
+"American Samoa",NA,NA
+"Andorra",NA,NA
+"Angola",NA,NA
+"Anguilla",NA,NA
+"Antarctica",NA,NA
+"Antigua & Barbuda",NA,NA
+"Argentina",1,5
+"Armenia",NA,NA
+"Aruba",NA,NA
+"Australia",37,45
+"Austria",5,57
+"Azerbaijan",NA,NA
+"Bahamas",NA,NA
+"Bahrain",NA,NA
+"Bangladesh",16,16
+"Barbados",NA,NA
+"Belarus",NA,NA
+"Belgium",10,83
+"Belize",NA,NA
+"Benin",NA,NA
+"Bermuda",NA,NA
+"Bhutan",NA,NA
+"Bolivia",NA,NA
+"Bosnia & Herzegovina",NA,NA
+"Botswana",NA,NA
+"Bouvet Island",NA,NA
+"Brazil",1,1
+"British Indian Ocean Territory",NA,NA
+"British Virgin Islands",NA,NA
+"Brunei",NA,NA
+"Bulgaria",NA,NA
+"Burkina Faso",NA,NA
+"Burundi",NA,NA
+"Cambodia",NA,NA
+"Cameroon",0,100
+"Canada",34,35
+"Cape Verde",NA,NA
+"Caribbean Netherlands",NA,NA
+"Cayman Islands",NA,NA
+"Central African Republic",NA,NA
+"Chad",NA,NA
+"Chile",2,0
+"China",NA,NA
+"Christmas Island",NA,NA
+"Cocos (Keeling) Islands",NA,NA
+"Colombia",2,0
+"Comoros",NA,NA
+"Congo - Brazzaville",NA,NA
+"Congo - Kinshasa",NA,NA
+"Cook Islands",NA,NA
+"Costa Rica",NA,NA
+"Côte d’Ivoire",NA,NA
+"Croatia",0,9
+"Cuba",NA,NA
+"Curaçao",NA,NA
+"Cyprus",NA,NA
+"Czechia",4,29
+"Denmark",9,61
+"Djibouti",NA,NA
+"Dominica",NA,NA
+"Dominican Republic",NA,NA
+"Ecuador",NA,NA
+"Egypt",4,4
+"El Salvador",NA,NA
+"Equatorial Guinea",NA,NA
+"Eritrea",NA,NA
+"Estonia",NA,NA
+"Eswatini",NA,NA
+"Ethiopia",58,0
+"Falkland Islands (Islas Malvinas)",NA,NA
+"Faroe Islands",NA,NA
+"Fiji",NA,NA
+"Finland",6,18
+"France",2,41
+"French Guiana",NA,NA
+"French Polynesia",NA,NA
+"French Southern Territories",NA,NA
+"Gabon",NA,NA
+"Gambia",NA,NA
+"Georgia",NA,NA
+"Germany",4,44
+"Ghana",32,33
+"Gibraltar",NA,NA
+"Greece",4,9
+"Greenland",NA,NA
+"Grenada",NA,NA
+"Guadeloupe",NA,NA
+"Guam",NA,NA
+"Guatemala",NA,NA
+"Guernsey",NA,NA
+"Guinea",NA,NA
+"Guinea-Bissau",NA,NA
+"Guyana",NA,NA
+"Haiti",NA,NA
+"Heard & McDonald Islands",NA,NA
+"Honduras",NA,NA
+"Hong Kong",12,25
+"Hungary",3,16
+"Iceland",0,94
+"India",16,14
+"Indonesia",2,3
+"Iran",1,0
+"Iraq",NA,NA
+"Ireland",24,59
+"Isle of Man",NA,NA
+"Israel",5,7
+"Italy",3,37
+"Jamaica",NA,NA
+"Japan",1,1
+"Jersey",NA,NA
+"Jordan",9,0
+"Kazakhstan",NA,NA
+"Kenya",44,55
+"Kiribati",NA,NA
+"Kosovo",NA,NA
+"Kuwait",NA,NA
+"Kyrgyzstan",NA,NA
+"Laos",NA,NA
+"Latvia",NA,NA
+"Lebanon",23,32
+"Lesotho",NA,NA
+"Liberia",NA,NA
+"Libya",NA,NA
+"Liechtenstein",NA,NA
+"Lithuania",NA,NA
+"Luxembourg",0,74
+"Macao",NA,NA
+"Madagascar",NA,NA
+"Malawi",NA,NA
+"Malaysia",5,6
+"Maldives",NA,NA
+"Mali",NA,NA
+"Malta",NA,NA
+"Marshall Islands",NA,NA
+"Martinique",NA,NA
+"Mauritania",NA,NA
+"Mauritius",38,0
+"Mayotte",NA,NA
+"Mexico",2,3
+"Micronesia",NA,NA
+"Moldova",NA,NA
+"Monaco",NA,NA
+"Mongolia",NA,NA
+"Montenegro",NA,NA
+"Montserrat",NA,NA
+"Morocco",0,13
+"Mozambique",NA,NA
+"Myanmar (Burma)",26,0
+"Namibia",NA,NA
+"Nauru",NA,NA
+"Nepal",38,50
+"Netherlands",9,64
+"New Caledonia",NA,NA
+"New Zealand",36,54
+"Nicaragua",NA,NA
+"Niger",NA,NA
+"Nigeria",34,39
+"Niue",NA,NA
+"Norfolk Island",NA,NA
+"North Korea",NA,NA
+"North Macedonia",NA,NA
+"Northern Mariana Islands",NA,NA
+"Norway",19,48
+"Oman",NA,NA
+"Pakistan",24,17
+"Palau",NA,NA
+"Palestine",NA,NA
+"Panama",NA,NA
+"Papua New Guinea",NA,NA
+"Paraguay",NA,NA
+"Peru",NA,NA
+"Philippines",41,13
+"Pitcairn Islands",NA,NA
+"Poland",1,25
+"Portugal",5,8
+"Puerto Rico",NA,NA
+"Qatar",18,0
+"Réunion",NA,NA
+"Romania",2,4
+"Russia",1,3
+"Rwanda",NA,NA
+"Samoa",NA,NA
+"San Marino",NA,NA
+"São Tomé & Príncipe",NA,NA
+"Saudi Arabia",2,0
+"Senegal",0,75
+"Serbia",NA,NA
+"Seychelles",NA,NA
+"Sierra Leone",NA,NA
+"Singapore",9,14
+"Sint Maarten",NA,NA
+"Slovakia",0,16
+"Slovenia",0,58
+"Solomon Islands",NA,NA
+"Somalia",NA,NA
+"South Africa",80,15
+"South Georgia & South Sandwich Islands",NA,NA
+"South Korea",5,6
+"South Sudan",NA,NA
+"Spain",3,5
+"Sri Lanka",20,0
+"St. Barthélemy",NA,NA
+"St. Helena",NA,NA
+"St. Kitts & Nevis",NA,NA
+"St. Lucia",NA,NA
+"St. Martin",NA,NA
+"St. Pierre & Miquelon",NA,NA
+"St. Vincent & Grenadines",NA,NA
+"Sudan",NA,NA
+"Suriname",NA,NA
+"Svalbard & Jan Mayen",NA,NA
+"Sweden",10,26
+"Switzerland",19,62
+"Syria",NA,NA
+"Taiwan",1,4
+"Tajikistan",NA,NA
+"Tanzania",48,0
+"Thailand",2,4
+"Timor-Leste",NA,NA
+"Togo",NA,NA
+"Tokelau",NA,NA
+"Tonga",NA,NA
+"Trinidad & Tobago",NA,NA
+"Tunisia",8,21
+"Turkey",1,3
+"Turkmenistan",NA,NA
+"Turks & Caicos Islands",NA,NA
+"Tuvalu",NA,NA
+"U.S. Outlying Islands",NA,NA
+"U.S. Virgin Islands",NA,NA
+"Uganda",94,0
+"Ukraine",2,5
+"United Arab Emirates",9,11
+"United Kingdom",25,51
+"United States",13,15
+"Uruguay",NA,NA
+"Uzbekistan",NA,NA
+"Vanuatu",NA,NA
+"Vatican City",NA,NA
+"Venezuela",NA,NA
+"Vietnam",1,1
+"Wallis & Futuna",NA,NA
+"Western Sahara",NA,NA
+"Yemen",NA,NA
+"Zambia",100,0
+"Zimbabwe",96,0

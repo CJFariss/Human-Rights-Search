@@ -54,6 +54,7 @@ COLORS <- c("#ffffcc", "#c2e699", "#78c679", "#31a354", "#006837", "black")
 pdf("Rplots/Maps_google_malaria.pdf", height=3, width=6)
 
 TIME <- "2015-01-01 2019-12-31"
+TIME <- "2017-01-01 2017-12-31"
 
 ## ------------------------------------------------------------ ##
 ## English (or Spanish) "malaria"

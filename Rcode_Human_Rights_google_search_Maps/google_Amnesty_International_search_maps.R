@@ -105,3 +105,100 @@ ggplot(data, aes(map_id = region)) +
   expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colours=COLORS, na.value=grey(.875), guide = "colourbar")
 
 dev.off()
+
+
+## ------------------------------------------------------------ ##
+## English "human rights"
+english.world <- gtrends("human rights", time=TIME)
+english.world <- subset(english.world$interest_by_country)
+english.world$hits[english.world$hits=="<1"] <- .5
+english.world$hits <- as.numeric(english.world$hits)
+data <- english.world[,1:2]
+names(data) <- c("region", "hits")
+dim(data)
+
+## ------------------------------------------------------------ ##
+## English "Amnesty International"
+english.world <- gtrends("Amnesty International", time=TIME)
+english.world <- subset(english.world$interest_by_country)
+english.world$hits[english.world$hits=="<1"] <- .5
+english.world$hits <- as.numeric(english.world$hits)
+data2 <- english.world[,1:2]
+names(data2) <- c("region", "hits")
+dim(data2)
+
+
+
+## search term by seerach term correlations
+test <- merge(data, data2, by="region", all=T)
+dim(test)
+
+par(mfrow=c(1,1))
+plot(test$hits.x, test$hits.y)
+cor.test(test$hits.x, test$hits.y)
+cor.test(test$hits.x, test$hits.y, method="spearman")
+
+test$hits.x[is.na(test$hits.x) & !is.na(test$hits.y)] <- 0
+test$hits.y[is.na(test$hits.y) & !is.na(test$hits.x)] <- 0
+
+plot(test$hits.x, test$hits.y)
+cor.test(test$hits.x, test$hits.y)
+cor.test(test$hits.x, test$hits.y, method="spearman")
+
+## archive datasets
+
+## set today's date for saving files below
+current_date <- as.Date(Sys.time())
+current_date
+
+## save data.frame
+write.csv(test, paste("Data_output/Maps_Anesty_International_language_validation", current_date, ".csv", sep=""), row.names=FALSE)
+
+
+
+## ------------------------------------------------------------ ##
+## Topic "human rights"
+english.world <- gtrends("%2Fm%2F03ll3", time=TIME)
+english.world <- subset(english.world$interest_by_country)
+english.world$hits[english.world$hits=="<1"] <- .5
+english.world$hits <- as.numeric(english.world$hits)
+data <- english.world[,1:2]
+names(data) <- c("region", "hits")
+dim(data)
+
+## ------------------------------------------------------------ ##
+## Topic "Amnesty International"
+english.world <- gtrends("%2Fm%2F012l0", time=TIME)
+english.world <- subset(english.world$interest_by_country)
+english.world$hits[english.world$hits=="<1"] <- .5
+english.world$hits <- as.numeric(english.world$hits)
+data2 <- english.world[,1:2]
+names(data2) <- c("region", "hits")
+dim(data2)
+
+
+## Topic by Topic correlations
+test <- merge(data, data2, by="region", all=T)
+dim(test)
+
+par(mfrow=c(1,1))
+plot(test$hits.x, test$hits.y)
+cor.test(test$hits.x, test$hits.y)
+cor.test(test$hits.x, test$hits.y, method="spearman")
+
+test$hits.x[is.na(test$hits.x) & !is.na(test$hits.y)] <- 0
+test$hits.y[is.na(test$hits.y) & !is.na(test$hits.x)] <- 0
+
+plot(test$hits.x, test$hits.y)
+cor.test(test$hits.x, test$hits.y)
+cor.test(test$hits.x, test$hits.y, method="spearman")
+
+## archive datasets
+
+## set today's date for saving files below
+current_date <- as.Date(Sys.time())
+current_date
+
+## save data.frame
+write.csv(test, paste("Data_output/Maps_Anesty_International_topic_validation", current_date, ".csv", sep=""), row.names=FALSE)
+
