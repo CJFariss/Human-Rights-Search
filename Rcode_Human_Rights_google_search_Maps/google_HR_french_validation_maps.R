@@ -164,45 +164,93 @@ ggplot(data, aes(map_id = region)) +
 dev.off()
 
 
+TERMS <- c("droits humains", "droits de lhomme", "libertés", "droits")
+
 ## ------------------------------------------------------------ ##
-## French ""
-english.world <- gtrends(TERMS[1], time=TIME)
-english.world <- subset(english.world$interest_by_country)
-english.world$hits[english.world$hits=="<1"] <- .5
-english.world$hits <- as.numeric(english.world$hits)
-data <- english.world[,1:2]
+## French "droits humains" 
+french.world <- gtrends(TERMS[1], time=TIME)
+french.world <- subset(french.world$interest_by_country)
+french.world$hits[french.world$hits=="<1"] <- .5
+french.world$hits <- as.numeric(french.world$hits)
+data <- french.world[,1:2]
 names(data) <- c("region", "hits")
 dim(data)
 
 ## ------------------------------------------------------------ ##
-## French ""
-english.world <- gtrends(TERMS[2], time=TIME)
-english.world <- subset(english.world$interest_by_country)
-english.world$hits[english.world$hits=="<1"] <- .5
-english.world$hits <- as.numeric(english.world$hits)
-data2 <- english.world[,1:2]
+## French "droits de lhomme"
+french.world <- gtrends(TERMS[2], time=TIME)
+french.world <- subset(french.world$interest_by_country)
+french.world$hits[french.world$hits=="<1"] <- .5
+french.world$hits <- as.numeric(french.world$hits)
+data2 <- french.world[,1:2]
 names(data2) <- c("region", "hits")
 dim(data2)
 
 ## ------------------------------------------------------------ ##
-## French ""
-english.world <- gtrends(TERMS[3], time=TIME)
-english.world <- subset(english.world$interest_by_country)
-english.world$hits[english.world$hits=="<1"] <- .5
-english.world$hits <- as.numeric(english.world$hits)
-data3 <- english.world[,1:2]
+## French "libertés"
+french.world <- gtrends(TERMS[3], time=TIME)
+french.world <- subset(french.world$interest_by_country)
+french.world$hits[french.world$hits=="<1"] <- .5
+french.world$hits <- as.numeric(french.world$hits)
+data3 <- french.world[,1:2]
 names(data3) <- c("region", "hits")
 dim(data3)
 
 ## ------------------------------------------------------------ ##
-## French ""
-english.world <- gtrends(TERMS[4], time=TIME)
-english.world <- subset(english.world$interest_by_country)
-english.world$hits[english.world$hits=="<1"] <- .5
-english.world$hits <- as.numeric(english.world$hits)
-data4 <- english.world[,1:2]
+## French "droits""
+french.world <- gtrends(TERMS[4], time=TIME)
+french.world <- subset(french.world$interest_by_country)
+french.world$hits[french.world$hits=="<1"] <- .5
+french.world$hits <- as.numeric(french.world$hits)
+data4 <- french.world[,1:2]
 names(data4) <- c("region", "hits")
 dim(data4)
+
+
+## merge datasets for correlations 
+test1 <- merge(data, data2, by="region", all=T, suffixes = c(".humains",".de_lhomme"))
+dim(test1)
+test2 <- merge(data3, data4, by="region", all=T, suffixes = c(".libertes", ".droits"))
+dim(test2)
+
+test <- merge(test1, test2, by="region", all=T)
+dim(test)
+
+head(test)
+summary(test)
+
+test$indicator <- NA
+test$indicator <- ifelse(!is.na(test$hits.humains), 1, NA)
+test$indicator <- ifelse(!is.na(test$hits.de_lhomme), 1, NA)
+test$indicator <- ifelse(!is.na(test$hits.libertes), 1, NA)
+test$indicator <- ifelse(!is.na(test$hits.droits), 1, NA)
+
+table(test$indicator)
+
+test$hits.humains[test$indicator==1 & is.na(test$hits.humains)] <- 0
+test$hits.de_lhomme[test$indicator==1 & is.na(test$hits.de_lhomme)] <- 0
+test$hits.libertes[test$indicator==1 & is.na(test$hits.libertes)] <- 0
+test$hits.droits[test$indicator==1 & is.na(test$hits.droits)] <- 0
+
+summary(test)
+
+par(mfrow=c(2,2))
+plot(test$hits.humains, test$hits.de_lhomme)
+plot(test$hits.de_lhomme, test$hits.libertes)
+plot(test$hits.libertes, test$hits.droits)
+plot(test$hits.droits, test$hits.de_lhomme)
+
+## Pearson correlations
+cor.test(test$hits.humains, test$hits.de_lhomme)
+cor.test(test$hits.de_lhomme, test$hits.libertes)
+cor.test(test$hits.libertes, test$hits.droits)
+cor.test(test$hits.droits, test$hits.de_lhomme)
+
+## Spearman correlations
+cor.test(test$hits.humains, test$hits.de_lhomme, method="spearman")
+cor.test(test$hits.de_lhomme, test$hits.libertes, method="spearman")
+cor.test(test$hits.libertes, test$hits.droits, method="spearman")
+cor.test(test$hits.droits, test$hits.de_lhomme, method="spearman")
 
 
 

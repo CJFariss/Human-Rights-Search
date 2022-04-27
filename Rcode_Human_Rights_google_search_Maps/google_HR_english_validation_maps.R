@@ -128,7 +128,7 @@ names(data2) <- c("region", "hits")
 dim(data2)
 
 
-
+## correlations 
 test <- merge(data, data2, by="region", all=T)
 dim(test)
 
