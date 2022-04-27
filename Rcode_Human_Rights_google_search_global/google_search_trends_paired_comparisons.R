@@ -54,8 +54,9 @@ TERMS <- list(c("facebook", "google"),
             c("human rights", "climate change"),
             c("human rights", "right to health"),
             c("human rights", "right to food"),
-            c("human rights", "torture")
-
+            c("human rights", "torture"),
+            c("human rights", "Amnesty International")
+            
 )
 length(TERMS)
 
