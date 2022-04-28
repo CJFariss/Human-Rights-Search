@@ -57,10 +57,11 @@ gsearch_cy_dataset_function <- function(language_term="human rights", language_t
   data("countries")
   #countries$country_code
   
-  language_world <- language_world[language_ISO %in% countries$country_code,]
 
   language_ISO <- countrycode(language_world$location, origin="country.name", destination="iso2c")
   language_CCODE <- countrycode(language_world$location, origin="country.name", destination="cown")
+
+  language_world <- language_world[language_ISO %in% countries$country_code,]
   
   language_location <- language_world$location
   
@@ -121,23 +122,62 @@ TERMS
 
 
 ## select time range
-TIME <- "2012-01-01 2015-12-31"
-TIME <- "2013-01-01 2017-12-31"
-TIME <- "2014-01-01 2016-12-31"
-TIME <- "2015-01-01 2019-12-31"
+TIME <- c()
+TIME[1] <- "2012-01-01 2015-12-31"
+TIME[2] <- "2013-01-01 2017-12-31"
+TIME[3] <- "2014-01-01 2018-12-31"
+TIME[4] <- "2015-01-01 2019-12-31"
 TIME
 
+TERMS <- c("human rights", "derechos humanos", "direitos humanos", "droit")
+TERMS
+
+i <- 5
+for(j in 1:length(TIME)){
+  out_dat <- gsearch_cy_dataset_function(language_term=TERMS[i], language_time=TIME[j])
+  #out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]
+  head(out_dat)
+  summary(out_dat)
+  
+  ## set today's date for saving files below
+  current_date <- as.Date(Sys.time())
+  current_date
+  
+  ## save data.frame for future analysis 
+  write.csv(out_dat, paste("Data_output/gsearch_cy_data_", gsub(" ", "_", TERMS[i]), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+}
 
 
-out_dat <- gsearch_cy_dataset_function(language_term=TERMS[1], language_time=TIME)
-#out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]
-head(out_dat)
-summary(out_dat)
 
-## set today's date for saving files below
-current_date <- as.Date(Sys.time())
-current_date
+## huquq alansan
+for(j in 1:length(TIME)){
+  out_dat <- gsearch_cy_dataset_function(language_term="حقوق الانسان", language_time=TIME[j])
+  #out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]
+  head(out_dat)
+  summary(out_dat)
+  
+  ## set today's date for saving files below
+  current_date <- as.Date(Sys.time())
+  current_date
+  
+  ## save data.frame for future analysis 
+  write.csv(out_dat, paste("Data_output/gsearch_cy_data_", gsub(" ", "_", "huquq alansan"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+  
+}
 
-## save data.frame for future analysis 
-write.csv(out_dat, paste("Data_output/gsearch_cy_data_", gsub(" ", "_", TERMS[1]), "_", gsub(" ", "_", TIME), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
-
+# "Amnesty International"
+for(j in 2:length(TIME)){
+  out_dat <- gsearch_cy_dataset_function(language_term= "Amnesty International", language_time=TIME[j])
+  #out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]
+  head(out_dat)
+  summary(out_dat)
+  
+  ## set today's date for saving files below
+  current_date <- as.Date(Sys.time())
+  current_date
+  
+  ## save data.frame for future analysis 
+  write.csv(out_dat, paste("Data_output/gsearch_cy_data_", gsub(" ", "_", TERMS[i]), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+  
+}

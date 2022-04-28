@@ -1,15 +1,4 @@
-## clean up workspace
-rm(list = ls(all.names = TRUE))
-gc()
 
-## load libraries
-library(gtrendsR)
-library(countrycode)
-library(stm)
-library(tm)
-library(MASS)
-library(colorbrewer)
-library(bcp)
 
 ## country codes
 data("countries")
