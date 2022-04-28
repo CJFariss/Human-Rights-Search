@@ -150,7 +150,7 @@ for(j in 1:length(TIME)){
 
 
 
-## huquq alansan
+## "huquq alansan"
 for(j in 1:length(TIME)){
   out_dat <- gsearch_cy_dataset_function(language_term="حقوق الانسان", language_time=TIME[j])
   #out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]
@@ -167,8 +167,8 @@ for(j in 1:length(TIME)){
 }
 
 # "Amnesty International"
-for(j in 2:length(TIME)){
-  out_dat <- gsearch_cy_dataset_function(language_term= "Amnesty International", language_time=TIME[j])
+for(j in 1:length(TIME)){
+  out_dat <- gsearch_cy_dataset_function(language_term="Amnesty International", language_time=TIME[4])
   #out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]
   head(out_dat)
   summary(out_dat)
@@ -178,6 +178,6 @@ for(j in 2:length(TIME)){
   current_date
   
   ## save data.frame for future analysis 
-  write.csv(out_dat, paste("Data_output/gsearch_cy_data_", gsub(" ", "_", TERMS[i]), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+  write.csv(out_dat, paste("Data_output/gsearch_cy_data_", gsub(" ", "_", "Amnesty International"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
   
 }
