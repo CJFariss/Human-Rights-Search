@@ -4,10 +4,10 @@ source("groundhog_library_func.R")
 groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
 
-dat <- read.csv("Data_output/gsearch_cy_data_human_rights_2012-01-01_2016-12-31_saved_2022-04-27.csv")
-dat <- read.csv("Data_output/gsearch_cy_data_human_rights_2013-01-01_2017-12-31_saved_2022-04-27.csv")
-dat <- read.csv("Data_output/gsearch_cy_data_human_rights_2014-01-01_2018-12-31_saved_2022-04-27.csv")
-dat <- read.csv("Data_output/gsearch_cy_data_human_rights_2015-01-01_2019-12-31_saved_2022-04-27.csv")
+dat <- read.csv("Data_output_search/gsearch_cy_data_human_rights_2012-01-01_2016-12-31_saved_2022-04-27.csv")
+dat <- read.csv("Data_output_search/gsearch_cy_data_human_rights_2013-01-01_2017-12-31_saved_2022-04-27.csv")
+dat <- read.csv("Data_output_search/gsearch_cy_data_human_rights_2014-01-01_2018-12-31_saved_2022-04-28.csv")
+dat <- read.csv("Data_output_search/gsearch_cy_data_human_rights_2015-01-01_2019-12-31_saved_2022-04-27.csv")
 head(dat)
 
 HRPS <- read.csv("Data_output/HumanRightsProtectionScores_v4.01_amnesty_report_count_v2.csv")
@@ -37,13 +37,17 @@ cor.test(test_dat$hits_max, test_dat$amnesty_report_count)
 
 ## linear models
 fit <- lm(hits_mean ~ theta_mean + amnesty_report_count, data=test_dat)
-summary(fit)
+#summary(fit)
+coeftest(fit, vcov = vcovHC, type = "HC1", cluster=~ISO)
 
 fit <- lm(hits_median ~ theta_mean + amnesty_report_count, data=test_dat)
-summary(fit)
+#summary(fit)
+coeftest(fit, vcov = vcovHC, type = "HC1", cluster=~ISO)
 
 fit <- lm(hits_max ~ theta_mean + amnesty_report_count, data=test_dat)
-summary(fit)
+#summary(fit)
+coeftest(fit, vcov = vcovHC, type = "HC1", cluster=~ISO)
+
 
 N <- nrow(fit$model)
 N
@@ -57,8 +61,10 @@ milm <- function(fml, midata){
   for(i in 1:length(midata)){
     tmp <- lm(formula=as.formula(fml), data=midata[[i]])
     lms[,i] <- tmp$coefficients
-    ses[,i] <- sqrt(diag(vcov(tmp)))
-    vcovs[[i]] <- vcov(tmp)
+    #ses[,i] <- sqrt(diag(vcov(tmp)))
+    #vcovs[[i]] <- vcov(tmp)
+    ses[,i] <- sqrt(diag(vcovHC(tmp, type="HC1")))
+    vcovs[[i]] <- vcovHC(tmp, type="HC1")
   }
   par.est <- apply(lms, 1, mean)
   se.within <- apply(ses, 1, mean)
@@ -87,7 +93,7 @@ for(i in 1:1000){
 
 
 # call the milm function with the list of datasets newdata
-fit <- milm(fml="hits_mean ~ theta_mean + amnesty_report_count", midata=newdata)
+fit <- milm(fml="hits_mean ~ draw + amnesty_report_count", midata=newdata)
 temp <- data.frame(fit$terms, fit$beta, fit$SE, fit$beta/fit$SE, pvalue=pvalue(x=fit$beta, x.se=fit$SE, N=N))
 print(temp)
 
