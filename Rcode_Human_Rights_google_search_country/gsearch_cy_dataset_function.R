@@ -123,7 +123,7 @@ TERMS
 
 ## select time range
 TIME <- c()
-TIME[1] <- "2012-01-01 2015-12-31"
+TIME[1] <- "2012-01-01 2016-12-31"
 TIME[2] <- "2013-01-01 2017-12-31"
 TIME[3] <- "2014-01-01 2018-12-31"
 TIME[4] <- "2015-01-01 2019-12-31"
@@ -132,7 +132,8 @@ TIME
 TERMS <- c("human rights", "derechos humanos", "direitos humanos", "droit")
 TERMS
 
-i <- 5
+i <- 1
+j <- 1
 for(j in 1:length(TIME)){
   out_dat <- gsearch_cy_dataset_function(language_term=TERMS[i], language_time=TIME[j])
   #out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]

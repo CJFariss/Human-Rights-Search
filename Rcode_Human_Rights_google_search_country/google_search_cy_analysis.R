@@ -63,6 +63,10 @@ milm <- function(fml, midata){
     #ses[,i] <- sqrt(diag(vcov(tmp)))
     #vcovs[[i]] <- vcov(tmp)
     ses[,i] <- sqrt(diag(vcovHC(tmp, type="HC1")))
+    
+    #library(clubSandwich)
+    #modfit_cluster[[i]] <- coef_test(tmp, vcov = "CR2", cluster = "individual", test = "Satterthwaite")
+    
     vcovs[[i]] <- vcovHC(tmp, type="HC1")
   }
   par.est <- apply(lms, 1, mean)
