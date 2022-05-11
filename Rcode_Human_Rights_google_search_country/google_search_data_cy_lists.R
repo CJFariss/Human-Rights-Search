@@ -1,3 +1,6 @@
+## google_serach_data_cy_lists.R
+
+
 ## load necessary libraries 
 ## change groundhog to TRUE to install original versions of libraries from April-2022
 source("groundhog_library_func.R")
@@ -56,6 +59,7 @@ gsearch_cy_search_lists_function <- function(language_term="human rights", langu
   out <- lapply(1:N, function(i){
     #temp <- try(gtrends(language_term, geo=c(language_ISO[i]), time=language_time, low_search_volume=TRUE)$interest_over_time)
     temp <- try(gtrends(language_term, geo=c(language_ISO[i]), time=language_time, low_search_volume=TRUE))
+    return(temp)
   })
   return(out)
 }
