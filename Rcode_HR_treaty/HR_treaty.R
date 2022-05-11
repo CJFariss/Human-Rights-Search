@@ -104,5 +104,8 @@ dat <- rbind(dat, dat_2018, dat_2019, dat_2020, dat_2021, dat_2022)
 dim(dat)
 head(dat)
 
+dat$treaty_count <- apply(dat[c(-1,-2,-3)], 1, sum)
+summary(dat$treaty_count)
+
 write.csv(dat, "Data_output/hr_commitments_updated_2022.csv", row.names=FALSE)
 
