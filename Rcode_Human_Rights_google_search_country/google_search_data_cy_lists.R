@@ -97,7 +97,7 @@ for(j in 4:length(TIME)){
   
   ## save data.frame for future analysis 
   #write.csv(out_dat, paste("Data_output_search/gsearch_cy_data_", gsub(" ", "_", TERMS[i]), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
-  saveRDS(out_dat, paste("Data_output_search_lists/gsearch_location_data_lists_", gsub(" ", "_", TERMS[i]), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
+  saveRDS(out_dat, paste("Data_output_location_search_lists/gsearch_location_data_lists_", gsub(" ", "_", TERMS[i]), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
   
 }
 
@@ -114,7 +114,7 @@ for(j in 1:length(TIME)){
   current_date
   
   ## save data.frame for future analysis 
-  saveRDS(out_dat, paste("Data_output_search_lists/gsearch_location_data_lists_", gsub(" ", "_", "huquq_alansan"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
+  saveRDS(out_dat, paste("Data_output_location_search_lists/gsearch_location_data_lists_", gsub(" ", "_", "huquq_alansan"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
   
 }
 
@@ -131,7 +131,7 @@ for(j in 1:length(TIME)){
   current_date
   
   ## save data.frame for future analysis 
-  saveRDS(out_dat, paste("Data_output_search_lists/gsearch_location_data_lists_", gsub(" ", "_", "Amnesty_International"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
+  saveRDS(out_dat, paste("Data_output_location_search_lists/gsearch_location_data_lists_", gsub(" ", "_", "Amnesty_International"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
   
 }
 
@@ -150,7 +150,7 @@ for(j in 1:length(TIME)){
   current_date
   
   ## save data.frame for future analysis 
-  saveRDS(out_dat, paste("Data_output_search_lists/gsearch_location_data_lists_", gsub(" ", "_", "human_rights_topic"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
+  saveRDS(out_dat, paste("Data_output_location_search_lists/gsearch_location_data_lists_", gsub(" ", "_", "human_rights_topic"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
   
 }
 
