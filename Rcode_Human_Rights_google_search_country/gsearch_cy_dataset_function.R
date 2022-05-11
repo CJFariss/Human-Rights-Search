@@ -146,7 +146,7 @@ for(j in 1:length(TIME)){
   current_date
   
   ## save data.frame for future analysis 
-  write.csv(out_dat, paste("Data_output_search/gsearch_cy_data_", gsub(" ", "_", TERMS[i]), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+  write.csv(out_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", TERMS[i]), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
 
 }
 
