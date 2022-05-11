@@ -33,14 +33,10 @@ COLORS <- c("#fdae61", "#a6cee3", "#1f78b4", "#b2df8a", "#33a02c")
 
 ## ------------------------------------------------------------ ##
 ## generic search function to create country-year cy datasets
-gsearch_cy_dataset_function <- function(language_term="human rights", language_time="2013-01-01 2017-12-31"){
-  
+##gsearch_cy_dataset_function <- function(language_term="human rights", language_time="2013-01-01 2017-12-31"){
+gsearch_cy_dataset_function <- function(){
+
   ## function arguments for internal function testing
-  #language_term <- TERMS[1]
-  #language_term
-  #language_time <- "2013-01-01 2017-12-31"
-  #language_time <- "2014-01-01 2016-12-31"
-  #language_type <- "English"
   
   language_world <- gtrends(language_term, time=language_time, low_search_volume=TRUE)
   language_world <- subset(language_world$interest_by_country, !is.na(hits))
@@ -66,11 +62,11 @@ gsearch_cy_dataset_function <- function(language_term="human rights", language_t
   language_location <- language_world$location
   
   ## fix Kosovo
-  language_ISO[language_CCODE==347] <- "XK"
+  #language_ISO[language_CCODE==347] <- "XK"
   ## fix Serbia
-  language_CCODE[language_ISO=="RS"] <- 345
+  #language_CCODE[language_ISO=="RS"] <- 345
   ## fix Vietnam
-  language_CCODE[language_CCODE==817] <- 816
+  #language_CCODE[language_CCODE==817] <- 816
   
   
   language_world <- language_world[!is.na(language_ISO),]
@@ -103,12 +99,17 @@ gsearch_cy_dataset_function <- function(language_term="human rights", language_t
     
     temp_cy <- data.frame(year, ISO, CCODE, location, hits_mean, hits_median, hits_max, hits_sd)
     return(temp_cy)
+    }else{
+    
+      temp_cy <- data.frame(year=NA, ISO=language_ISO[i], CCODE=NA, location=NA, hits_mean=NA, hits_median=NA, hits_max=NA, hits_sd=NA)
+      return(temp_cy)
+      
     }
   
   })
   
   cy_dat <- do.call("rbind", cy_temp)
-  cy_dat <- cy_dat[order(cy_dat$ISO, cy_dat$year),]
+  #cy_dat <- cy_dat[order(cy_dat$ISO, cy_dat$year),]
   return(cy_dat)
 }
 
@@ -133,7 +134,7 @@ TERMS <- c("human rights", "derechos humanos", "direitos humanos", "droit")
 TERMS
 
 i <- 1
-j <- 1
+#j <- 1
 for(j in 1:length(TIME)){
   out_dat <- gsearch_cy_dataset_function(language_term=TERMS[i], language_time=TIME[j])
   #out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]
