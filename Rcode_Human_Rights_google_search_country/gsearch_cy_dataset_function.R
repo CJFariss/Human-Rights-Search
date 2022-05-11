@@ -34,14 +34,30 @@ COLORS <- c("#fdae61", "#a6cee3", "#1f78b4", "#b2df8a", "#33a02c")
 ## ------------------------------------------------------------ ##
 ## generic search function to create country-year cy datasets
 ##gsearch_cy_dataset_function <- function(language_term="human rights", language_time="2013-01-01 2017-12-31"){
-gsearch_cy_dataset_function <- function(data_list){
+gsearch_cy_dataset_function <- function(cy_data_list, global_data_list){
 
   temp_cy <- list()
   
+  language_world <- global_data_list
+
+  language_world <- subset(language_world$interest_by_country, !is.na(hits))
+  
+  language_world$hits[language_world$hits=="<1"] <- .5
+  language_world$hits <- as.numeric(language_world$hits)
+  language_world <- subset(language_world, !is.na(hits))
+  
+  ## location to ISO and CCODE
+  data("countries")
+  countries$country_code
+  
+  language_ISO <- countrycode(language_world$location, origin="country.name", destination="iso2c")
+  language_CCODE <- countrycode(language_world$location, origin="country.name", destination="cown")
+  
   ## function arguments for internal function testing
-  for(i in 1:length(data_list)){
+  for(i in 1:length(cy_data_list)){
     
-    temp <- data_list[[i]]$interest_over_time
+    temp <- cy_data_list[[i]]$interest_over_time
+    
     
     temp$hits[temp$hits=="<1"] <- .5
     temp$hits <- as.numeric(temp$hits)
@@ -54,67 +70,143 @@ gsearch_cy_dataset_function <- function(data_list){
     hits_max <- sapply(1:length(year), function(j){max(temp[c("year","hits")]$hits[temp$year==year[j]])})
     hits_sd <- sapply(1:length(year), function(j){sd(temp[c("year","hits")]$hits[temp$year==year[j]])})
     
-    ISO <- temp$geo[1]
-    #CCODE <- language_CCODE[i]
-    #location <- language_location[i]
+    ISO <- language_ISO[i]
+    CCODE <- language_CCODE[i]
+    location <- language_world$location[i]
     
-    temp_cy[[i]] <- data.frame(year, ISO, hits_mean, hits_median, hits_max, hits_sd)
+    temp_cy[[i]] <- data.frame(year, ISO, CCODE, location, hits_mean, hits_median, hits_max, hits_sd)
   }
   
-  cy_dat <- do.call("rbind", temp_cy)
-  return(cy_dat)
-}
-
-data <- readRDS("Data_output_search_lists/gsearch_location_data_lists_human_rights_2012-01-01_2016-12-31_saved_2022-05-10.RDS")
-out_dat <- gsearch_cy_dataset_function(data_list=data)
-
-
-for(j in 1:length(TIME)){
-  out_dat <- gsearch_cy_dataset_function(language_term=TERMS[i], language_time=TIME[j])
-  #out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]
-  head(out_dat)
-  summary(out_dat)
-  
-  ## set today's date for saving files below
-  current_date <- as.Date(Sys.time())
-  current_date
-  
-  ## save data.frame for future analysis 
-  write.csv(out_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", TERMS[i]), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
-
+  #cy_dat <- do.call("rbind", temp_cy)
+  return(temp_cy)
 }
 
 
+## set today's date for saving files below
+current_date <- as.Date(Sys.time())
+current_date
 
+##########################################################################
+## "human rights"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_human_rights_2012-01-01_2016-12-31_saved_2022-05-10.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_human_rights_2012-01-01_2016-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", "human rights"), "_", gsub(" ", "_", "2012-01-01 2016-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+## "human rights"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_human_rights_2013-01-01_2017-12-31_saved_2022-05-10.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_human_rights_2013-01-01_2017-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", "human rights"), "_", gsub(" ", "_", "2013-01-01 2017-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+## "human rights"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_human_rights_2014-01-01_2018-12-31_saved_2022-05-10.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_human_rights_2014-01-01_2018-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", "human rights"), "_", gsub(" ", "_", "2014-01-01 2018-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+## "human rights"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_human_rights_2015-01-01_2019-12-31_saved_2022-05-10.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_human_rights_2015-01-01_2019-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", "human rights"), "_", gsub(" ", "_", "2015-01-01 2019-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+
+##########################################################################
+## "derechos humanos"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_derechos_humanos_2012-01-01_2016-12-31_saved_2022-05-10.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_derechos_humanos_2012-01-01_2016-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", "derechos humanos"), "_", gsub(" ", "_", "2012-01-01 2016-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+## "derechos humanos"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_derechos_humanos_2013-01-01_2017-12-31_saved_2022-05-10.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_derechos_humanos_2013-01-01_2017-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", "derechos humanos"), "_", gsub(" ", "_", "2013-01-01 2017-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+## "derechos humanos"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_derechos_humanos_2014-01-01_2018-12-31_saved_2022-05-10.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_derechos_humanos_2014-01-01_2018-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", "derechos humanos"), "_", gsub(" ", "_", "2014-01-01 2018-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+## "derechos humanos"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-10.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", "derechos humanos"), "_", gsub(" ", "_", "2015-01-01 2019-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+
+##########################################################################
+## "direitos humanos"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_direitos_humanos_2012-01-01_2016-12-31_saved_2022-05-10.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_direitos_humanos_2012-01-01_2016-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", "direitos humanos"), "_", gsub(" ", "_", "2012-01-01 2016-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+## "direitos humanos"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_direitos_humanos_2013-01-01_2017-12-31_saved_2022-05-10.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_direitos_humanos_2013-01-01_2017-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", "direitos humanos"), "_", gsub(" ", "_", "2013-01-01 2017-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+## "direitos humanos"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_direitos_humanos_2014-01-01_2018-12-31_saved_2022-05-10.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_direitos_humanos_2014-01-01_2018-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", "direitos humanos"), "_", gsub(" ", "_", "2014-01-01 2018-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+## "direitos humanos"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_direitos_humanos_2015-01-01_2019-12-31_saved_2022-05-10.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_direitos_humanos_2015-01-01_2019-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", "direitos humanos"), "_", gsub(" ", "_", "2015-01-01 2019-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+
+##########################################################################
+## "droit"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_droit_2012-01-01_2016-12-31_saved_2022-05-11.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_droit_2012-01-01_2016-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", "direitos humanos"), "_", gsub(" ", "_", "2012-01-01 2016-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+## "droit"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_droit_2013-01-01_2017-12-31_saved_2022-05-11.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_droit_2013-01-01_2017-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", "droit"), "_", gsub(" ", "_", "2013-01-01 2017-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+## "droit"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_droit_2014-01-01_2018-12-31_saved_2022-05-11.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_droit_2014-01-01_2018-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", "droit"), "_", gsub(" ", "_", "2014-01-01 2018-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+## "droit"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_droit_2015-01-01_2019-12-31_saved_2022-05-11.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_droit_2015-01-01_2019-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(" ", "_", "droit"), "_", gsub(" ", "_", "2015-01-01 2019-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+##########################################################################
 ## "huquq alansan"
-for(j in 1:length(TIME)){
-  out_dat <- gsearch_cy_dataset_function(language_term="حقوق الانسان", language_time=TIME[j])
-  #out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]
-  head(out_dat)
-  summary(out_dat)
-  
-  ## set today's date for saving files below
-  current_date <- as.Date(Sys.time())
-  current_date
-  
-  ## save data.frame for future analysis 
-  write.csv(out_dat, paste("Data_output_search/gsearch_cy_data_", gsub(" ", "_", "huquq alansan"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
-  
-}
 
-# "Amnesty International"
-for(j in 1:length(TIME)){
-#for(j in c(1,4)){
-  out_dat <- gsearch_cy_dataset_function(language_term="Amnesty International", language_time=TIME[j])
-  #out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]
-  head(out_dat)
-  summary(out_dat)
-  
-  ## set today's date for saving files below
-  current_date <- as.Date(Sys.time())
-  current_date
-  
-  ## save data.frame for future analysis 
-  write.csv(out_dat, paste("Data_output_search/gsearch_cy_data_", gsub(" ", "_", "Amnesty International"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
-  
-}
+##########################################################################
+## "Amnesty International"
