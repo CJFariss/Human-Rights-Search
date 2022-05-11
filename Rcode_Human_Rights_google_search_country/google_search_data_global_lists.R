@@ -11,7 +11,7 @@ COLORS <- c("#fdae61", "#a6cee3", "#1f78b4", "#b2df8a", "#33a02c")
 
 ## ------------------------------------------------------------ ##
 ## generic search function to create country-year cy datasets
-gsearch_cy_search_lists_function <- function(language_term="human rights", language_time="2013-01-01 2017-12-31"){
+gsearch_global_search_lists_function <- function(language_term="human rights", language_time="2013-01-01 2017-12-31"){
   
   ## function arguments for internal function testing
   #language_term <- TERMS[1]
@@ -79,8 +79,8 @@ TERMS
 
 i <- 4
 j <- 1
-for(j in 4:length(TIME)){
-  out_dat <- gsearch_cy_search_lists_function(language_term=TERMS[i], language_time=TIME[j])
+for(j in 1:length(TIME)){
+  out_dat <- gsearch_global_search_lists_function(language_term=TERMS[i], language_time=TIME[j])
   #out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]
   head(out_dat)
   summary(out_dat)
@@ -98,7 +98,7 @@ for(j in 4:length(TIME)){
 
 ## "huquq alansan"
 for(j in 1:length(TIME)){
-  out_dat <- gsearch_cy_search_lists_function(language_term="حقوق الانسان", language_time=TIME[j])
+  out_dat <- gsearch_global_search_lists_function(language_term="حقوق الانسان", language_time=TIME[j])
   #out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]
   head(out_dat)
   summary(out_dat)
@@ -115,7 +115,7 @@ for(j in 1:length(TIME)){
 # "Amnesty International"
 for(j in 1:length(TIME)){
   #for(j in c(1,4)){
-  out_dat <- gsearch_cy_search_lists_function(language_term="Amnesty International", language_time=TIME[j])
+  out_dat <- gsearch_global_search_lists_function(language_term="Amnesty International", language_time=TIME[j])
   #out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]
   head(out_dat)
   summary(out_dat)
@@ -128,3 +128,23 @@ for(j in 1:length(TIME)){
   saveRDS(out_dat, paste("Data_output_global_search_lists/gsearch_global_data_lists_", gsub(" ", "_", "Amnesty_International"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
   
 }
+
+# human rights topic
+TERMS <- c(URLdecode("%2Fm%2F03ll3")) ## human rights topic
+
+for(j in 1:length(TIME)){
+  #for(j in c(1,4)){
+  out_dat <- gsearch_global_search_lists_function(language_term=TERMS, language_time=TIME[j])
+  #out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]
+  head(out_dat)
+  summary(out_dat)
+  
+  ## set today's date for saving files below
+  current_date <- as.Date(Sys.time())
+  current_date
+  
+  ## save data.frame for future analysis 
+  saveRDS(out_dat, paste("Data_output_global_search_lists/gsearch_global_data_lists_", gsub(" ", "_", "human_rights_topic"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
+  
+}
+

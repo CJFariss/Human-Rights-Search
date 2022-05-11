@@ -134,3 +134,23 @@ for(j in 1:length(TIME)){
   saveRDS(out_dat, paste("Data_output_search_lists/gsearch_location_data_lists_", gsub(" ", "_", "Amnesty_International"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
   
 }
+
+# human rights topic
+TERMS <- c(URLdecode("%2Fm%2F03ll3")) ## human rights topic
+
+for(j in 1:length(TIME)){
+  #for(j in c(1,4)){
+  out_dat <- gsearch_global_search_lists_function(language_term=TERMS, language_time=TIME[j])
+  #out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]
+  head(out_dat)
+  summary(out_dat)
+  
+  ## set today's date for saving files below
+  current_date <- as.Date(Sys.time())
+  current_date
+  
+  ## save data.frame for future analysis 
+  saveRDS(out_dat, paste("Data_output_search_lists/gsearch_location_data_lists_", gsub(" ", "_", "human_rights_topic"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
+  
+}
+
