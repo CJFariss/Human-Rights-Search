@@ -4,11 +4,13 @@ source("groundhog_library_func.R")
 groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
 files_names <- list.files("Data_output_search_cy_datasets")
+#files_names <- list.files("Data_output_search_cy_datasets_lowsearch")
 files_names
 
 dat_list <- list()
 for(i in 1:length(files_names)){
   dat_list[[i]] <- read.csv(paste("Data_output_search_cy_datasets/",files_names[i], sep=""))
+  #dat_list[[i]] <- read.csv(paste("Data_output_search_cy_datasets_lowsearch",files_names[i], sep=""))
 }
 length(dat_list)
 
@@ -42,3 +44,4 @@ head(dat_list_merged[[1]])
 
 ## saved combined list of datasets
 saveRDS(dat_list_merged, file="Data_output/combined_gsearch_dat_list_merged.RDS")
+#saveRDS(dat_list_merged, file="Data_output/combined_gsearch_dat_list_merged_lowsearch.RDS")
