@@ -3,41 +3,157 @@
 source("groundhog_library_func.R")
 groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
-dat <- read.csv("Data_output_search/gsearch_cy_data_human_rights_2012-01-01_2016-12-31_saved_2022-05-09.csv")
-dat <- read.csv("Data_output_search/gsearch_cy_data_human_rights_2013-01-01_2017-12-31_saved_2022-04-27.csv")
-dat <- read.csv("Data_output_search/gsearch_cy_data_human_rights_2014-01-01_2018-12-31_saved_2022-04-28.csv")
-dat <- read.csv("Data_output_search/gsearch_cy_data_human_rights_2015-01-01_2019-12-31_saved_2022-04-27.csv")
-head(dat)
+test_dat <- readRDS("Data_output/combined_gsearch_dat_list_merged.RDS")
+test_dat <- readRDS("Data_output/combined_gsearch_dat_list_merged_lowsearch.RDS")
+length(test_dat)
 
-HRPS <- read.csv("Data_output/HumanRightsProtectionScores_v4.01_amnesty_report_count_v2.csv")
-HRPS <- subset(HRPS, YEAR>=min(dat$year))
-head(HRPS)
-
-test_dat <- merge(dat, HRPS, by.x=c("CCODE", "year"), by.y=c("COW", "YEAR"), all=TRUE)
-
-head(test_dat)
-dim(test_dat)
-
-test_dat$hits_mean[is.na(test_dat$hits_mean)] <- 0
-test_dat$hits_median[is.na(test_dat$hits_median)] <- 0
-test_dat$hits_max[is.na(test_dat$hits_max)] <- 0
-test_dat$hits_sd[is.na(test_dat$hits_sd)] <- 0
+#test_dat$hits_mean[is.na(test_dat$hits_mean)] <- 0
+#test_dat$hits_median[is.na(test_dat$hits_median)] <- 0
+#test_dat$hits_max[is.na(test_dat$hits_max)] <- 0
+#test_dat$hits_sd[is.na(test_dat$hits_sd)] <- 0
 
 
 ## correlations
-cor.test(test_dat$hits_mean, test_dat$theta_mean)
-cor.test(test_dat$hits_mean, test_dat$amnesty_report_count)
+cor_value <- list()
+for(i in 1:length(test_dat)){
+  dat <- test_dat[[i]]
+  cor_value[[i]] <- c(cor(dat$hits_mean, dat$theta_mean, use="pairwise"), cor(dat$hits_median, dat$theta_mean, use="pairwise"), cor(dat$hits_max, dat$theta_mean, use="pairwise"))
+}
+cor_value
+summary(do.call("rbind", cor_value))
 
-cor.test(test_dat$hits_median, test_dat$theta_mean)
-cor.test(test_dat$hits_median, test_dat$amnesty_report_count)
+## correlations
+cor_value <- list()
+for(i in 1:length(test_dat)){
+  dat <- test_dat[[i]]
+  cor_value[[i]] <- c(cor(dat$hits_mean, dat$amnesty_report_count, use="pairwise"), cor(dat$hits_median, dat$amnesty_report_count, use="pairwise"), cor(dat$hits_max, dat$amnesty_report_count, use="pairwise"))
+}
+cor_value
+summary(do.call("rbind", cor_value))
 
-cor.test(test_dat$hits_max, test_dat$theta_mean)
-cor.test(test_dat$hits_max, test_dat$amnesty_report_count)
+## correlations
+cor_value <- list()
+par(mfrow=c(5,4), mar=c(1,1,.5,.5))
+for(i in 1:length(test_dat)){
+  dat <- test_dat[[i]]
+  cor_value[[i]] <- c(cor(dat$theta_mean, dat$amnesty_report_count, use="pairwise"))
+  plot(scale(dat$amnesty_report_count) ~ scale(dat$theta_mean) )
+  abline(reg=lm(scale(dat$amnesty_report_count) ~ scale(dat$theta_mean) ),col=2)
+}
+unlist(cor_value)
+
 
 ## linear models
-fit <- lm(hits_mean ~ theta_mean + amnesty_report_count, data=test_dat)
-#summary(fit)
-coeftest(fit, vcov = vcovHC, type = "HC1", cluster=~ISO)
+lm_value <- list()
+unit_n <- c()
+for(i in 1:length(test_dat)){
+  fit <- lm(hits_mean ~ I(-1*scale(theta_mean)) + 
+              I(scale(sqrt(amnesty_report_count))) + 
+              GDP_growth_annual_percent + 
+              Foreign_direct_investment_net_inflows_percent_GDP + 
+              treaty_count +
+              v2smgovfilprc, 
+            #data=test_dat[[i]])
+            data=subset(test_dat[[i]], !is.na(CCODE)))
+            #data=test_dat[[i]][(test_dat[[i]]$year - min(test_dat[[i]]$year) + 1)==1,])
+  #summary(fit)
+  ## robust clustered standard errors
+  lm_value[[i]] <- coeftest(fit, vcov = vcovHC, type = "HC1", cluster=~CCODE)
+  unit_n[i] <- length(fit$fitted.values)
+}
+lm_value
+unit_n
+
+
+
+## panel linear models
+plm_value <- list()
+unit_n <- c()
+for(i in 1:length(test_dat)){
+  fit <- plm(hits_median ~ I(-1*theta_mean) + 
+               I(sqrt(amnesty_report_count)) + 
+               GDP_growth_annual_percent + 
+               Foreign_direct_investment_net_inflows_percent_GDP + 
+               treaty_count +
+               v2smgovfilprc, 
+             data=subset(test_dat[[i]], !is.na(CCODE)),
+             effect = c("individual"),
+             model = c("within"),
+             index = c("CCODE")
+  )
+  #summary(fit)
+  ## robust clustered standard errors
+  plm_value[[i]] <- coeftest(fit, vcov = vcovHC, type = "HC1")
+  unit_n[i] <- length(fit$residuals)
+}
+plm_value
+unit_n
+
+
+
+for(i in 1:length(test_dat)){
+  if(i>0 & i<=4) test_dat[[i]]$language <- "derechos_humanos"
+  if(i>4 & i<=8) test_dat[[i]]$language <- "direitos_humanos"
+  if(i>8 & i<=12) test_dat[[i]]$language <- "droit"
+  if(i>12 & i<=16) test_dat[[i]]$language <- "human_rights"
+  if(i>16 & i<=20) test_dat[[i]]$language <- "huquq_alansan"
+}
+
+test_dat_language_pooled <- list()
+test_dat_language_pooled[[1]] <- rbind(test_dat[[1]], test_dat[[5]], test_dat[[9]], test_dat[[13]], test_dat[[17]])
+test_dat_language_pooled[[2]] <- rbind(test_dat[[2]], test_dat[[6]], test_dat[[10]], test_dat[[14]], test_dat[[18]])
+test_dat_language_pooled[[3]] <- rbind(test_dat[[3]], test_dat[[7]], test_dat[[11]], test_dat[[15]], test_dat[[19]])
+test_dat_language_pooled[[4]] <- rbind(test_dat[[4]], test_dat[[8]], test_dat[[12]], test_dat[[16]], test_dat[[20]])
+
+
+## linear models
+lm_value <- list()
+unit_n <- c()
+for(i in 1:length(test_dat_language_pooled)){
+  fit <- lm(hits_median ~ I(-1*scale(theta_mean)) + 
+              I(scale(sqrt(amnesty_report_count))) + 
+              GDP_growth_annual_percent + 
+              Foreign_direct_investment_net_inflows_percent_GDP + 
+              treaty_count +
+              v2smgovfilprc, 
+            data=test_dat_language_pooled[[i]])
+  #summary(fit)
+  ## robust clustered standard errors
+  lm_value[[i]] <- coeftest(fit, vcov = vcovHC, type = "HC1", cluster=~CCODE)
+  unit_n[i] <- length(fit$fitted.values)
+}
+lm_value
+unit_n
+
+
+
+
+## panel linear models
+plm_value <- list()
+unit_n <- c()
+for(i in 1:length(test_dat_language_pooled)){
+  fit <- plm(hits_mean ~ I(-1*theta_mean) + 
+              I(sqrt(amnesty_report_count)) + 
+              GDP_growth_annual_percent + 
+              Foreign_direct_investment_net_inflows_percent_GDP + 
+              treaty_count +
+              v2smgovfilprc, 
+            data=subset(test_dat_language_pooled[[i]], !is.na(CCODE)),
+            effect = c("time"),
+            model = c("within"),
+            index= c("CCODE")
+            )
+  #summary(fit)
+  ## robust clustered standard errors
+  plm_value[[i]] <- coeftest(fit, vcov = vcovHC,  type = "HC1")
+  unit_n[i] <- length(fit$residuals)
+}
+plm_value
+unit_n
+
+
+
+
 
 fit <- lm(hits_median ~ theta_mean + amnesty_report_count, data=test_dat)
 #summary(fit)
