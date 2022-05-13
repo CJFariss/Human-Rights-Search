@@ -39,3 +39,6 @@ for(i in 1:length(dat_list)){
   dat_list_merged[[i]] <- temp
 }
 head(dat_list_merged[[1]])
+
+## saved combined list of datasets
+saveRDS(dat_list_merged, file="Data_output/combined_gsearch_dat_list_merged.RDS")

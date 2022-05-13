@@ -1,4 +1,4 @@
-## google_serach_data_cy_lists.R
+## google_search_data_cy_lists_lowsearch.R
 
 
 ## load necessary libraries 
@@ -22,7 +22,7 @@ gsearch_cy_search_lists_function <- function(language_term="human rights", langu
   #language_time <- "2014-01-01 2016-12-31"
   #language_type <- "English"
   
-  language_world <- gtrends(language_term, time=language_time, low_search_volume=TRUE)
+  language_world <- gtrends(language_term, time=language_time, low_search_volume=FALSE)
   language_world <- subset(language_world$interest_by_country, !is.na(hits))
   
   language_world$hits[language_world$hits=="<1"] <- .5
@@ -85,7 +85,7 @@ TERMS
 
 i <- 4
 j <- 1
-for(j in 4:length(TIME)){
+for(j in 1:length(TIME)){
   out_dat <- gsearch_cy_search_lists_function(language_term=TERMS[i], language_time=TIME[j])
   #out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]
   head(out_dat)
@@ -97,7 +97,7 @@ for(j in 4:length(TIME)){
   
   ## save data.frame for future analysis 
   #write.csv(out_dat, paste("Data_output_search/gsearch_cy_data_", gsub(" ", "_", TERMS[i]), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
-  saveRDS(out_dat, paste("Data_output_location_search_lists/gsearch_location_data_lists_", gsub(" ", "_", TERMS[i]), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
+  saveRDS(out_dat, paste("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_", gsub(" ", "_", TERMS[i]), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
   
 }
 
@@ -114,7 +114,7 @@ for(j in 1:length(TIME)){
   current_date
   
   ## save data.frame for future analysis 
-  saveRDS(out_dat, paste("Data_output_location_search_lists/gsearch_location_data_lists_", gsub(" ", "_", "huquq_alansan"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
+  saveRDS(out_dat, paste("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_", gsub(" ", "_", "huquq_alansan"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
   
 }
 
@@ -131,7 +131,7 @@ for(j in 1:length(TIME)){
   current_date
   
   ## save data.frame for future analysis 
-  saveRDS(out_dat, paste("Data_output_location_search_lists/gsearch_location_data_lists_", gsub(" ", "_", "Amnesty_International"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
+  saveRDS(out_dat, paste("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_", gsub(" ", "_", "Amnesty_International"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
   
 }
 
@@ -150,7 +150,7 @@ for(j in 1:length(TIME)){
   current_date
   
   ## save data.frame for future analysis 
-  saveRDS(out_dat, paste("Data_output_location_search_lists/gsearch_location_data_lists_", gsub(" ", "_", "human_rights_topic"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
+  saveRDS(out_dat, paste("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_", gsub(" ", "_", "human_rights_topic"), "_", gsub(" ", "_", TIME[j]), "_saved_", current_date, ".RDS", sep=""))
   
 }
 
