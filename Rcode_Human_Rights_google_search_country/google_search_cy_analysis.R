@@ -70,15 +70,24 @@ unit_n
 plm_value <- list()
 unit_n <- c()
 for(i in 1:length(test_dat)){
-  fit <- plm(hits_median ~ I(-1*theta_mean) + 
-               I(sqrt(amnesty_report_count)) + 
+  
+  temp <- subset(test_dat[[i]], !is.na(CCODE))
+  
+  temp$amnesty_report_count <- scale(temp$amnesty_report_count)  
+  temp$GDP_growth_annual_percent <- scale(temp$GDP_growth_annual_percent)
+  temp$Foreign_direct_investment_net_inflows_percent_GDP <- scale(temp$Foreign_direct_investment_net_inflows_percent_GDP) 
+  temp$treaty_count <- scale(temp$treaty_count)
+  temp$v2smgovfilprc <- scale(temp$v2smgovfilprc)
+  
+  fit <- plm(hits_mean ~ I(-1*theta_mean) + 
+               amnesty_report_count + 
                GDP_growth_annual_percent + 
                Foreign_direct_investment_net_inflows_percent_GDP + 
                treaty_count +
-               v2smgovfilprc, 
-             data=subset(test_dat[[i]], !is.na(CCODE)),
+               v2smgovfilprc,
+              data=temp,
              effect = c("individual"),
-             model = c("within"),
+             model = c("pooling"),
              index = c("CCODE")
   )
   #summary(fit)
@@ -110,8 +119,8 @@ test_dat_language_pooled[[4]] <- rbind(test_dat[[4]], test_dat[[8]], test_dat[[1
 lm_value <- list()
 unit_n <- c()
 for(i in 1:length(test_dat_language_pooled)){
-  fit <- lm(hits_median ~ I(-1*scale(theta_mean)) + 
-              I(scale(sqrt(amnesty_report_count))) + 
+  fit <- lm(hits_mean ~ I(-1*theta_mean) + 
+              amnesty_report_count + 
               GDP_growth_annual_percent + 
               Foreign_direct_investment_net_inflows_percent_GDP + 
               treaty_count +
@@ -132,15 +141,24 @@ unit_n
 plm_value <- list()
 unit_n <- c()
 for(i in 1:length(test_dat_language_pooled)){
-  fit <- plm(hits_mean ~ I(-1*theta_mean) + 
-              I(sqrt(amnesty_report_count)) + 
+  
+  temp <- subset(test_dat_language_pooled[[i]], !is.na(CCODE))
+  
+  temp$amnesty_report_count <- scale(temp$amnesty_report_count)  
+  temp$GDP_growth_annual_percent <- scale(temp$GDP_growth_annual_percent)
+  temp$Foreign_direct_investment_net_inflows_percent_GDP <- scale(temp$Foreign_direct_investment_net_inflows_percent_GDP) 
+  temp$treaty_count <- scale(temp$treaty_count)
+  temp$v2smgovfilprc <- scale(temp$v2smgovfilprc)
+  
+  fit <- plm(hits_max ~ I(-1*theta_mean) + 
+              amnesty_report_count + 
               GDP_growth_annual_percent + 
               Foreign_direct_investment_net_inflows_percent_GDP + 
               treaty_count +
               v2smgovfilprc, 
-            data=subset(test_dat_language_pooled[[i]], !is.na(CCODE)),
-            effect = c("time"),
-            model = c("within"),
+            data=temp,
+            effect = c("individual"),
+            model = c("pooling"),
             index= c("CCODE")
             )
   #summary(fit)
