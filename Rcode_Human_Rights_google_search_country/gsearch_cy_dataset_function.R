@@ -237,7 +237,7 @@ write.csv(cy_dat, paste("Data_output_search_cy_datasets/gsearch_cy_data_", gsub(
 
 ##########################################################################
 ## "Amnesty International"
-location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_Amnesty_International_2012-01-01_2016-12-31_saved_2022-05-12.RDS")
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_Amnesty_International_2012-01-01_2016-12-31_saved_2022-05-16.RDS")
 global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_Amnesty_International_2012-01-01_2016-12-31_saved_2022-05-11.RDS")
 out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
 cy_dat <- do.call("rbind", out_dat)

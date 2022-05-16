@@ -38,8 +38,8 @@ gsearch_cy_list_function <- function(cy_data_list, global_data_list){
   
   ## function arguments for internal function testing
   for(i in 1:length(cy_data_list)){
-    
-    temp <- cy_data_list[[i]]$interest_over_time
+
+    temp <- try(cy_data_list[[i]]$interest_over_time)
     
     
     temp$hits[temp$hits=="<1"] <- .5
@@ -52,6 +52,7 @@ gsearch_cy_list_function <- function(cy_data_list, global_data_list){
     temp$location <- language_world$location[i]
     
     temp_cy[[i]] <- temp
+  
   }
   
   #cy_dat <- do.call("rbind", temp_cy)
@@ -66,7 +67,7 @@ google_search_data_country_Rplot_function <- function(dat_list, file_name="temp.
   
   par(mfrow=c(4,3), mar=c(2,2.5,1,.5))
   for(i in 1:length(dat_list)){
-  #for(i in 1:12){
+  if(length(dat_list[[1]])>1){
     LOCATION <- dat_list[[i]]$location[i][1]
     LOCATION <- gsub("Côte d’Ivoire", "Cote d'Ivoire", LOCATION)
     plot(dat_list[[i]]$hits, main=LOCATION, lwd=1, col=grey(.75), ylim=c(0, 100), xaxt="n", yaxt="n", type="n")
@@ -95,6 +96,7 @@ google_search_data_country_Rplot_function <- function(dat_list, file_name="temp.
     #axis(side=1, at=c(median(id2015), median(id2017), median(id2019)), labels=c(2015, 2017, 2019), las=1)
     model <- bcp(y= dat_list[[i]]$hits)
     lines(model$posterior.mean, lwd=.75, col="#08519c")
+  }
   }
   dev.off()
   
@@ -129,7 +131,7 @@ google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rpl
 location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_human_rights_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
 global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_human_rights_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
 out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
-google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "human rights"), "_country_week_time_series_lowsearch", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "human rights"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
 
 
 ##########################################################################
@@ -208,3 +210,61 @@ location_data <- readRDS("Data_output_location_search_lists/gsearch_location_dat
 global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_droit_2015-01-01_2019-12-31_saved_2022-05-11.RDS")
 out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
 google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "droit"), "_country_week_time_series_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+
+
+##########################################################################
+## "huquq alansan"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_huquq_alansan_2012-01-01_2016-12-31_saved_2022-05-11.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_huquq_alansan_2012-01-01_2016-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq alansan"), "_country_week_time_series_", gsub(" ", "_", "2012-01-01 2016-12-31"), ".pdf", sep=""))
+
+## "huquq alansan"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_huquq_alansan_2013-01-01_2017-12-31_saved_2022-05-11.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_huquq_alansan_2013-01-01_2017-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq alansan"), "_country_week_time_series_", gsub(" ", "_", "2013-01-01 2017-12-31"), ".pdf", sep=""))
+
+## "huquq alansan"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_huquq_alansan_2014-01-01_2018-12-31_saved_2022-05-11.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_huquq_alansan_2014-01-01_2018-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq alansan"), "_country_week_time_series_", gsub(" ", "_", "2014-01-01 2018-12-31"), ".pdf", sep=""))
+
+## "huquq alansan"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_huquq_alansan_2015-01-01_2019-12-31_saved_2022-05-11.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_huquq_alansan_2015-01-01_2019-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq alansan"), "_country_week_time_series_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+
+
+##########################################################################
+## "Amnesty International"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_Amnesty_International_2012-01-01_2016-12-31_saved_2022-05-16.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_Amnesty_International_2012-01-01_2016-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "Amnesty International"), "_country_week_time_series_", gsub(" ", "_", "2012-01-01 2016-12-31"), ".pdf", sep=""))
+
+## "Amnesty International"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_Amnesty_International_2013-01-01_2017-12-31_saved_2022-05-16.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_Amnesty_International_2013-01-01_2017-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "Amnesty International"), "_country_week_time_series_", gsub(" ", "_", "2013-01-01 2017-12-31"), ".pdf", sep=""))
+
+## "Amnesty International"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_Amnesty_International_2014-01-01_2018-12-31_saved_2022-05-16.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_Amnesty_International_2014-01-01_2018-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "Amnesty International"), "_country_week_time_series_", gsub(" ", "_", "2014-01-01 2018-12-31"), ".pdf", sep=""))
+
+## "Amnesty International"
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_Amnesty_International_2015-01-01_2019-12-31_saved_2022-05-16.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_Amnesty_International_2015-01-01_2019-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "Amnesty International"), "_country_week_time_series_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+
+## "Amnesty International" lowsearch=FALSE
+location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_Amnesty_International_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
+global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_Amnesty_International_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
+out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "Amnesty International"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
