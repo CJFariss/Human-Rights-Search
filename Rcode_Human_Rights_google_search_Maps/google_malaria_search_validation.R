@@ -15,24 +15,13 @@
 ##
 ##########################################################################
 
-## Do this (set to TRUE) to load libraries using the version from when the scripts were originally run
-if(FALSE){
-  ## load an older version of the libraries
-  remotes::install_github('CredibilityLab/groundhog')
-  library(groundhog)
-  pkgs <- c("gtrendsR", "countrycode", "bcp", "ggplot2")
-  groundhog.library(pkgs,'2022-04-19')
-} else{
-  ## or load the more recent version of the libraries
-  install.packages("gtrendsR", "countrycode", "bcp", "ggplot2")
-  library(gtrendsR)
-  library(countrycode)
-  library(bcp)
-  library(ggplot2)
-}
+## load necessary libraries 
+## change groundhog to TRUE to install original versions of libraries from April-2022
+source("groundhog_library_func.R")
+groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
 
-
+## malaria terms (note that malaria is the same in English and Spanish so here we only included English/Spanish, Portuguese, and French) 
 TERMS <- c("malaria", "malária", "paludisme")
 
 
@@ -58,7 +47,7 @@ TIME <- "2017-01-01 2017-12-31"
 
 ## ------------------------------------------------------------ ##
 ## English (or Spanish) "malaria"
-english.world <- gtrends(TERMS[1], time=TIME)
+english.world <- gtrends(TERMS[1], time=TIME, low_search_volume=TRUE)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
@@ -85,7 +74,7 @@ expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colo
 
 ## ------------------------------------------------------------ ##
 ## Portuguese
-portugese.world <- gtrends(TERMS[2], time=TIME)
+portugese.world <- gtrends(TERMS[2], time=TIME, low_search_volume=TRUE)
 portugese.world <- subset(portugese.world$interest_by_country)
 portugese.world$hits[portugese.world$hits=="<1"] <- .5
 portugese.world$hits <- as.numeric(portugese.world$hits)
@@ -112,7 +101,7 @@ expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colo
 
 ## ------------------------------------------------------------ ##
 ## French "paludisme"
-french.world <- gtrends(TERMS[3], time=TIME)
+french.world <- gtrends(TERMS[3], time=TIME, low_search_volume=TRUE)
 french.world <- subset(french.world$interest_by_country)
 french.world$hits[french.world$hits=="<1"] <- .5
 french.world$hits <- as.numeric(french.world$hits)

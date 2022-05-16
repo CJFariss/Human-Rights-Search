@@ -15,21 +15,10 @@
 ##
 ##########################################################################
 
-## Do this (set to TRUE) to load libraries using the version from when the scripts were originally run
-if(FALSE){
-  ## load an older version of the libraries
-  remotes::install_github('CredibilityLab/groundhog')
-  library(groundhog)
-  pkgs <- c("gtrendsR", "countrycode", "bcp", "ggplot2")
-  groundhog.library(pkgs,'2022-04-19')
-} else{
-  ## or load the more recent version of the libraries
-  install.packages("gtrendsR", "countrycode", "bcp", "ggplot2")
-  library(gtrendsR)
-  library(countrycode)
-  library(bcp)
-  library(ggplot2)
-}
+## load necessary libraries 
+## change groundhog to TRUE to install original versions of libraries from April-2022
+source("groundhog_library_func.R")
+groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
 
 pdf("Rplots/Maps_French_validation.pdf", height=3, width=6)
@@ -62,7 +51,7 @@ TERMS <- c("droits humains", "droits de lhomme", "libertés", "droits")
 
 ## ------------------------------------------------------------ ##
 ## French "human rights"
-french.world <- gtrends(TERMS[1], time=TIME)
+french.world <- gtrends(TERMS[1], time=TIME, low_search_volume=TRUE)
 french.world <- subset(french.world$interest_by_country)
 french.world$hits[french.world$hits=="<1"] <- .5
 french.world$hits <- as.numeric(french.world$hits)
@@ -87,7 +76,7 @@ expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colo
 
 ## ------------------------------------------------------------ ##
 ## French alternative to "human rights"
-french.world <- gtrends(TERMS[2],  time=TIME)
+french.world <- gtrends(TERMS[2],  time=TIME, low_search_volume=TRUE)
 french.world <- subset(french.world$interest_by_country)
 french.world$hits[french.world$hits=="<1"] <- .5
 french.world$hits <- as.numeric(french.world$hits)
@@ -112,7 +101,7 @@ ggplot(data, aes(map_id = region)) +
 
 ## ------------------------------------------------------------ ##
 ## French "liberties"
-french.world <- gtrends(TERMS[3],  time=TIME)
+french.world <- gtrends(TERMS[3],  time=TIME, low_search_volume=TRUE)
 french.world <- subset(french.world$interest_by_country)
 french.world$hits[french.world$hits=="<1"] <- .5
 french.world$hits <- as.numeric(french.world$hits)
@@ -137,7 +126,7 @@ ggplot(data, aes(map_id = region)) +
 
 ## ------------------------------------------------------------ ##
 ## French "rights"
-french.world <- gtrends(TERMS[4],  time=TIME)
+french.world <- gtrends(TERMS[4],  time=TIME, low_search_volume=TRUE)
 french.world <- subset(french.world$interest_by_country)
 french.world$hits[french.world$hits=="<1"] <- .5
 french.world$hits <- as.numeric(french.world$hits)
@@ -168,7 +157,7 @@ TERMS <- c("droits humains", "droits de lhomme", "libertés", "droits")
 
 ## ------------------------------------------------------------ ##
 ## French "droits humains" 
-french.world <- gtrends(TERMS[1], time=TIME)
+french.world <- gtrends(TERMS[1], time=TIME, low_search_volume=TRUE)
 french.world <- subset(french.world$interest_by_country)
 french.world$hits[french.world$hits=="<1"] <- .5
 french.world$hits <- as.numeric(french.world$hits)
@@ -178,7 +167,7 @@ dim(data)
 
 ## ------------------------------------------------------------ ##
 ## French "droits de lhomme"
-french.world <- gtrends(TERMS[2], time=TIME)
+french.world <- gtrends(TERMS[2], time=TIME, low_search_volume=TRUE)
 french.world <- subset(french.world$interest_by_country)
 french.world$hits[french.world$hits=="<1"] <- .5
 french.world$hits <- as.numeric(french.world$hits)
@@ -188,7 +177,7 @@ dim(data2)
 
 ## ------------------------------------------------------------ ##
 ## French "libertés"
-french.world <- gtrends(TERMS[3], time=TIME)
+french.world <- gtrends(TERMS[3], time=TIME, low_search_volume=TRUE)
 french.world <- subset(french.world$interest_by_country)
 french.world$hits[french.world$hits=="<1"] <- .5
 french.world$hits <- as.numeric(french.world$hits)
@@ -198,7 +187,7 @@ dim(data3)
 
 ## ------------------------------------------------------------ ##
 ## French "droits""
-french.world <- gtrends(TERMS[4], time=TIME)
+french.world <- gtrends(TERMS[4], time=TIME, low_search_volume=TRUE)
 french.world <- subset(french.world$interest_by_country)
 french.world$hits[french.world$hits=="<1"] <- .5
 french.world$hits <- as.numeric(french.world$hits)

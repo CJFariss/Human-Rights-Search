@@ -1,10 +1,27 @@
+## google_search_cy_analysis.R
+##########################################################################
+##
+## Authors: Geoff Dancy and Christopher J. Fariss
+##
+## Title: "The Search for Human Rights: A Global Analysis Using Google Data"
+##
+## Contact Information: 
+##  Geoff Dancy <gdancy@tulane.edu>
+##  Christopher J. Fariss <cjf0006@gmail.com>
+##  
+##  Copyright (c) 2022, under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License.
+## For more information see: http://creativecommons.org/licenses/by-nc-sa/3.0/us/
+##  All rights reserved. 
+##
+##########################################################################
+
 ## load necessary libraries 
 ## change groundhog to TRUE to install original versions of libraries from April-2022
 source("groundhog_library_func.R")
 groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
 test_dat <- readRDS("Data_output/combined_gsearch_dat_list_merged.RDS")
-test_dat <- readRDS("Data_output/combined_gsearch_dat_list_merged_lowsearch.RDS")
+#test_dat <- readRDS("Data_output/combined_gsearch_dat_list_merged_lowsearch.RDS")
 length(test_dat)
 
 #test_dat$hits_mean[is.na(test_dat$hits_mean)] <- 0
@@ -150,12 +167,11 @@ for(i in 1:length(test_dat_language_pooled)){
   temp$treaty_count <- scale(temp$treaty_count)
   temp$v2smgovfilprc <- scale(temp$v2smgovfilprc)
   
-  fit <- plm(hits_max ~ I(-1*theta_mean) + 
+  fit <- plm(hits_max ~ I(-1*theta_mean) * treaty_count + 
               amnesty_report_count + 
               GDP_growth_annual_percent + 
               Foreign_direct_investment_net_inflows_percent_GDP + 
-              treaty_count +
-              v2smgovfilprc, 
+               v2smgovfilprc, 
             data=temp,
             effect = c("individual"),
             model = c("pooling"),

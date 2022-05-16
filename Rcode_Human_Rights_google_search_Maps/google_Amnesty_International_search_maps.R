@@ -15,21 +15,11 @@
 ##
 ##########################################################################
 
-## Do this (set to TRUE) to load libraries using the version from when the scripts were originally run
-if(FALSE){
-  ## load an older version of the libraries
-  remotes::install_github('CredibilityLab/groundhog')
-  library(groundhog)
-  pkgs <- c("gtrendsR", "countrycode", "bcp", "ggplot2")
-  groundhog.library(pkgs,'2022-04-19')
-} else{
-  ## or load the more recent version of the libraries
-  install.packages("gtrendsR", "countrycode", "bcp", "ggplot2")
-  library(gtrendsR)
-  library(countrycode)
-  library(bcp)
-  library(ggplot2)
-}
+## load necessary libraries 
+## change groundhog to TRUE to install original versions of libraries from April-2022
+source("groundhog_library_func.R")
+groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
+
 
 pdf("Rplots/Maps_Amnesty_International_search.pdf", height=3, width=6)
 
@@ -56,7 +46,7 @@ TIME <- "2015-01-01 2019-12-31"
 
 ## ------------------------------------------------------------ ##
 ## google Topic "amnesty international" (this is langauge agnostic)
-english.world <- gtrends("%2Fm%2F012l0", time=TIME)
+english.world <- gtrends("%2Fm%2F012l0", time=TIME, low_search_volume=TRUE)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
@@ -81,7 +71,7 @@ ggplot(data, aes(map_id = region)) +
 
 ## ------------------------------------------------------------ ##
 ## google English language "amnesty international" (this is langauge agnostic)
-english.world <- gtrends("Amnesty International", time=TIME)
+english.world <- gtrends("Amnesty International", time=TIME, low_search_volume=TRUE)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
@@ -109,7 +99,7 @@ dev.off()
 
 ## ------------------------------------------------------------ ##
 ## English "human rights"
-english.world <- gtrends("human rights", time=TIME)
+english.world <- gtrends("human rights", time=TIME, low_search_volume=TRUE)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
@@ -119,7 +109,7 @@ dim(data)
 
 ## ------------------------------------------------------------ ##
 ## English "Amnesty International"
-english.world <- gtrends("Amnesty International", time=TIME)
+english.world <- gtrends("Amnesty International", time=TIME, low_search_volume=TRUE)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
@@ -158,7 +148,7 @@ write.csv(test, paste("Data_output/Maps_Anesty_International_language_validation
 
 ## ------------------------------------------------------------ ##
 ## Topic "human rights"
-english.world <- gtrends("%2Fm%2F03ll3", time=TIME)
+english.world <- gtrends("%2Fm%2F03ll3", time=TIME, low_search_volume=TRUE)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
@@ -168,7 +158,7 @@ dim(data)
 
 ## ------------------------------------------------------------ ##
 ## Topic "Amnesty International"
-english.world <- gtrends("%2Fm%2F012l0", time=TIME)
+english.world <- gtrends("%2Fm%2F012l0", time=TIME, low_search_volume=TRUE)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)

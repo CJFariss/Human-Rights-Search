@@ -1,8 +1,43 @@
 ## HR_treaty.R
 ##########################################################################
-
+##
+## Authors: Geoff Dancy and Christopher J. Fariss
+##
+## Title: "The Search for Human Rights: A Global Analysis Using Google Data"
+##
+## Contact Information: 
+##  Geoff Dancy <gdancy@tulane.edu>
+##  Christopher J. Fariss <cjf0006@gmail.com>
+##  
+##  Copyright (c) 2022, under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License.
+## For more information see: http://creativecommons.org/licenses/by-nc-sa/3.0/us/
+##  All rights reserved. 
+##
+##########################################################################
+##
 ## document search for treaty updates: tbinternet.ohchr.org
+##
+## https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/Treaty.aspx?Treaty=CAT&Lang=en
+## https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/Treaty.aspx?Treaty=CAT-OP&Lang=en
+## https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/Treaty.aspx?Treaty=CCPR&Lang=en
+## https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/Treaty.aspx?Treaty=CCPR-OP1&Lang=en
+## https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/Treaty.aspx?Treaty=CCPR-OP1-DP&Lang=en
+## https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/Treaty.aspx?Treaty=CED&Lang=en
+## https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/Treaty.aspx?Treaty=CEDAW&Lang=en
+## https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/Treaty.aspx?Treaty=CEDAW-OP&Lang=en
+## https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/Treaty.aspx?Treaty=CESCR&Lang=en
+## https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/Treaty.aspx?Treaty=CESCR-OP&Lang=en
+## https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/Treaty.aspx?Treaty=CMW&Lang=en
+## https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/Treaty.aspx?Treaty=CRC&Lang=en
+## https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/Treaty.aspx?Treaty=CRC-OP-AC&Lang=en
+## https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/Treaty.aspx?Treaty=CRC-OP-IC&Lang=en
+## https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/Treaty.aspx?Treaty=CRC-OP-SC&Lang=en
+## https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/Treaty.aspx?Treaty=CRPD&Lang=en
+## https://tbinternet.ohchr.org/_layouts/15/TreatyBodyExternal/Treaty.aspx?Treaty=CRPD-OP&Lang=en
+##
+##########################################################################
 
+## load data 
 dat <- read.csv("Data_input/hr_commitments.csv")
 dat$country <- as.character(dat$country)
 dim(dat)
@@ -13,17 +48,17 @@ names(dat)
 dat_2018 <- subset(dat, year==2017)
 dat_2018$year <- 2018
 
-## cat
+## cat (CAT)
 dat_2018$cat[dat_2018$country_case=="Bahamas"] <- 1
 
-## cat_op
+## cat (CAT-OP)
 dat_2018$cat_op[dat_2018$country_case=="Afghanistan"] <- 1
 
-## iccpr
+## iccpr (CCPR)
 dat_2018$iccpr[dat_2018$country_case=="Marshall Islands"] <- 1
 dat_2018$iccpr[dat_2018$country_case=="Qatar"] <- 1
 
-## disap
+## disap (CED)
 dat_2018$disap[dat_2018$country_case=="Gambia"] <- 1
 
 ##########################################################################
@@ -31,19 +66,19 @@ dat_2018$disap[dat_2018$country_case=="Gambia"] <- 1
 dat_2019 <- dat_2018
 dat_2019$year <- 2019
 
-## cat
+## cat (CAT)
 dat_2019$cat[dat_2019$country_case=="Angola"] <- 1
 dat_2019$cat[dat_2019$country_case=="Kiribati"] <- 1
 dat_2019$cat[dat_2019$country_case=="Samoa"] <- 1
 
-## cat_op
+## cat_op (CAT-OP)
 dat_2019$cat_op[dat_2019$country_case=="Iceland"] <- 1
 dat_2019$cat_op[dat_2019$country_case=="South Africa"] <- 1
 
-## iccpr
+## iccpr (CCPR)
 dat_2019$iccpr[dat_2019$country_case=="Antigua & Barbuda"] <- 1
 
-## disap
+## disap (CED)
 dat_2019$disap[dat_2019$country_case=="Dominica"] <- 1
 dat_2019$disap[dat_2019$country_case=="Fiji"] <- 1
 dat_2019$disap[dat_2019$country_case=="Norway"] <- 1
@@ -54,11 +89,11 @@ dat_2019$disap[dat_2019$country_case=="Norway"] <- 1
 dat_2020 <- dat_2019
 dat_2020$year <- 2020
 
-## cat
+## cat (CAT)
 dat_2020$cat[dat_2020$country_case=="Oman"] <- 1
 dat_2020$cat[dat_2020$country_case=="Saint Kitts & Nevis"] <- 1
 
-## disap
+## disap (CED)
 dat_2020$disap[dat_2020$country_case=="Oman"] <- 1
 
 ## disab_op (CED Article 31) 
@@ -69,14 +104,14 @@ dat_2020$disab_op[dat_2020$country_case=="Mexico"] <- 1
 dat_2021 <- dat_2020
 dat_2021$year <- 2021
 
-## cat
+## cat (CAT)
 dat_2021$cat[dat_2021$country_case=="Sudan"] <- 1
 dat_2021$cat[dat_2021$country_case=="Suriname"] <- 1
 
-## cat_op
+## cat (CAT-OP)
 dat_2021$cat_op[dat_2021$country_case=="Latvia"] <- 1
 
-## disap
+## disap (CED)
 dat_2021$disap[dat_2021$country_case=="Slovenia"] <- 1
 dat_2021$disap[dat_2021$country_case=="Sudan"] <- 1
 
@@ -88,11 +123,10 @@ dat_2021$disab_op[dat_2021$country_case=="Slovenia"]
 dat_2022 <- dat_2021
 dat_2022$year <- 2022
 
-## cat_op
+## cat (CAT-OP)
 dat_2022$cat_op[dat_2022$country_case=="Morocco"] <- 1
 
-
-## disap
+## disap (CED)
 dat_2022$disap[dat_2022$country_case=="Croatia"] <- 1
 dat_2022$disap[dat_2022$country_case=="Denmark"] <- 1
 
@@ -100,10 +134,16 @@ dat_2022$disap[dat_2022$country_case=="Denmark"] <- 1
 dat_2022$disab_op[dat_2022$country_case=="Denmark"] <- 1
 
 
+
+##########################################################################
+## combine new datasets years with the original dataset
 dat <- rbind(dat, dat_2018, dat_2019, dat_2020, dat_2021, dat_2022)
+
+## inspect data
 dim(dat)
 head(dat)
 
+## create count variable
 dat$treaty_count <- NA
 dim(dat[,c(-1,-2,-3)])
 
@@ -111,5 +151,6 @@ dat$treaty_count <- apply(dat[,c(-1,-2,-3)], 1, sum, na.rm=TRUE)
 summary(dat$treaty_count)
 table(dat$treaty_count)
 
+## save output as csv file
 write.csv(dat, "Data_output/hr_commitments_updated_2022.csv", row.names=FALSE)
 
