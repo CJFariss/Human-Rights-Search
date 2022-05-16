@@ -119,7 +119,7 @@ for(j in 1:length(TIME)){
 }
 
 # "Amnesty International"
-for(j in 1:length(TIME)){
+for(j in 2:length(TIME)){
   #for(j in c(1,4)){
   out_dat <- gsearch_cy_search_lists_function(language_term="Amnesty International", language_time=TIME[j])
   #out_dat <- out_dat[order(out_dat$ISO, out_dat$year),]
