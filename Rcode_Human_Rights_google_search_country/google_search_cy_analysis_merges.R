@@ -10,7 +10,7 @@ files_names
 dat_list <- list()
 for(i in 1:length(files_names)){
   dat_list[[i]] <- read.csv(paste("Data_output_search_cy_datasets/",files_names[i], sep=""))
-  #dat_list[[i]] <- read.csv(paste("Data_output_search_cy_datasets_lowsearch",files_names[i], sep=""))
+  #dat_list[[i]] <- read.csv(paste("Data_output_search_cy_datasets_lowsearch/",files_names[i], sep=""))
 }
 length(dat_list)
 

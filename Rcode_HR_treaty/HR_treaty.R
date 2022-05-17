@@ -61,6 +61,21 @@ dat_2018$iccpr[dat_2018$country_case=="Qatar"] <- 1
 ## disap (CED)
 dat_2018$disap[dat_2018$country_case=="Gambia"] <- 1
 
+## icescr (CESCR)
+dat_2018$icescr[dat_2018$country_case=="Fiji"] <- 1
+dat_2018$icescr[dat_2018$country_case=="Qatar"] <- 1
+
+## icescr_op (CESCR-OP)
+# none changed
+
+## migrant (CRM)
+dat_2018$migrant[dat_2018$country_case=="Gambia"] <- 1
+dat_2018$migrant[dat_2018$country_case=="Guinea-Bissau"] <- 1
+
+## crc_op1 (CRC-OP-AC)
+dat_2018$crc_op1[dat_2018$country_case=="South Sudan"] <- 1
+
+
 ##########################################################################
 ## 2019 updates
 dat_2019 <- dat_2018
@@ -83,6 +98,19 @@ dat_2019$disap[dat_2019$country_case=="Dominica"] <- 1
 dat_2019$disap[dat_2019$country_case=="Fiji"] <- 1
 dat_2019$disap[dat_2019$country_case=="Norway"] <- 1
 
+## cedaw (CEDAW)
+dat_2019$cedaw_op[dat_2019$country_case=="Malta"] <- 1
+dat_2019$cedaw_op[dat_2019$country_case=="Marshall Islands"] <- 1
+
+## icescr (CESCR)
+dat_2019$icescr[dat_2019$country_case=="Antigua & Barbuda"] <- 1
+
+## migrant (CRM)
+dat_2019$icescr[dat_2019$country_case=="Fiji"] <- 1
+
+## crc_op1 (CRC-OP-AC)
+dat_2019$crc_op1[dat_2019$country_case=="Gambia"] <- 1
+
 
 ##########################################################################
 ## 2020 updates
@@ -98,6 +126,10 @@ dat_2020$disap[dat_2020$country_case=="Oman"] <- 1
 
 ## disab_op (CED Article 31) 
 dat_2020$disab_op[dat_2020$country_case=="Mexico"] <- 1
+
+## migrant (CRM)
+dat_2020$migrant[dat_2020$country_case=="Togo"] <- 1
+
 
 ##########################################################################
 ## 2021 updates
@@ -116,7 +148,10 @@ dat_2021$disap[dat_2021$country_case=="Slovenia"] <- 1
 dat_2021$disap[dat_2021$country_case=="Sudan"] <- 1
 
 ## disab_op (CED Article 31)
-dat_2021$disab_op[dat_2021$country_case=="Slovenia"] 
+dat_2021$disab_op[dat_2021$country_case=="Slovenia"] <- 1 
+
+
+
 
 ##########################################################################
 ## 2022 updates
@@ -133,6 +168,8 @@ dat_2022$disap[dat_2022$country_case=="Denmark"] <- 1
 ## disab_op (CED Article 31)
 dat_2022$disab_op[dat_2022$country_case=="Denmark"] <- 1
 
+## cedaw (CEDAW)
+dat_2022$cedaw_op[dat_2022$country_case=="Morocco"] <- 1
 
 
 ##########################################################################

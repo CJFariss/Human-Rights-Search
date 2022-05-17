@@ -36,7 +36,7 @@ for(i in 1:length(test_dat)){
   dat <- test_dat[[i]]
   cor_value[[i]] <- c(cor(dat$hits_mean, dat$theta_mean, use="pairwise"), cor(dat$hits_median, dat$theta_mean, use="pairwise"), cor(dat$hits_max, dat$theta_mean, use="pairwise"))
 }
-cor_value
+do.call("rbind", cor_value)
 summary(do.call("rbind", cor_value))
 
 ## correlations
@@ -45,7 +45,7 @@ for(i in 1:length(test_dat)){
   dat <- test_dat[[i]]
   cor_value[[i]] <- c(cor(dat$hits_mean, dat$amnesty_report_count, use="pairwise"), cor(dat$hits_median, dat$amnesty_report_count, use="pairwise"), cor(dat$hits_max, dat$amnesty_report_count, use="pairwise"))
 }
-cor_value
+do.call("rbind", cor_value)
 summary(do.call("rbind", cor_value))
 
 ## correlations
@@ -82,41 +82,7 @@ lm_value
 unit_n
 
 
-
-## panel linear models
-plm_value <- list()
-unit_n <- c()
-for(i in 1:length(test_dat)){
-  
-  temp <- subset(test_dat[[i]], !is.na(CCODE))
-  
-  temp$amnesty_report_count <- scale(temp$amnesty_report_count)  
-  temp$GDP_growth_annual_percent <- scale(temp$GDP_growth_annual_percent)
-  temp$Foreign_direct_investment_net_inflows_percent_GDP <- scale(temp$Foreign_direct_investment_net_inflows_percent_GDP) 
-  temp$treaty_count <- scale(temp$treaty_count)
-  temp$v2smgovfilprc <- scale(temp$v2smgovfilprc)
-  
-  fit <- plm(hits_mean ~ I(-1*theta_mean) + 
-               amnesty_report_count + 
-               GDP_growth_annual_percent + 
-               Foreign_direct_investment_net_inflows_percent_GDP + 
-               treaty_count +
-               v2smgovfilprc,
-              data=temp,
-             effect = c("individual"),
-             model = c("pooling"),
-             index = c("CCODE")
-  )
-  #summary(fit)
-  ## robust clustered standard errors
-  plm_value[[i]] <- coeftest(fit, vcov = vcovHC, type = "HC1")
-  unit_n[i] <- length(fit$residuals)
-}
-plm_value
-unit_n
-
-
-
+## pool the datasets by language group
 for(i in 1:length(test_dat)){
   if(i>0 & i<=4) test_dat[[i]]$language <- "derechos_humanos"
   if(i>4 & i<=8) test_dat[[i]]$language <- "direitos_humanos"
@@ -133,10 +99,26 @@ test_dat_language_pooled[[4]] <- rbind(test_dat[[4]], test_dat[[8]], test_dat[[1
 
 
 ## linear models
-lm_value <- list()
+fit_mean_robust <- fit_median_robust <- fit_max_robust <- list()
 unit_n <- c()
 for(i in 1:length(test_dat_language_pooled)){
-  fit <- lm(hits_mean ~ I(-1*theta_mean) + 
+  fit_mean <- lm(hits_mean ~ I(-1*theta_mean) + 
+              amnesty_report_count + 
+              GDP_growth_annual_percent + 
+              Foreign_direct_investment_net_inflows_percent_GDP + 
+              treaty_count +
+              v2smgovfilprc, 
+            data=test_dat_language_pooled[[i]])
+
+  fit_median <- lm(hits_median ~ I(-1*theta_mean) + 
+              amnesty_report_count + 
+              GDP_growth_annual_percent + 
+              Foreign_direct_investment_net_inflows_percent_GDP + 
+              treaty_count +
+              v2smgovfilprc, 
+            data=test_dat_language_pooled[[i]])
+
+  fit_max <- lm(hits_max ~ I(-1*theta_mean) + 
               amnesty_report_count + 
               GDP_growth_annual_percent + 
               Foreign_direct_investment_net_inflows_percent_GDP + 
@@ -145,61 +127,154 @@ for(i in 1:length(test_dat_language_pooled)){
             data=test_dat_language_pooled[[i]])
   #summary(fit)
   ## robust clustered standard errors
-  lm_value[[i]] <- coeftest(fit, vcov = vcovHC, type = "HC1", cluster=~CCODE)
-  unit_n[i] <- length(fit$fitted.values)
+  fit_mean_robust[[i]] <- coeftest(fit_mean, vcov = vcovHC, type = "HC1", cluster=~CCODE)
+  fit_median_robust[[i]] <- coeftest(fit_median, vcov = vcovHC, type = "HC1", cluster=~CCODE)
+  fit_max_robust[[i]] <- coeftest(fit_max, vcov = vcovHC, type = "HC1", cluster=~CCODE)
+  
+  
+  unit_n[i] <- length(fit_mean$fitted.values)
 }
-lm_value
+
 unit_n
 
-
-
+fit_mean_robust[[4]]
+fit_median_robust[[4]]
+fit_max_robust[[4]]
 
 ## panel linear models
-plm_value <- list()
 unit_n <- c()
+fit_mean_robust <- fit_median_robust <- fit_max_robust <- list()
 for(i in 1:length(test_dat_language_pooled)){
   
   temp <- subset(test_dat_language_pooled[[i]], !is.na(CCODE))
-  
+ 
+  ## scale variable 
   temp$amnesty_report_count <- scale(temp$amnesty_report_count)  
   temp$GDP_growth_annual_percent <- scale(temp$GDP_growth_annual_percent)
   temp$Foreign_direct_investment_net_inflows_percent_GDP <- scale(temp$Foreign_direct_investment_net_inflows_percent_GDP) 
   temp$treaty_count <- scale(temp$treaty_count)
   temp$v2smgovfilprc <- scale(temp$v2smgovfilprc)
   
-  fit <- plm(hits_max ~ I(-1*theta_mean) * treaty_count + 
+  fit_mean <- plm(hits_mean ~ I(-1*theta_mean) + 
+              treaty_count + 
               amnesty_report_count + 
               GDP_growth_annual_percent + 
               Foreign_direct_investment_net_inflows_percent_GDP + 
                v2smgovfilprc, 
             data=temp,
             effect = c("individual"),
-            model = c("pooling"),
-            index= c("CCODE")
+            model = c("within"),
+            index= c("language")
             )
   #summary(fit)
   ## robust clustered standard errors
-  plm_value[[i]] <- coeftest(fit, vcov = vcovHC,  type = "HC1")
-  unit_n[i] <- length(fit$residuals)
+  fit_mean_robust[[i]] <- coeftest(fit_mean, vcov = vcovHC,  type = "HC1")
+  
+  fit_median <- plm(hits_median ~ I(-1*theta_mean) + 
+                    treaty_count + 
+                    amnesty_report_count + 
+                    GDP_growth_annual_percent + 
+                    Foreign_direct_investment_net_inflows_percent_GDP + 
+                    v2smgovfilprc, 
+                  data=temp,
+                  effect = c("individual"),
+                  model = c("within"),
+                  index= c("language")
+  )
+  #summary(fit)
+  ## robust clustered standard errors
+  fit_median_robust[[i]] <- coeftest(fit_median, vcov = vcovHC,  type = "HC1")
+  
+  fit_max <- plm(hits_max ~ I(-1*theta_mean) + 
+                    treaty_count + 
+                    amnesty_report_count + 
+                    GDP_growth_annual_percent + 
+                    Foreign_direct_investment_net_inflows_percent_GDP + 
+                    v2smgovfilprc, 
+                  data=temp,
+                  effect = c("individual"),
+                  model = c("within"),
+                  index= c("language")
+  )
+  #summary(fit)
+  ## robust clustered standard errors
+  fit_max_robust[[i]] <- coeftest(fit_max, vcov = vcovHC,  type = "HC1")
+  
+  unit_n[i] <- length(fit_mean$residuals)
 }
-plm_value
 unit_n
 
+fit_mean_robust[[4]]
+fit_median_robust[[4]]
+fit_max_robust[[4]]
 
 
 
+## panel linear models
+unit_n <- c()
+fit_mean_robust <- fit_median_robust <- fit_max_robust <- list()
+for(i in 1:length(test_dat_language_pooled)){
+  
+  temp <- subset(test_dat_language_pooled[[i]], !is.na(CCODE))
+  
+  ## scale variable 
+  #temp$amnesty_report_count <- scale(temp$amnesty_report_count)  
+  #temp$GDP_growth_annual_percent <- scale(temp$GDP_growth_annual_percent)
+  #temp$Foreign_direct_investment_net_inflows_percent_GDP <- scale(temp$Foreign_direct_investment_net_inflows_percent_GDP) 
+  #temp$treaty_count <- scale(temp$treaty_count)
+  #temp$v2smgovfilprc <- scale(temp$v2smgovfilprc)
+  
+  fit_mean <- plm(hits_mean ~ I(-1*theta_mean) + 
+                    treaty_count + 
+                    amnesty_report_count + 
+                    GDP_growth_annual_percent + 
+                    Foreign_direct_investment_net_inflows_percent_GDP + 
+                    v2smgovfilprc, 
+                  data=temp,
+                  effect = c("individual"),
+                  model = c("within"),
+                  index= c("language")
+  )
 
-fit <- lm(hits_median ~ theta_mean + amnesty_report_count, data=test_dat)
-#summary(fit)
-coeftest(fit, vcov = vcovHC, type = "HC1", cluster=~ISO)
+  fit_median <- plm(hits_median ~ I(-1*theta_mean) + 
+                      treaty_count + 
+                      amnesty_report_count + 
+                      GDP_growth_annual_percent + 
+                      Foreign_direct_investment_net_inflows_percent_GDP + 
+                      v2smgovfilprc, 
+                    data=temp,
+                    effect = c("individual"),
+                    model = c("within"),
+                    index= c("language")
+  )
+  
+  fit_max <- plm(hits_max ~ I(-1*theta_mean) + 
+                   treaty_count + 
+                   amnesty_report_count + 
+                   GDP_growth_annual_percent + 
+                   Foreign_direct_investment_net_inflows_percent_GDP + 
+                   v2smgovfilprc, 
+                 data=temp,
+                 effect = c("individual"),
+                 model = c("within"),
+                 index= c("language")
+  )
+  #summary(fit)
+  ## robust clustered standard errors
+  fit_mean_robust[[i]] <- coeftest(fit_mean, vcov = vcovHC,  type = "HC1")
+  fit_median_robust[[i]] <- coeftest(fit_median, vcov = vcovHC,  type = "HC1")
+  fit_max_robust[[i]] <- coeftest(fit_max, vcov = vcovHC,  type = "HC1")
+  
+  unit_n[i] <- length(fit_mean$residuals)
+}
+unit_n
 
-fit <- lm(hits_max ~ theta_mean + amnesty_report_count, data=test_dat)
-#summary(fit)
-coeftest(fit, vcov = vcovHC, type = "HC1", cluster=~ISO)
+fit_mean_robust[[4]]
+fit_median_robust[[4]]
+fit_max_robust[[4]]
 
 
-N <- nrow(fit$model)
-N
+
 
 ## define milm function
 milm <- function(fml, midata){
