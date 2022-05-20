@@ -79,9 +79,21 @@ points(dat$year, dat$year_cor_draw_mean, pch=21, bg=grey(.9), col=grey(.25))
 dev.off()
 
 ## check out the cross-tabs 
-ctabs <- xtabs(data$amnesty_report_count ~ data$YEAR + data$country_name) 
+ctabs <- xtabs(amnesty_report_count ~ YEAR + country_name, data=data) 
 ctabs
 ctabs[,'Uganda']
 ctabs[,'Guatemala']
 ctabs[,'Argentina']
 ctabs[,'United Kingdom']
+
+## 
+
+ctabs <- xtabs(amnesty_report_count ~ YEAR + country_name, data=subset(data, YEAR>=2012)) 
+ctabs
+ctabs[,'Uganda']
+ctabs[,'Guatemala']
+ctabs[,'Argentina']
+ctabs[,'United Kingdom']
+
+
+out_2019 <- sort(ctabs['2019',])
