@@ -22,7 +22,7 @@ i <- 1
 test_list <- list()
 test_list[[1]] <- try(readLines(paste("https://www.amnesty.org/en/search/page/",i,"/", sep="")))
 
-for(i in 5601:6260){
+for(i in 5827:6260){
   pause_value <- rgamma(1,.5)+runif(1)+1
   Sys.sleep(pause_value)
   test_list[[i]] <- try(readLines(paste("https://www.amnesty.org/en/search/page/",i,"/", sep="")))
