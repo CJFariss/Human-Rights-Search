@@ -85,6 +85,9 @@ ctabs[,'Uganda']
 ctabs[,'Guatemala']
 ctabs[,'Argentina']
 ctabs[,'United Kingdom']
+ctabs[,'Congo - Brazzaville']
+ctabs[,'Congo - Kinshasa']
+ctabs[,'Myanmar (Burma)']
 
 ## 
 
@@ -97,7 +100,12 @@ ctabs[,'United Kingdom']
 
 
 out_2019 <- sort(ctabs['2019',])
+out_2018 <- sort(ctabs['2018',])
 
-par(mar=c(3,12,1,.25))
-barplot(out_2019, horiz=T, las=2, xaxt="n")
+pdf("Rplots/Amnesty_report_2019_rankorder.pdf", height=12, width=8)
+
+par(mar=c(2,10,1,.25))
+barplot(out_2019, horiz=T, las=2, xaxt="n", cex.names=.75, main="Amnesty International Reports Rank Order in 2019", space=0)
 axis(side=1, at=c(0,25,50,75,100,125,150,175,200,225))
+
+dev.off()

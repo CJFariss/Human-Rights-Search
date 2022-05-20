@@ -41,7 +41,7 @@ data$amnesty_report_count <- NA
 
 ## add new variable for country name associated with Amnesty report count
 data$country_name_amnesty <- data$country_name
-data$country_name_amnesty[data$country_name=="Myanmar (Burma) "] <- "Myanmar"
+data$country_name_amnesty[data$country_name=="Myanmar (Burma)"] <- "Myanmar"
 
 #data$amnesty_report_count[data$country_name=="Myanmar (Burma) " & data$YEAR==2019] <- NA
 

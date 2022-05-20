@@ -6,11 +6,15 @@ source("groundhog_library_func.R")
 groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
 
-dat <- WDI(indicator=c(GDP_growth_annual_percent="NY.GDP.MKTP.KD.ZG", Foreign_direct_investment_net_inflows_percent_GDP="BX.KLT.DINV.WD.GD.ZS"), country="all", start=2012, end=2019)
+dat <- WDI(indicator=c(GDP_growth_annual_percent="NY.GDP.MKTP.KD.ZG",    Foreign_direct_investment_net_inflows_percent_GDP="BX.KLT.DINV.WD.GD.ZS"
+            ),
+  country="all", start=2012, end=2019)
 
 dim(dat)
 names(dat)
 head(dat)
+
+cor(dat[,4:8], use="pairwise")
 
 ## set today's date for saving files below
 current_date <- as.Date(Sys.time())
