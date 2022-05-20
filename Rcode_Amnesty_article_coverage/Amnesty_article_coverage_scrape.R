@@ -79,4 +79,21 @@ out <- lapply(5995:nrow(data), function(i){
 count
 #summary(data)
 
+count <- 0
+COUNTRY <- "Myanmar"
+out <- lapply(1:length(1961:2019), function(i){
+  
+  YEAR <- (1961:2019)[i]
+  #COUNTRY <- data$country_name_amnesty[i]
+  
+  test <- temp <- temp2 <- c()
+  if(is.na(data$amnesty_report_count[i]) & data$YEAR[i]>=1961 & data$YEAR[i]>=1961){
+    test <- try(readLines(paste("https://www.amnesty.org/en/search/",COUNTRY,"/?year=",YEAR,"&language=en", sep="")))
+    if(length(test)>0){
+      try(writeLines(text=test, con=paste("Rcode_Amnesty_article_coverage/Amnesty_webpage_source_files/Amnesty_source_", COUNTRY,"_",YEAR,".txt",sep="")))
+      count <- count + 1
+    }
+  }
+})
+
 

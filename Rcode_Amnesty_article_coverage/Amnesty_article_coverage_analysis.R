@@ -97,3 +97,7 @@ ctabs[,'United Kingdom']
 
 
 out_2019 <- sort(ctabs['2019',])
+
+par(mar=c(3,12,1,.25))
+barplot(out_2019, horiz=T, las=2, xaxt="n")
+axis(side=1, at=c(0,25,50,75,100,125,150,175,200,225))
