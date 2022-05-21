@@ -13,7 +13,7 @@ new_list <- list()
 id <- 0
 
 for(i in 1:length(test_list)){
-#for(i in 1:5){
+#for(i in 1:5){ ## for testing
   starts <- grep("<article class=", test_list[[i]])
   stops <- grep("</article>", test_list[[i]])
 
@@ -24,3 +24,10 @@ for(i in 1:length(test_list)){
   } 
   
 }
+id
+new_list[[id]]
+
+
+gsub(pattern="<article class=\"post post--result\" aria-label=\"", "", new_list[[5001]])
+gsub(pattern="\t<a class=\"floating-anchor\" href=\"", "", new_list[[5001]])
+gsub(pattern="\" aria-hidden=\"true\"></a>", "", new_list[[5001]])
