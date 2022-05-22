@@ -177,3 +177,14 @@ dev.off()
 
 cor(data$amnesty_report_count, data$amnesty_attention_count, use="pairwise")
 cor(data$amnesty_report_count, data$amnesty_attention_count, use="pairwise", method="spearman")
+
+
+
+report_count <- data.frame(xtabs(amnesty_attention_count ~ COW, data=subset(data, YEAR>=2015)))
+report_count[order(report_count$Freq, decreasing=TRUE),]
+
+report_count$COUNTRY <- countrycode(report_count$COW, origin="cown", destination="country.name")
+
+report_count[order(report_count$Freq, decreasing=TRUE),]
+
+

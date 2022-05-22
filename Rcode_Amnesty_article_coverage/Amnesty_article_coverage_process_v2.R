@@ -154,3 +154,5 @@ out_dat$ISCO2C <- ISCO2C
 
 write.csv(out_dat, file="Rcode_Amnesty_article_coverage/Amnesty_webpage_source_files_v2/amnesty_article_meta_data_procssed.csv")
 
+
+## bug to figure out: Article: Côte D'ivoire

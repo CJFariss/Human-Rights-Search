@@ -55,7 +55,7 @@ COLORS <- c("#ffffcc", "#c2e699", "#78c679", "#31a354", "#006837", "black")
 #COLORS <- c("#f7f7f7", "#cccccc", "#969696", "#636363", "#252525", "black")
 
 
-pdf("Rplots/Maps_Amnesty_attention.pdf", height=3, width=6)
+pdf("Rplots/Maps_Amnesty_attention_2015_2019.pdf", height=3, width=6)
 
 
 ## ------------------------------------------------------------ ##
@@ -74,10 +74,29 @@ COLORS <- c("#feebe2", "#fbb4b9", "#f768a1", "#c51b8a", "#7a0177", "black")
 map.world <- map_data("world")
 ggplot(data, aes(map_id = region)) +
 geom_map(aes(fill = Value), map = map.world) +
-ggtitle(paste("Amnesty International Country Attention (Article Count)", sep="")) +
+ggtitle(paste("Amnesty International Country Attention: Article Count", sep="")) +
 xlab("Latitude") + ylab("Longitude") +
 coord_map("rectangular", lat0=0, xlim=c(-180,180), ylim=c(-60, 90)) +
 expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colours=COLORS, na.value=grey(.875), guide = "colourbar")
+
+
+## transform count variable 
+#data$Value <- log10(data$Value + 1)
+data$Value <- sqrt(data$Value)
+data$region[data$region=="Cote d'Ivoire"] <- "Ivory Coast"
+data$region[data$region=="Congo - Kinshasa"] <- "Democratic Republic of the Congo"
+data$region[data$region=="Congo - Brazzaville"] <- "Republic of Congo"
+data$region[data$region=="United Kingdom"] <- "UK"
+data$region[data$region=="United States"] <- "USA"
+COLORS <- c("#feebe2", "#fbb4b9", "#f768a1", "#c51b8a", "#7a0177", "black")
+
+map.world <- map_data("world")
+ggplot(data, aes(map_id = region)) +
+  geom_map(aes(fill = Value), map = map.world) +
+  ggtitle(paste("Amnesty International Country Attention: sqrt(Article Count)", sep="")) +
+  xlab("Latitude") + ylab("Longitude") +
+  coord_map("rectangular", lat0=0, xlim=c(-180,180), ylim=c(-60, 90)) +
+  expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colours=COLORS, na.value=grey(.875), guide = "colourbar")
 
 
 ## transform count variable 
@@ -93,7 +112,7 @@ COLORS <- c("#feebe2", "#fbb4b9", "#f768a1", "#c51b8a", "#7a0177", "black")
 map.world <- map_data("world")
 ggplot(data, aes(map_id = region)) +
   geom_map(aes(fill = Value), map = map.world) +
-  ggtitle(paste("Amnesty International Country Attention (Log-10 Scale)", sep="")) +
+  ggtitle(paste("Amnesty International Country Attention: log10(Article Count)", sep="")) +
   xlab("Latitude") + ylab("Longitude") +
   coord_map("rectangular", lat0=0, xlim=c(-180,180), ylim=c(-60, 90)) +
   expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colours=COLORS, na.value=grey(.875), guide = "colourbar")
