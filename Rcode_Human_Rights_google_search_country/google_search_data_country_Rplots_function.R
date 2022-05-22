@@ -1,3 +1,31 @@
+## google_search_data_country_Rplot_function.R
+##########################################################################
+##
+## Authors: Geoff Dancy and Christopher J. Fariss
+##
+## Title: "The Search for Human Rights: A Global Analysis Using Google Data"
+##
+## Contact Information: 
+##  Geoff Dancy <gdancy@tulane.edu>
+##  Christopher J. Fariss <cjf0006@gmail.com>
+##  
+##  Copyright (c) 2022, under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License.
+## For more information see: http://creativecommons.org/licenses/by-nc-sa/3.0/us/
+##  All rights reserved. 
+##
+##########################################################################
+
+## human rights search as a topic
+#https://trends.google.com/trends/explore?q=%2Fm%2F03ll3&geo=US
+
+## human rights search as a search term
+#https://trends.google.com/trends/explore?geo=US&q=Human%20rights
+
+## load necessary libraries 
+## change groundhog to TRUE to install original versions of libraries from April-2022
+source("groundhog_library_func.R")
+groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
+
 
 #files_names <- list.files("Data_output_location_search_lists")
 #files_names <- list.files("Data_output_location_search_lists_lowsearch")
