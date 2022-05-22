@@ -128,5 +128,29 @@ names(out_dat)
 out_dat$article_publication_date <- gsub(",", "", out_dat$article_publication_date)
 
 for(i in 1:nrow(out_dat)){
-  out_dat$YEAR <- strsplit(out_dat$article_publication_date, split=" ")
+  temp <- unlist(strsplit(out_dat$article_publication_date[i], split=" "))
+  out_dat$YEAR[i] <- temp[3]
 }
+
+table(out_dat$YEAR)
+
+table(out_dat$topic)
+
+table(out_dat$YEAR, out_dat$topic)
+
+table(out_dat$YEAR[out_dat$topic=="Disappearances"])
+table(out_dat$YEAR[out_dat$topic=="Torture and other ill-treatment"])
+table(out_dat$YEAR[out_dat$topic=="Detention"])
+table(out_dat$YEAR[out_dat$topic=="Detention"])
+
+ISCO2C <- countrycode(out_dat$location, origin="country.name", destination="iso2c")
+CCODE <- countrycode(out_dat$location, origin="country.name", destination="cown")
+
+table(CCODE)
+
+out_dat$CCODE <- CCODE
+out_dat$ISCO2C <- ISCO2C
+
+
+write.csv(out_dat, file="Rcode_Amnesty_article_coverage/Amnesty_webpage_source_files_v2/amnesty_article_meta_data_procssed.csv")
+

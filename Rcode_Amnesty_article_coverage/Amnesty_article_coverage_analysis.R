@@ -20,6 +20,12 @@
 
 data <- try(read.csv("Data_input/HumanRightsProtectionScores_v4.01_amnesty_report_count_v2.csv"))
 
+amnesty_cy <- data.frame(table(amnesty_attention$CCODE, amnesty_attention$YEAR))
+names(amnesty_cy) <- c("CCODE", "YEAR", "amnesty_attention_count")
+head(amnesty_cy)
+
+data <- merge(data, amnesty_cy, by.x=c("COW", "YEAR"), by.y=c("CCODE", "YEAR"), all.x=TRUE, all.y=FALSE)
+
 ## inspect the object
 head(data)
 summary(data)
@@ -109,3 +115,65 @@ barplot(out_2019, horiz=T, las=2, xaxt="n", cex.names=.75, main="Amnesty Interna
 axis(side=1, at=c(0,25,50,75,100,125,150,175,200,225))
 
 dev.off()
+
+
+
+
+
+
+# create an empty list
+newdata <- list()
+
+# take K draws from the posterior distribution and make K new datasets in the list object just created
+for(j in 1:1000){
+  newdata[[j]] <- data
+  newdata[[j]]$draw <- rnorm(cbind(rep(1,nrow(data))), mean=data$theta_mean, sd=data$theta_sd)
+}
+
+## a vector and a list object to hold some stuff
+year_cor <- c()
+year_cor_draws <- list()
+
+YEAR <- 1961:2019
+
+## this code is slow but it works fine <shrugs>; make an lapply() version later
+for(i in 1:length(YEAR)){
+  temp <- c()
+  year_cor[i] <- cor(data$theta_mean[data$YEAR==YEAR[i]], data$amnesty_attention_count[data$YEAR==YEAR[i]], use="pairwise", method="spearman")
+  for(j in 1:1000){
+    temp[j] <- cor(newdata[[j]]$draw[newdata[[j]]$YEAR==YEAR[i]], newdata[[j]]$amnesty_attention_count[newdata[[j]]$YEAR==YEAR[i]], use="pairwise", method="spearman")
+  }
+  year_cor_draws[[i]] <- temp
+}
+
+year_cor
+
+## unlist and lapply some stats
+year_cor_draw_mean <- unlist(lapply(year_cor_draws, mean, na.rm=T))
+year_cor_draw_ub <- unlist(lapply(year_cor_draws, quantile, .975, na.rm=T))
+year_cor_draw_lb <- unlist(lapply(year_cor_draws, quantile, .025, na.rm=T))
+
+## organize all the correlation estimates in a data.frame
+dat <- data.frame(year=1961:2019, year_cor, year_cor_draw_mean, year_cor_draw_ub, year_cor_draw_lb)
+dat
+
+## create graph file
+pdf("Rplots/HRPS_Amnesty_attention_Yearly_Correlations.pdf", height=8, width=8)
+
+## make a sweet plots
+par(mar=c(4,4,4,1))
+plot(dat$year, dat$year_cor_draw_mean, type="n", ylim=c(-1,1), main="Yearly Correlation between Human Rights Protection\nScores and Number of Amnesty International Reports", ylab="Spearman Correlation", xlab="Year")
+abline(h=0.5, col=grey(.25), lty=2)
+abline(h=0, col=grey(.25), lty=2)
+abline(h=-0.5, col=grey(.25), lty=2)
+for(i in 1:nrow(dat)){
+  lines(c(dat$year[i], dat$year[i]), c(dat$year_cor_draw_lb[i], dat$year_cor_draw_ub[i]), col=grey(.25))
+}
+points(dat$year, dat$year_cor_draw_mean, pch=21, bg=grey(.9), col=grey(.25))
+
+dev.off()
+
+
+
+cor(data$amnesty_report_count, data$amnesty_attention_count, use="pairwise")
+cor(data$amnesty_report_count, data$amnesty_attention_count, use="pairwise", method="spearman")
