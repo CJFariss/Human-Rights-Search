@@ -115,4 +115,18 @@ out_dat <- do.call("rbind", out_list)
 
 dim(out_dat)
 
-write.csv(out_dat, file="Amnesty_webpage_source_files_v2/amnesty_article_meta_data.csv")
+
+
+write.csv(out_dat, file="Rcode_Amnesty_article_coverage/Amnesty_webpage_source_files_v2/amnesty_article_meta_data.csv")
+
+
+out_dat <- read.csv("Rcode_Amnesty_article_coverage/Amnesty_webpage_source_files_v2/amnesty_article_meta_data.csv")
+out_dat[3,]
+names(out_dat) <- c("id", "article_title", "article_url", "location_url", "location", "topic_url", "topic", "article_url_2", "article_title_2", "post_excerpt", "article_publication_date", "post_updated_date", "end_article_code")
+names(out_dat)
+
+out_dat$article_publication_date <- gsub(",", "", out_dat$article_publication_date)
+
+for(i in 1:nrow(out_dat)){
+  out_dat$YEAR <- strsplit(out_dat$article_publication_date, split=" ")
+}
