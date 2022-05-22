@@ -14,7 +14,6 @@ dim(dat)
 names(dat)
 head(dat)
 
-cor(dat[,4:8], use="pairwise")
 
 ## set today's date for saving files below
 current_date <- as.Date(Sys.time())
