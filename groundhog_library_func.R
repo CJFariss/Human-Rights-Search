@@ -5,11 +5,11 @@ groundhog_library_func <- function(groundhog=FALSE, regular_install=FALSE){
       ## load an older version of the libraries
       remotes::install_github('CredibilityLab/groundhog')
       library(groundhog)
-      pkgs <- c("gtrendsR", "countrycode", "stm", "tm", "MASS", "bcp", "ngramr", "rvest", "plm", "lmtest", "WDI")
-      groundhog.library(pkgs,'2022-04-19')
+      pkgs <- c("gtrendsR", "countrycode", "stm", "tm", "MASS", "bcp", "ngramr", "rvest", "plm", "lmtest", "WDI", "boot", "forecast", "acled.api", "ggplot2", "stargazer")
+      groundhog.library(pkgs,'2022-05-23')
   } else if(regular_install==TRUE){
       ## or install and load the more recent version of the libraries
-      install.packages("gtrendsR", "countrycode", "stm", "tm", "MASS", "bcp", "ngramr", "rvest", "plm", "lmtest", "WDI")
+      install.packages("gtrendsR", "countrycode", "stm", "tm", "MASS", "bcp", "ngramr", "rvest", "plm", "lmtest", "WDI", "boot", "forecast", "acled.api", "ggplot2", "stargazer")
       library(gtrendsR)
       library(countrycode)
       library(stm)
@@ -20,7 +20,12 @@ groundhog_library_func <- function(groundhog=FALSE, regular_install=FALSE){
       library(rvest)
       library(plm)
       library(lmtest)
-    library(WDI)
+      library(WDI)
+      library(boot)
+      library(forecast)
+      library(acled.api)
+      library(ggplot2)
+      library(stargazer)
   } else{
       ## or just load the more recent version of the libraries
       library(gtrendsR)
@@ -33,6 +38,24 @@ groundhog_library_func <- function(groundhog=FALSE, regular_install=FALSE){
       library(rvest)
       library(plm)
       library(lmtest)
-       library(WDI)
+      library(WDI)
+      library(boot)
+      library(forecast)
+      library(acled.api)
+      library(ggplot2)
+      library(stargazer)
+
+
   }
 }
+
+library(boot)
+library(countrycode)
+library(stm)
+library(tm)
+library(MASS)
+library(bcp)
+library(forecast)
+library(acled.api)
+library(gtrendsR)
+library(stargazer)
