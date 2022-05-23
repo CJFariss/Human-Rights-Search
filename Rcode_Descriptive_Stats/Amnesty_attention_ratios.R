@@ -42,3 +42,8 @@ cor(report_count_2$Freq.x, report_count_2$amnesty_attention_rate, method="spearm
 
 
 report_count_2[order(report_count_2$amnesty_attention_rate, decreasing=TRUE),]
+
+
+report_count_2$rank_rate[order(report_count_2$amnesty_attention_rate, decreasing=TRUE)] <- 1:nrow(report_count_2)
+
+report_count_2$rank_count[order(report_count_2$Freq.x, decreasing=TRUE)] <- 1:nrow(report_count_2)

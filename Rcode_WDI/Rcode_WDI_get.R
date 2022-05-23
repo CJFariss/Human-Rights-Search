@@ -27,6 +27,7 @@ dat <- WDI(indicator=c(GDP_growth_annual_percent="NY.GDP.MKTP.KD.ZG",
             ),
   country="all", start=2012, end=2019)
 
+## inspect 
 dim(dat)
 names(dat)
 head(dat)
