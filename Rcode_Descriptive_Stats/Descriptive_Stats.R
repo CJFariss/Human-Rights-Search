@@ -31,3 +31,23 @@ test_dat_language_pooled[[4]] <- rbind(test_dat[[4]], test_dat[[8]], test_dat[[1
 
 sapply(test_dat_language_pooled, nrow)
 
+
+mean(test_dat_language_pooled[[4]]$hits_mean)
+mean(test_dat_language_pooled[[4]]$hits_median)
+mean(test_dat_language_pooled[[4]]$hits_max)
+
+sd(test_dat_language_pooled[[4]]$hits_mean)
+sd(test_dat_language_pooled[[4]]$hits_median)
+sd(test_dat_language_pooled[[4]]$hits_max)
+
+min(test_dat_language_pooled[[4]]$hits_mean)
+min(test_dat_language_pooled[[4]]$hits_median)
+min(test_dat_language_pooled[[4]]$hits_max)
+
+max(test_dat_language_pooled[[4]]$hits_mean)
+max(test_dat_language_pooled[[4]]$hits_median)
+max(test_dat_language_pooled[[4]]$hits_max)
+
+
+
+
