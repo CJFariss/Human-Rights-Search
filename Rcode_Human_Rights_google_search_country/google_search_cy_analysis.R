@@ -228,6 +228,10 @@ fit_mean_robust[[4]]
 fit_median_robust[[4]]
 fit_max_robust[[4]]
 
+## coef ratios
+fit_mean_robust[[4]][5,1] / fit_mean_robust[[4]][2,1]
+fit_median_robust[[4]][5,1] / fit_median_robust[[4]][2,1]
+
 ## 
 for(j in 1:4){
   
@@ -236,15 +240,15 @@ for(j in 1:4){
     #tab_output <- stargazer(fit_mean_robust[[j]], fit_median_robust[[j]], fit_max_robust[[j]], covariate.labels = c("FDI inflows", "Amnesty Report Rate", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)"))
   
   tab_output
-  if(j==1) write(tab_output, file="Tex_tables/main_results_lowsearch_2012_2016.tex")
-  if(j==2) write(tab_output, file="Tex_tables/main_results_lowsearch_2013_2017.tex")
-  if(j==3) write(tab_output, file="Tex_tables/main_results_lowsearch_2014_2018.tex")
-  if(j==4) write(tab_output, file="Tex_tables/main_results_lowsearch_2015_2019.tex")
+  #if(j==1) write(tab_output, file="Tex_tables/main_results_lowsearch_2012_2016.tex")
+  #if(j==2) write(tab_output, file="Tex_tables/main_results_lowsearch_2013_2017.tex")
+  #if(j==3) write(tab_output, file="Tex_tables/main_results_lowsearch_2014_2018.tex")
+  #if(j==4) write(tab_output, file="Tex_tables/main_results_lowsearch_2015_2019.tex")
 
-  #if(j==1) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2012_2016.tex")
-  #if(j==2) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2013_2017.tex")
-  #if(j==3) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2014_2018.tex")
-  #if(j==4) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2015_2019.tex")
+  if(j==1) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2012_2016.tex")
+  if(j==2) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2013_2017.tex")
+  if(j==3) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2014_2018.tex")
+  if(j==4) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2015_2019.tex")
 }
 
 
@@ -254,26 +258,38 @@ for(j in 1:4){
   coef_median <- fit_median_robust[[j]][6:1,1]
   coef_max <- fit_max_robust[[j]][6:1,1]
   
-  coef_mean_1ub <- fit_mean_robust[[j]][6:1,1] + 1*fit_mean_robust[[j]][6:1,2]
-  coef_median_1ub <- fit_median_robust[[j]][6:1,1] + 1*fit_mean_robust[[j]][6:1,2]
-  coef_max_1ub <- fit_max_robust[[j]][6:1,1] + 1*fit_mean_robust[[j]][6:1,2]
-  coef_mean_1lb <- fit_mean_robust[[j]][6:1,1] - 1*fit_mean_robust[[j]][6:1,2]
-  coef_median_1lb <- fit_median_robust[[j]][6:1,1] - 1*fit_mean_robust[[j]][6:1,2]
-  coef_max_1lb <- fit_max_robust[[j]][6:1,1] - 1*fit_mean_robust[[j]][6:1,2]
+  ##
+  VALUE <- 1
+  VALUE <- qt(.95, unit_n[j])
   
-  coef_mean_2ub <- fit_mean_robust[[j]][6:1,1] + 2*fit_mean_robust[[j]][6:1,2]
-  coef_median_2ub <- fit_median_robust[[j]][6:1,1] + 2*fit_mean_robust[[j]][6:1,2]
-  coef_max_2ub <- fit_max_robust[[j]][6:1,1] + 2*fit_mean_robust[[j]][6:1,2]
-  coef_mean_2lb <- fit_mean_robust[[j]][6:1,1] - 2*fit_mean_robust[[j]][6:1,2]
-  coef_median_2lb <- fit_median_robust[[j]][6:1,1] - 2*fit_mean_robust[[j]][6:1,2]
-  coef_max_2lb <- fit_max_robust[[j]][6:1,1] - 2*fit_mean_robust[[j]][6:1,2]
+  coef_mean_1ub <- fit_mean_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_median_1ub <- fit_median_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_max_1ub <- fit_max_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_mean_1lb <- fit_mean_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_median_1lb <- fit_median_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_max_1lb <- fit_max_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
   
-  coef_mean_3ub <- fit_mean_robust[[j]][6:1,1] + 3*fit_mean_robust[[j]][6:1,2]
-  coef_median_3ub <- fit_median_robust[[j]][6:1,1] + 3*fit_mean_robust[[j]][6:1,2]
-  coef_max_3ub <- fit_max_robust[[j]][6:1,1] + 3*fit_mean_robust[[j]][6:1,2]
-  coef_mean_3lb <- fit_mean_robust[[j]][6:1,1] - 3*fit_mean_robust[[j]][6:1,2]
-  coef_median_3lb <- fit_median_robust[[j]][6:1,1] - 3*fit_mean_robust[[j]][6:1,2]
-  coef_max_3lb <- fit_max_robust[[j]][6:1,1] - 3*fit_mean_robust[[j]][6:1,2]
+  ##
+  VALUE <- 2
+  VALUE <- qt(.975, unit_n[j])
+  
+  coef_mean_2ub <- fit_mean_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_median_2ub <- fit_median_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_max_2ub <- fit_max_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_mean_2lb <- fit_mean_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_median_2lb <- fit_median_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_max_2lb <- fit_max_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
+  
+  ##
+  VALUE <- 3
+  VALUE <- qt(.995, unit_n[j])
+  
+  coef_mean_3ub <- fit_mean_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_median_3ub <- fit_median_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_max_3ub <- fit_max_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_mean_3lb <- fit_mean_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_median_3lb <- fit_median_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_max_3lb <- fit_max_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
   
   cbind(coef_mean, coef_median, coef_max)
   
@@ -301,13 +317,13 @@ for(j in 1:4){
   for(i in 1:6){
     lines(c(coef_mean_1ub[i], coef_mean_1lb[i]), c(i+.25,i+.25), lwd=2)
     lines(c(coef_mean_2ub[i], coef_mean_2lb[i]), c(i+.25,i+.25), lwd=1.25)
-    lines(c(coef_mean_3ub[i], coef_mean_3lb[i]), c(i+.25,i+.25), lwd=.5)
+    #lines(c(coef_mean_3ub[i], coef_mean_3lb[i]), c(i+.25,i+.25), lwd=.5)
     lines(c(coef_median_1ub[i], coef_median_1lb[i]), c(i,i), lwd=2)
     lines(c(coef_median_2ub[i], coef_median_2lb[i]), c(i,i), lwd=1.25)
-    lines(c(coef_median_3ub[i], coef_median_3lb[i]), c(i,i), lwd=.5)
+    #lines(c(coef_median_3ub[i], coef_median_3lb[i]), c(i,i), lwd=.5)
     lines(c(coef_max_1ub[i], coef_max_1lb[i]), c(i-.25,i-.25), lwd=2)
     lines(c(coef_max_2ub[i], coef_max_2lb[i]), c(i-.25,i-.25), lwd=1.5)
-    lines(c(coef_max_3ub[i], coef_max_3lb[i]), c(i-.25,i-.25), lwd=.5)
+    #lines(c(coef_max_3ub[i], coef_max_3lb[i]), c(i-.25,i-.25), lwd=.5)
   }
   
   points(coef_mean, 1.25:6.25, col=1, bg=grey(.25), pch=21)
