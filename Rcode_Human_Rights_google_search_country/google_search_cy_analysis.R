@@ -177,8 +177,8 @@ for(i in 1:length(test_dat_language_pooled)){
 
   fit_mean <- lm(hits_mean ~ -1
                  + Foreign_direct_investment_net_inflows_percent_GDP  
-                 + amnesty_attention_count  
-                 #+ amnesty_attention_rate 
+                 #+ amnesty_attention_count  
+                 + amnesty_attention_rate 
                  + treaty_count 
                  + GDP_growth_annual_percent  
                  + theta_mean + 
@@ -188,8 +188,8 @@ for(i in 1:length(test_dat_language_pooled)){
 
   fit_median <- lm(hits_median ~ -1 + 
                     + Foreign_direct_investment_net_inflows_percent_GDP  
-                   + amnesty_attention_count  
-                   #+ amnesty_attention_rate 
+                   #+ amnesty_attention_count  
+                   + amnesty_attention_rate 
                    + treaty_count 
                    + GDP_growth_annual_percent  
                    + theta_mean + 
@@ -199,8 +199,8 @@ for(i in 1:length(test_dat_language_pooled)){
 
   fit_max <- lm(hits_max ~ -1 
                 + Foreign_direct_investment_net_inflows_percent_GDP  
-                + amnesty_attention_count  
-                #+ amnesty_attention_rate 
+                #+ amnesty_attention_count  
+                + amnesty_attention_rate 
                 + treaty_count 
                 + GDP_growth_annual_percent  
                 + theta_mean + 
@@ -268,18 +268,25 @@ for(j in 1:4){
   coef_median_2lb <- fit_median_robust[[j]][6:1,1] - 2*fit_mean_robust[[j]][6:1,2]
   coef_max_2lb <- fit_max_robust[[j]][6:1,1] - 2*fit_mean_robust[[j]][6:1,2]
   
+  coef_mean_3ub <- fit_mean_robust[[j]][6:1,1] + 3*fit_mean_robust[[j]][6:1,2]
+  coef_median_3ub <- fit_median_robust[[j]][6:1,1] + 3*fit_mean_robust[[j]][6:1,2]
+  coef_max_3ub <- fit_max_robust[[j]][6:1,1] + 3*fit_mean_robust[[j]][6:1,2]
+  coef_mean_3lb <- fit_mean_robust[[j]][6:1,1] - 3*fit_mean_robust[[j]][6:1,2]
+  coef_median_3lb <- fit_median_robust[[j]][6:1,1] - 3*fit_mean_robust[[j]][6:1,2]
+  coef_max_3lb <- fit_max_robust[[j]][6:1,1] - 3*fit_mean_robust[[j]][6:1,2]
+  
   cbind(coef_mean, coef_median, coef_max)
   
   ## coefficient plots
   ## create graph file
   #if(j==1) pdf("Rplots/coefs_lowsearch_2012_2016_Rplot.pdf", height=6, width=8)
-  #if(j==2) pdf("Rplots/coefs_lowsearch_2013_2019_Rplot.pdf", height=6, width=8)
-  #if(j==3) pdf("Rplots/coefs_lowsearch_2014_2019_Rplot.pdf", height=6, width=8)
+  #if(j==2) pdf("Rplots/coefs_lowsearch_2013_2017_Rplot.pdf", height=6, width=8)
+  #if(j==3) pdf("Rplots/coefs_lowsearch_2014_2018_Rplot.pdf", height=6, width=8)
   #if(j==4) pdf("Rplots/coefs_lowsearch_2015_2019_Rplot.pdf", height=6, width=8)
   
   if(j==1) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2012_2016_Rplot.pdf", height=6, width=8)
-  if(j==2) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2013_2019_Rplot.pdf", height=6, width=8)
-  if(j==3) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2014_2019_Rplot.pdf", height=6, width=8)
+  if(j==2) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2013_2017_Rplot.pdf", height=6, width=8)
+  if(j==3) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2014_2018_Rplot.pdf", height=6, width=8)
   if(j==4) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2015_2019_Rplot.pdf", height=6, width=8)
   
   par(mar=c(4,10,2,1))
@@ -292,19 +299,22 @@ for(j in 1:4){
   abline(h=5.5, col=grey(.85), lty=1, lwd=.5)
   
   for(i in 1:6){
-    lines(c(coef_mean_1ub[i], coef_mean_1lb[i]), c(i+.25,i+.25), lwd=1.5)
-    lines(c(coef_mean_2ub[i], coef_mean_2lb[i]), c(i+.25,i+.25), lwd=.75)
-    lines(c(coef_median_1ub[i], coef_median_1lb[i]), c(i,i), lwd=1.5)
-    lines(c(coef_median_2ub[i], coef_median_2lb[i]), c(i,i), lwd=.75)
-    lines(c(coef_max_1ub[i], coef_max_1lb[i]), c(i-.25,i-.25), lwd=1.5)
-    lines(c(coef_max_2ub[i], coef_max_2lb[i]), c(i-.25,i-.25), lwd=.75)
+    lines(c(coef_mean_1ub[i], coef_mean_1lb[i]), c(i+.25,i+.25), lwd=2)
+    lines(c(coef_mean_2ub[i], coef_mean_2lb[i]), c(i+.25,i+.25), lwd=1.25)
+    lines(c(coef_mean_3ub[i], coef_mean_3lb[i]), c(i+.25,i+.25), lwd=.5)
+    lines(c(coef_median_1ub[i], coef_median_1lb[i]), c(i,i), lwd=2)
+    lines(c(coef_median_2ub[i], coef_median_2lb[i]), c(i,i), lwd=1.25)
+    lines(c(coef_median_3ub[i], coef_median_3lb[i]), c(i,i), lwd=.5)
+    lines(c(coef_max_1ub[i], coef_max_1lb[i]), c(i-.25,i-.25), lwd=2)
+    lines(c(coef_max_2ub[i], coef_max_2lb[i]), c(i-.25,i-.25), lwd=1.5)
+    lines(c(coef_max_3ub[i], coef_max_3lb[i]), c(i-.25,i-.25), lwd=.5)
   }
   
   points(coef_mean, 1.25:6.25, col=1, bg=grey(.25), pch=21)
   points(coef_median, 1:6, col=1, bg=grey(.65), pch=23)
   points(coef_max, 0.75:5.75, col=1, bg=grey(.95), pch=22)
   
-  mtext(side=3, line=0.5, text="Lower <----------- Google Searche Rate -----------> Higher")
+  mtext(side=3, line=0.5, text="Lower <----------- Google Search Rate -----------> Higher")
   #axis(side=2, at=6:1, labels=c("FDI inflows", "Amnesty Report Count", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
   axis(side=2, at=6:1, labels=c("FDI inflows", "Amnesty Report Rate", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
   axis(side=1, at=-6:6)
