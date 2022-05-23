@@ -28,7 +28,14 @@ amnesty_cy <- data.frame(table(amnesty_attention$CCODE, amnesty_attention$YEAR))
 names(amnesty_cy) <- c("CCODE", "YEAR", "amnesty_attention_count")
 head(amnesty_cy)
 
+WDI <- read.csv("Data_input/WDI_data_2012_2019_saved_2022-05-23.csv")
+
 data <- merge(data, amnesty_cy, by.x=c("COW", "YEAR"), by.y=c("CCODE", "YEAR"), all.x=TRUE, all.y=FALSE)
+
+data$ISO <- countrycode(data$COW, origin="cown", destination="iso2c")
+
+data <- merge(data, WDI, by.x=c("ISO", "YEAR"), by.y=c("iso2c", "year"), all.x=TRUE, all.y=FALSE)
+
 
 report_count <- data.frame(xtabs(amnesty_attention_count ~ COW, data=subset(data, YEAR>=2015)))
 report_count[order(report_count$Freq, decreasing=TRUE),]
@@ -36,6 +43,17 @@ report_count[order(report_count$Freq, decreasing=TRUE),]
 report_count$COUNTRY <- countrycode(report_count$COW, origin="cown", destination="country.name")
 
 report_count[order(report_count$Freq, decreasing=TRUE),]
+
+
+total_pop <- data.frame(xtabs(Population ~ COW, data=subset(data, YEAR>=2015))/5)
+
+#total_pop$Freq <- total_pop$Freq/median(total_pop$Freq)
+
+report_count_2 <- merge(report_count, total_pop, by="COW")
+
+
+report_count_2$amnesty_attention_rate <- 100000*(report_count_2$Freq.x / report_count_2$Freq.y)
+
 
 
 ## colors from colorbrewer2.org
@@ -55,10 +73,8 @@ COLORS <- c("#ffffcc", "#c2e699", "#78c679", "#31a354", "#006837", "black")
 #COLORS <- c("#f7f7f7", "#cccccc", "#969696", "#636363", "#252525", "black")
 
 
-pdf("Rplots/Maps_Amnesty_attention_2015_2019.pdf", height=3, width=6)
-
-
 ## ------------------------------------------------------------ ##
+pdf("Rplots/Maps_Amnesty_attention_2015_2019.pdf", height=3, width=6)
 
 data <- report_count[,2:3]
 names(data) <- c("Value", "region")
@@ -119,4 +135,67 @@ ggplot(data, aes(map_id = region)) +
 
 dev.off()
 
+
+
+## ------------------------------------------------------------ ##
+pdf("Rplots/Maps_Amnesty_attention_rate_2015_2019.pdf", height=3, width=6)
+
+data <- report_count_2[,c(5,3)]
+names(data) <- c("Value", "region")
+#data$Value <- log10(data$Value)
+#data$Value <- sqrt(data$Value)
+data$region[data$region=="Côte d’Ivoire"] <- "Ivory Coast"
+data$region[data$region=="Congo - Kinshasa"] <- "Democratic Republic of the Congo"
+data$region[data$region=="Congo - Brazzaville"] <- "Republic of Congo"
+data$region[data$region=="United Kingdom"] <- "UK"
+data$region[data$region=="United States"] <- "USA"
+COLORS <- c("#feebe2", "#fbb4b9", "#f768a1", "#c51b8a", "#7a0177", "black")
+
+map.world <- map_data("world")
+ggplot(data, aes(map_id = region)) +
+  geom_map(aes(fill = Value), map = map.world) +
+  ggtitle(paste("Amnesty International Country Attention: Article Count", sep="")) +
+  xlab("Latitude") + ylab("Longitude") +
+  coord_map("rectangular", lat0=0, xlim=c(-180,180), ylim=c(-60, 90)) +
+  expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colours=COLORS, na.value=grey(.875), guide = "colourbar")
+
+
+## transform count variable 
+#data$Value <- log10(data$Value + 1)
+data$Value <- sqrt(data$Value)
+data$region[data$region=="Cote d'Ivoire"] <- "Ivory Coast"
+data$region[data$region=="Congo - Kinshasa"] <- "Democratic Republic of the Congo"
+data$region[data$region=="Congo - Brazzaville"] <- "Republic of Congo"
+data$region[data$region=="United Kingdom"] <- "UK"
+data$region[data$region=="United States"] <- "USA"
+COLORS <- c("#feebe2", "#fbb4b9", "#f768a1", "#c51b8a", "#7a0177", "black")
+
+map.world <- map_data("world")
+ggplot(data, aes(map_id = region)) +
+  geom_map(aes(fill = Value), map = map.world) +
+  ggtitle(paste("Amnesty International Country Attention: sqrt(Article Count)", sep="")) +
+  xlab("Latitude") + ylab("Longitude") +
+  coord_map("rectangular", lat0=0, xlim=c(-180,180), ylim=c(-60, 90)) +
+  expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colours=COLORS, na.value=grey(.875), guide = "colourbar")
+
+
+## transform count variable 
+data$Value <- log10(data$Value + 1)
+#data$Value <- sqrt(data$Value)
+data$region[data$region=="Cote d'Ivoire"] <- "Ivory Coast"
+data$region[data$region=="Congo - Kinshasa"] <- "Democratic Republic of the Congo"
+data$region[data$region=="Congo - Brazzaville"] <- "Republic of Congo"
+data$region[data$region=="United Kingdom"] <- "UK"
+data$region[data$region=="United States"] <- "USA"
+COLORS <- c("#feebe2", "#fbb4b9", "#f768a1", "#c51b8a", "#7a0177", "black")
+
+map.world <- map_data("world")
+ggplot(data, aes(map_id = region)) +
+  geom_map(aes(fill = Value), map = map.world) +
+  ggtitle(paste("Amnesty International Country Attention: log10(Article Count)", sep="")) +
+  xlab("Latitude") + ylab("Longitude") +
+  coord_map("rectangular", lat0=0, xlim=c(-180,180), ylim=c(-60, 90)) +
+  expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colours=COLORS, na.value=grey(.875), guide = "colourbar")
+
+dev.off()
 
