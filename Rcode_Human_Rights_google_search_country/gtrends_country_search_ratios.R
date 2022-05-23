@@ -76,3 +76,8 @@ gtrends_country_search_ratios_func(dat=dat, location1="Guatemala", location2="Ar
 dat <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-11.RDS")
 gtrends_country_search_ratios_func(dat=dat, location1="Guatemala", location2="Argentina")
 
+
+## Guatemala vs. Spain
+dat <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-11.RDS")
+gtrends_country_search_ratios_func(dat=dat, location1="Guatemala", location2="Spain")
+

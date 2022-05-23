@@ -27,7 +27,7 @@ source("groundhog_library_func.R")
 groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
 
-## make a color vector for polots
+## make a color vector for plots
 COLORS <- c("#fdae61", "#a6cee3", "#1f78b4", "#b2df8a", "#33a02c")
 
 

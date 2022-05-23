@@ -187,6 +187,12 @@ global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_list
 out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
 google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "derechos humanos"), "_country_week_time_series_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
 
+## "derechos humanos" lowsearch=FALSE
+location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-10.RDS")
+global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-11.RDS")
+out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "derechos humanos"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+
 
 ##########################################################################
 ## "direitos humanos"
