@@ -20,8 +20,11 @@
 source("groundhog_library_func.R")
 groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
-test_dat <- readRDS("Data_output/combined_gsearch_dat_list_merged.RDS")
-test_dat <- readRDS("Data_output/combined_gsearch_dat_list_merged_lowsearch.RDS")
+lowsearch_option <- FALSE ## note that the lowsearch term in the file label means that the lowsearch argument is set to its default FALSE value in the gtrends() search function
+if(lowsearch_option==TRUE) test_dat <- readRDS("Data_output/combined_gsearch_dat_list_merged.RDS")
+if(lowsearch_option==FALSE) test_dat <- readRDS("Data_output/combined_gsearch_dat_list_merged_lowsearch.RDS")
+
+## inspect object
 length(test_dat)
 head(test_dat[[1]])
 summary(test_dat[[1]])
@@ -81,8 +84,7 @@ for(i in 1:length(test_dat)){
 unlist(cor_value)
 
 
-## linear models
-## linear models
+## linear models (languages are seperated)
 fit_mean_robust <- fit_median_robust <- fit_max_robust <- list()
 unit_n <- c()
 for(i in 1:length(test_dat)){
@@ -91,39 +93,49 @@ for(i in 1:length(test_dat)){
   
   ## scale variable 
   temp$theta_mean <- -1*temp$theta_mean
-  temp$amnesty_report_count <- scale(temp$amnesty_report_count)
-  temp$amnesty_attention_count <- scale(temp$amnesty_report_count)
+  temp$amnesty_attention_count <- scale(temp$amnesty_attention_count)
+  temp$amnesty_attention_rate <- scale(temp$amnesty_attention_rate)
   temp$GDP_growth_annual_percent <- scale(temp$GDP_growth_annual_percent)
   temp$Foreign_direct_investment_net_inflows_percent_GDP <- scale(temp$Foreign_direct_investment_net_inflows_percent_GDP) 
   temp$treaty_count <- scale(temp$treaty_count)
   temp$v2smgovfilprc <- scale(temp$v2smgovfilprc)
-
-  fit_mean <- lm(hits_mean ~ theta_mean + 
-                #+ amnesty_attention_count  
+  temp$hringo_inter <- scale(temp$hringo_inter)
+  temp$hringo_inter_rate <- scale(temp$hringo_inter_rate)
+  
+  temp$NGO <- temp$amnesty_attention_count
+  temp$NGO <- temp$amnesty_attention_rate
+  temp$NGO <- temp$hringo_inter
+  temp$NGO <- temp$hringo_inter_rate
+  
+  fit_mean <- lm(hits_mean ~ Foreign_direct_investment_net_inflows_percent_GDP  
+                 #+ hringo_inter
+                 #+ amnesty_attention_count  
                  + amnesty_attention_rate 
-                 + GDP_growth_annual_percent  
-                 + Foreign_direct_investment_net_inflows_percent_GDP  
                  + treaty_count 
+                 + GDP_growth_annual_percent  
+                 + theta_mean   
                  + v2smgovfilprc 
                  , 
                  data=temp)
   
-  fit_median <- lm(hits_median ~ theta_mean + 
-                  #+ amnesty_attention_count  
+  fit_median <- lm(hits_median ~ Foreign_direct_investment_net_inflows_percent_GDP  
+                   #+ hringo_inter
+                   #+ amnesty_attention_count  
                    + amnesty_attention_rate 
-                   + GDP_growth_annual_percent  
-                   + Foreign_direct_investment_net_inflows_percent_GDP  
                    + treaty_count 
+                   + GDP_growth_annual_percent  
+                   + theta_mean   
                    + v2smgovfilprc 
                    , 
                    data=temp)
   
-  fit_max <- lm(hits_max ~ theta_mean + 
+  fit_max <- lm(hits_max ~Foreign_direct_investment_net_inflows_percent_GDP  
+                #+ hringo_inter
                 #+ amnesty_attention_count  
                 + amnesty_attention_rate 
-                + GDP_growth_annual_percent  
-                + Foreign_direct_investment_net_inflows_percent_GDP  
                 + treaty_count 
+                + GDP_growth_annual_percent  
+                + theta_mean   
                 + v2smgovfilprc 
                 , 
                 data=temp)
@@ -137,6 +149,7 @@ for(i in 1:length(test_dat)){
   unit_n[i] <- length(fit_mean$fitted.values)
 }
 
+## print models to screen
 unit_n
 fit_mean_robust
 fit_median_robust
@@ -159,7 +172,7 @@ test_dat_language_pooled[[3]] <- rbind(test_dat[[3]], test_dat[[7]], test_dat[[1
 test_dat_language_pooled[[4]] <- rbind(test_dat[[4]], test_dat[[8]], test_dat[[12]], test_dat[[16]], test_dat[[20]])
 
 
-## linear models
+## linear models (languages are pooled together)
 fit_mean_robust <- fit_median_robust <- fit_max_robust <-  list()
 unit_n <- c()
 for(i in 1:length(test_dat_language_pooled)){
@@ -174,43 +187,45 @@ for(i in 1:length(test_dat_language_pooled)){
   temp$Foreign_direct_investment_net_inflows_percent_GDP <- scale(temp$Foreign_direct_investment_net_inflows_percent_GDP) 
   temp$treaty_count <- scale(temp$treaty_count)
   temp$v2smgovfilprc <- scale(temp$v2smgovfilprc)
-
+  temp$hringo_inter <- scale(temp$hringo_inter)
+  
   fit_mean <- lm(hits_mean ~ -1
                  + Foreign_direct_investment_net_inflows_percent_GDP  
+                 + hringo_inter
                  #+ amnesty_attention_count  
-                 + amnesty_attention_rate 
+                 #+ amnesty_attention_rate 
                  + treaty_count 
                  + GDP_growth_annual_percent  
-                 + theta_mean * treaty_count
+                 + theta_mean 
                  + v2smgovfilprc 
                  + as.factor(language), 
                  data=temp)
 
   fit_median <- lm(hits_median ~ -1 + 
                     + Foreign_direct_investment_net_inflows_percent_GDP  
+                   + hringo_inter
                    #+ amnesty_attention_count  
-                   + amnesty_attention_rate 
+                   #+ amnesty_attention_rate 
                    + treaty_count 
                    + GDP_growth_annual_percent  
-                   + theta_mean * treaty_count
+                   + theta_mean 
                     + v2smgovfilprc 
                    + as.factor(language), 
                    data=temp)
 
   fit_max <- lm(hits_max ~ -1 
                 + Foreign_direct_investment_net_inflows_percent_GDP  
+                + hringo_inter
                 #+ amnesty_attention_count  
-                + amnesty_attention_rate 
+                #+ amnesty_attention_rate 
                 + treaty_count 
                 + GDP_growth_annual_percent  
-                + theta_mean * treaty_count  
+                + theta_mean   
                 + v2smgovfilprc 
                 + as.factor(language), 
               data=temp)
 
- 
-  
-    #summary(fit)
+  #summary(fit)
   ## robust clustered standard errors
   fit_mean_robust[[i]] <- coeftest(fit_mean, vcov = vcovHC, type = "HC1", cluster=~language)
   fit_median_robust[[i]] <- coeftest(fit_median, vcov = vcovHC, type = "HC1", cluster=~language)
@@ -221,6 +236,7 @@ for(i in 1:length(test_dat_language_pooled)){
 
 unit_n
 
+## print models to screen
 #summary(fit_mean)
 #summary(fit_median)
 #summary(fit_max)
@@ -228,35 +244,35 @@ fit_mean_robust[[4]]
 fit_median_robust[[4]]
 fit_max_robust[[4]]
 
-## coef ratios
+## coeffient ratios
 fit_mean_robust[[4]][5,1] / fit_mean_robust[[4]][2,1]
 fit_median_robust[[4]][5,1] / fit_median_robust[[4]][2,1]
 
-## 
+## save table output for latex 
 for(j in 1:4){
   
   tab_output <- stargazer(fit_mean_robust[[j]], fit_median_robust[[j]], fit_max_robust[[j]], covariate.labels = c("FDI Inflows", "Amnesty Report Count", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)"))
 
   tab_output
-  if(j==1) write(tab_output, file="Tex_tables/main_results_lowsearch_2012_2016.tex")
-  if(j==2) write(tab_output, file="Tex_tables/main_results_lowsearch_2013_2017.tex")
-  if(j==3) write(tab_output, file="Tex_tables/main_results_lowsearch_2014_2018.tex")
-  if(j==4) write(tab_output, file="Tex_tables/main_results_lowsearch_2015_2019.tex")
-
-  #if(j==1) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2012_2016.tex")
-  #if(j==2) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2013_2017.tex")
-  #if(j==3) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2014_2018.tex")
-  #if(j==4) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2015_2019.tex")
+  if(j==1 & lowsearch_option==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_2012_2016.tex")
+  if(j==2 & lowsearch_option==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_2013_2017.tex")
+  if(j==3 & lowsearch_option==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_2014_2018.tex")
+  if(j==4 & lowsearch_option==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_2015_2019.tex")
+  
+  #if(j==1 & lowsearch_option==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2012_2016.tex")
+  #if(j==2 & lowsearch_option==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2013_2017.tex")
+  #if(j==3 & lowsearch_option==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2014_2018.tex")
+  #if(j==4 & lowsearch_option==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2015_2019.tex")
 }
 
 
-## 
+## save coefficient plots
 for(j in 1:4){
   coef_mean <- fit_mean_robust[[j]][6:1,1]
   coef_median <- fit_median_robust[[j]][6:1,1]
   coef_max <- fit_max_robust[[j]][6:1,1]
   
-  ##
+  ## select value for first interval
   VALUE <- 1
   VALUE <- qt(.95, unit_n[j])
   
@@ -267,7 +283,7 @@ for(j in 1:4){
   coef_median_1lb <- fit_median_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
   coef_max_1lb <- fit_max_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
   
-  ##
+  ## select value for second interval
   VALUE <- 2
   VALUE <- qt(.975, unit_n[j])
   
@@ -278,7 +294,7 @@ for(j in 1:4){
   coef_median_2lb <- fit_median_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
   coef_max_2lb <- fit_max_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
   
-  ##
+  ## select value for third *optional) interval
   VALUE <- 3
   VALUE <- qt(.995, unit_n[j])
   
@@ -293,15 +309,15 @@ for(j in 1:4){
   
   ## coefficient plots
   ## create graph file
-  if(j==1) pdf("Rplots/coefs_lowsearch_2012_2016_Rplot.pdf", height=6, width=8)
-  if(j==2) pdf("Rplots/coefs_lowsearch_2013_2017_Rplot.pdf", height=6, width=8)
-  if(j==3) pdf("Rplots/coefs_lowsearch_2014_2018_Rplot.pdf", height=6, width=8)
-  if(j==4) pdf("Rplots/coefs_lowsearch_2015_2019_Rplot.pdf", height=6, width=8)
+  if(j==1 & lowsearch_option==TRUE) pdf("Rplots/coefs_lowsearch_2012_2016_Rplot.pdf", height=6, width=8)
+  if(j==2 & lowsearch_option==TRUE) pdf("Rplots/coefs_lowsearch_2013_2017_Rplot.pdf", height=6, width=8)
+  if(j==3 & lowsearch_option==TRUE) pdf("Rplots/coefs_lowsearch_2014_2018_Rplot.pdf", height=6, width=8)
+  if(j==4 & lowsearch_option==TRUE) pdf("Rplots/coefs_lowsearch_2015_2019_Rplot.pdf", height=6, width=8)
   
-  #if(j==1) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2012_2016_Rplot.pdf", height=6, width=8)
-  #if(j==2) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2013_2017_Rplot.pdf", height=6, width=8)
-  #if(j==3) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2014_2018_Rplot.pdf", height=6, width=8)
-  #if(j==4) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2015_2019_Rplot.pdf", height=6, width=8)
+  #if(j==1 & lowsearch_option==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2012_2016_Rplot.pdf", height=6, width=8)
+  #if(j==2 & lowsearch_option==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2013_2017_Rplot.pdf", height=6, width=8)
+  #if(j==3 & lowsearch_option==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2014_2018_Rplot.pdf", height=6, width=8)
+  #if(j==4 & lowsearch_option==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2015_2019_Rplot.pdf", height=6, width=8)
   
   par(mar=c(4,10,2,1))
   plot(coef_mean, 1:6, xlim=c(-6,6), ylim=c(.5,6.5), ylab="", xlab="Standarized Coefficients", xaxt="n", yaxt="n", type="n")
@@ -338,6 +354,11 @@ for(j in 1:4){
   dev.off()
 }
 
+
+
+##########################################################################
+## a bunch of alternative models
+##########################################################################
 
 ## panel linear models
 unit_n <- c()

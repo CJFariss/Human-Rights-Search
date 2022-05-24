@@ -60,6 +60,7 @@ for(i in 1:length(dat_list)){
   temp <- merge(temp, TREATY, by.x=c("CCODE", "year"), by.y=c("CCODE", "year"), all.x=TRUE, all.y=FALSE)
   
   temp$amnesty_attention_rate <- 100000*(temp$amnesty_attention_count / temp$Population)
+  temp$hringo_inter_rate <- 100000*(temp$hringo_inter / temp$Population)
   
   dat_list_merged[[i]] <- temp
 }
@@ -129,6 +130,7 @@ for(i in 1:length(dat_list)){
   temp <- merge(temp, TREATY, by.x=c("CCODE", "year"), by.y=c("CCODE", "year"), all.x=TRUE, all.y=FALSE)
   
   temp$amnesty_attention_rate <- 100000*(temp$amnesty_attention_count / temp$Population)
+  temp$hringo_inter_rate <- 100000*(temp$hringo_inter / temp$Population)
   
   dat_list_merged[[i]] <- temp
 }
@@ -202,6 +204,7 @@ for(i in 1:length(dat_list)){
   temp <- merge(temp, TREATY, by.x=c("CCODE", "year"), by.y=c("CCODE", "year"), all.x=TRUE, all.y=FALSE)
   
   temp$amnesty_attention_rate <- 100000*(temp$amnesty_attention_count / temp$Population)
+  temp$hringo_inter_rate <- 100000*(temp$hringo_inter / temp$Population)
   
   dat_list_merged[[i]] <- temp
 }
