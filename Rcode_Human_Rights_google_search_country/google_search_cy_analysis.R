@@ -181,7 +181,7 @@ for(i in 1:length(test_dat_language_pooled)){
                  + amnesty_attention_rate 
                  + treaty_count 
                  + GDP_growth_annual_percent  
-                 + theta_mean + 
+                 + theta_mean * treaty_count
                  + v2smgovfilprc 
                  + as.factor(language), 
                  data=temp)
@@ -192,7 +192,7 @@ for(i in 1:length(test_dat_language_pooled)){
                    + amnesty_attention_rate 
                    + treaty_count 
                    + GDP_growth_annual_percent  
-                   + theta_mean + 
+                   + theta_mean * treaty_count
                     + v2smgovfilprc 
                    + as.factor(language), 
                    data=temp)
@@ -203,7 +203,7 @@ for(i in 1:length(test_dat_language_pooled)){
                 + amnesty_attention_rate 
                 + treaty_count 
                 + GDP_growth_annual_percent  
-                + theta_mean + 
+                + theta_mean * treaty_count  
                 + v2smgovfilprc 
                 + as.factor(language), 
               data=temp)
@@ -235,20 +235,18 @@ fit_median_robust[[4]][5,1] / fit_median_robust[[4]][2,1]
 ## 
 for(j in 1:4){
   
-  tab_output <- stargazer(fit_mean_robust[[j]], fit_median_robust[[j]], fit_max_robust[[j]], covariate.labels = c("FDI inflows", "Amnesty Report Count", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)"))
+  tab_output <- stargazer(fit_mean_robust[[j]], fit_median_robust[[j]], fit_max_robust[[j]], covariate.labels = c("FDI Inflows", "Amnesty Report Count", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)"))
 
-    #tab_output <- stargazer(fit_mean_robust[[j]], fit_median_robust[[j]], fit_max_robust[[j]], covariate.labels = c("FDI inflows", "Amnesty Report Rate", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)"))
-  
   tab_output
-  #if(j==1) write(tab_output, file="Tex_tables/main_results_lowsearch_2012_2016.tex")
-  #if(j==2) write(tab_output, file="Tex_tables/main_results_lowsearch_2013_2017.tex")
-  #if(j==3) write(tab_output, file="Tex_tables/main_results_lowsearch_2014_2018.tex")
-  #if(j==4) write(tab_output, file="Tex_tables/main_results_lowsearch_2015_2019.tex")
+  if(j==1) write(tab_output, file="Tex_tables/main_results_lowsearch_2012_2016.tex")
+  if(j==2) write(tab_output, file="Tex_tables/main_results_lowsearch_2013_2017.tex")
+  if(j==3) write(tab_output, file="Tex_tables/main_results_lowsearch_2014_2018.tex")
+  if(j==4) write(tab_output, file="Tex_tables/main_results_lowsearch_2015_2019.tex")
 
-  if(j==1) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2012_2016.tex")
-  if(j==2) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2013_2017.tex")
-  if(j==3) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2014_2018.tex")
-  if(j==4) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2015_2019.tex")
+  #if(j==1) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2012_2016.tex")
+  #if(j==2) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2013_2017.tex")
+  #if(j==3) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2014_2018.tex")
+  #if(j==4) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2015_2019.tex")
 }
 
 
@@ -295,15 +293,15 @@ for(j in 1:4){
   
   ## coefficient plots
   ## create graph file
-  #if(j==1) pdf("Rplots/coefs_lowsearch_2012_2016_Rplot.pdf", height=6, width=8)
-  #if(j==2) pdf("Rplots/coefs_lowsearch_2013_2017_Rplot.pdf", height=6, width=8)
-  #if(j==3) pdf("Rplots/coefs_lowsearch_2014_2018_Rplot.pdf", height=6, width=8)
-  #if(j==4) pdf("Rplots/coefs_lowsearch_2015_2019_Rplot.pdf", height=6, width=8)
+  if(j==1) pdf("Rplots/coefs_lowsearch_2012_2016_Rplot.pdf", height=6, width=8)
+  if(j==2) pdf("Rplots/coefs_lowsearch_2013_2017_Rplot.pdf", height=6, width=8)
+  if(j==3) pdf("Rplots/coefs_lowsearch_2014_2018_Rplot.pdf", height=6, width=8)
+  if(j==4) pdf("Rplots/coefs_lowsearch_2015_2019_Rplot.pdf", height=6, width=8)
   
-  if(j==1) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2012_2016_Rplot.pdf", height=6, width=8)
-  if(j==2) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2013_2017_Rplot.pdf", height=6, width=8)
-  if(j==3) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2014_2018_Rplot.pdf", height=6, width=8)
-  if(j==4) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2015_2019_Rplot.pdf", height=6, width=8)
+  #if(j==1) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2012_2016_Rplot.pdf", height=6, width=8)
+  #if(j==2) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2013_2017_Rplot.pdf", height=6, width=8)
+  #if(j==3) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2014_2018_Rplot.pdf", height=6, width=8)
+  #if(j==4) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2015_2019_Rplot.pdf", height=6, width=8)
   
   par(mar=c(4,10,2,1))
   plot(coef_mean, 1:6, xlim=c(-6,6), ylim=c(.5,6.5), ylab="", xlab="Standarized Coefficients", xaxt="n", yaxt="n", type="n")
@@ -331,8 +329,8 @@ for(j in 1:4){
   points(coef_max, 0.75:5.75, col=1, bg=grey(.95), pch=22)
   
   mtext(side=3, line=0.5, text="Lower <----------- Google Search Rate -----------> Higher")
-  #axis(side=2, at=6:1, labels=c("FDI inflows", "Amnesty Report Count", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
-  axis(side=2, at=6:1, labels=c("FDI inflows", "Amnesty Report Rate", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
+  axis(side=2, at=6:1, labels=c("FDI Inflows", "Amnesty Report Count", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
+  #axis(side=2, at=6:1, labels=c("FDI Inflows", "Amnesty Report Rate", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
   axis(side=1, at=-6:6)
 
   legend("topright", legend=c("mean rate", "median rate", "max rate"), pch=c(21, 23, 22), col=1, pt.bg=c(grey(.25), grey(.65), grey(.95)), bty="n", cex=.75)

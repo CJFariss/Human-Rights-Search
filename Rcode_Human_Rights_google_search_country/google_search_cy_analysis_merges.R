@@ -29,6 +29,10 @@ amnesty_cy <- data.frame(table(amnesty_attention$CCODE, amnesty_attention$YEAR))
 names(amnesty_cy) <- c("CCODE", "YEAR", "amnesty_attention_count")
 head(amnesty_cy)
 
+hringo <- read.csv("Data_output/hringo_inter_v2.csv")
+hringo <- subset(hringo, year>=2012 & ccode!=-999, select=c(ccode, year, hringo_inter))
+head(hringo, 10)
+
 WDI <- read.csv("Data_input/WDI_data_2012_2019_saved_2022-05-23.csv")
 head(WDI)
 
@@ -50,6 +54,7 @@ for(i in 1:length(dat_list)){
   #dat <- dat_list[[1]] ## for testing
   temp <- merge(dat, HRPS, by.x=c("CCODE", "year"), by.y=c("COW", "YEAR"), all.x=TRUE, all.y=FALSE)
   temp <- merge(temp, amnesty_cy, by.x=c("CCODE", "year"), by.y=c("CCODE", "YEAR"), all.x=TRUE, all.y=FALSE)
+  temp <- merge(temp, hringo, by.x=c("CCODE", "year"), by.y=c("ccode", "year"), all.x=TRUE, all.y=FALSE)
   temp <- merge(temp, WDI, by.x=c("ISO", "year"), by.y=c("iso2c", "year"), all.x=TRUE, all.y=FALSE)
   temp <- merge(temp, VDEM, by.x=c("CCODE", "year"), by.y=c("COWcode", "year"), all.x=TRUE, all.y=FALSE)
   temp <- merge(temp, TREATY, by.x=c("CCODE", "year"), by.y=c("CCODE", "year"), all.x=TRUE, all.y=FALSE)
@@ -93,6 +98,10 @@ amnesty_cy <- data.frame(table(amnesty_attention$CCODE, amnesty_attention$YEAR))
 names(amnesty_cy) <- c("CCODE", "YEAR", "amnesty_attention_count")
 head(amnesty_cy)
 
+hringo <- read.csv("Data_output/hringo_inter_v2.csv")
+hringo <- subset(hringo, year>=2012 & ccode!=-999, select=c(ccode, year, hringo_inter))
+head(hringo, 10)
+
 WDI <- read.csv("Data_input/WDI_data_2012_2019_saved_2022-05-23.csv")
 head(WDI)
 
@@ -114,6 +123,7 @@ for(i in 1:length(dat_list)){
   #dat <- dat_list[[1]] ## for testing
   temp <- merge(dat, HRPS, by.x=c("CCODE", "year"), by.y=c("COW", "YEAR"), all.x=TRUE, all.y=FALSE)
   temp <- merge(temp, amnesty_cy, by.x=c("CCODE", "year"), by.y=c("CCODE", "YEAR"), all.x=TRUE, all.y=FALSE)
+  temp <- merge(temp, hringo, by.x=c("CCODE", "year"), by.y=c("ccode", "year"), all.x=TRUE, all.y=FALSE)
   temp <- merge(temp, WDI, by.x=c("ISO", "year"), by.y=c("iso2c", "year"), all.x=TRUE, all.y=FALSE)
   temp <- merge(temp, VDEM, by.x=c("CCODE", "year"), by.y=c("COWcode", "year"), all.x=TRUE, all.y=FALSE)
   temp <- merge(temp, TREATY, by.x=c("CCODE", "year"), by.y=c("CCODE", "year"), all.x=TRUE, all.y=FALSE)
@@ -159,6 +169,9 @@ amnesty_cy <- data.frame(table(amnesty_attention$CCODE, amnesty_attention$YEAR))
 names(amnesty_cy) <- c("CCODE", "YEAR", "amnesty_attention_count")
 head(amnesty_cy)
 
+hringo <- read.csv("Data_output/hringo_inter_v2.csv")
+hringo <- subset(hringo, year>=2012 & ccode!=-999, select=c(ccode, year, hringo_inter))
+head(hringo, 10)
 
 WDI <- read.csv("Data_input/WDI_data_2012_2019_saved_2022-05-23.csv")
 head(WDI)
@@ -183,6 +196,7 @@ for(i in 1:length(dat_list)){
   #dat <- dat_list[[1]] ## for testing
   temp <- merge(dat, HRPS, by.x=c("CCODE", "year"), by.y=c("COW", "YEAR"), all.x=TRUE, all.y=FALSE)
   temp <- merge(temp, amnesty_cy, by.x=c("CCODE", "year"), by.y=c("CCODE", "YEAR"), all.x=TRUE, all.y=FALSE)
+  temp <- merge(temp, hringo, by.x=c("CCODE", "year"), by.y=c("ccode", "year"), all.x=TRUE, all.y=FALSE)
   temp <- merge(temp, WDI, by.x=c("ISO", "year"), by.y=c("iso2c", "year"), all.x=TRUE, all.y=FALSE)
   temp <- merge(temp, VDEM, by.x=c("CCODE", "year"), by.y=c("COWcode", "year"), all.x=TRUE, all.y=FALSE)
   temp <- merge(temp, TREATY, by.x=c("CCODE", "year"), by.y=c("CCODE", "year"), all.x=TRUE, all.y=FALSE)
