@@ -29,7 +29,7 @@ amnesty_cy <- data.frame(table(amnesty_attention$CCODE, amnesty_attention$YEAR))
 names(amnesty_cy) <- c("CCODE", "YEAR", "amnesty_attention_count")
 head(amnesty_cy)
 
-WDI <- read.csv("Data_input/WDI_data_2012_2019_saved_2022-05-17.csv")
+WDI <- read.csv("Data_input/WDI_data_2012_2019_saved_2022-05-23.csv")
 head(WDI)
 
 VDEM <- readRDS("Data_input/Country_Year_V-Dem_Full+others_R_v12/V-Dem-CY-Full+Others-v12.rds")
@@ -54,7 +54,7 @@ for(i in 1:length(dat_list)){
   temp <- merge(temp, VDEM, by.x=c("CCODE", "year"), by.y=c("COWcode", "year"), all.x=TRUE, all.y=FALSE)
   temp <- merge(temp, TREATY, by.x=c("CCODE", "year"), by.y=c("CCODE", "year"), all.x=TRUE, all.y=FALSE)
   
-  temp$amnesty_attention_rate <- 100000*(temp$amnesty_attention / temp$Population)
+  temp$amnesty_attention_rate <- 100000*(temp$amnesty_attention_count / temp$Population)
   
   dat_list_merged[[i]] <- temp
 }
@@ -93,7 +93,7 @@ amnesty_cy <- data.frame(table(amnesty_attention$CCODE, amnesty_attention$YEAR))
 names(amnesty_cy) <- c("CCODE", "YEAR", "amnesty_attention_count")
 head(amnesty_cy)
 
-WDI <- read.csv("Data_input/WDI_data_2012_2019_saved_2022-05-17.csv")
+WDI <- read.csv("Data_input/WDI_data_2012_2019_saved_2022-05-23.csv")
 head(WDI)
 
 VDEM <- readRDS("Data_input/Country_Year_V-Dem_Full+others_R_v12/V-Dem-CY-Full+Others-v12.rds")
@@ -118,7 +118,7 @@ for(i in 1:length(dat_list)){
   temp <- merge(temp, VDEM, by.x=c("CCODE", "year"), by.y=c("COWcode", "year"), all.x=TRUE, all.y=FALSE)
   temp <- merge(temp, TREATY, by.x=c("CCODE", "year"), by.y=c("CCODE", "year"), all.x=TRUE, all.y=FALSE)
   
-  temp$amnesty_attention_rate <- 100000*(temp$amnesty_attention / temp$Population)
+  temp$amnesty_attention_rate <- 100000*(temp$amnesty_attention_count / temp$Population)
   
   dat_list_merged[[i]] <- temp
 }
@@ -153,7 +153,14 @@ HRPS <- read.csv("Data_output/HumanRightsProtectionScores_v4.01_amnesty_report_c
 HRPS <- subset(HRPS, YEAR>=2012, select=c(YEAR, COW, theta_mean, theta_sd, amnesty_report_count))
 head(HRPS)
 
-WDI <- read.csv("Data_input/WDI_data_2012_2019_saved_2022-05-09.csv")
+amnesty_attention <- read.csv("Rcode_Amnesty_article_coverage/Amnesty_webpage_source_files_v2/amnesty_article_meta_data_procssed.csv")
+
+amnesty_cy <- data.frame(table(amnesty_attention$CCODE, amnesty_attention$YEAR))
+names(amnesty_cy) <- c("CCODE", "YEAR", "amnesty_attention_count")
+head(amnesty_cy)
+
+
+WDI <- read.csv("Data_input/WDI_data_2012_2019_saved_2022-05-23.csv")
 head(WDI)
 
 VDEM <- readRDS("Data_input/Country_Year_V-Dem_Full+others_R_v12/V-Dem-CY-Full+Others-v12.rds")
@@ -175,11 +182,12 @@ for(i in 1:length(dat_list)){
   dat <- dat_list[[i]]
   #dat <- dat_list[[1]] ## for testing
   temp <- merge(dat, HRPS, by.x=c("CCODE", "year"), by.y=c("COW", "YEAR"), all.x=TRUE, all.y=FALSE)
+  temp <- merge(temp, amnesty_cy, by.x=c("CCODE", "year"), by.y=c("CCODE", "YEAR"), all.x=TRUE, all.y=FALSE)
   temp <- merge(temp, WDI, by.x=c("ISO", "year"), by.y=c("iso2c", "year"), all.x=TRUE, all.y=FALSE)
   temp <- merge(temp, VDEM, by.x=c("CCODE", "year"), by.y=c("COWcode", "year"), all.x=TRUE, all.y=FALSE)
   temp <- merge(temp, TREATY, by.x=c("CCODE", "year"), by.y=c("CCODE", "year"), all.x=TRUE, all.y=FALSE)
   
-  temp$amnesty_attention_rate <- 100000*(temp$amnesty_attention / temp$Population)
+  temp$amnesty_attention_rate <- 100000*(temp$amnesty_attention_count / temp$Population)
   
   dat_list_merged[[i]] <- temp
 }
@@ -194,3 +202,4 @@ names(dat_list_merged)
 
 ## saved combined list of datasets
 saveRDS(dat_list_merged, file="Data_output/combined_gsearch_dat_topic_list_merged.RDS")
+

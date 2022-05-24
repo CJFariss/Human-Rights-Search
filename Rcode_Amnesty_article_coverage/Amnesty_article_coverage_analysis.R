@@ -20,6 +20,8 @@
 
 data <- try(read.csv("Data_input/HumanRightsProtectionScores_v4.01_amnesty_report_count_v2.csv"))
 
+amnesty_attention <- read.csv("Rcode_Amnesty_article_coverage/Amnesty_webpage_source_files_v2/amnesty_article_meta_data_procssed.csv")
+
 amnesty_cy <- data.frame(table(amnesty_attention$CCODE, amnesty_attention$YEAR))
 names(amnesty_cy) <- c("CCODE", "YEAR", "amnesty_attention_count")
 head(amnesty_cy)
