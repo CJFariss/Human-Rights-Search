@@ -75,6 +75,24 @@ dat_2018$migrant[dat_2018$country_case=="Guinea-Bissau"] <- 1
 ## crc_op1 (CRC-OP-AC)
 dat_2018$crc_op1[dat_2018$country_case=="South Sudan"] <- 1
 
+## crc_op2 (CRC-OP-SC)
+dat_2018$crc_op2[dat_2018$country_case=="South Sudan"] <- 1
+
+## crc_op3 (CRC-OP-IC)
+dat_2018$crc_op3[dat_2018$country_case=="Bosnia & Herzegovina"] <- 1 
+dat_2018$crc_op3[dat_2018$country_case=="Ecuador"] <- 1 
+dat_2018$crc_op3[dat_2018$country_case=="San Marino"] <- 1 
+dat_2018$crc_op3[dat_2018$country_case=="Slovenia"] <- 1 
+dat_2018$crc_op3[dat_2018$country_case=="Tunisia"] <- 1 
+
+## disability (CRPD)
+dat_2018$disability[dat_2018$country_case=="Ireland"] <- 1 
+dat_2018$disability[dat_2018$country_case=="Libya"] <- 1 
+
+## disab_op (CRPD-OP)
+dat_2018$disab_op[dat_2018$country_case=="Canada"] <- 1 
+dat_2018$disab_op[dat_2018$country_case=="Guinea-Bissau"] <- 1 
+
 
 ##########################################################################
 ## 2019 updates
@@ -111,6 +129,24 @@ dat_2019$icescr[dat_2019$country_case=="Fiji"] <- 1
 ## crc_op1 (CRC-OP-AC)
 dat_2019$crc_op1[dat_2019$country_case=="Gambia"] <- 1
 
+## crc_op2 (CRC-OP-SC)
+dat_2019$crc_op2[dat_2019$country_case=="Marshall Islands"] <- 1
+
+## crc_op3 (CRC-OP-IC)
+dat_2019$crc_op3[dat_2019$country_case=="Belize"] <- 1
+dat_2019$crc_op3[dat_2019$country_case=="Maldives"] <- 1
+dat_2019$crc_op3[dat_2019$country_case=="Marshall Islands"] <- 1
+dat_2019$crc_op3[dat_2019$country_case=="Palestine"] <- 1 
+
+## disability (CRPD)
+dat_2019$disability[dat_2019$country_case=="Chad"] <- 1 
+dat_2019$disability[dat_2019$country_case=="Kyrgyzstan"] <- 1 
+dat_2019$disability[dat_2019$country_case=="Somalia"] <- 1 
+
+## disab_op (CRPD-OP)
+dat_2019$disab_op[dat_2019$country_case=="Monaco"] <- 1 
+dat_2019$disab_op[dat_2019$country_case=="Palestine"] <- 1 
+
 
 ##########################################################################
 ## 2020 updates
@@ -129,6 +165,12 @@ dat_2020$disab_op[dat_2020$country_case=="Mexico"] <- 1
 
 ## migrant (CRM)
 dat_2020$migrant[dat_2020$country_case=="Togo"] <- 1
+
+## disability (CRPD)
+dat_2020$disability[dat_2020$country_case=="Saint Lucia"] <- 1 
+
+## disab_op (CRPD-OP)
+dat_2020$disab_op[dat_2020$country_case=="Saint Lucia"] <- 1 
 
 
 ##########################################################################
@@ -150,7 +192,19 @@ dat_2021$disap[dat_2021$country_case=="Sudan"] <- 1
 ## disab_op (CED Article 31)
 dat_2021$disab_op[dat_2021$country_case=="Slovenia"] <- 1 
 
+## crc_op2 (CRC-OP-SC)
+dat_2021$crc_op2[dat_2021$country_case=="Fiji"] <- 1
 
+## crc_op3 (CRC-OP-IC)
+dat_2021$crc_op3[dat_2021$country_case=="Armenia"] <- 1
+dat_2021$crc_op3[dat_2021$country_case=="Seychelles"] <- 1
+
+## disability (CRPD)
+dat_2021$disability[dat_2021$country_case=="Botswana"] <- 1 
+
+## disab_op (CRPD-OP)
+dat_2021$disab_op[dat_2021$country_case=="Czechoslovakia/Czech Republic"] <- 1 
+dat_2021$disab_op[dat_2021$country_case=="Georgia"] <- 1 
 
 
 ##########################################################################
@@ -171,6 +225,11 @@ dat_2022$disab_op[dat_2022$country_case=="Denmark"] <- 1
 ## cedaw (CEDAW)
 dat_2022$cedaw_op[dat_2022$country_case=="Morocco"] <- 1
 
+## disability (CRPD)
+dat_2022$disability[dat_2022$country_case=="Equatorial Guinea"] <- 1 
+
+
+## last checked May-24-2022
 
 ##########################################################################
 ## combine new datasets years with the original dataset
