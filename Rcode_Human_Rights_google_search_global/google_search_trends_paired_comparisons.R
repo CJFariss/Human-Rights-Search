@@ -15,24 +15,47 @@
 ##
 ##########################################################################
 
+## load necessary libraries 
+## change groundhog to TRUE to install original versions of libraries from April-2022
+source("groundhog_library_func.R")
+groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
-## Do this (set to TRUE) to load libraries using the version from when the scripts were originally run
-if(FALSE){
-    ## load an older version of the libraries
-    remotes::install_github('CredibilityLab/groundhog')
-    library(groundhog)
-    pkgs <- c("gtrendsR")
-    groundhog.library(pkgs,'2022-04-19')
-} else{
-    ## or load the more recent version of the libraries
-    install.packages("gtrendsR")
-    library(gtrendsR)
-}
+#pdf("Rplots/Google_search_term_pairs.pdf", height=6, width=6)
+pdf("Rplots/Google_search_term_pairs_shortlist.pdf", height=6, width=6)
+#pdf("Rplots/Google_search_term_pairs_longlist.pdf", height=6, width=6)
 
+#time
+#war
+#god
+#race
+#injustice
+#human rights
+#malaria
+#torture
+#terrorism
+#national security
+#social justice
+#right to food
+#amnesty International
+#worker's rights
 
-pdf("Rplots/Google_search_term_pairs.pdf", height=6, width=6)
+TERMS_short <- list(c("time", "war"),
+              c("war", "god"),
+              c("god", "race"),
+              c("race", "injustice"),
+              c("injustice", "human rights"),
+              c("human rights", "malaria"),
+              c("human rights", "torture"),
+              c("human rights", "terrorism"),
+              c("human rights", "national security"),
+              c("human rights", "social justice"),
+              c("human rights", "right to food"),
+              #c("human rights", "Amnesty International"),
+              c("human rights", "worker's rights")
+)
+length(TERMS_short)
 
-TERMS <- list(c("facebook", "google"),
+TERMS_long <- list(c("facebook", "google"),
             c("google", "time"),
             c("time", "sports"),
             c("sports", "war"),
@@ -58,7 +81,10 @@ TERMS <- list(c("facebook", "google"),
             c("human rights", "Amnesty International")
             
 )
-length(TERMS)
+length(TERMS_long)
+
+TERMS <- TERMS_short
+#TERMS <- TERMS_long
 
 #TIME <- "2013-01-01 2017-12-31"
 TIME <- "2015-01-01 2019-12-31"
