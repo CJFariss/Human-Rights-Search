@@ -188,8 +188,8 @@ out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list
 google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "derechos humanos"), "_country_week_time_series_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
 
 ## "derechos humanos" lowsearch=FALSE
-location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-10.RDS")
-global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-11.RDS")
+location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
+global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
 out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
 google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "derechos humanos"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
 
@@ -219,6 +219,12 @@ global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_list
 out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
 google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "direitos humanos"), "_country_week_time_series_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
 
+## "direitos humanos" lowsearch=FALSE
+location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_direitos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
+global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_direitos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
+out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "direitos humanos"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+
 
 ##########################################################################
 ## "droit"
@@ -244,6 +250,12 @@ location_data <- readRDS("Data_output_location_search_lists/gsearch_location_dat
 global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_droit_2015-01-01_2019-12-31_saved_2022-05-11.RDS")
 out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
 google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "droit"), "_country_week_time_series_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+
+## "droit" lowsearch=FALSE
+location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_droit_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
+global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_droit_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
+out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "droit"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
 
 
 ##########################################################################
@@ -271,8 +283,17 @@ global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_list
 out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
 google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq alansan"), "_country_week_time_series_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
 
+## "huquq alansan" lowsearch=FALSE
+location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_huquq_alansan_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
+global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_huquq_alansan_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
+out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq alansan"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+
 
 ##########################################################################
+## NOTE: there is an error for these Amnesty search datasets which I still have not figured out but these graphs have never gone into the paper or appendix (probably for the book later on)
+
+
 ## "Amnesty International"
 location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_Amnesty_International_2012-01-01_2016-12-31_saved_2022-05-16.RDS")
 global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_Amnesty_International_2012-01-01_2016-12-31_saved_2022-05-11.RDS")
