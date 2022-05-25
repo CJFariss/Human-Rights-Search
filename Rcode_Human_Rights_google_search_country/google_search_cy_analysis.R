@@ -101,16 +101,15 @@ for(i in 1:length(test_dat)){
   temp$v2smgovfilprc <- scale(temp$v2smgovfilprc)
   temp$hringo_inter <- scale(temp$hringo_inter)
   temp$hringo_inter_rate <- scale(temp$hringo_inter_rate)
+  temp$hringo_inter_rate <- scale(temp$hringo_inter_rate)
   
-  temp$NGO <- temp$amnesty_attention_count
-  temp$NGO <- temp$amnesty_attention_rate
-  temp$NGO <- temp$hringo_inter
+  #temp$NGO <- temp$amnesty_attention_count
+  #temp$NGO <- temp$amnesty_attention_rate
+  #temp$NGO <- temp$hringo_inter
   temp$NGO <- temp$hringo_inter_rate
   
   fit_mean <- lm(hits_mean ~ Foreign_direct_investment_net_inflows_percent_GDP  
-                 #+ hringo_inter
-                 #+ amnesty_attention_count  
-                 + amnesty_attention_rate 
+                 + NGO
                  + treaty_count 
                  + GDP_growth_annual_percent  
                  + theta_mean   
@@ -119,9 +118,7 @@ for(i in 1:length(test_dat)){
                  data=temp)
   
   fit_median <- lm(hits_median ~ Foreign_direct_investment_net_inflows_percent_GDP  
-                   #+ hringo_inter
-                   #+ amnesty_attention_count  
-                   + amnesty_attention_rate 
+                   + NGO
                    + treaty_count 
                    + GDP_growth_annual_percent  
                    + theta_mean   
@@ -130,9 +127,7 @@ for(i in 1:length(test_dat)){
                    data=temp)
   
   fit_max <- lm(hits_max ~Foreign_direct_investment_net_inflows_percent_GDP  
-                #+ hringo_inter
-                #+ amnesty_attention_count  
-                + amnesty_attention_rate 
+                + NGO
                 + treaty_count 
                 + GDP_growth_annual_percent  
                 + theta_mean   
@@ -188,12 +183,16 @@ for(i in 1:length(test_dat_language_pooled)){
   temp$treaty_count <- scale(temp$treaty_count)
   temp$v2smgovfilprc <- scale(temp$v2smgovfilprc)
   temp$hringo_inter <- scale(temp$hringo_inter)
+  temp$hringo_inter_rate <- scale(temp$hringo_inter_rate)
+  
+  #temp$NGO <- temp$amnesty_attention_count
+  #temp$NGO <- temp$amnesty_attention_rate
+  #temp$NGO <- temp$hringo_inter
+  temp$NGO <- temp$hringo_inter_rate
   
   fit_mean <- lm(hits_mean ~ -1
                  + Foreign_direct_investment_net_inflows_percent_GDP  
-                 + hringo_inter
-                 #+ amnesty_attention_count  
-                 #+ amnesty_attention_rate 
+                 + NGO
                  + treaty_count 
                  + GDP_growth_annual_percent  
                  + theta_mean 
@@ -203,9 +202,7 @@ for(i in 1:length(test_dat_language_pooled)){
 
   fit_median <- lm(hits_median ~ -1 + 
                     + Foreign_direct_investment_net_inflows_percent_GDP  
-                   + hringo_inter
-                   #+ amnesty_attention_count  
-                   #+ amnesty_attention_rate 
+                   + NGO
                    + treaty_count 
                    + GDP_growth_annual_percent  
                    + theta_mean 
@@ -215,9 +212,7 @@ for(i in 1:length(test_dat_language_pooled)){
 
   fit_max <- lm(hits_max ~ -1 
                 + Foreign_direct_investment_net_inflows_percent_GDP  
-                + hringo_inter
-                #+ amnesty_attention_count  
-                #+ amnesty_attention_rate 
+                + NGO
                 + treaty_count 
                 + GDP_growth_annual_percent  
                 + theta_mean   
