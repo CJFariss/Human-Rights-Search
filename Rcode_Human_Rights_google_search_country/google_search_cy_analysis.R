@@ -20,7 +20,7 @@
 source("groundhog_library_func.R")
 groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
-attention_rate <- TRUE ## set to FALSE for count
+attention_rate <- FALSE ## set to FALSE for count
 NGO_amnesty <- TRUE ## set to FALSE for the alternative NGO variable
 lowsearch_option <- FALSE ## note that the lowsearch term in the file label means that the lowsearch argument is set to its default FALSE value in the gtrends() search function
 
@@ -257,9 +257,11 @@ for(j in 1:4){
 
   if(attention_rate==TRUE & NGO_amnesty==FALSE) LABELS <- c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)")
   
-  tab_output <- stargazer(fit_mean_robust[[j]], fit_median_robust[[j]], fit_max_robust[[j]], covariate.labels = LABELS)
+  NOTES <- "\\parbox[t]{8cm}{Models include a fixed effects parameter for each language group (Spanish, Portuguese, French, English, Arabic). Search Mean, Search Median, and Search Max dependent variables are measure of the yearly mean, median, or max country-week search rate value for each country-year unit. Independent variables are measured annually for each country-year unit. $^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}"
+  
+  tab_output <- stargazer(fit_mean_robust[[j]], fit_median_robust[[j]], fit_max_robust[[j]], covariate.labels = LABELS, column.labels = c("Search Mean", "Search Median", "Search Max"), dep.var.caption = "Google Search Rate", no.space=TRUE, title="", notes=NOTES, notes.align="l", notes.append=FALSE)
 
-  #tab_output
+  tab_output
   
   if(j==1 & lowsearch_option==FALSE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2012_2016.tex")
   if(j==2 & lowsearch_option==FALSE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2013_2017.tex")
