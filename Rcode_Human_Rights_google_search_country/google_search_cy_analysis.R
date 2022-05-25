@@ -20,7 +20,10 @@
 source("groundhog_library_func.R")
 groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
+attention_rate <- TRUE ## set to FALSE for count
+NGO_amnesty <- TRUE ## set to FALSE for the alternative NGO variable
 lowsearch_option <- FALSE ## note that the lowsearch term in the file label means that the lowsearch argument is set to its default FALSE value in the gtrends() search function
+
 if(lowsearch_option==TRUE) test_dat <- readRDS("Data_output/combined_gsearch_dat_list_merged.RDS")
 if(lowsearch_option==FALSE) test_dat <- readRDS("Data_output/combined_gsearch_dat_list_merged_lowsearch.RDS")
 
@@ -103,10 +106,10 @@ for(i in 1:length(test_dat)){
   temp$hringo_inter_rate <- scale(temp$hringo_inter_rate)
   temp$hringo_inter_rate <- scale(temp$hringo_inter_rate)
   
-  #temp$NGO <- temp$amnesty_attention_count
-  #temp$NGO <- temp$amnesty_attention_rate
-  #temp$NGO <- temp$hringo_inter
-  temp$NGO <- temp$hringo_inter_rate
+  if(attention_rate==FALSE & NGO_amnesty==TRUE) temp$NGO <- temp$amnesty_attention_count
+  if(attention_rate==TRUE & NGO_amnesty==TRUE) temp$NGO <- temp$amnesty_attention_rate
+  if(attention_rate==FALSE & NGO_amnesty==FALSE) temp$NGO <- temp$hringo_inter
+  if(attention_rate==TRUE & NGO_amnesty==FALSE) temp$NGO <- temp$hringo_inter_rate
   
   fit_mean <- lm(hits_mean ~ Foreign_direct_investment_net_inflows_percent_GDP  
                  + NGO
@@ -185,10 +188,10 @@ for(i in 1:length(test_dat_language_pooled)){
   temp$hringo_inter <- scale(temp$hringo_inter)
   temp$hringo_inter_rate <- scale(temp$hringo_inter_rate)
   
-  #temp$NGO <- temp$amnesty_attention_count
-  temp$NGO <- temp$amnesty_attention_rate
-  #temp$NGO <- temp$hringo_inter
-  #temp$NGO <- temp$hringo_inter_rate
+  if(attention_rate==FALSE & NGO_amnesty==TRUE) temp$NGO <- temp$amnesty_attention_count
+  if(attention_rate==TRUE & NGO_amnesty==TRUE) temp$NGO <- temp$amnesty_attention_rate
+  if(attention_rate==FALSE & NGO_amnesty==FALSE) temp$NGO <- temp$hringo_inter
+  if(attention_rate==TRUE & NGO_amnesty==FALSE) temp$NGO <- temp$hringo_inter_rate
   
   fit_mean <- lm(hits_mean ~ -1
                  + Foreign_direct_investment_net_inflows_percent_GDP  
@@ -246,18 +249,27 @@ fit_median_robust[[4]][5,1] / fit_median_robust[[4]][2,1]
 ## save table output for latex 
 for(j in 1:4){
   
-  tab_output <- stargazer(fit_mean_robust[[j]], fit_median_robust[[j]], fit_max_robust[[j]], covariate.labels = c("FDI Inflows", "NGO Attention", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)"))
+  if(attention_rate==FALSE & NGO_amnesty==TRUE) LABELS <- c("FDI Inflows", "Amnesty Reports (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)")
 
-  tab_output
-  if(j==1 & lowsearch_option==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_2012_2016.tex")
-  if(j==2 & lowsearch_option==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_2013_2017.tex")
-  if(j==3 & lowsearch_option==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_2014_2018.tex")
-  if(j==4 & lowsearch_option==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_2015_2019.tex")
+  if(attention_rate==TRUE & NGO_amnesty==TRUE) LABELS <- c("FDI Inflows", "Amnesty Reports (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)")
+
+  if(attention_rate==FALSE & NGO_amnesty==FALSE) LABELS <- c("FDI Inflows", "NGO Presence (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)")
+
+  if(attention_rate==TRUE & NGO_amnesty==FALSE) LABELS <- c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)")
   
-  #if(j==1 & lowsearch_option==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2012_2016.tex")
-  #if(j==2 & lowsearch_option==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2013_2017.tex")
-  #if(j==3 & lowsearch_option==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2014_2018.tex")
-  #if(j==4 & lowsearch_option==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_attention_rate_2015_2019.tex")
+  tab_output <- stargazer(fit_mean_robust[[j]], fit_median_robust[[j]], fit_max_robust[[j]], covariate.labels = LABELS)
+
+  #tab_output
+  
+  if(j==1 & lowsearch_option==TRUE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2012_2016.tex")
+  if(j==2 & lowsearch_option==TRUE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2013_2017.tex")
+  if(j==3 & lowsearch_option==TRUE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2014_2018.tex")
+  if(j==4 & lowsearch_option==TRUE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2015_2019.tex")
+  
+  if(j==1 & lowsearch_option==TRUE & attention_rate==TRUE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_rate_2012_2016.tex")
+  if(j==2 & lowsearch_option==TRUE & attention_rate==TRUE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_rate_2013_2017.tex")
+  if(j==3 & lowsearch_option==TRUE & attention_rate==TRUE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_rate_2014_2018.tex")
+  if(j==4 & lowsearch_option==TRUE& attention_rate==TRUE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_rate_2015_2019.tex")
 }
 
 
@@ -304,15 +316,16 @@ for(j in 1:4){
   
   ## coefficient plots
   ## create graph file
-  if(j==1 & lowsearch_option==TRUE) pdf("Rplots/coefs_lowsearch_2012_2016_Rplot.pdf", height=6, width=8)
-  if(j==2 & lowsearch_option==TRUE) pdf("Rplots/coefs_lowsearch_2013_2017_Rplot.pdf", height=6, width=8)
-  if(j==3 & lowsearch_option==TRUE) pdf("Rplots/coefs_lowsearch_2014_2018_Rplot.pdf", height=6, width=8)
-  if(j==4 & lowsearch_option==TRUE) pdf("Rplots/coefs_lowsearch_2015_2019_Rplot.pdf", height=6, width=8)
+  if(j==1 & lowsearch_option==TRUE & attention_rate==FALSE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_count_2012_2016_Rplot.pdf", height=6, width=8)
+  if(j==2 & lowsearch_option==TRUE & attention_rate==FALSE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_count_2013_2017_Rplot.pdf", height=6, width=8)
+  if(j==3 & lowsearch_option==TRUE & attention_rate==FALSE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_count_2014_2018_Rplot.pdf", height=6, width=8)
+  if(j==4 & lowsearch_option==TRUE & attention_rate==FALSE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_count_2015_2019_Rplot.pdf", height=6, width=8)
   
-  #if(j==1 & lowsearch_option==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2012_2016_Rplot.pdf", height=6, width=8)
-  #if(j==2 & lowsearch_option==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2013_2017_Rplot.pdf", height=6, width=8)
-  #if(j==3 & lowsearch_option==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2014_2018_Rplot.pdf", height=6, width=8)
-  #if(j==4 & lowsearch_option==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_attention_rate_2015_2019_Rplot.pdf", height=6, width=8)
+  if(j==1 & lowsearch_option==TRUE & attention_rate==TRUE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_rate_2012_2016_Rplot.pdf", height=6, width=8)
+  if(j==2 & lowsearch_option==TRUE & attention_rate==TRUE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_rate_2013_2017_Rplot.pdf", height=6, width=8)
+  if(j==3 & lowsearch_option==TRUE & attention_rate==TRUE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_rate_2014_2018_Rplot.pdf", height=6, width=8)
+  if(j==4 & lowsearch_option==TRUE & attention_rate==TRUE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_rate_2015_2019_Rplot.pdf", height=6, width=8)
+  
   
   par(mar=c(4,10,2,1))
   plot(coef_mean, 1:6, xlim=c(-6,6), ylim=c(.5,6.5), ylab="", xlab="Standarized Coefficients", xaxt="n", yaxt="n", type="n")
@@ -340,8 +353,13 @@ for(j in 1:4){
   points(coef_max, 0.75:5.75, col=1, bg=grey(.95), pch=22)
   
   mtext(side=3, line=0.5, text="Lower <----------- Google Search Rate -----------> Higher")
-  axis(side=2, at=6:1, labels=c("FDI Inflows", "Amnesty Report Count", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
-  #axis(side=2, at=6:1, labels=c("FDI Inflows", "Amnesty Report Rate", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
+  
+  if(attention_rate==FALSE & NGO_amnesty==TRUE) axis(side=2, at=6:1, labels=c("FDI Inflows", "Amnesty Report (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
+  if(attention_rate==TRUE & NGO_amnesty==TRUE) axis(side=2, at=6:1, labels=c("FDI Inflows", "Amnesty Report (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
+  if(attention_rate==FALSE & NGO_amnesty==FALSE) axis(side=2, at=6:1, labels=c("FDI Inflows", "NGO Presence (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
+  if(attention_rate==TRUE & NGO_amnesty==FALSE) axis(side=2, at=6:1, labels=c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
+  
+  
   axis(side=1, at=-6:6)
 
   legend("topright", legend=c("mean rate", "median rate", "max rate"), pch=c(21, 23, 22), col=1, pt.bg=c(grey(.25), grey(.65), grey(.95)), bty="n", cex=.75)
