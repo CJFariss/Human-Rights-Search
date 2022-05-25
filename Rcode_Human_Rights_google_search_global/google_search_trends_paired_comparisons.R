@@ -21,8 +21,8 @@ source("groundhog_library_func.R")
 groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
 #pdf("Rplots/Google_search_term_pairs.pdf", height=6, width=6)
-pdf("Rplots/Google_search_term_pairs_shortlist.pdf", height=6, width=6)
-#pdf("Rplots/Google_search_term_pairs_longlist.pdf", height=6, width=6)
+#pdf("Rplots/Google_search_term_pairs_shortlist.pdf", height=6, width=6)
+pdf("Rplots/Google_search_term_pairs_longlist.pdf", height=6, width=6)
 
 #time
 #war
@@ -84,7 +84,7 @@ TERMS_long <- list(c("facebook", "google"),
 length(TERMS_long)
 
 TERMS <- TERMS_short
-#TERMS <- TERMS_long
+TERMS <- TERMS_long
 
 #TIME <- "2013-01-01 2017-12-31"
 TIME <- "2015-01-01 2019-12-31"
