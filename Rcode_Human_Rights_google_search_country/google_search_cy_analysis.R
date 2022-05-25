@@ -186,9 +186,9 @@ for(i in 1:length(test_dat_language_pooled)){
   temp$hringo_inter_rate <- scale(temp$hringo_inter_rate)
   
   #temp$NGO <- temp$amnesty_attention_count
-  #temp$NGO <- temp$amnesty_attention_rate
+  temp$NGO <- temp$amnesty_attention_rate
   #temp$NGO <- temp$hringo_inter
-  temp$NGO <- temp$hringo_inter_rate
+  #temp$NGO <- temp$hringo_inter_rate
   
   fit_mean <- lm(hits_mean ~ -1
                  + Foreign_direct_investment_net_inflows_percent_GDP  
@@ -246,7 +246,7 @@ fit_median_robust[[4]][5,1] / fit_median_robust[[4]][2,1]
 ## save table output for latex 
 for(j in 1:4){
   
-  tab_output <- stargazer(fit_mean_robust[[j]], fit_median_robust[[j]], fit_max_robust[[j]], covariate.labels = c("FDI Inflows", "Amnesty Report Count", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)"))
+  tab_output <- stargazer(fit_mean_robust[[j]], fit_median_robust[[j]], fit_max_robust[[j]], covariate.labels = c("FDI Inflows", "NGO Attention", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)"))
 
   tab_output
   if(j==1 & lowsearch_option==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_2012_2016.tex")
