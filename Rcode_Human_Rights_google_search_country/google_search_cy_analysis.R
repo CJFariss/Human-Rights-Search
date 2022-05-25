@@ -261,15 +261,15 @@ for(j in 1:4){
 
   #tab_output
   
-  if(j==1 & lowsearch_option==TRUE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2012_2016.tex")
-  if(j==2 & lowsearch_option==TRUE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2013_2017.tex")
-  if(j==3 & lowsearch_option==TRUE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2014_2018.tex")
-  if(j==4 & lowsearch_option==TRUE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2015_2019.tex")
+  if(j==1 & lowsearch_option==FALSE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2012_2016.tex")
+  if(j==2 & lowsearch_option==FALSE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2013_2017.tex")
+  if(j==3 & lowsearch_option==FALSE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2014_2018.tex")
+  if(j==4 & lowsearch_option==FALSE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2015_2019.tex")
   
-  if(j==1 & lowsearch_option==TRUE & attention_rate==TRUE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_rate_2012_2016.tex")
-  if(j==2 & lowsearch_option==TRUE & attention_rate==TRUE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_rate_2013_2017.tex")
-  if(j==3 & lowsearch_option==TRUE & attention_rate==TRUE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_rate_2014_2018.tex")
-  if(j==4 & lowsearch_option==TRUE& attention_rate==TRUE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_rate_2015_2019.tex")
+  if(j==1 & lowsearch_option==FALSE & attention_rate==TRUE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_rate_2012_2016.tex")
+  if(j==2 & lowsearch_option==FALSE & attention_rate==TRUE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_rate_2013_2017.tex")
+  if(j==3 & lowsearch_option==FALSE & attention_rate==TRUE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_rate_2014_2018.tex")
+  if(j==4 & lowsearch_option==FALSE & attention_rate==TRUE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_rate_2015_2019.tex")
 }
 
 
@@ -316,15 +316,15 @@ for(j in 1:4){
   
   ## coefficient plots
   ## create graph file
-  if(j==1 & lowsearch_option==TRUE & attention_rate==FALSE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_count_2012_2016_Rplot.pdf", height=6, width=8)
-  if(j==2 & lowsearch_option==TRUE & attention_rate==FALSE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_count_2013_2017_Rplot.pdf", height=6, width=8)
-  if(j==3 & lowsearch_option==TRUE & attention_rate==FALSE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_count_2014_2018_Rplot.pdf", height=6, width=8)
-  if(j==4 & lowsearch_option==TRUE & attention_rate==FALSE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_count_2015_2019_Rplot.pdf", height=6, width=8)
+  if(j==1 & lowsearch_option==FALSE & attention_rate==FALSE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_count_2012_2016_Rplot.pdf", height=6, width=8)
+  if(j==2 & lowsearch_option==FALSE & attention_rate==FALSE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_count_2013_2017_Rplot.pdf", height=6, width=8)
+  if(j==3 & lowsearch_option==FALSE & attention_rate==FALSE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_count_2014_2018_Rplot.pdf", height=6, width=8)
+  if(j==4 & lowsearch_option==FALSE & attention_rate==FALSE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_count_2015_2019_Rplot.pdf", height=6, width=8)
   
-  if(j==1 & lowsearch_option==TRUE & attention_rate==TRUE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_rate_2012_2016_Rplot.pdf", height=6, width=8)
-  if(j==2 & lowsearch_option==TRUE & attention_rate==TRUE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_rate_2013_2017_Rplot.pdf", height=6, width=8)
-  if(j==3 & lowsearch_option==TRUE & attention_rate==TRUE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_rate_2014_2018_Rplot.pdf", height=6, width=8)
-  if(j==4 & lowsearch_option==TRUE & attention_rate==TRUE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_rate_2015_2019_Rplot.pdf", height=6, width=8)
+  if(j==1 & lowsearch_option==FALSE & attention_rate==TRUE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_rate_2012_2016_Rplot.pdf", height=6, width=8)
+  if(j==2 & lowsearch_option==FALSE & attention_rate==TRUE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_rate_2013_2017_Rplot.pdf", height=6, width=8)
+  if(j==3 & lowsearch_option==FALSE & attention_rate==TRUE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_rate_2014_2018_Rplot.pdf", height=6, width=8)
+  if(j==4 & lowsearch_option==FALSE & attention_rate==TRUE & NGO_amnesty==TRUE) pdf("Rplots/coefs_lowsearch_amnesty_amnesty_report_rate_2015_2019_Rplot.pdf", height=6, width=8)
   
   
   par(mar=c(4,10,2,1))
