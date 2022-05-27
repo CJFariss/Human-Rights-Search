@@ -1,5 +1,11 @@
-## gtrends_elated_topics.R
+## gtrends_related_topics.R
 
+## load necessary libraries 
+## change groundhog to TRUE to install original versions of libraries from April-2022
+source("groundhog_library_func.R")
+groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
+
+## get file names
 files_names <- list.files("Data_output_location_search_lists_lowsearch")
 files_names
 
