@@ -18,18 +18,31 @@
 search_volume <- c(100,50,10)
 hr_search_volume <- c(10,1,1)
 
+make_min_max_func <- function(search_volume = c(100,50,10), hr_search_volume = c(10,1,1)){
+  
+  par(mfrow=c(4,1), mar=c(3,3,3,1))
+  
+  barplot(search_volume, names.arg=c("Country A", "Country B", "Country C"), main="Total Search Volume", las=2)
+  
+  barplot(hr_search_volume, names.arg=c("Country A", "Country B", "Country C"), main="Human Rights Search Volume", ylim=c(0,10), las=2)
+  
+  search_ratio <- hr_search_volume/search_volume
+  
+  barplot(search_ratio, names.arg=c("Country A", "Country B", "Country C"), main="Human Rights Search Ratio", ylim=c(0,1), las=2)
+  
+  
+  search_rate <- 100 * (search_ratio - min(search_ratio)) / (max(search_ratio) - min(search_ratio))
+  
+  barplot(search_rate, names.arg=c("Country A", "Country B", "Country C"), main="Human Rights Search Rate (min-max normalization)", las=2)
 
-par(mfrow=c(4,1), mar=c(3,3,3,1))
-barplot(search_volume, names.arg=c("Country A", "Country B", "Country C"), main="Total Search Volume")
+}
 
-barplot(hr_search_volume, names.arg=c("Country A", "Country B", "Country C"), main="Human Rights Search Volume", ylim=c(0,10))
+pdf("Rplot_search_rate_examples/Rplot_search_rate_examples.pdf", height=9, width=6)
 
-search_ratio <- hr_search_volume/search_volume
+make_min_max_func(search_volume = c(100,50,10), hr_search_volume = c(5,1,1))
+make_min_max_func(search_volume = c(100,50,10), hr_search_volume = c(5,1,5))
+make_min_max_func(search_volume = c(100,50,10), hr_search_volume = c(5,5,5))
+make_min_max_func(search_volume = c(100,50,10), hr_search_volume = c(10,1,1))
+make_min_max_func(search_volume = c(100,50,10), hr_search_volume = c(10,5,5))
 
-barplot(search_ratio, names.arg=c("Country A", "Country B", "Country C"), main="Human Rights Search Ratio", ylim=c(0,1))
-
-
-search_rate <- 100 * (search_ratio - min(search_ratio)) / (max(search_ratio) - min(search_ratio))
-
-barplot(search_rate, names.arg=c("Country A", "Country B", "Country C"), main="Human Rights Search Rate (min-max normalization)")
-
+dev.off()
