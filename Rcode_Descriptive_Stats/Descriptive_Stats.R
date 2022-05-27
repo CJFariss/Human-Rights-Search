@@ -83,8 +83,14 @@ for(i in 1:length(test_dat_language_pooled)){
   dat <- test_dat_language_pooled[[i]]
   cor_value[[i]] <- c(cor(dat$hits_mean, -1*dat$theta_mean, use="pairwise"), cor(dat$hits_median, -1*dat$theta_mean, use="pairwise"), cor(dat$hits_max, -1*dat$theta_mean, use="pairwise"))
 }
-data.frame(do.call("rbind", cor_value))
+cor_out <- data.frame(do.call("rbind", cor_value))
 #summary(do.call("rbind", cor_value))
+names(cor_out) <- c("Search Mean", "Search Median", "Search Max")
+row.names(cor_out) <- c("2012-2016", "2013-2017", "2014-2018", "2015-2019")
+cor_out
+tab_out <- xtable(cor_out, digits=3)
+tab_out
+print(tab_out, file="Tex_tables/cor_search_theta_2012_2016.tex")
 
 ## correlations
 cor_value <- list()
@@ -92,8 +98,13 @@ for(i in 1:length(test_dat_language_pooled)){
   dat <- test_dat_language_pooled[[i]]
   cor_value[[i]] <- c(cor(dat$hits_mean, dat$amnesty_attention_count, use="pairwise"), cor(dat$hits_median, dat$amnesty_attention_count, use="pairwise"), cor(dat$hits_max, dat$amnesty_attention_count, use="pairwise"))
 }
-data.frame(do.call("rbind", cor_value))
+cor_out <- data.frame(do.call("rbind", cor_value))
 #summary(do.call("rbind", cor_value))
+names(cor_out) <- c("Search Mean", "Search Median", "Search Max")
+row.names(cor_out) <- c("2012-2016", "2013-2017", "2014-2018", "2015-2019")
+cor_out
+tab_out <- xtable(cor_out, digits=3)
+print(tab_out, file="Tex_tables/cor_search_amnesty_attention_count_2012_2016.tex")
 
 ## correlations
 cor_value <- list()
@@ -101,8 +112,13 @@ for(i in 1:length(test_dat_language_pooled)){
   dat <- test_dat_language_pooled[[i]]
   cor_value[[i]] <- c(cor(dat$hits_mean, dat$amnesty_attention_rate, use="pairwise"), cor(dat$hits_median, dat$amnesty_attention_rate, use="pairwise"), cor(dat$hits_max, dat$amnesty_attention_rate, use="pairwise"))
 }
-data.frame(do.call("rbind", cor_value))
+cor_out <- data.frame(do.call("rbind", cor_value))
 #summary(do.call("rbind", cor_value))
+names(cor_out) <- c("Search Mean", "Search Median", "Search Max")
+row.names(cor_out) <- c("2012-2016", "2013-2017", "2014-2018", "2015-2019")
+cor_out
+tab_out <- xtable(cor_out, digits=3)
+print(tab_out, file="Tex_tables/cor_search_amnesty_attention_rate_2012_2016.tex")
 
 
 
@@ -124,5 +140,44 @@ max(test_dat_language_pooled[[4]]$hits_median)
 max(test_dat_language_pooled[[4]]$hits_max)
 
 
+summary_list <- list()
 
+for(i in 1:length(test_dat_language_pooled)){
+  
+  temp <- subset(test_dat_language_pooled[[i]], !is.na(CCODE), select=c(hits_mean, hits_median, hits_max, theta_mean, GDP_growth_annual_percent, Foreign_direct_investment_net_inflows_percent_GDP, treaty_count, v2smgovfilprc,amnesty_attention_count, amnesty_attention_rate, hringo_inter, hringo_inter_rate))
+  
+  ## scale variable 
+  #temp$theta_mean <- -1*temp$theta_mean
+  #temp$amnesty_attention_count <- scale(temp$amnesty_attention_count)
+  #temp$amnesty_attention_rate <- scale(temp$amnesty_attention_rate)
+  #temp$GDP_growth_annual_percent <- scale(temp$GDP_growth_annual_percent)
+  #temp$Foreign_direct_investment_net_inflows_percent_GDP <- scale(temp$Foreign_direct_investment_net_inflows_percent_GDP) 
+  #temp$treaty_count <- scale(temp$treaty_count)
+  #temp$v2smgovfilprc <- scale(temp$v2smgovfilprc)
+  #temp$hringo_inter <- scale(temp$hringo_inter)
+  #temp$hringo_inter_rate <- scale(temp$hringo_inter_rate)
 
+  
+  summary_list[[i]] <- data.frame(mean=apply(temp,2,mean, na.rm=T), 
+                                  sd=apply(temp,2,sd, na.rm=T),
+                                  min=apply(temp,2,min, na.rm=T),
+                                  max=apply(temp,2,max, na.rm=T)) 
+  row.names(summary_list[[i]]) <- c("Search Mean", "Search Median", "Search Max", "HR Violations", "GDP Growth", "FDI Inflows", "HR Treaty Count", "Internet Censorship", "Amnesty Attention Count", "Amnesty Attention Rate", "HRNGO Count", "HRNGO Rate")
+}
+
+summary_list[[1]]
+summary_list[[2]]
+summary_list[[3]]
+summary_list[[4]]
+
+tab_out <- xtable(summary_list[[1]], digits=3)
+write(tab_output, file="Tex_tables/stats_2012_2016.tex") ## can also use print()
+
+tab_out <- xtable(summary_list[[2]], digits=3)
+write(tab_output, file="Tex_tables/stats_2013_2017.tex")
+
+tab_out <- xtable(summary_list[[3]], digits=3)
+write(tab_output, file="Tex_tables/stats_2014_2018.tex")
+
+tab_out <- xtable(summary_list[[4]], digits=3)
+write(tab_output, file="Tex_tables/stats_2015_2019.tex")
