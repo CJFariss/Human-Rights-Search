@@ -88,7 +88,7 @@ cor_out <- data.frame(do.call("rbind", cor_value))
 names(cor_out) <- c("Search Mean", "Search Median", "Search Max")
 row.names(cor_out) <- c("2012-2016", "2013-2017", "2014-2018", "2015-2019")
 cor_out
-tab_out <- xtable(cor_out, digits=3)
+tab_out <- xtable(cor_out, digits=3, align=c("|l|","r","r","r|"), caption="Correlations between Search and HR Violations")
 tab_out
 print(tab_out, file="Tex_tables/cor_search_theta_2012_2016.tex")
 
@@ -103,7 +103,7 @@ cor_out <- data.frame(do.call("rbind", cor_value))
 names(cor_out) <- c("Search Mean", "Search Median", "Search Max")
 row.names(cor_out) <- c("2012-2016", "2013-2017", "2014-2018", "2015-2019")
 cor_out
-tab_out <- xtable(cor_out, digits=3)
+tab_out <- xtable(cor_out, digits=3, align=c("|l|","r","r","r|"), caption="Correlations between Search and Amnesty Attention Count")
 print(tab_out, file="Tex_tables/cor_search_amnesty_attention_count_2012_2016.tex")
 
 ## correlations
@@ -117,7 +117,7 @@ cor_out <- data.frame(do.call("rbind", cor_value))
 names(cor_out) <- c("Search Mean", "Search Median", "Search Max")
 row.names(cor_out) <- c("2012-2016", "2013-2017", "2014-2018", "2015-2019")
 cor_out
-tab_out <- xtable(cor_out, digits=3)
+tab_out <- xtable(cor_out, digits=3, align=c("|l|","r","r","r|"), caption="Correlations between Search and Amnesty Attention Rate")
 print(tab_out, file="Tex_tables/cor_search_amnesty_attention_rate_2012_2016.tex")
 
 
@@ -148,7 +148,7 @@ for(i in 1:length(test_dat_language_pooled)){
   temp <- subset(test_dat_language_pooled[[i]], !is.na(CCODE), select=c(hits_mean, hits_median, hits_max, theta_mean, GDP_growth_annual_percent, Foreign_direct_investment_net_inflows_percent_GDP, treaty_count, v2smgovfilprc,amnesty_attention_count, amnesty_attention_rate, hringo_inter, hringo_inter_rate))
   
   ## scale variable 
-  #temp$theta_mean <- -1*temp$theta_mean
+  temp$theta_mean <- -1*temp$theta_mean
   #temp$amnesty_attention_count <- scale(temp$amnesty_attention_count)
   #temp$amnesty_attention_rate <- scale(temp$amnesty_attention_rate)
   #temp$GDP_growth_annual_percent <- scale(temp$GDP_growth_annual_percent)
@@ -166,6 +166,10 @@ for(i in 1:length(test_dat_language_pooled)){
   row.names(summary_list[[i]]) <- c("Search Mean", "Search Median", "Search Max", "HR Violations", "GDP Growth", "FDI Inflows", "HR Treaty Count", "Internet Censorship", "Amnesty Attention Count", "Amnesty Attention Rate", "HRNGO Count", "HRNGO Rate")
   
   cor_mat_list[[i]] <- cor(temp, use="pairwise")
+  row.names(cor_mat_list[[i]]) <- c("Search Mean", "Search Median", "Search Max", "HR Violations", "GDP Growth", "FDI Inflows", "HR Treaty Count", "Internet Censorship", "AI Attention Count", "AI Attention Rate", "HRNGO Count", "HRNGO Rate")
+
+  colnames(cor_mat_list[[i]]) <- c("(1)","(2)","(3)","(4)","(5)","(6)","(7)","(8)","(9)","(10)","(11)","(12)")
+  
 }
 
 summary_list[[1]]
@@ -173,32 +177,37 @@ summary_list[[2]]
 summary_list[[3]]
 summary_list[[4]]
 
+cor_mat_list[[1]]
+cor_mat_list[[2]]
+cor_mat_list[[3]]
+cor_mat_list[[4]]
+
 ## descriptive stats
-tab_out <- xtable(summary_list[[1]], digits=3)
-write(tab_output, file="Tex_tables/stats_2012_2016.tex") ## can also use print()
+tab_out <- xtable(summary_list[[1]], digits=3, align=c("|l|","r","r","r","r|"), caption="Summary Statistics 2012-2016")
+print(tab_out, file="Tex_tables/stats_2012_2016.tex") 
 
-tab_out <- xtable(summary_list[[2]], digits=3)
-write(tab_output, file="Tex_tables/stats_2013_2017.tex")
+tab_out <- xtable(summary_list[[2]], digits=3, align=c("|l|","r","r","r","r|"), caption="Summary Statistics 2013-2017")
+print(tab_out, file="Tex_tables/stats_2013_2017.tex")
 
-tab_out <- xtable(summary_list[[3]], digits=3)
-write(tab_output, file="Tex_tables/stats_2014_2018.tex")
+tab_out <- xtable(summary_list[[3]], digits=3, align=c("|l|","r","r","r","r|"), caption="Summary Statistics 2014-2018")
+print(tab_out, file="Tex_tables/stats_2014_2018.tex")
 
-tab_out <- xtable(summary_list[[4]], digits=3)
-write(tab_output, file="Tex_tables/stats_2015_2019.tex")
+tab_out <- xtable(summary_list[[4]], digits=3, align=c("|l|","r","r","r","r|"), caption="Summary Statistics 2015-2019")
+print(tab_out, file="Tex_tables/stats_2015_2019.tex")
 
 
 ## correlation matrices
-tab_output <- xtable(cor_mat_list[[1]], digits=3)
-print(tab_output, file="Tex_tables/cors_2012_2016.tex") ## can also use print()
+tab_out <- xtable(cor_mat_list[[1]], digits=2, align=c("|l|","r","r","r","r","r","r","r","r","r","r","r","r|"), caption="Pairwise Correlations 2012-2016")
+print(tab_out, file="Tex_tables/cors_2012_2016.tex") 
 
-tab_out <- xtable(cor_mat_list[[2]], digits=3)
-print(tab_output, file="Tex_tables/cors_2013_2017.tex")
+tab_out <- xtable(cor_mat_list[[2]], digits=2, align=c("|l|","r","r","r","r","r","r","r","r","r","r","r","r|"), caption="Pairwise Correlations 2013-2017")
+print(tab_out, file="Tex_tables/cors_2013_2017.tex")
 
-tab_out <- xtable(cor_mat_list[[3]], digits=3)
-print(tab_output, file="Tex_tables/cors_2014_2018.tex")
+tab_out <- xtable(cor_mat_list[[3]], digits=2, align=c("|l|","r","r","r","r","r","r","r","r","r","r","r","r|"), caption="Pairwise Correlations 2014-2018")
+print(tab_out, file="Tex_tables/cors_2014_2018.tex")
 
-tab_out <- xtable(cor_mat_list[[4]], digits=3)
-print(tab_output, file="Tex_tables/cors_2015_2019.tex")
+tab_out <- xtable(cor_mat_list[[4]], digits=2, align=c("|l|","r","r","r","r","r","r","r","r","r","r","r","r|"), caption="Pairwise Correlations 2015-2019")
+print(tab_out, file="Tex_tables/cors_2015_2019.tex")
 
 
 
