@@ -141,6 +141,7 @@ max(test_dat_language_pooled[[4]]$hits_max)
 
 
 summary_list <- list()
+cor_mat_list <- list()
 
 for(i in 1:length(test_dat_language_pooled)){
   
@@ -163,6 +164,8 @@ for(i in 1:length(test_dat_language_pooled)){
                                   min=apply(temp,2,min, na.rm=T),
                                   max=apply(temp,2,max, na.rm=T)) 
   row.names(summary_list[[i]]) <- c("Search Mean", "Search Median", "Search Max", "HR Violations", "GDP Growth", "FDI Inflows", "HR Treaty Count", "Internet Censorship", "Amnesty Attention Count", "Amnesty Attention Rate", "HRNGO Count", "HRNGO Rate")
+  
+  cor_mat_list[[i]] <- cor(temp, use="pairwise")
 }
 
 summary_list[[1]]
@@ -170,6 +173,7 @@ summary_list[[2]]
 summary_list[[3]]
 summary_list[[4]]
 
+## descriptive stats
 tab_out <- xtable(summary_list[[1]], digits=3)
 write(tab_output, file="Tex_tables/stats_2012_2016.tex") ## can also use print()
 
@@ -181,3 +185,20 @@ write(tab_output, file="Tex_tables/stats_2014_2018.tex")
 
 tab_out <- xtable(summary_list[[4]], digits=3)
 write(tab_output, file="Tex_tables/stats_2015_2019.tex")
+
+
+## correlation matrices
+tab_output <- xtable(cor_mat_list[[1]], digits=3)
+print(tab_output, file="Tex_tables/cors_2012_2016.tex") ## can also use print()
+
+tab_out <- xtable(cor_mat_list[[2]], digits=3)
+print(tab_output, file="Tex_tables/cors_2013_2017.tex")
+
+tab_out <- xtable(cor_mat_list[[3]], digits=3)
+print(tab_output, file="Tex_tables/cors_2014_2018.tex")
+
+tab_out <- xtable(cor_mat_list[[4]], digits=3)
+print(tab_output, file="Tex_tables/cors_2015_2019.tex")
+
+
+
