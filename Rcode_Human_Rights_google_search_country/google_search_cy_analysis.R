@@ -38,55 +38,6 @@ summary(test_dat[[1]])
 #test_dat$hits_sd[is.na(test_dat$hits_sd)] <- 0
 
 
-## correlations
-cor_value <- list()
-for(i in 1:length(test_dat)){
-  dat <- test_dat[[i]]
-  cor_value[[i]] <- c(cor(dat$hits_mean, dat$theta_mean, use="pairwise"), cor(dat$hits_median, dat$theta_mean, use="pairwise"), cor(dat$hits_max, dat$theta_mean, use="pairwise"))
-}
-data.frame(names(test_dat), do.call("rbind", cor_value))
-summary(do.call("rbind", cor_value))
-
-## correlations
-cor_value <- list()
-for(i in 1:length(test_dat)){
-  dat <- test_dat[[i]]
-  cor_value[[i]] <- c(cor(dat$hits_mean, dat$amnesty_report_count, use="pairwise"), cor(dat$hits_median, dat$amnesty_report_count, use="pairwise"), cor(dat$hits_max, dat$amnesty_report_count, use="pairwise"))
-}
-data.frame(names(test_dat), do.call("rbind", cor_value))
-summary(do.call("rbind", cor_value))
-
-## correlations
-cor_value <- list()
-for(i in 1:length(test_dat)){
-  dat <- test_dat[[i]]
-  cor_value[[i]] <- c(cor(dat$hits_mean, dat$amnesty_attention_count, use="pairwise"), cor(dat$hits_median, dat$amnesty_attention_count, use="pairwise"), cor(dat$hits_max, dat$amnesty_attention_count, use="pairwise"))
-}
-data.frame(names(test_dat), do.call("rbind", cor_value))
-summary(do.call("rbind", cor_value))
-
-## correlations
-cor_value <- list()
-for(i in 1:length(test_dat)){
-  dat <- test_dat[[i]]
-  cor_value[[i]] <- c(cor(dat$hits_mean, dat$amnesty_attention_rate, use="pairwise"), cor(dat$hits_median, dat$amnesty_attention_rate, use="pairwise"), cor(dat$hits_max, dat$amnesty_attention_rate, use="pairwise"))
-}
-data.frame(names(test_dat), do.call("rbind", cor_value))
-summary(do.call("rbind", cor_value))
-
-
-## correlations
-cor_value <- list()
-par(mfrow=c(5,4), mar=c(1,1,.5,.5))
-for(i in 1:length(test_dat)){
-  dat <- test_dat[[i]]
-  cor_value[[i]] <- c(cor(dat$theta_mean, dat$amnesty_report_count, use="pairwise"))
-  plot(scale(dat$amnesty_report_count) ~ scale(dat$theta_mean) )
-  abline(reg=lm(scale(dat$amnesty_report_count) ~ scale(dat$theta_mean) ),col=2)
-}
-unlist(cor_value)
-
-
 ## linear models (languages are seperated)
 fit_mean_robust <- fit_median_robust <- fit_max_robust <- list()
 unit_n <- c()

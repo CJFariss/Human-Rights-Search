@@ -29,6 +29,35 @@ summary(test_dat[[1]])
 sapply(test_dat, nrow)
 
 
+## correlations
+cor_value <- list()
+for(i in 1:length(test_dat)){
+  dat <- test_dat[[i]]
+  cor_value[[i]] <- c(cor(dat$hits_mean, -1*dat$theta_mean, use="pairwise"), cor(dat$hits_median, -1*dat$theta_mean, use="pairwise"), cor(dat$hits_max, -1*dat$theta_mean, use="pairwise"))
+}
+data.frame(names(test_dat), do.call("rbind", cor_value))
+summary(do.call("rbind", cor_value))
+
+## correlations
+cor_value <- list()
+for(i in 1:length(test_dat)){
+  dat <- test_dat[[i]]
+  cor_value[[i]] <- c(cor(dat$hits_mean, dat$amnesty_attention_count, use="pairwise"), cor(dat$hits_median, dat$amnesty_attention_count, use="pairwise"), cor(dat$hits_max, dat$amnesty_attention_count, use="pairwise"))
+}
+data.frame(names(test_dat), do.call("rbind", cor_value))
+summary(do.call("rbind", cor_value))
+
+## correlations
+cor_value <- list()
+for(i in 1:length(test_dat)){
+  dat <- test_dat[[i]]
+  cor_value[[i]] <- c(cor(dat$hits_mean, dat$amnesty_attention_rate, use="pairwise"), cor(dat$hits_median, dat$amnesty_attention_rate, use="pairwise"), cor(dat$hits_max, dat$amnesty_attention_rate, use="pairwise"))
+}
+data.frame(names(test_dat), do.call("rbind", cor_value))
+summary(do.call("rbind", cor_value))
+
+
+
 ## pool the datasets by language group
 for(i in 1:length(test_dat)){
   if(i>0 & i<=4) test_dat[[i]]$language <- "derechos_humanos"
@@ -47,6 +76,37 @@ test_dat_language_pooled[[4]] <- rbind(test_dat[[4]], test_dat[[8]], test_dat[[1
 sapply(test_dat_language_pooled, nrow)
 
 
+
+## correlations
+cor_value <- list()
+for(i in 1:length(test_dat_language_pooled)){
+  dat <- test_dat_language_pooled[[i]]
+  cor_value[[i]] <- c(cor(dat$hits_mean, -1*dat$theta_mean, use="pairwise"), cor(dat$hits_median, -1*dat$theta_mean, use="pairwise"), cor(dat$hits_max, -1*dat$theta_mean, use="pairwise"))
+}
+data.frame(do.call("rbind", cor_value))
+#summary(do.call("rbind", cor_value))
+
+## correlations
+cor_value <- list()
+for(i in 1:length(test_dat_language_pooled)){
+  dat <- test_dat_language_pooled[[i]]
+  cor_value[[i]] <- c(cor(dat$hits_mean, dat$amnesty_attention_count, use="pairwise"), cor(dat$hits_median, dat$amnesty_attention_count, use="pairwise"), cor(dat$hits_max, dat$amnesty_attention_count, use="pairwise"))
+}
+data.frame(do.call("rbind", cor_value))
+#summary(do.call("rbind", cor_value))
+
+## correlations
+cor_value <- list()
+for(i in 1:length(test_dat_language_pooled)){
+  dat <- test_dat_language_pooled[[i]]
+  cor_value[[i]] <- c(cor(dat$hits_mean, dat$amnesty_attention_rate, use="pairwise"), cor(dat$hits_median, dat$amnesty_attention_rate, use="pairwise"), cor(dat$hits_max, dat$amnesty_attention_rate, use="pairwise"))
+}
+data.frame(do.call("rbind", cor_value))
+#summary(do.call("rbind", cor_value))
+
+
+
+## some descriptive stats
 mean(test_dat_language_pooled[[4]]$hits_mean)
 mean(test_dat_language_pooled[[4]]$hits_median)
 mean(test_dat_language_pooled[[4]]$hits_max)
