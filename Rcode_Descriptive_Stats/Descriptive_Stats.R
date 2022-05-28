@@ -39,12 +39,9 @@ cor_out <- data.frame(names(test_dat), do.call("rbind", cor_value))
 #cor_out
 cor_out[,1] <- c("derechos humanos", "derechos humanos", "derechos humanos", "derechos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "droit", "droit", "droit", "droit", "human rights", "human rights", "human rights", "human rights", "huquq alansan", "huquq alansan", "huquq alansan", "huquq alansan")
 cor_out$years <- c("2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019")
-
 cor_out <- cor_out[,c(1,5,2,3,4)]
 cor_out
-
 names(cor_out) <- c("Term", "Years", "Search Mean", "Search Median", "Search Max")
-
 tab_out <- xtable(cor_out, digits=3, align=c("|r|", "rl", "r","r","r","r||"), caption="Correlations between Search and HR Violations by search term")
 tab_out
 print(tab_out, file="Tex_tables/cor_search_theta_all.tex")
@@ -56,8 +53,17 @@ for(i in 1:length(test_dat)){
   dat <- test_dat[[i]]
   cor_value[[i]] <- c(cor(dat$hits_mean, dat$amnesty_attention_count, use="pairwise"), cor(dat$hits_median, dat$amnesty_attention_count, use="pairwise"), cor(dat$hits_max, dat$amnesty_attention_count, use="pairwise"))
 }
-data.frame(names(test_dat), do.call("rbind", cor_value))
-summary(do.call("rbind", cor_value))
+cor_out <- data.frame(names(test_dat), do.call("rbind", cor_value))
+#cor_out
+cor_out[,1] <- c("derechos humanos", "derechos humanos", "derechos humanos", "derechos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "droit", "droit", "droit", "droit", "human rights", "human rights", "human rights", "human rights", "huquq alansan", "huquq alansan", "huquq alansan", "huquq alansan")
+cor_out$years <- c("2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019")
+cor_out <- cor_out[,c(1,5,2,3,4)]
+cor_out
+names(cor_out) <- c("Term", "Years", "Search Mean", "Search Median", "Search Max")
+tab_out <- xtable(cor_out, digits=3, align=c("|r|", "rl", "r","r","r","r||"), caption="Correlations between Search and HR Violations by search term")
+tab_out
+print(tab_out, file="Tex_tables/cor_search_amnesty_attention_count_all.tex")
+
 
 ## correlations
 cor_value <- list()
@@ -65,8 +71,16 @@ for(i in 1:length(test_dat)){
   dat <- test_dat[[i]]
   cor_value[[i]] <- c(cor(dat$hits_mean, dat$amnesty_attention_rate, use="pairwise"), cor(dat$hits_median, dat$amnesty_attention_rate, use="pairwise"), cor(dat$hits_max, dat$amnesty_attention_rate, use="pairwise"))
 }
-data.frame(names(test_dat), do.call("rbind", cor_value))
-summary(do.call("rbind", cor_value))
+cor_out <- data.frame(names(test_dat), do.call("rbind", cor_value))
+#cor_out
+cor_out[,1] <- c("derechos humanos", "derechos humanos", "derechos humanos", "derechos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "droit", "droit", "droit", "droit", "human rights", "human rights", "human rights", "human rights", "huquq alansan", "huquq alansan", "huquq alansan", "huquq alansan")
+cor_out$years <- c("2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019")
+cor_out <- cor_out[,c(1,5,2,3,4)]
+cor_out
+names(cor_out) <- c("Term", "Years", "Search Mean", "Search Median", "Search Max")
+tab_out <- xtable(cor_out, digits=3, align=c("|r|", "rl", "r","r","r","r||"), caption="Correlations between Search and HR Violations by search term")
+tab_out
+print(tab_out, file="Tex_tables/cor_search_amnesty_attention_rate_all.tex")
 
 
 
