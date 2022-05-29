@@ -221,6 +221,6 @@ temp$hringo_inter_rate <- 100000*(temp$hringo_inter / temp$Population)
 dim(temp)
 head(temp)
 
-cor(temp[,c('amnesty_report_count','amnesty_attention_count', 'hringo_inter','amnesty_report_rate','amnesty_attention_rate','hringo_inter_rate')], use="pairwise")
+cor(temp[,c('theta_mean','amnesty_report_count','amnesty_attention_count', 'hringo_inter','amnesty_report_rate','amnesty_attention_rate','hringo_inter_rate')], use="pairwise")
 
-cor(temp[,c('amnesty_report_count','amnesty_attention_count', 'hringo_inter','amnesty_report_rate','amnesty_attention_rate','hringo_inter_rate')], use="pairwise", method="spearman")
+cor(temp[,c('theta_mean','amnesty_report_count','amnesty_attention_count', 'hringo_inter','amnesty_report_rate','amnesty_attention_rate','hringo_inter_rate')], use="pairwise", method="spearman")
