@@ -54,7 +54,8 @@ gsearch_cy_dataset_function <- function(cy_data_list, global_data_list){
   language_CCODE <- countrycode(language_world$location, origin="country.name", destination="cown")
   
   ## function arguments for internal function testing
-  for(i in 1:length(cy_data_list)){
+  INDEX <- which(sapply(cy_data_list, length)==7)
+  for(i in INDEX){
     
     temp <- cy_data_list[[i]]$interest_over_time
     
