@@ -120,9 +120,6 @@ dev.off()
 
 
 
-
-
-
 # create an empty list
 newdata <- list()
 
@@ -190,3 +187,40 @@ report_count$COUNTRY <- countrycode(report_count$COW, origin="cown", destination
 report_count[order(report_count$Freq, decreasing=TRUE),]
 
 
+
+
+
+#####
+HRPS <- read.csv("Data_output/HumanRightsProtectionScores_v4.01_amnesty_report_count_v2.csv")
+HRPS <- subset(HRPS, YEAR>=2012, select=c(YEAR, COW, theta_mean, theta_sd, amnesty_report_count))
+head(HRPS)
+
+amnesty_attention <- read.csv("Rcode_Amnesty_article_coverage/Amnesty_webpage_source_files_v2/amnesty_article_meta_data_procssed.csv")
+
+amnesty_cy <- data.frame(table(amnesty_attention$CCODE, amnesty_attention$YEAR))
+names(amnesty_cy) <- c("CCODE", "YEAR", "amnesty_attention_count")
+head(amnesty_cy)
+
+hringo <- read.csv("Data_output/hringo_inter_v2.csv")
+hringo <- subset(hringo, year>=2012 & ccode!=-999, select=c(ccode, year, hringo_inter))
+head(hringo, 10)
+
+WDI <- read.csv("Data_input/WDI_data_2012_2019_saved_2022-05-23.csv")
+head(WDI)
+
+
+temp <- merge(HRPS, amnesty_cy, by.x=c("COW", "YEAR"), by.y=c("CCODE", "YEAR"), all.x=TRUE, all.y=FALSE)
+temp <- merge(temp, hringo, by.x=c("COW", "YEAR"), by.y=c("ccode", "year"), all.x=TRUE, all.y=FALSE)
+temp$ISO <- countrycode(temp$COW, origin="cown", destination="iso2c")
+temp <- merge(temp, WDI, by.x=c("ISO", "YEAR"), by.y=c("iso2c", "year"), all.x=TRUE, all.y=FALSE)
+
+temp$amnesty_report_rate <- 100000*(temp$amnesty_report_count / temp$Population)
+temp$amnesty_attention_rate <- 100000*(temp$amnesty_attention_count / temp$Population)
+temp$hringo_inter_rate <- 100000*(temp$hringo_inter / temp$Population)
+  
+dim(temp)
+head(temp)
+
+cor(temp[,c('amnesty_report_count','amnesty_attention_count', 'hringo_inter','amnesty_report_rate','amnesty_attention_rate','hringo_inter_rate')], use="pairwise")
+
+cor(temp[,c('amnesty_report_count','amnesty_attention_count', 'hringo_inter','amnesty_report_rate','amnesty_attention_rate','hringo_inter_rate')], use="pairwise", method="spearman")
