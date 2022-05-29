@@ -54,7 +54,8 @@ gsearch_cy_dataset_function <- function(cy_data_list, global_data_list){
   language_CCODE <- countrycode(language_world$location, origin="country.name", destination="cown")
   
   ## function arguments for internal function testing
-  for(i in 1:length(cy_data_list)){
+  INDEX <- which(sapply(cy_data_list, length)==7)
+  for(i in INDEX){
     
     temp <- cy_data_list[[i]]$interest_over_time
     
@@ -64,7 +65,7 @@ gsearch_cy_dataset_function <- function(cy_data_list, global_data_list){
     temp$hits <- temp$hits * (language_world$hits[i]/100)
     temp$year <- as.numeric(format(as.Date(temp$date, formate="%Y %B %d"), "%Y"))
     
-    year <<- as.numeric(names(table(temp[c("year")])))
+    year <- as.numeric(names(table(temp[c("year")])))
     hits_mean <- sapply(1:length(year), function(j){mean(temp[c("year","hits")]$hits[temp$year==year[j]])})
     hits_median <- sapply(1:length(year), function(j){median(temp[c("year","hits")]$hits[temp$year==year[j]])})
     hits_max <- sapply(1:length(year), function(j){max(temp[c("year","hits")]$hits[temp$year==year[j]])})
@@ -236,8 +237,22 @@ write.csv(cy_dat, paste("Data_output_search_cy_datasets_lowsearch/gsearch_cy_dat
 
 ##########################################################################
 ## "Amnesty International"
-location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_Amnesty_International_2012-01-01_2016-12-31_saved_2022-05-12.RDS")
+location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_Amnesty_International_2012-01-01_2016-12-31_saved_2022-05-29.RDS")
 global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_Amnesty_International_2012-01-01_2016-12-31_saved_2022-05-12.RDS")
 out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
 cy_dat <- do.call("rbind", out_dat)
-write.csv(cy_dat, paste("Data_output_search_cy_datasets_lowsearch/gsearch_cy_data_", gsub(" ", "_", "Amnesty International"), "_", gsub(" ", "_", "2012-01-01 2016-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets_lowsearch_AI/gsearch_cy_data_", gsub(" ", "_", "Amnesty International"), "_", gsub(" ", "_", "2012-01-01 2016-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+## "Amnesty International"
+location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_Amnesty_International_2013-01-01_2017-12-31_saved_2022-05-29.RDS")
+global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_Amnesty_International_2013-01-01_2017-12-31_saved_2022-05-12.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets_lowsearch_AI/gsearch_cy_data_", gsub(" ", "_", "Amnesty International"), "_", gsub(" ", "_", "2013-01-01 2017-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+## "Amnesty International"
+location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_Amnesty_International_2014-01-01_2018-12-31_saved_2022-05-29.RDS")
+global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_Amnesty_International_2014-01-01_2018-12-31_saved_2022-05-12.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets_lowsearch_AI/gsearch_cy_data_", gsub(" ", "_", "Amnesty International"), "_", gsub(" ", "_", "2014-01-01 2018-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
