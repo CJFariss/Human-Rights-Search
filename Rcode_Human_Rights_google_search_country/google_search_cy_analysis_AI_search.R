@@ -20,7 +20,7 @@
 source("groundhog_library_func.R")
 groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
-attention_rate <- TRUE ## set to FALSE for count
+attention_rate <- FALSE ## set to FALSE for count
 NGO_amnesty <- TRUE ## set to FALSE for the alternative NGO variable
 lowsearch_option <- FALSE ## note that the lowsearch term in the file label means that the lowsearch argument is set to its default FALSE value in the gtrends() search function
 
@@ -137,42 +137,42 @@ for(j in 1:4){
 
 ## save coefficient plots
 for(j in 1:4){
-  coef_mean <- fit_mean_robust[[j]][6:1,1]
-  coef_median <- fit_median_robust[[j]][6:1,1]
-  coef_max <- fit_max_robust[[j]][6:1,1]
+  coef_mean <- fit_mean_robust[[j]][7:1,1]
+  coef_median <- fit_median_robust[[j]][7:1,1]
+  coef_max <- fit_max_robust[[j]][7:1,1]
   
   ## select value for first interval
   VALUE <- 1
   VALUE <- qt(.95, unit_n[j])
   
-  coef_mean_1ub <- fit_mean_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
-  coef_median_1ub <- fit_median_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
-  coef_max_1ub <- fit_max_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
-  coef_mean_1lb <- fit_mean_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
-  coef_median_1lb <- fit_median_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
-  coef_max_1lb <- fit_max_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_mean_1ub <- fit_mean_robust[[j]][7:1,1] + VALUE*fit_mean_robust[[j]][7:1,2]
+  coef_median_1ub <- fit_median_robust[[j]][7:1,1] + VALUE*fit_mean_robust[[j]][7:1,2]
+  coef_max_1ub <- fit_max_robust[[j]][7:1,1] + VALUE*fit_mean_robust[[j]][7:1,2]
+  coef_mean_1lb <- fit_mean_robust[[j]][7:1,1] - VALUE*fit_mean_robust[[j]][7:1,2]
+  coef_median_1lb <- fit_median_robust[[j]][7:1,1] - VALUE*fit_mean_robust[[j]][7:1,2]
+  coef_max_1lb <- fit_max_robust[[j]][7:1,1] - VALUE*fit_mean_robust[[j]][7:1,2]
   
   ## select value for second interval
   VALUE <- 2
   VALUE <- qt(.975, unit_n[j])
   
-  coef_mean_2ub <- fit_mean_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
-  coef_median_2ub <- fit_median_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
-  coef_max_2ub <- fit_max_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
-  coef_mean_2lb <- fit_mean_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
-  coef_median_2lb <- fit_median_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
-  coef_max_2lb <- fit_max_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_mean_2ub <- fit_mean_robust[[j]][7:1,1] + VALUE*fit_mean_robust[[j]][7:1,2]
+  coef_median_2ub <- fit_median_robust[[j]][7:1,1] + VALUE*fit_mean_robust[[j]][7:1,2]
+  coef_max_2ub <- fit_max_robust[[j]][7:1,1] + VALUE*fit_mean_robust[[j]][7:1,2]
+  coef_mean_2lb <- fit_mean_robust[[j]][7:1,1] - VALUE*fit_mean_robust[[j]][7:1,2]
+  coef_median_2lb <- fit_median_robust[[j]][7:1,1] - VALUE*fit_mean_robust[[j]][7:1,2]
+  coef_max_2lb <- fit_max_robust[[j]][7:1,1] - VALUE*fit_mean_robust[[j]][7:1,2]
   
   ## select value for third *optional) interval
   VALUE <- 3
   VALUE <- qt(.995, unit_n[j])
   
-  coef_mean_3ub <- fit_mean_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
-  coef_median_3ub <- fit_median_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
-  coef_max_3ub <- fit_max_robust[[j]][6:1,1] + VALUE*fit_mean_robust[[j]][6:1,2]
-  coef_mean_3lb <- fit_mean_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
-  coef_median_3lb <- fit_median_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
-  coef_max_3lb <- fit_max_robust[[j]][6:1,1] - VALUE*fit_mean_robust[[j]][6:1,2]
+  coef_mean_3ub <- fit_mean_robust[[j]][7:1,1] + VALUE*fit_mean_robust[[j]][7:1,2]
+  coef_median_3ub <- fit_median_robust[[j]][7:1,1] + VALUE*fit_mean_robust[[j]][7:1,2]
+  coef_max_3ub <- fit_max_robust[[j]][7:1,1] + VALUE*fit_mean_robust[[j]][7:1,2]
+  coef_mean_3lb <- fit_mean_robust[[j]][7:1,1] - VALUE*fit_mean_robust[[j]][7:1,2]
+  coef_median_3lb <- fit_median_robust[[j]][7:1,1] - VALUE*fit_mean_robust[[j]][7:1,2]
+  coef_max_3lb <- fit_max_robust[[j]][7:1,1] - VALUE*fit_mean_robust[[j]][7:1,2]
   
   cbind(coef_mean, coef_median, coef_max)
   
@@ -190,7 +190,7 @@ for(j in 1:4){
   
   
   par(mar=c(4,10,2,1))
-  plot(coef_mean, 1:6, xlim=c(-6,6), ylim=c(.5,6.5), ylab="", xlab="Standarized Coefficients", xaxt="n", yaxt="n", type="n")
+  plot(coef_mean, 1:7, xlim=c(-6,6), ylim=c(.5,7.5), ylab="", xlab="Standarized Coefficients", xaxt="n", yaxt="n", type="n")
   abline(v=0, col=grey(.5), lty=2)
   abline(h=1.5, col=grey(.85), lty=1, lwd=.5)
   abline(h=2.5, col=grey(.85), lty=1, lwd=.5)
@@ -198,7 +198,7 @@ for(j in 1:4){
   abline(h=4.5, col=grey(.85), lty=1, lwd=.5)
   abline(h=5.5, col=grey(.85), lty=1, lwd=.5)
   
-  for(i in 1:6){
+  for(i in 1:7){
     lines(c(coef_mean_1ub[i], coef_mean_1lb[i]), c(i+.25,i+.25), lwd=2)
     lines(c(coef_mean_2ub[i], coef_mean_2lb[i]), c(i+.25,i+.25), lwd=1.25)
     #lines(c(coef_mean_3ub[i], coef_mean_3lb[i]), c(i+.25,i+.25), lwd=.5)
@@ -216,15 +216,15 @@ for(j in 1:4){
   
   mtext(side=3, line=0.5, text="Lower <----------- Google Search Rate -----------> Higher")
   
-  if(attention_rate==FALSE & NGO_amnesty==TRUE) axis(side=2, at=6:1, labels=c("Intercept", "FDI Inflows", "Amnesty Report (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
-  if(attention_rate==TRUE & NGO_amnesty==TRUE) axis(side=2, at=6:1, labels=c("Intercept", "FDI Inflows", "Amnesty Report (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
-  if(attention_rate==FALSE & NGO_amnesty==FALSE) axis(side=2, at=6:1, labels=c("Intercept", "FDI Inflows", "NGO Presence (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
-  if(attention_rate==TRUE & NGO_amnesty==FALSE) axis(side=2, at=6:1, labels=c("Intercept", "FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
+  if(attention_rate==FALSE & NGO_amnesty==TRUE) axis(side=2, at=7:1, labels=c("Intercept", "FDI Inflows", "Amnesty Report (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
+  if(attention_rate==TRUE & NGO_amnesty==TRUE) axis(side=2, at=7:1, labels=c("Intercept", "FDI Inflows", "Amnesty Report (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
+  if(attention_rate==FALSE & NGO_amnesty==FALSE) axis(side=2, at=7:1, labels=c("Intercept", "FDI Inflows", "NGO Presence (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
+  if(attention_rate==TRUE & NGO_amnesty==FALSE) axis(side=2, at=7:1, labels=c("Intercept", "FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship"), las=2)
   
   
   axis(side=1, at=-6:6)
   
-  legend("topright", legend=c("mean rate", "median rate", "max rate"), pch=c(21, 23, 22), col=1, pt.bg=c(grey(.25), grey(.65), grey(.95)), bty="n", cex=.75)
+  legend("topleft", legend=c("mean rate", "median rate", "max rate"), pch=c(21, 23, 22), col=1, pt.bg=c(grey(.25), grey(.65), grey(.95)), bty="n", cex=.75)
   
   dev.off()
 }
