@@ -108,8 +108,8 @@ fit_max_robust
 ## pool the datasets by language group
 for(i in 1:length(test_dat)){
   if(i>0 & i<=4) test_dat[[i]]$language <- "Amnesty_International" ## English and French 
-  if(i>4 & i<=8) test_dat[[i]]$language <- "Amnistia_Internaciona" ## Spanish   
-  if(i>8 & i<=12) test_dat[[i]]$language <- "Anistia_Internacional" ## Portugese
+  if(i>4 & i<=8) test_dat[[i]]$language <- "Amnistia_Internacional" ## Spanish   
+  if(i>8 & i<=12) test_dat[[i]]$language <- "Anistia_Internacional" ## Portuguese
   if(i>12 & i<=16) test_dat[[i]]$language <- "munazamat_aleafw_alduwalia" ## Arabic
 }
 
@@ -201,7 +201,7 @@ for(j in 1:4){
   
   if(attention_rate==FALSE & NGO_amnesty==FALSE) LABELS <- c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship")
   
-  if(attention_rate==TRUE & NGO_amnesty==FALSE) LABELS <- c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship")
+  if(attention_rate==TRUE & NGO_amnesty==FALSE) LABELS <- c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "English/French (Amnesty International)", "Spanish (Amnistia Internacional)", "Portuguese (direitos humanos)", "Arabic (huquq alansan)")
   
   NOTES <- "\\parbox[t]{8cm}{``Amnesty International' searching: Search Mean, Search Median, and Search Max dependent variables are measure of the yearly mean, median, or max country-week search rate value for each country-year unit. Independent variables are measured annually for each country-year unit. $^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}"
   
