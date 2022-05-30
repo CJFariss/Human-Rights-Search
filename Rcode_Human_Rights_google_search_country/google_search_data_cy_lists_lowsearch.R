@@ -173,8 +173,8 @@ for(j in 1:length(TIME)){
   
 }
 
-"Anistia Internacional"
-"منظمة العفو الدولية"
-"munazamat aleafw alduwalia"
+#"Anistia Internacional"
+#"منظمة العفو الدولية"
+#"munazamat aleafw alduwalia"
 
 
