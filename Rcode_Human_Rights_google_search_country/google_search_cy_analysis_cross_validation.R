@@ -285,11 +285,11 @@ tab_out <- data.frame(rbind(cor_y_hat_pred_mean_HRPS, cor_y_hat_pred_mean_baseli
 names(tab_out) <- c("2012-2016", "2013-2017", "2014-2018", "2015-2019")
 row.names(tab_out) <- c("Correlation: Search Mean with HRPS", "Correlation: Search Mean baseline", "Correlation: Search Median with HRPS", "Correlation: Search Median baseline", "Correlation: Search Max with HRPS", "Correlation: Search Max baseline")
 tab_out
-write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_rate_cross_validation_cor.tex")
+print(xtable(tab_out, digits=3, align=c("|l|", "r", "r", "r", "r"), caption="Correlation Comparison after Leave-One-Out Cross Valiation"), file="Tex_tables/main_results_lowsearch_amnesty_report_rate_cross_validation_cor.tex")
 
 tab_out <- data.frame(rbind(rmse_y_hat_pred_mean_HRPS, rmse_y_hat_pred_mean_baseline, rmse_y_hat_pred_median_HRPS, rmse_y_hat_pred_median_baseline, rmse_y_hat_pred_max_HRPS, rmse_y_hat_pred_max_baseline))
 names(tab_out) <- c("2012-2016", "2013-2017", "2014-2018", "2015-2019")
 row.names(tab_out) <- c("RMSE: Search Mean with HRPS", "RMSE: Search Mean baseline", "RMSE: Search Median with HRPS", "RMSE: Search Median baseline", "RMSE: Search Max with HRPS", "RMSE: Search Max baseline")
 tab_out
-write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_rate_cross_validation_rmse.tex")
+print(xtable(tab_out, digits=3, align=c("|l|", "r", "r", "r", "r"), caption="RMSE Comparison after Leave-One-Out Cross Valiation"), file="Tex_tables/main_results_lowsearch_amnesty_report_rate_cross_validation_rmse.tex")
 
