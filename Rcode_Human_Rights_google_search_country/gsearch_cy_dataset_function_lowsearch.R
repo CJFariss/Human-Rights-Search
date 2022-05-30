@@ -264,3 +264,33 @@ out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_l
 cy_dat <- do.call("rbind", out_dat)
 write.csv(cy_dat, paste("Data_output_search_cy_datasets_lowsearch_AI/gsearch_cy_data_", gsub(" ", "_", "Amnesty International"), "_", gsub(" ", "_", "2015-01-01 2019-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
 
+
+##########################################################################
+## "Amnistía Internacional"
+location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_Amnistia_Internacional_2012-01-01_2016-12-31_saved_2022-05-30.RDS")
+global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_Amnistia_Internacional_2012-01-01_2016-12-31_saved_2022-05-30.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets_lowsearch_AI/gsearch_cy_data_", gsub(" ", "_", "Amnistia_Internacional"), "_", gsub(" ", "_", "2012-01-01 2016-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+## "Amnistía Internacional"
+location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_Amnistia_Internacionall_2013-01-01_2017-12-31_saved_2022-05-29.RDS")
+global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_Amnistia_Internacional_2013-01-01_2017-12-31_saved_2022-05-30.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets_lowsearch_AI/gsearch_cy_data_", gsub(" ", "_", "Amnistia Internacional"), "_", gsub(" ", "_", "2013-01-01 2017-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+## "Amnistía Internacional"
+location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_Amnistia_Internacional_2014-01-01_2018-12-31_saved_2022-05-29.RDS")
+global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_Amnistia_Internacional_2014-01-01_2018-12-31_saved_2022-05-30.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets_lowsearch_AI/gsearch_cy_data_", gsub(" ", "_", "Amnistia Internacional"), "_", gsub(" ", "_", "2014-01-01 2018-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
+## "Amnistía Internacional"
+location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_Amnistia_Internacional_2015-01-01_2019-12-31_saved_2022-05-29.RDS")
+global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_Amnistia_Internacional_2015-01-01_2019-12-31_saved_2022-05-30.RDS")
+out_dat <- gsearch_cy_dataset_function(cy_data_list=location_data, global_data_list=global_data)
+cy_dat <- do.call("rbind", out_dat)
+write.csv(cy_dat, paste("Data_output_search_cy_datasets_lowsearch_AI/gsearch_cy_data_", gsub(" ", "_", "Amnistia Internacional"), "_", gsub(" ", "_", "2015-01-01 2019-12-31"), "_saved_", current_date, ".csv", sep=""), row.names=FALSE)
+
