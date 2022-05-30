@@ -47,7 +47,7 @@ TIME <- "2017-01-01 2017-12-31"
 
 ## ------------------------------------------------------------ ##
 ## English (or Spanish) "malaria"
-english.world <- gtrends(TERMS[1], time=TIME, low_search_volume=TRUE)
+english.world <- gtrends(TERMS[1], time=TIME, low_search_volume=FALSE)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
@@ -74,7 +74,7 @@ expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colo
 
 ## ------------------------------------------------------------ ##
 ## Portuguese
-portugese.world <- gtrends(TERMS[2], time=TIME, low_search_volume=TRUE)
+portugese.world <- gtrends(TERMS[2], time=TIME, low_search_volume=FALSE)
 portugese.world <- subset(portugese.world$interest_by_country)
 portugese.world$hits[portugese.world$hits=="<1"] <- .5
 portugese.world$hits <- as.numeric(portugese.world$hits)
@@ -101,7 +101,7 @@ expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colo
 
 ## ------------------------------------------------------------ ##
 ## French "paludisme"
-french.world <- gtrends(TERMS[3], time=TIME, low_search_volume=TRUE)
+french.world <- gtrends(TERMS[3], time=TIME, low_search_volume=FALSE)
 french.world <- subset(french.world$interest_by_country)
 french.world$hits[french.world$hits=="<1"] <- .5
 french.world$hits <- as.numeric(french.world$hits)
@@ -202,6 +202,15 @@ test_dat[3,3] <- nrow(subset(french_data, !is.na(hits) & !is.na(rate)))
 
 names(test_dat) <- c("Pearson", "Spearman", "N")
 test_dat
+
+test_dat$term <- TERMS
+test_dat
+
+tab_output <- xtable(test_dat[c(4,1,2,3)])
+
+tab_output
+write(tab_output, file="Tex_tables/malaria_search_correlations.tex")
+
 
 ## archive datasets
 
