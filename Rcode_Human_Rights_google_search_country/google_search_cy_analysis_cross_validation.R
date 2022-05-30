@@ -153,8 +153,8 @@ for(i in 1:length(test_dat_language_pooled)){
   temp$folds <- as.numeric(as.factor(temp$CCODE)) 
   #temp$folds <- as.numeric(temp$year) - min(as.numeric(temp$year)) + 1
   
-  for(k in 1:unique(temp$folds)){
-    
+  for(k in unique(temp$folds)){
+    print(k)
     ## fit model with HRPS variable
     fit_mean <- lm(hits_mean ~ -1
                    + Foreign_direct_investment_net_inflows_percent_GDP  
