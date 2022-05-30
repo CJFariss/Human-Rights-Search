@@ -150,11 +150,11 @@ for(i in 1:length(test_dat_language_pooled)){
   if(attention_rate==FALSE & NGO_amnesty==FALSE) temp$NGO <- temp$hringo_inter
   if(attention_rate==TRUE & NGO_amnesty==FALSE) temp$NGO <- temp$hringo_inter_rate
   
-  temp$folds <- as.numeric(as.factor(temp$CCODE)) 
-  #temp$folds <- as.numeric(temp$year) - min(as.numeric(temp$year)) + 1
+  temp$folds <- as.numeric(as.factor(temp$CCODE)) ## crossvalidation with country units
+  #temp$folds <- as.numeric(temp$year) - min(as.numeric(temp$year)) + 1 ## crossvalidation with year units
   
   for(k in unique(temp$folds)){
-    print(k)
+    #print(k) ## for error checking
     ## fit model with HRPS variable
     fit_mean <- lm(hits_mean ~ -1
                    + Foreign_direct_investment_net_inflows_percent_GDP  
@@ -281,6 +281,15 @@ rmse_y_hat_pred_max_HRPS
 rmse_y_hat_pred_max_baseline
 
 
-cbind(cor_y_hat_pred_mean_HRPS, cor_y_hat_pred_mean_baseline, cor_y_hat_pred_median_HRPS, cor_y_hat_pred_median_baseline, cor_y_hat_pred_max_HRPS, cor_y_hat_pred_max_baseline)
+tab_out <- data.frame(rbind(cor_y_hat_pred_mean_HRPS, cor_y_hat_pred_mean_baseline, cor_y_hat_pred_median_HRPS, cor_y_hat_pred_median_baseline, cor_y_hat_pred_max_HRPS, cor_y_hat_pred_max_baseline))
+names(tab_out) <- c("2012-2016", "2013-2017", "2014-2018", "2015-2019")
+row.names(tab_out) <- c("Correlation: Search Mean with HRPS", "Correlation: Search Mean baseline", "Correlation: Search Median with HRPS", "Correlation: Search Median baseline", "Correlation: Search Max with HRPS", "Correlation: Search Max baseline")
+tab_out
+write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_rate_cross_validation_cor.tex")
 
-cbind(rmse_y_hat_pred_mean_HRPS, rmse_y_hat_pred_mean_baseline, rmse_y_hat_pred_median_HRPS, rmse_y_hat_pred_median_baseline, rmse_y_hat_pred_max_HRPS, rmse_y_hat_pred_max_baseline)
+tab_out <- data.frame(rbind(rmse_y_hat_pred_mean_HRPS, rmse_y_hat_pred_mean_baseline, rmse_y_hat_pred_median_HRPS, rmse_y_hat_pred_median_baseline, rmse_y_hat_pred_max_HRPS, rmse_y_hat_pred_max_baseline))
+names(tab_out) <- c("2012-2016", "2013-2017", "2014-2018", "2015-2019")
+row.names(tab_out) <- c("RMSE: Search Mean with HRPS", "RMSE: Search Mean baseline", "RMSE: Search Median with HRPS", "RMSE: Search Median baseline", "RMSE: Search Max with HRPS", "RMSE: Search Max baseline")
+tab_out
+write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_rate_cross_validation_rmse.tex")
+
