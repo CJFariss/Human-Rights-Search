@@ -279,3 +279,8 @@ rmse_y_hat_pred_median_baseline
 
 rmse_y_hat_pred_max_HRPS
 rmse_y_hat_pred_max_baseline
+
+
+cbind(cor_y_hat_pred_mean_HRPS, cor_y_hat_pred_mean_baseline, cor_y_hat_pred_median_HRPS, cor_y_hat_pred_median_baseline, cor_y_hat_pred_max_HRPS, cor_y_hat_pred_max_baseline)
+
+cbind(rmse_y_hat_pred_mean_HRPS, rmse_y_hat_pred_mean_baseline, rmse_y_hat_pred_median_HRPS, rmse_y_hat_pred_median_baseline, rmse_y_hat_pred_max_HRPS, rmse_y_hat_pred_max_baseline)
