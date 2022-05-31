@@ -20,8 +20,8 @@
 source("groundhog_library_func.R")
 groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
-attention_rate <- TRUE ## set to FALSE for count
-NGO_amnesty <- TRUE ## set to FALSE for the alternative NGO variable
+attention_rate <- FALSE ## set to FALSE for count
+NGO_amnesty <- FALSE ## set to FALSE for the alternative NGO variable
 lowsearch_option <- FALSE ## note that the lowsearch term in the file label means that the lowsearch argument is set to its default FALSE value in the gtrends() search function
 
 if(lowsearch_option==TRUE) test_dat <- readRDS("Data_output/combined_gsearch_dat_list_merged.RDS")
@@ -304,7 +304,7 @@ for(j in 1:4){
   
   if(attention_rate==FALSE & NGO_amnesty==TRUE) axis(side=2, at=c(7,6:1), labels=c("FDI Inflows", "Amnesty Report (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "HR Treaty * HR Violations"), las=2)
   if(attention_rate==TRUE & NGO_amnesty==TRUE) axis(side=2, at=c(7,6:1), labels=c("FDI Inflows", "Amnesty Report (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "HR Treaty * HR Violations"), las=2)
-  if(attention_rate==FALSE & NGO_amnesty==FALSE) axis(side=2, at=c(7), labels=c("FDI Inflows", "NGO Presence (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "HR Treaty * HR Violations"), las=2)
+  if(attention_rate==FALSE & NGO_amnesty==FALSE) axis(side=2, at=c(7,6:1), labels=c("FDI Inflows", "NGO Presence (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "HR Treaty * HR Violations"), las=2)
   if(attention_rate==TRUE & NGO_amnesty==FALSE) axis(side=2, at=c(7,6:1), labels=c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "HR Treaty * HR Violations"), las=2)
   
   

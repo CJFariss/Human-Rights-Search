@@ -196,13 +196,13 @@ fit_median_robust[[4]][5,1] / fit_median_robust[[4]][2,1]
 ## save table output for latex 
 for(j in 1:4){
   
-  if(attention_rate==FALSE & NGO_amnesty==TRUE) LABELS <- c("FDI Inflows", "Amnesty Reports (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)", "NGO * HR Violations")
+  if(attention_rate==FALSE & NGO_amnesty==TRUE) LABELS <- c("FDI Inflows", "Amnesty Reports (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)", "Amnesty Reports * HR Violations")
   
-  if(attention_rate==TRUE & NGO_amnesty==TRUE) LABELS <- c("FDI Inflows", "Amnesty Reports (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)", "NGO * HR Violations")
+  if(attention_rate==TRUE & NGO_amnesty==TRUE) LABELS <- c("FDI Inflows", "Amnesty Reports (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)", "Amnesty Reports * HR Violations")
   
-  if(attention_rate==FALSE & NGO_amnesty==FALSE) LABELS <- c("FDI Inflows", "NGO Presence (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)", "NGO * HR Violations")
+  if(attention_rate==FALSE & NGO_amnesty==FALSE) LABELS <- c("FDI Inflows", "NGO Presence (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)", "NGO Presence * HR Violations")
   
-  if(attention_rate==TRUE & NGO_amnesty==FALSE) LABELS <- c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)", "NGO * HR Violations")
+  if(attention_rate==TRUE & NGO_amnesty==FALSE) LABELS <- c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)", "NGO Presence * HR Violations")
   
   NOTES <- "\\parbox[t]{8cm}{Models include a fixed effects parameter for each language group (Spanish, Portuguese, French, English, Arabic). Search Mean, Search Median, and Search Max dependent variables are measure of the yearly mean, median, or max country-week search rate value for each country-year unit. Independent variables are measured annually for each country-year unit. $^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}"
   
@@ -303,10 +303,10 @@ for(j in 1:4){
   
   mtext(side=3, line=0.5, text="Lower <----------- Google Search Rate -----------> Higher")
   
-  if(attention_rate==FALSE & NGO_amnesty==TRUE) axis(side=2, at=c(7,6:1), labels=c("FDI Inflows", "Amnesty Report (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "NGO * HR Violations"), las=2)
-  if(attention_rate==TRUE & NGO_amnesty==TRUE) axis(side=2, at=c(7,6:1), labels=c("FDI Inflows", "Amnesty Report (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "NGO * HR Violations"), las=2)
-  if(attention_rate==FALSE & NGO_amnesty==FALSE) axis(side=2, at=c(7), labels=c("FDI Inflows", "NGO Presence (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "NGO * HR Violations"), las=2)
-  if(attention_rate==TRUE & NGO_amnesty==FALSE) axis(side=2, at=c(7,6:1), labels=c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "NGO * HR Violations"), las=2)
+  if(attention_rate==FALSE & NGO_amnesty==TRUE) axis(side=2, at=c(7,6:1), labels=c("FDI Inflows", "Amnesty Report (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Amnesty Reports * HR Violations"), las=2)
+  if(attention_rate==TRUE & NGO_amnesty==TRUE) axis(side=2, at=c(7,6:1), labels=c("FDI Inflows", "Amnesty Report (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Amnesty Reports * HR Violations"), las=2)
+  if(attention_rate==FALSE & NGO_amnesty==FALSE) axis(side=2, at=c(7), labels=c("FDI Inflows", "NGO Presence (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "NGO Presence * HR Violations"), las=2)
+  if(attention_rate==TRUE & NGO_amnesty==FALSE) axis(side=2, at=c(7,6:1), labels=c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "NGO Presence * HR Violations"), las=2)
   
   
   axis(side=1, at=-6:6)

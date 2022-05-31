@@ -189,10 +189,10 @@ for(i in 1:length(test_dat_language_pooled)){
                                   sd=apply(temp,2,sd, na.rm=T),
                                   min=apply(temp,2,min, na.rm=T),
                                   max=apply(temp,2,max, na.rm=T)) 
-  row.names(summary_list[[i]]) <- c("Search Mean", "Search Median", "Search Max", "HR Violations", "GDP Growth", "FDI Inflows", "HR Treaty Count", "Internet Censorship", "Amnesty Attention Count", "Amnesty Attention Rate", "HRNGO Count", "HRNGO Rate")
+  row.names(summary_list[[i]]) <- c("Search Mean", "Search Median", "Search Max", "HR Violations", "GDP Growth", "FDI Inflows", "HR Treaty Count", "Internet Censorship", "Amnesty Report Count", "Amnesty Report Rate", "HRNGO Count", "HRNGO Rate")
   
   cor_mat_list[[i]] <- cor(temp, use="pairwise")
-  row.names(cor_mat_list[[i]]) <- c("Search Mean", "Search Median", "Search Max", "HR Violations", "GDP Growth", "FDI Inflows", "HR Treaty Count", "Internet Censorship", "AI Attention Count", "AI Attention Rate", "HRNGO Count", "HRNGO Rate")
+  row.names(cor_mat_list[[i]]) <- c("Search Mean", "Search Median", "Search Max", "HR Violations", "GDP Growth", "FDI Inflows", "HR Treaty Count", "Internet Censorship", "AI Report Count", "AI Report Rate", "HRNGO Count", "HRNGO Rate")
 
   colnames(cor_mat_list[[i]]) <- c("(1)","(2)","(3)","(4)","(5)","(6)","(7)","(8)","(9)","(10)","(11)","(12)")
   
