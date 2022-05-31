@@ -195,13 +195,13 @@ fit_max_robust[[4]]
 ## save table output for latex 
 for(j in 1:4){
   
-  if(attention_rate==FALSE & NGO_amnesty==TRUE) LABELS <- c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship")
+  if(attention_rate==FALSE & NGO_amnesty==TRUE) LABELS <- c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "English/French (Amnesty International)", "Spanish (Amnistia Internacional)", "Portuguese (Anistia Internacional)", "Arabic (Munazamat Aleafw Alduwalia)")
   
-  if(attention_rate==TRUE & NGO_amnesty==TRUE) LABELS <- c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship")
+  if(attention_rate==TRUE & NGO_amnesty==TRUE) LABELS <- c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "English/French (Amnesty International)", "Spanish (Amnistia Internacional)", "Portuguese (Anistia Internacional)", "Arabic (Munazamat Aleafw Alduwalia)")
   
-  if(attention_rate==FALSE & NGO_amnesty==FALSE) LABELS <- c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship")
+  if(attention_rate==FALSE & NGO_amnesty==FALSE) LABELS <- c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "English/French (Amnesty International)", "Spanish (Amnistia Internacional)", "Portuguese (Anistia Internacional)", "Arabic (Munazamat Aleafw Alduwalia)")
   
-  if(attention_rate==TRUE & NGO_amnesty==FALSE) LABELS <- c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "English/French (Amnesty International)", "Spanish (Amnistia Internacional)", "Portuguese (direitos humanos)", "Arabic (huquq alansan)")
+  if(attention_rate==TRUE & NGO_amnesty==FALSE) LABELS <- c("FDI Inflows", "NGO Presence (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "English/French (Amnesty International)", "Spanish (Amnistia Internacional)", "Portuguese (Anistia Internacional)", "Arabic (Munazamat Aleafw Alduwalia)")
   
   NOTES <- "\\parbox[t]{8cm}{``Amnesty International' searching: Search Mean, Search Median, and Search Max dependent variables are measure of the yearly mean, median, or max country-week search rate value for each country-year unit. Independent variables are measured annually for each country-year unit. $^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}"
   
