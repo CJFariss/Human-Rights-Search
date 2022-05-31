@@ -46,7 +46,7 @@ TIME <- "2015-01-01 2019-12-31"
 
 ## ------------------------------------------------------------ ##
 ## google Topic "amnesty international" (this is langauge agnostic)
-english.world <- gtrends("%2Fm%2F012l0", time=TIME, low_search_volume=TRUE)
+english.world <- gtrends("%2Fm%2F012l0", time=TIME, low_search_volume=FALSE)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
@@ -70,8 +70,8 @@ ggplot(data, aes(map_id = region)) +
   expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colours=COLORS, na.value=grey(.875), guide = "colourbar")
 
 ## ------------------------------------------------------------ ##
-## google English language "amnesty international" (this is langauge agnostic)
-english.world <- gtrends("Amnesty International", time=TIME, low_search_volume=TRUE)
+## google English/French language "amnesty international" 
+english.world <- gtrends("Amnesty International", time=TIME, low_search_volume=FALSE)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
@@ -89,7 +89,85 @@ COLORS <- c("#f0f9e8", "#bae4bc", "#7bccc4", "#43a2ca", "#0868ac", "black")
 map.world <- map_data("world")
 ggplot(data, aes(map_id = region)) +
   geom_map(aes(fill = hits), map = map.world) +
-  ggtitle(paste("English Langugage: '", "Amnesty International", "'", sep="")) +
+  ggtitle(paste("English/French Langugage: '", "Amnesty International", "'", sep="")) +
+  xlab("Latitude") + ylab("Longitude") +
+  coord_map("rectangular", lat0=0, xlim=c(-180,180), ylim=c(-60, 90)) +
+  expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colours=COLORS, na.value=grey(.875), guide = "colourbar")
+
+
+## ------------------------------------------------------------ ##
+## google Spanish language "Amnistía Internacional" 
+espanish.world <- gtrends("Amnistía Internacional", time=TIME, low_search_volume=FALSE)
+espanish.world <- subset(espanish.world$interest_by_country)
+espanish.world$hits[espanish.world$hits=="<1"] <- .5
+espanish.world$hits <- as.numeric(espanish.world$hits)
+data <- espanish.world[,1:2]
+names(data) <- c("region", "hits")
+data$region[data$region=="Côte d’Ivoire"] <- "Ivory Coast"
+data$region[data$region=="Congo - Kinshasa"] <- "Democratic Republic of the Congo"
+data$region[data$region=="Congo - Brazzaville"] <- "Republic of Congo"
+data$region[data$region=="United Kingdom"] <- "UK"
+data$region[data$region=="United States"] <- "USA"
+#data$hits[is.na(data$hits)]<-0
+
+COLORS <- c("#feebe2", "#fbb4b9", "#f768a1", "#c51b8a", "#7a0177", "black")
+
+map.world <- map_data("world")
+ggplot(data, aes(map_id = region)) +
+  geom_map(aes(fill = hits), map = map.world) +
+  ggtitle(paste("Spanish Langugage: '", "Amnistía Internacional", "'", sep="")) +
+  xlab("Latitude") + ylab("Longitude") +
+  coord_map("rectangular", lat0=0, xlim=c(-180,180), ylim=c(-60, 90)) +
+  expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colours=COLORS, na.value=grey(.875), guide = "colourbar")
+
+## ------------------------------------------------------------ ##
+## google Portuguese language "Anistia Internacional" 
+portuguese.world <- gtrends("Anistia Internacional", time=TIME, low_search_volume=FALSE)
+portuguese.world <- subset(portuguese.world$interest_by_country)
+portuguese.world$hits[portuguese.world$hits=="<1"] <- .5
+portuguese.world$hits <- as.numeric(portuguese.world$hits)
+data <- portuguese.world[,1:2]
+names(data) <- c("region", "hits")
+data$region[data$region=="Côte d’Ivoire"] <- "Ivory Coast"
+data$region[data$region=="Congo - Kinshasa"] <- "Democratic Republic of the Congo"
+data$region[data$region=="Congo - Brazzaville"] <- "Republic of Congo"
+data$region[data$region=="United Kingdom"] <- "UK"
+data$region[data$region=="United States"] <- "USA"
+#data$hits[is.na(data$hits)]<-0
+
+COLORS <- c("#feebe2", "#fbb4b9", "#f768a1", "#c51b8a", "#7a0177", "black")
+
+map.world <- map_data("world")
+ggplot(data, aes(map_id = region)) +
+  geom_map(aes(fill = hits), map = map.world) +
+  ggtitle(paste("Portuguese Langugage: '", "Anistia Internacional", "'", sep="")) +
+  xlab("Latitude") + ylab("Longitude") +
+  coord_map("rectangular", lat0=0, xlim=c(-180,180), ylim=c(-60, 90)) +
+  expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colours=COLORS, na.value=grey(.875), guide = "colourbar")
+
+
+## ------------------------------------------------------------ ##
+## google Arabic language "منظمة العفو الدولية", laa
+
+arabic.world <- gtrends("منظمة العفو الدولية", time=TIME, low_search_volume=FALSE)
+arabic.world <- subset(arabic.world$interest_by_country)
+arabic.world$hits[english.world$hits=="<1"] <- .5
+arabic.world$hits <- as.numeric(arabic.world$hits)
+data <- arabic.world[,1:2]
+names(data) <- c("region", "hits")
+data$region[data$region=="Côte d’Ivoire"] <- "Ivory Coast"
+data$region[data$region=="Congo - Kinshasa"] <- "Democratic Republic of the Congo"
+data$region[data$region=="Congo - Brazzaville"] <- "Republic of Congo"
+data$region[data$region=="United Kingdom"] <- "UK"
+data$region[data$region=="United States"] <- "USA"
+#data$hits[is.na(data$hits)]<-0
+
+COLORS <- c("#f1eef6", "#d7b5d8", "#df65b0", "#dd1c77", "#980043", "black")
+
+map.world <- map_data("world")
+ggplot(data, aes(map_id = region)) +
+  geom_map(aes(fill = hits), map = map.world) +
+  ggtitle(paste("Arabic Langugage: '", "Munazamat Aleafw Alduwalia", "'", sep="")) +
   xlab("Latitude") + ylab("Longitude") +
   coord_map("rectangular", lat0=0, xlim=c(-180,180), ylim=c(-60, 90)) +
   expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colours=COLORS, na.value=grey(.875), guide = "colourbar")
@@ -99,7 +177,7 @@ dev.off()
 
 ## ------------------------------------------------------------ ##
 ## English "human rights"
-english.world <- gtrends("human rights", time=TIME, low_search_volume=TRUE)
+english.world <- gtrends("human rights", time=TIME, low_search_volume=FALSE)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
@@ -109,7 +187,7 @@ dim(data)
 
 ## ------------------------------------------------------------ ##
 ## English "Amnesty International"
-english.world <- gtrends("Amnesty International", time=TIME, low_search_volume=TRUE)
+english.world <- gtrends("Amnesty International", time=TIME, low_search_volume=FALSE)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
@@ -148,7 +226,7 @@ write.csv(test, paste("Data_output/Maps_Anesty_International_language_validation
 
 ## ------------------------------------------------------------ ##
 ## Topic "human rights"
-english.world <- gtrends("%2Fm%2F03ll3", time=TIME, low_search_volume=TRUE)
+english.world <- gtrends("%2Fm%2F03ll3", time=TIME, low_search_volume=FALSE)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
@@ -158,7 +236,7 @@ dim(data)
 
 ## ------------------------------------------------------------ ##
 ## Topic "Amnesty International"
-english.world <- gtrends("%2Fm%2F012l0", time=TIME, low_search_volume=TRUE)
+english.world <- gtrends("%2Fm%2F012l0", time=TIME, low_search_volume=FALSE)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)

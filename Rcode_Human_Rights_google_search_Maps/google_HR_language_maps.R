@@ -44,7 +44,7 @@ TIME <- "2015-01-01 2019-12-31"
 
 ## ------------------------------------------------------------ ##
 ## English "human rights"
-english.world <- gtrends(TERMS[1], time=TIME, low_search_volume=TRUE)
+english.world <- gtrends(TERMS[1], time=TIME, low_search_volume=FALSE)
 english.world <- subset(english.world$interest_by_country)
 english.world$hits[english.world$hits=="<1"] <- .5
 english.world$hits <- as.numeric(english.world$hits)
@@ -71,7 +71,7 @@ expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colo
 
 ## ------------------------------------------------------------ ##
 ## Spanish
-spanish.world <- gtrends(TERMS[2], time=TIME, low_search_volume=TRUE)
+spanish.world <- gtrends(TERMS[2], time=TIME, low_search_volume=FALSE)
 spanish.world <- subset(spanish.world$interest_by_country)
 spanish.world$hits[spanish.world$hits=="<1"] <- .5
 spanish.world$hits <- as.numeric(spanish.world$hits)
@@ -98,7 +98,7 @@ expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colo
 
 ## ------------------------------------------------------------ ##
 ## Portugese
-portugese.world <- gtrends(TERMS[3], time=TIME, low_search_volume=TRUE)
+portugese.world <- gtrends(TERMS[3], time=TIME, low_search_volume=FALSE)
 portugese.world <- subset(portugese.world$interest_by_country)
 portugese.world$hits[portugese.world$hits=="<1"] <- .5
 portugese.world$hits <- as.numeric(portugese.world$hits)
@@ -125,7 +125,7 @@ expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colo
 
 ## ------------------------------------------------------------ ##
 ## Arabic
-arabic.world <- gtrends(TERMS[4], time=TIME, low_search_volume=TRUE)
+arabic.world <- gtrends(TERMS[4], time=TIME, low_search_volume=FALSE)
 arabic.world <- subset(arabic.world$interest_by_country)
 arabic.world$hits[arabic.world$hits=="<1"] <- .5
 arabic.world$hits <- as.numeric(arabic.world$hits)
@@ -152,7 +152,7 @@ expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colo
 
 ## ------------------------------------------------------------ ##
 ## French "rights"
-french.world <- gtrends(TERMS[8], time=TIME, low_search_volume=TRUE)
+french.world <- gtrends(TERMS[8], time=TIME, low_search_volume=FALSE)
 french.world <- subset(french.world$interest_by_country)
 french.world$hits[french.world$hits=="<1"] <- .5
 french.world$hits <- as.numeric(french.world$hits)
@@ -182,7 +182,7 @@ expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colo
 
 ## ------------------------------------------------------------ ##
 ## Russian
-russian.world <- gtrends(TERMS[5], time=TIME, low_search_volume=TRUE)
+russian.world <- gtrends(TERMS[5], time=TIME, low_search_volume=FALSE)
 russian.world <- subset(russian.world$interest_by_country)
 russian.world$hits[russian.world$hits=="<1"] <- .5
 russian.world$hits <- as.numeric(russian.world$hits)
@@ -209,7 +209,7 @@ expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colo
 
 ## ------------------------------------------------------------ ##
 ## Chinese
-chinese.world <- gtrends(TERMS[7], time=TIME, low_search_volume=TRUE)
+chinese.world <- gtrends(TERMS[7], time=TIME, low_search_volume=FALSE)
 chinese.world <- subset(chinese.world$interest_by_country)
 chinese.world$hits[chinese.world$hits=="<1"] <- .5
 chinese.world$hits <- as.numeric(chinese.world$hits)
