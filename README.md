@@ -28,10 +28,10 @@ Note that lowsearch is in reference to the low_search_volume argument in the gtr
 - [Data_output_search_cy_datasets_lowsearch](./Data_output_search_cy_datasets_lowsearch): csv dataset files for each search term, time period combination (search terms are 'human rights' in several languages)
 - [Data_output_search_cy_datasets_lowsearch_AI](./Data_output_search_cy_datasets_lowsearch_AI): csv dataset files for each search term, time period combination (search terms are 'Amnesty International' in several languages) 
 - [Data_output_search_cy_topic_datasets](./Data_output_search_cy_topic_datasets): csv dataset files for each search term, time period combination (search terms are 'human rights' using the internal google trends topic model)
-- [Rcode_ACLED_analysis](./Rcode_ACLED_analysis): Rcode to pull ACLED data for weekly level analysis
+- [Rcode_ACLED_analysis](./Rcode_ACLED_analysis): Rcode to pull [ACLED](acled.org) data for weekly level analysis
 - [Rcode_Amnesty_article_coverage](./Rcode_Amnesty_article_coverage): Rcode and files to scrape Amnesty report files from the [amnesty.org](amnesty.org) website
 - [Rcode_Descriptive_Stats](./Rcode_Descriptive_Stats): Rcode that generates descriptive statistics
-- [Rcode_Global_Survey_analysis](./Rcode_Global_Survey_analysis): Rcode for analysising several surveys ([World Values Survey](https://www.worldvaluessurvey.org/wvs.jsp), [Latin American Public Opinion Project](https://www.vanderbilt.edu/lapop/), [Afrobarometer](https://www.afrobarometer.org/about/))
+- [Rcode_Global_Survey_analysis](./Rcode_Global_Survey_analysis): Rcode for analysing several surveys ([World Values Survey](https://www.worldvaluessurvey.org/wvs.jsp), [Latin American Public Opinion Project](https://www.vanderbilt.edu/lapop/), [Afrobarometer](https://www.afrobarometer.org/about/), and [Open Global Rights](https://www.openglobalrights.org/))
 - [Rcode_gtrends_related_topics](./Rcode_gtrends_related_topics):
 - [Rcode_HR_treaty](./Rcode_HR_treaty):
 - [Rcode_Human_Rights_google_ngrams](./Rcode_Human_Rights_google_ngrams):
