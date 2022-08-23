@@ -12,7 +12,7 @@ We have created this complete Github repository with all the R code and datasets
 
 
 ### Folder Descriptions 
-The primary datas ource we use in this project is serach term rates from [trends.google.com](trends.google.com). We access the data available at this site through the API using the R package gtrendsR, using the the gtrends() function. 
+The primary datas source we use in this project is serach term rates from [trends.google.com](trends.google.com). We access the data available at this site through the API using the R package [gtrendsR](https://cran.r-project.org/web/packages/gtrendsR/gtrendsR.pdf), using the the gtrends() function. 
 
 Many of the folders below contain search term datasets or R files (.RDS files) necessary to create these datasets. When pulling datasets from the google trends APIs, specifically from [trends.google.com](trends.google.com) (the primary data source), we have saved the resulting datasets and the code that pulls the data. This will allow interested readers to reproduce the reported analyses with the same data we used or reproduce the search term datasets themselves. 
   
