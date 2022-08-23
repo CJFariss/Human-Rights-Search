@@ -16,9 +16,10 @@ When pulling datasets from certain APIs, specifically from [trends.google.com](t
 - [Data_Ouput](./Data_output): contains datasets produced or updated by our project code
 - [Data_output_global_search_lists](./Data_output_global_search_lists): RDS files that contain list objects with google trends search results for all countries in a given time period for a specific search term (lowsearch is off or set to FALSE)
 - [Data_output_global_search_lists_lowsearch](./Data_output_global_search_lists_lowsearch): RDS files that contain list objects with google trends search results for all countries in a given time period for a specific search term (lowsearch is on or set to TRUE) 
-- [Data_output_location_search_lists](./Data_output_location_search_lists):
-- [Data_output_location_search_lists_lowsearch](./Data_output_location_search_lists_lowsearch):
-- [Data_output_search_cy_datasets](./Data_output_search_cy_datasets):
-- [Data_output_search_cy_datasets_lowsearch](./Data_output_search_cy_datasets_lowsearch):
-- [Data_output_search_cy_datasets_lowsearch_AI](./Data_output_search_cy_datasets_lowsearch_AI):
-- [Data_output_search_cy_topic_datasets](./Data_output_search_cy_topic_datasets):
+- [Data_output_location_search_lists](./Data_output_location_search_lists): RDS files that contain list objects with google trends search results for weeks for each country in a given time period for a specific search term (lowsearch is off or set to FALSE)
+- [Data_output_location_search_lists_lowsearch](./Data_output_location_search_lists_lowsearch): RDS files that contain list objects with google trends search results for weeks for each country in a given time period for a specific search term (lowsearch is on or set to TRUE)
+- [Data_output_search_cy_datasets](./Data_output_search_cy_datasets): csv dataset files for each search term, time period combination (search terms are 'human rights' in several languages) 
+- [Data_output_search_cy_datasets_lowsearch](./Data_output_search_cy_datasets_lowsearch): csv dataset files for each search term, time period combination (search terms are 'human rights' in several languages)
+- [Data_output_search_cy_datasets_lowsearch_AI](./Data_output_search_cy_datasets_lowsearch_AI): csv dataset files for each search term, time period combination (search terms are 'Amnesty International' in several languages) 
+- [Data_output_search_cy_topic_datasets](./Data_output_search_cy_topic_datasets): csv dataset files for each search term, time period combination (search terms are 'human rights' using the internal google trends topic model)
+
