@@ -28,22 +28,22 @@ Note that lowsearch is in reference to the low_search_volume argument in the gtr
 - [Data_output_search_cy_datasets_lowsearch](./Data_output_search_cy_datasets_lowsearch): csv dataset files for each search term, time period combination (search terms are 'human rights' in several languages)
 - [Data_output_search_cy_datasets_lowsearch_AI](./Data_output_search_cy_datasets_lowsearch_AI): csv dataset files for each search term, time period combination (search terms are 'Amnesty International' in several languages) 
 - [Data_output_search_cy_topic_datasets](./Data_output_search_cy_topic_datasets): csv dataset files for each search term, time period combination (search terms are 'human rights' using the internal google trends topic model)
-- [Rcode_ACLED_analysis](./Rcode_ACLED_analysis): Rcode to pull [ACLED](acled.org) data for weekly level analysis
+- [Rcode_ACLED_analysis](./Rcode_ACLED_analysis): Rcode to pull [ACLED](https://acleddata.com/) data for weekly level analysis
 - [Rcode_Amnesty_article_coverage](./Rcode_Amnesty_article_coverage): Rcode and files to scrape Amnesty report files from the [amnesty.org](amnesty.org) website
 - [Rcode_Descriptive_Stats](./Rcode_Descriptive_Stats): Rcode that generates descriptive statistics
-- [Rcode_Global_Survey_analysis](./Rcode_Global_Survey_analysis): Rcode for analysing several surveys ([World Values Survey](https://www.worldvaluessurvey.org/wvs.jsp), [Latin American Public Opinion Project](https://www.vanderbilt.edu/lapop/), [Afrobarometer](https://www.afrobarometer.org/about/), and [Open Global Rights](https://www.openglobalrights.org/))
-- [Rcode_gtrends_related_topics](./Rcode_gtrends_related_topics):
-- [Rcode_HR_treaty](./Rcode_HR_treaty):
-- [Rcode_Human_Rights_google_ngrams](./Rcode_Human_Rights_google_ngrams):
+- [Rcode_Global_Survey_analysis](./Rcode_Global_Survey_analysis): Rcode for analyzing several surveys ([World Values Survey](https://www.worldvaluessurvey.org/wvs.jsp), [Latin American Public Opinion Project](https://www.vanderbilt.edu/lapop/), [Afrobarometer](https://www.afrobarometer.org/about/), and [Open Global Rights](https://www.openglobalrights.org/))
+- [Rcode_gtrends_related_topics](./Rcode_gtrends_related_topics): Rcode to create co-occuring topics data and Rplots
+- [Rcode_HR_treaty](./Rcode_HR_treaty): Rcode to update country-year UN human rights treaty dataset 
+- [Rcode_Human_Rights_google_ngrams](./Rcode_Human_Rights_google_ngrams): Rcode for analyzing google ngrams data
 - [Rcode_Human_Rights_google_search_country](./Rcode_Human_Rights_google_search_country):
 - [Rcode_Human_Rights_google_search_global](./Rcode_Human_Rights_google_search_global):
-- [Rcode_Human_Rights_google_search_Maps](./Rcode_Human_Rights_google_search_Maps):
-- [Rcode_min_max_examples](./Rcode_min_max_examples):
-- [Rcode_Search_engine_use_analysis](./Rcode_Search_engine_use_analysis):
-- [Rcode_WDI](./Rcode_WDI):
-- [Rplot_Related_Topics](./Rplot_Related_Topics):
-- [Rplot_search_rate_examples](./Rplot_search_rate_examples):
-- [Rplots](./Rplots):
-- [Rplots_coefplots](./Rplots_coefplots):
-- [Rplots_country_search_ranks](./Rplots_country_search_ranks):
-- [Rplots_survey_data](./Rplots_survey_data):
+- [Rcode_Human_Rights_google_search_Maps](./Rcode_Human_Rights_google_search_Maps): Rcode for generating global maps of relative search rates across countries
+- [Rcode_min_max_examples](./Rcode_min_max_examples): Rcode examples using the min-max transformation
+- [Rcode_Search_engine_use_analysis](./Rcode_Search_engine_use_analysis): Rcode for analyzing variation in search engine use across regions and countries
+- [Rcode_WDI](./Rcode_WDI): Rcode for pulling World Development Indicators directly from the WDI API
+- [Rplot_Related_Topics](./Rplot_Related_Topics): Rplot graphs 
+- [Rplot_search_rate_examples](./Rplot_search_rate_examples): Rplot graphs 
+- [Rplots](./Rplots): Rplot graphs 
+- [Rplots_coefplots](./Rplots_coefplots): Rplot graphs 
+- [Rplots_country_search_ranks](./Rplots_country_search_ranks): Rplot graphs 
+- [Rplots_survey_data](./Rplots_survey_data): Rplot graphs 
