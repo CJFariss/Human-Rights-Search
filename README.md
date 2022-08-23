@@ -22,4 +22,22 @@ When pulling datasets from certain APIs, specifically from [trends.google.com](t
 - [Data_output_search_cy_datasets_lowsearch](./Data_output_search_cy_datasets_lowsearch): csv dataset files for each search term, time period combination (search terms are 'human rights' in several languages)
 - [Data_output_search_cy_datasets_lowsearch_AI](./Data_output_search_cy_datasets_lowsearch_AI): csv dataset files for each search term, time period combination (search terms are 'Amnesty International' in several languages) 
 - [Data_output_search_cy_topic_datasets](./Data_output_search_cy_topic_datasets): csv dataset files for each search term, time period combination (search terms are 'human rights' using the internal google trends topic model)
-
+- [Rcode_ACLED_analysis](./Rcode_ACLED_analysis):
+- [Rcode_Amnesty_article_coverage](./Rcode_Amnesty_article_coverage):
+- [Rcode_Descriptive_Stats](./Rcode_Descriptive_Stats):
+- [Rcode_Global_Survey_analysis](./Rcode_Global_Survey_analysis):
+- [Rcode_gtrends_related_topics](./Rcode_gtrends_related_topics):
+- [Rcode_HR_treaty](./Rcode_HR_treaty):
+- [Rcode_Human_Rights_google_ngrams](./Rcode_Human_Rights_google_ngrams):
+- [Rcode_Human_Rights_google_search_country](./Rcode_Human_Rights_google_search_country):
+- [Rcode_Human_Rights_google_search_global](./Rcode_Human_Rights_google_search_global):
+- [Rcode_Human_Rights_google_search_Maps](./Rcode_Human_Rights_google_search_Maps):
+- [Rcode_min_max_examples](./Rcode_min_max_examples):
+- [Rcode_Search_engine_use_analysis](./Rcode_Search_engine_use_analysis):
+- [Rcode_WDI](./Rcode_WDI):
+- [Rplot_Related_Topics](./Rplot_Related_Topics):
+- [Rplot_search_rate_examples](./Rplot_search_rate_examples):
+- [Rplots](./Rplots):
+- [Rplots_coefplots](./Rplots_coefplots):
+- [Rplots_country_search_ranks](./Rplots_country_search_ranks):
+- [Rplots_survey_data](./Rplots_survey_data):
