@@ -11,3 +11,5 @@ Critics of the human rights discourse claim that it is losing global resonance, 
 We have created this complete Github repository with all the R code and datasets necessary to replicate or reproduce all reported data analyses presented in the main manuscript and this appendix. Every single step in our data processing and analysis sequence is available in this repository such that all procedures and results are fully accessible to any interested reader.
 
 When pulling datasets from certain APIs, specifically from [trends.google.com](trends.google.com) (the primary data source), we have saved the resulting datasets and the code that pulls the data. This will allow interested readers to reproduce the reported analyses with the same data we used or reporduce the search term datasets themselves. 
+
+[Data_Input](./Data_input)
