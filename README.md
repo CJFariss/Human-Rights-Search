@@ -12,4 +12,5 @@ We have created this complete Github repository with all the R code and datasets
 
 When pulling datasets from certain APIs, specifically from [trends.google.com](trends.google.com) (the primary data source), we have saved the resulting datasets and the code that pulls the data. This will allow interested readers to reproduce the reported analyses with the same data we used or reporduce the search term datasets themselves. 
 
-[Data_Input](./Data_input)
+[Data_Input](./Data_input) --- contains datasets obtained from sources outside of our project code
+[Data_Ouput](./Data_output) --- contains datasets produced or updated by our project code
