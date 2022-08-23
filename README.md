@@ -14,3 +14,11 @@ When pulling datasets from certain APIs, specifically from [trends.google.com](t
 
 - [Data_Input](./Data_input): contains datasets obtained from sources outside of our project code
 - [Data_Ouput](./Data_output): contains datasets produced or updated by our project code
+- [Data_output_global_search_lists](./Data_output_global_search_lists): RDS files that contain list objects with google trends search results for all countries in a given time period for a specific search term (lowsearch is off or set to FALSE)
+- [Data_output_global_search_lists_lowsearch](./Data_output_global_search_lists_lowsearch): RDS files that contain list objects with google trends search results for all countries in a given time period for a specific search term (lowsearch is on or set to TRUE) 
+- [Data_output_location_search_lists](./Data_output_location_search_lists):
+- [Data_output_location_search_lists_lowsearch](./Data_output_location_search_lists_lowsearch):
+- [Data_output_search_cy_datasets](./Data_output_search_cy_datasets):
+- [Data_output_search_cy_datasets_lowsearch](./Data_output_search_cy_datasets_lowsearch):
+- [Data_output_search_cy_datasets_lowsearch_AI](./Data_output_search_cy_datasets_lowsearch_AI):
+- [Data_output_search_cy_topic_datasets](./Data_output_search_cy_topic_datasets):
