@@ -1,4 +1,4 @@
-## google_global_HR_yearly_trends_2015_2019_months.R
+## google_global_HR_yearly_trends_2015_2019_weeks.R
 ##########################################################################
 ##
 ## Authors: Geoff Dancy and Christopher J. Fariss
