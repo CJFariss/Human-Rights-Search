@@ -63,14 +63,30 @@ There are many folders that contain many files. In an effort to make the product
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_global/google_HR_language_maps.R)
 
-#### Figure 4: Rate of google searches for “human rights” in the English language for country- weeks from 2015-2019
+#### Article Figure 4: Rate of google searches for “human rights” in the English language for country- weeks from 2015-2019
 
-#### Figure 5: Rate of google searches for “derechos humanos” in the Spanish language across countries
+#### Article Figure 5: Rate of google searches for “derechos humanos” in the Spanish language across countries
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_global/google_HR_language_maps.R)
   
-#### Figure 6: Rate of google searches for “derechos humanos” in the Spanish language for country-weeks from 2015-2019
+#### Article Figure 6: Rate of google searches for “derechos humanos” in the Spanish language for country-weeks from 2015-2019
 
+
+#### Article Figure 7: Results of Regression Models with Language Fixed Effects
+
+
+#### Article Figure 8: Human rights survey validation
+
+
+#### Article Figure 9: Google search proportions
+
+
+
+#### Article Figure 10: Related co-occurring search queries (upper left panel), search topics (upper right panel) for Guatemala, and relative search rates for regions (lower left panel) and cities (lower right panel)
+
+
+
+#### Article Table 1: 
 
 
 
