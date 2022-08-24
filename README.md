@@ -63,17 +63,21 @@ There are many folders that contain many files. In an effort to make the product
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_global/google_HR_language_maps.R)
 
-#### Article Figure 4: Rate of google searches for “human rights” in the English language for country- weeks from 2015-2019
+#### Article Figure 4: Rate of google searches for “human rights” in the English language for country-weeks from 2015-2019
+- [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
+  - [google_search_data_country_Rplot_function.R](./Rcode_Human_Rights_google_search_country/google_search_data_country_Rplot_function.R)
 
 #### Article Figure 5: Rate of google searches for “derechos humanos” in the Spanish language across countries
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_global/google_HR_language_maps.R)
   
 #### Article Figure 6: Rate of google searches for “derechos humanos” in the Spanish language for country-weeks from 2015-2019
-
+- [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
+  - [google_search_data_country_Rplot_function.R](./Rcode_Human_Rights_google_search_country/google_search_data_country_Rplot_function.R)
 
 #### Article Figure 7: Results of Regression Models with Language Fixed Effects
-
+- [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
+  - [google_search_cy_analysis.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis.R)
 
 #### Article Figure 8: Human rights survey validation
 - [Rcode_Global_Survey_analysis/](./Rcode_Global_Survey_analysis)
@@ -88,9 +92,9 @@ There are many folders that contain many files. In an effort to make the product
 - [Rcode_gtrends_related_topics/](./Rcode_gtrends_related_topics)
   - [gtrends_related_topics.R](./Rcode_gtrends_related_topics/gtrends_related_topics.R)
 
-
-
 #### Article Table 1: 
+- [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
+  - [google_search_cy_analysis.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis.R)
 
 
 
