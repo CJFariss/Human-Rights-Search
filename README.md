@@ -58,8 +58,7 @@ There are many folders that contain many files. In an effort to make the product
 #### Article Figure 1: Pairwise comparisons of relative search term rates
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_search_trends_paired_comparisons.R](./Rcode_Human_Rights_google_search_global/google_search_trends_paired_comparisons.R)
-
-![This is an image](./Rplots/Google_search_term_pairs_shortlist.pdf)
+  - [Google_search_term_pairs_shortlist.pdf](./Rplots/Google_search_term_pairs_shortlist.pdf)
 
 
 
