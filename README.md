@@ -60,15 +60,15 @@ There are many folders that contain many files. In an effort to make the product
   - [google_search_trends_paired_comparisons.R](./Rcode_Human_Rights_google_search_global/google_search_trends_paired_comparisons.R)
   - [Google_search_term_pairs_shortlist.pdf](./Rplots/Google_search_term_pairs_shortlist.pdf)
 
-
-
 #### Article Figure 2: Global weekly search rates from Google Trends for five language groups (2015- 2019)
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_global_HR_yearly_trends_2015_2019_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2015_2019_weeks.R)
+  - [Global_search_hits_mean_CI_2015_2019.pdf](./Rplots/Global_search_hits_mean_CI_2015_2019.pdf)
 
 #### Article Figure 3: Rate of google searches for “human rights” in the english language across countries
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_global/google_HR_language_maps.R)
+  - [Maps_Human_Rights_language_groups.pdf](./Rplots/Maps_Human_Rights_language_groups.pdf)
 
 #### Article Figure 4: Rate of google searches for “human rights” in the English language for country-weeks from 2015-2019
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
@@ -77,7 +77,8 @@ There are many folders that contain many files. In an effort to make the product
 #### Article Figure 5: Rate of google searches for “derechos humanos” in the Spanish language across countries
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_global/google_HR_language_maps.R)
-  
+  - [Maps_Human_Rights_language_groups.pdf](./Rplots/Maps_Human_Rights_language_groups.pdf)
+
 #### Article Figure 6: Rate of google searches for “derechos humanos” in the Spanish language for country-weeks from 2015-2019
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_data_country_Rplot_function.R](./Rcode_Human_Rights_google_search_country/google_search_data_country_Rplot_function.R)
