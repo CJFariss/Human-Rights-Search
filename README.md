@@ -53,6 +53,8 @@ There are many folders that contain many files. In an effort to make the product
 
 [groundhog_library_func.R](./groundhog_library_func.R) Is a function that loads all the necessary R libraries. There are three options in the function, load libraries using the version from when the scripts were originally run, load libraries using the current version, install the current version of the libraries. This function will hopefully ensure that all the results reported in the article and supplementary appendix can always be reproduced using the original function versions if any updatd functions produce dissimilar results in the future.
 
+### Main Article Files
+
 #### Article Figure 1: Pairwise comparisons of relative search term rates
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_search_trends_paired_comparisons.R](./Rcode_Human_Rights_google_search_global/google_search_trends_paired_comparisons.R)
@@ -99,6 +101,7 @@ There are many folders that contain many files. In an effort to make the product
   - [google_search_cy_analysis.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis.R)
 
 
+### Supplementary Appendix Files
 
 
   
