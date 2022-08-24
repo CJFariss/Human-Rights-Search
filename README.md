@@ -49,5 +49,9 @@ Note that lowsearch is in reference to the low_search_volume argument in the gtr
 - [Rplots_survey_data](./Rplots_survey_data): Rplot graphs from the analyses of the global survey datasets
 
 ## Analysis Information
+There are many folders that contain many files. In an effort to make the production of each result presented in our article as transparent as possible, we describe the resources necessary (contained in the project folders described above) to reproduce each figure or table in the main article and by section in the supplementary appendix.
 
-### Figure 1
+### Figure 1: Pairwise comparisons of relative search term rates
+- [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
+-- [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global/google_search_trends_paired_comparisons.R)
+
