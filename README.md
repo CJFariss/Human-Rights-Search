@@ -76,6 +76,9 @@ There are many folders that contain many files. In an effort to make the product
 
 
 #### Article Figure 8: Human rights survey validation
+- [Rcode_Global_Survey_analysis/](./Rcode_Global_Survey_analysis)
+  - [google_HR_language_maps.R](./Rcode_Global_Survey_analysis/LAPOP_analysis_weighted_means.R)
+  - [google_HR_language_maps.R](./Rcode_Global_Survey_analysis/WorldValuesSurvey_analysis_weighted.R)
 
 
 #### Article Figure 9: Google search proportions
