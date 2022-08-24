@@ -36,7 +36,7 @@ Note that lowsearch is in reference to the low_search_volume argument in the gtr
 - [Rcode_HR_treaty](./Rcode_HR_treaty): Rcode to update country-year UN human rights treaty dataset 
 - [Rcode_Human_Rights_google_ngrams](./Rcode_Human_Rights_google_ngrams): Rcode for analyzing [google ngrams data](https://books.google.com/ngrams)
 - [Rcode_Human_Rights_google_search_country](./Rcode_Human_Rights_google_search_country): country-year analysis files
-- [Rcode_Human_Rights_google_search_global](./Rcode_Human_Rights_google_search_global): 
+- [Rcode_Human_Rights_google_search_global](./Rcode_Human_Rights_google_search_global): global analysis files 
 - [Rcode_Human_Rights_google_search_Maps](./Rcode_Human_Rights_google_search_Maps): Rcode for generating global maps of relative search rates across countries
 - [Rcode_min_max_examples](./Rcode_min_max_examples): Rcode examples using the min-max transformation
 - [Rcode_Search_engine_use_analysis](./Rcode_Search_engine_use_analysis): Rcode for analyzing variation in search engine use across regions and countries
@@ -47,3 +47,7 @@ Note that lowsearch is in reference to the low_search_volume argument in the gtr
 - [Rplots_coefplots](./Rplots_coefplots): Rplot graphs coefficient plots from regression models
 - [Rplots_country_search_ranks](./Rplots_country_search_ranks): Rplot graphs of within-country weekly time series data, ranked by overall country search rates (all langugage groups and topics)
 - [Rplots_survey_data](./Rplots_survey_data): Rplot graphs from the analyses of the global survey datasets
+
+## Analysis Information
+
+### Figure 1
