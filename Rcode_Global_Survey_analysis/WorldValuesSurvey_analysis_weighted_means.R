@@ -1,4 +1,4 @@
-## LAPOP_analysis_weighted_means.R
+## WorldValuesSurvey_analysis_weighted_means.R
 ##########################################################################
 ##
 ## Authors: Geoff Dancy and Christopher J. Fariss
