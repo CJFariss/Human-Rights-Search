@@ -34,16 +34,16 @@ Note that lowsearch is in reference to the low_search_volume argument in the gtr
 - [Rcode_Global_Survey_analysis](./Rcode_Global_Survey_analysis): Rcode for analyzing several surveys ([World Values Survey](https://www.worldvaluessurvey.org/wvs.jsp), [Latin American Public Opinion Project](https://www.vanderbilt.edu/lapop/), [Afrobarometer](https://www.afrobarometer.org/about/), and [Open Global Rights](https://www.openglobalrights.org/))
 - [Rcode_gtrends_related_topics](./Rcode_gtrends_related_topics): Rcode to create co-occuring topics data and Rplots
 - [Rcode_HR_treaty](./Rcode_HR_treaty): Rcode to update country-year UN human rights treaty dataset 
-- [Rcode_Human_Rights_google_ngrams](./Rcode_Human_Rights_google_ngrams): Rcode for analyzing google ngrams data
-- [Rcode_Human_Rights_google_search_country](./Rcode_Human_Rights_google_search_country):
-- [Rcode_Human_Rights_google_search_global](./Rcode_Human_Rights_google_search_global):
+- [Rcode_Human_Rights_google_ngrams](./Rcode_Human_Rights_google_ngrams): Rcode for analyzing [google ngrams data](https://books.google.com/ngrams)
+- [Rcode_Human_Rights_google_search_country](./Rcode_Human_Rights_google_search_country): country-year analysis files
+- [Rcode_Human_Rights_google_search_global](./Rcode_Human_Rights_google_search_global): 
 - [Rcode_Human_Rights_google_search_Maps](./Rcode_Human_Rights_google_search_Maps): Rcode for generating global maps of relative search rates across countries
 - [Rcode_min_max_examples](./Rcode_min_max_examples): Rcode examples using the min-max transformation
 - [Rcode_Search_engine_use_analysis](./Rcode_Search_engine_use_analysis): Rcode for analyzing variation in search engine use across regions and countries
 - [Rcode_WDI](./Rcode_WDI): Rcode for pulling World Development Indicators directly from the WDI API
 - [Rplot_Related_Topics](./Rplot_Related_Topics): Rplot graphs of related topics and within-country regions for all country-language search terms
 - [Rplot_search_rate_examples](./Rplot_search_rate_examples): Rplot graphs with relative search rate examples 
-- [Rplots](./Rplots): Rplot graphs (all the others)
+- [Rplots](./Rplots): Rplot graphs (all the other Rplots)
 - [Rplots_coefplots](./Rplots_coefplots): Rplot graphs coefficient plots from regression models
 - [Rplots_country_search_ranks](./Rplots_country_search_ranks): Rplot graphs of within-country weekly time series data, ranked by overall country search rates (all langugage groups and topics)
 - [Rplots_survey_data](./Rplots_survey_data): Rplot graphs from the analyses of the global survey datasets
