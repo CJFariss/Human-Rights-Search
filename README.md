@@ -51,6 +51,8 @@ Note that lowsearch is in reference to the low_search_volume argument in the gtr
 ### Analysis Information
 There are many folders that contain many files. In an effort to make the production of each result presented in our article as transparent as possible, we describe the resources necessary (contained in the project folders described above) to reproduce each figure or table in the main article and by section in the supplementary appendix.
 
+[groundhog_library_func.R](./groundhog_library_func.R) Is a function that loads all the necessary R libraries. There are three options in the function, load libraries using the version from when the scripts were originally run, load libraries using the current version, install the current version of the libraries. This function will hopefully ensure that all the results reported in the article and supplementary appendix can always be reproduced using the original function versions if any updatd functions produce dissimilar results in the future.
+
 #### Article Figure 1: Pairwise comparisons of relative search term rates
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_search_trends_paired_comparisons.R](./Rcode_Human_Rights_google_search_global/google_search_trends_paired_comparisons.R)
@@ -92,7 +94,7 @@ There are many folders that contain many files. In an effort to make the product
 - [Rcode_gtrends_related_topics/](./Rcode_gtrends_related_topics)
   - [gtrends_related_topics.R](./Rcode_gtrends_related_topics/gtrends_related_topics.R)
 
-#### Article Table 1: 
+#### Article Table 1: Results of Regression Models with Language Fixed Effects 
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis.R)
 
