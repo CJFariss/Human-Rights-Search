@@ -73,6 +73,7 @@ There are many folders that contain many files. In an effort to make the product
 #### Article Figure 4: Rate of google searches for “human rights” in the English language for country-weeks from 2015-2019
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_data_country_Rplot_function.R](./Rcode_Human_Rights_google_search_country/google_search_data_country_Rplot_function.R)
+  - [human_rights_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/human_rights_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
 
 #### Article Figure 5: Rate of google searches for “derechos humanos” in the Spanish language across countries
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
@@ -82,6 +83,7 @@ There are many folders that contain many files. In an effort to make the product
 #### Article Figure 6: Rate of google searches for “derechos humanos” in the Spanish language for country-weeks from 2015-2019
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_data_country_Rplot_function.R](./Rcode_Human_Rights_google_search_country/google_search_data_country_Rplot_function.R)
+  - [derechos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/derechos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
 
 #### Article Figure 7: Results of Regression Models with Language Fixed Effects
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
