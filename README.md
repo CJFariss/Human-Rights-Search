@@ -51,7 +51,18 @@ Note that lowsearch is in reference to the low_search_volume argument in the gtr
 ## Analysis Information
 There are many folders that contain many files. In an effort to make the production of each result presented in our article as transparent as possible, we describe the resources necessary (contained in the project folders described above) to reproduce each figure or table in the main article and by section in the supplementary appendix.
 
-### Figure 1: Pairwise comparisons of relative search term rates
+### Article Figure 1: Pairwise comparisons of relative search term rates
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
-  - [google_search_trends_paired_comparisons.R/](./Rcode_Human_Rights_google_search_global/google_search_trends_paired_comparisons.R)
+  - [google_search_trends_paired_comparisons.R](./Rcode_Human_Rights_google_search_global/google_search_trends_paired_comparisons.R)
+
+### Article Figure 2: Global weekly search rates from Google Trends for five language groups (2015- 2019)
+- [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
+  - [google_global_HR_yearly_trends_2015_2019_months.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2015_2019_months.R)
+
+### Article Figure 3: Rate of google searches for “human rights” in the english language across countries
+- [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
+  - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_global/google_HR_language_maps.R)
+
+
+
 
