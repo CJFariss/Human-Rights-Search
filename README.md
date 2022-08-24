@@ -57,7 +57,7 @@ There are many folders that contain many files. In an effort to make the product
 
 #### Article Figure 2: Global weekly search rates from Google Trends for five language groups (2015- 2019)
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
-  - [google_global_HR_yearly_trends_2015_2019_months.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2015_2019_months.R)
+  - [google_global_HR_yearly_trends_2015_2019_months.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2015_2019_weeks.R)
 
 #### Article Figure 3: Rate of google searches for “human rights” in the english language across countries
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
