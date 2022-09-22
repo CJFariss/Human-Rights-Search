@@ -23,7 +23,7 @@ groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 ## additional functions to add content to the stargazer table output
 source("Rcode_Human_Rights_google_search_country/star_cleaning_functions.R")
 
-attention_rate <- FALSE ## set to FALSE for count
+attention_rate <- TRUE ## set to FALSE for count
 NGO_amnesty <- TRUE ## set to FALSE for the alternative NGO variable
 lowsearch_option <- FALSE ## note that the lowsearch term in the file label means that the lowsearch argument is set to its default FALSE value in the gtrends() search function
 
@@ -216,7 +216,7 @@ for(j in 1:4){
   
   tab_output <- stargazer(fit_mean_robust[[j]], fit_median_robust[[j]], fit_max_robust[[j]], covariate.labels = LABELS, column.labels = c("Search Mean", "Search Median", "Search Max"), dep.var.caption = "Dependent Variable: Google Search Rate", no.space=TRUE, title="Country-Year Regression Analysis", notes=NOTES, notes.align="l", notes.append=FALSE)
 
-  star_insert_row(tab_output, paste("R-squared  &", round(r_squared[[i]][1],3), "&", round(r_squared[[i]][2],3), "&", round(r_squared[[i]][3],3),"\\\\ "), insert.after=38) 
+  tab_output <- star_insert_row(tab_output, paste("R-squared  &", round(r_squared[[i]][1],3), "&", round(r_squared[[i]][2],3), "&", round(r_squared[[i]][3],3),"\\\\ "), insert.after=38) 
   
   tab_output
 
