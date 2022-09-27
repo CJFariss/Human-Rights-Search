@@ -25,8 +25,9 @@ source("Rcode_Human_Rights_google_search_country/star_cleaning_functions.R")
 
 attention_rate <- TRUE ## set to FALSE for count
 NGO_amnesty <- TRUE ## set to FALSE for the alternative NGO variable
-lowsearch_option <- FALSE ## note that the lowsearch term in the file label means that the lowsearch argument is set to its default FALSE value in the gtrends() search function
+lowsearch_option <- FALSE ## note that the lowsearch term in the file label means that the lowsearch argument is set to its default FALSE value in the gtrends() search function which is FALSE (sorry this is confusing)
 
+## keep these fixed
 if(lowsearch_option==TRUE) test_dat <- readRDS("Data_output/combined_gsearch_dat_list_merged.RDS")
 if(lowsearch_option==FALSE) test_dat <- readRDS("Data_output/combined_gsearch_dat_list_merged_lowsearch.RDS")
 
@@ -218,7 +219,7 @@ for(j in 1:4){
 
   tab_output <- star_insert_row(tab_output, paste("R-squared  &", round(r_squared[[i]][1],3), "&", round(r_squared[[i]][2],3), "&", round(r_squared[[i]][3],3),"\\\\ "), insert.after=38) 
   
-  tab_output
+  #tab_output
 
     if(j==1 & lowsearch_option==FALSE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2012_2016.tex")
   if(j==2 & lowsearch_option==FALSE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2013_2017.tex")

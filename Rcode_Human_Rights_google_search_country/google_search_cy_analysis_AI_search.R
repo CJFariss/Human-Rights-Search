@@ -20,9 +20,12 @@
 source("groundhog_library_func.R")
 groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
-attention_rate <- FALSE ## set to FALSE for count
+## additional functions to add content to the stargazer table output
+source("Rcode_Human_Rights_google_search_country/star_cleaning_functions.R")
+
+attention_rate <- TRUE ## set to FALSE for count
 NGO_amnesty <- TRUE ## set to FALSE for the alternative NGO variable
-lowsearch_option <- FALSE ## note that the lowsearch term in the file label means that the lowsearch argument is set to its default FALSE value in the gtrends() search function
+lowsearch_option <- FALSE ## note that the lowsearch term in the file label means that the lowsearch argument is set to its default FALSE value in the gtrends() search function which is FALSE (sorry this is confusing)
 
 if(lowsearch_option==TRUE) test_dat <- readRDS("Data_output/combined_gsearch_dat_list_merged_AI.RDS")
 if(lowsearch_option==FALSE) test_dat <- readRDS("Data_output/combined_gsearch_dat_list_merged_lowsearch_AI.RDS")
@@ -121,7 +124,7 @@ test_dat_language_pooled[[4]] <- rbind(test_dat[[4]], test_dat[[8]], test_dat[[1
 
 
 ## linear models (languages are pooled together)
-fit_mean_robust <- fit_median_robust <- fit_max_robust <-  list()
+fit_mean_robust <- fit_median_robust <- fit_max_robust <- r_squared <- list()
 unit_n <- c()
 for(i in 1:length(test_dat_language_pooled)){
   
@@ -173,6 +176,7 @@ for(i in 1:length(test_dat_language_pooled)){
                 + as.factor(language), 
                 data=temp)
   
+  r_squared[[i]] <- c(summary(fit_mean)$r.squared, summary(fit_median)$r.squared, summary(fit_max)$r.squared)
   #summary(fit)
   ## robust clustered standard errors
   fit_mean_robust[[i]] <- coeftest(fit_mean, vcov = vcovHC, type = "HC1", cluster=~language)
@@ -205,9 +209,11 @@ for(j in 1:4){
   
   NOTES <- "\\parbox[t]{8cm}{``Amnesty International' searching: Search Mean, Search Median, and Search Max dependent variables are measure of the yearly mean, median, or max country-week search rate value for each country-year unit. Independent variables are measured annually for each country-year unit. $^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01}"
   
-  tab_output <- stargazer(fit_mean_robust[[j]], fit_median_robust[[j]], fit_max_robust[[j]], covariate.labels = LABELS, column.labels = c("Search Mean", "Search Median", "Search Max"), dep.var.caption = "Google Search Rate", no.space=TRUE, title="", notes=NOTES, notes.align="l", notes.append=FALSE)
+  tab_output <- stargazer(fit_mean_robust[[j]], fit_median_robust[[j]], fit_max_robust[[j]], covariate.labels = LABELS, column.labels = c("Search Mean", "Search Median", "Search Max"), dep.var.caption = "Dependent Variable: Google Search Rate", no.space=TRUE, title="Country-Year Regression Analysis", notes=NOTES, notes.align="l", notes.append=FALSE)
   
-  tab_output
+  tab_output <- star_insert_row(tab_output, paste("R-squared  &", round(r_squared[[i]][1],3), "&", round(r_squared[[i]][2],3), "&", round(r_squared[[i]][3],3),"\\\\ "), insert.after=36) 
+  
+  #tab_output
   
   if(j==1 & lowsearch_option==FALSE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_AI_amnesty_report_count_2012_2016.tex")
   if(j==2 & lowsearch_option==FALSE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_AI_amnesty_report_count_2013_2017.tex")
