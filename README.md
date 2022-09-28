@@ -109,7 +109,16 @@ There are many folders that contain many files. In an effort to make the product
 
 ### Supplementary Appendix Files
 
-
+#### Section L
+- [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
+  - [google_search_cy_analysis.R/](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis.R)
+  - [google_search_cy_analysis_treaty_count_interaction.R/](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_treaty_count_interaction.R)
+  - [google_search_cy_analysis_NGO_interaction.R/](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_NGO_interaction.R)
+  - [google_search_cy_analysis_NGO_alt.R/](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_NGO_alt.R)
+  - [google_search_cy_analysis_merges.R/](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_merges.R)
+  - [google_search_cy_analysis_excludeUS.R/](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_excludeUS.R)
+  - [google_search_cy_analysis_cross_validation.R/](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_cross_validation.R)
+  - [google_search_cy_analysis_AI_search.R/](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_AI_search.R)
   
 
 

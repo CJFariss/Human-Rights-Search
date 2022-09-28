@@ -24,7 +24,7 @@ groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 source("Rcode_Human_Rights_google_search_country/star_cleaning_functions.R")
 
 ## keep these values the same (see the other files for alternative model specifications)
-attention_rate <- FALSE ## set to FALSE for count
+attention_rate <- TRUE ## set to FALSE for count
 NGO_amnesty <- TRUE ## set to FALSE for the alternative NGO variable
 lowsearch_option <- FALSE ## note that the lowsearch term in the file label means that the lowsearch argument is set to its default FALSE value in the gtrends() search function
 
