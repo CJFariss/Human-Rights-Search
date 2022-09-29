@@ -171,6 +171,9 @@ There are many folders that contain many files. In an effort to make the product
   - [google_search_data_country_Rplot_function.R](./Rcode_Human_Rights_google_search_country/google_search_data_country_Rplot_function.R)
   - [human_rights_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/human_rights_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
   - [derechos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/derechos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
+  - [direitos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/direitos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
+  - [droit_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/droit_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
+  - [huquq_alansan_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/huquq_alansan_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
   
 #### Supplementary Appendix Section F: Variation in term usage for French Speakers
 
