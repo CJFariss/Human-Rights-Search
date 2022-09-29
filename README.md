@@ -58,58 +58,69 @@ There are many folders that contain many files. In an effort to make the product
 #### Article Figure 1: Pairwise comparisons of relative search term rates
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_search_trends_paired_comparisons.R](./Rcode_Human_Rights_google_search_global/google_search_trends_paired_comparisons.R)
+- [Rplots](./Rplots)
   - [Google_search_term_pairs_shortlist.pdf](./Rplots/Google_search_term_pairs_shortlist.pdf)
 
 #### Article Figure 2: Global weekly search rates from Google Trends for five language groups (2015- 2019)
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_global_HR_yearly_trends_2015_2019_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2015_2019_weeks.R)
+- [Rplots](./Rplots)
   - [Global_search_hits_mean_CI_2015_2019.pdf](./Rplots/Global_search_hits_mean_CI_2015_2019.pdf)
 
 #### Article Figure 3: Rate of google searches for “human rights” in the english language across countries
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_language_maps.R)
+- [Rplots](./Rplots)
   - [Maps_Human_Rights_language_groups.pdf](./Rplots/Maps_Human_Rights_language_groups.pdf)
 
 #### Article Figure 4: Rate of google searches for “human rights” in the English language for country-weeks from 2015-2019
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_data_country_Rplot_function.R](./Rcode_Human_Rights_google_search_country/google_search_data_country_Rplots_function.R)
+- [Rplots_country_search_ranks](./Rplots_country_search_ranks)
   - [human_rights_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/human_rights_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
 
 #### Article Figure 5: Rate of google searches for “derechos humanos” in the Spanish language across countries
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_language_maps.R)
+- [Rplots](./Rplots)
   - [Maps_Human_Rights_language_groups.pdf](./Rplots/Maps_Human_Rights_language_groups.pdf)
 
 #### Article Figure 6: Rate of google searches for “derechos humanos” in the Spanish language for country-weeks from 2015-2019
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_data_country_Rplot_function.R](./Rcode_Human_Rights_google_search_country/google_search_data_country_Rplots_function.R)
+- [Rplots_country_search_ranks](./Rplots_country_search_ranks)
   - [derechos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/derechos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
 
 #### Article Figure 7: Results of Regression Models with Language Fixed Effects
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis.R)
+- [Rplots_coefplots](./Rplots_coefplots)
   - [coefs_lowsearch_amnesty_amnesty_report_rate_2015_2019_Rplot.pdf](./Rplots_coefplots/coefs_lowsearch_amnesty_amnesty_report_rate_2015_2019_Rplot.pdf)
 
 #### Article Figure 8: Human rights survey validation
 - [Rcode_Global_Survey_analysis/](./Rcode_Global_Survey_analysis)
   - [LAPOP_analysis_weighted_means.R](./Rcode_Global_Survey_analysis/LAPOP_analysis_weighted_means.R)
-  - [LAPOP_country_plots.pdf](./Rplots_survey_data/LAPOP_country_plots.pdf)
   - [WorldValuesSurvey_analysis_weighted.R](./Rcode_Global_Survey_analysis/WorldValuesSurvey_analysis_weighted_means.R)
+- [Rplots_survey_data](./Rplots_survey_data)
+  - [LAPOP_country_plots.pdf](./Rplots_survey_data/LAPOP_country_plots.pdf)
   - [WVS_LA_country_plots.pdf](./Rplots_survey_data/WVS_LA_country_plots.pdf)
 
 #### Article Figure 9: Google search proportions
 - [Rcode_Search_engine_use_analysis/](./Rcode_Search_engine_use_analysis)
   - [Rcode_Search_engine_use_analysis.R](./Rcode_Search_engine_use_analysis/Search_engine_use_analysis.R)
+- [Rplots](./Rplots)
   - [Rplot_search_months.pdf](./Rplots/Rplot_search_months.pdf)
   
 #### Article Figure 10: Related co-occurring search queries (upper left panel), search topics (upper right panel) for Guatemala, and relative search rates for regions (lower left panel) and cities (lower right panel)
 - [Rcode_gtrends_related_topics/](./Rcode_gtrends_related_topics)
   - [gtrends_related_topics.R](./Rcode_gtrends_related_topics/gtrends_related_topics.R)
+- [Rplot_Related_Topics](./Rplot_Related_Topics)
   - [related_topics_gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf](./Rplot_Related_Topics/related_topics_gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf)
 
 #### Article Table 1: Results of Regression Models with Language Fixed Effects 
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis.R)
+- [Tex_tables/](./Tex_tables/)
   - [main_results_lowsearch_amnesty_report_rate_2015_2019.tex](./Tex_tables/main_results_lowsearch_amnesty_report_rate_2015_2019.tex)
 
 ### Supplementary Appendix Files
