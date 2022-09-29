@@ -178,43 +178,37 @@ There are many folders that contain many files. In an effort to make the product
 #### Supplementary Appendix Section F: Variation in term usage for French Speakers
 - [Rcode_Human_Rights_google_search_Maps/](./Rcode_Human_Rights_google_search_Maps/)
   - [google_HR_french_validation_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_french_validation_maps.R)
-
--[Rplots](./Rplots)
+- [Rplots](./Rplots)
   - [Maps_French_validation.pdf](./Rplots/Maps_French_validation.pdf)
 
 #### Supplementary Appendix Section G: Searching for “human rights” and “rights” in English
 - [Rcode_Human_Rights_google_search_Maps/](./Rcode_Human_Rights_google_search_Maps/)
   - [google_HR_english_validation_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_english_validation_maps.R)
-
--[Rplots](./Rplots)
+- [Rplots](./Rplots)
   - [Maps_English_validation.pdf](./Rplots/Maps_English_validation.pdf)
 
 #### Supplementary Appendix Section H: Searching for “Amnesty International”
 - [Rcode_Human_Rights_google_search_Maps/](./Rcode_Human_Rights_google_search_Maps/)
   - [google_Amnesty_International_search_maps.R](./Rcode_Human_Rights_google_search_Maps/google_Amnesty_International_search_maps.R)
-
--[Rplots](./Rplots)
+- [Rplots](./Rplots)
   - [Maps_Amnesty_International_search.pdf](./Rplots/Maps_Amnesty_International_search.pdf)
 
 #### Supplementary Appendix Section I: Validation: Google Searches for “malaria”  
 - [Rcode_Human_Rights_google_search_Maps/](./Rcode_Human_Rights_google_search_Maps/)
   - [google_malaria_search_validation.R](./Rcode_Human_Rights_google_search_Maps/google_malaria_search_validation.R)
-
--[Rplots](./Rplots)
+- [Rplots](./Rplots)
   - [Maps_google_malaria.pdf](./Rplots/Maps_google_malaria.pdf)
 
 #### Supplementary Appendix Section J: Validation: Google Search Volumes vs. Competitor Search Volumes
 - [Rcode_Search_engine_use_analysis/](./Rcode_Search_engine_use_analysis)
   - [Rcode_Search_engine_use_analysis.R](./Rcode_Search_engine_use_analysis/Search_engine_use_analysis.R)
-
--[Rplots](./Rplots)
+- [Rplots](./Rplots)
   - [Rplot_search_months.pdf](./Rplots/Rplot_search_months.pdf)
 
 #### Supplementary Appendix Section K: Google n-grams (1800-2008)
 - [Rcode_Human_Rights_google_ngrams](./Rcode_Human_Rights_google_ngrams/)
   - [google_book_ngrams.R](./Rcode_Human_Rights_google_ngrams/google_book_ngrams.R)
-
--[Rplots](./Rplots)
+- [Rplots](./Rplots)
   - [Google_book_corpus_ngram.pdf](./Rplots/Google_book_corpus_ngram.pdf)
 
 #### Supplementary Appendix Section L: Additional Regression Results
@@ -232,7 +226,6 @@ There are many folders that contain many files. In an effort to make the product
 #### Supplementary Appendix Section M: Guatemala Week-Level Analysis
 - [Rcode_Human_Rights_google_search_country/](./Rcode_ACLED_analysis)
   - [acled_foo.R.R](./Rcode_ACLED_analysis/acled_foo.R)
-
 - [Rplots_acled/](./Rplots_acled)
   - [Cross_validated_predictions_Guatemala_v2.pdf](./Rplots_acled/Cross_validated_predictions_Guatemala_v2.pdf)
 
