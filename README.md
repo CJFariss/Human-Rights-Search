@@ -142,7 +142,11 @@ There are many folders that contain many files. In an effort to make the product
   - [Google_topic_pairs.pdf](./Rplots/Google_topic_pairs.pdf)
   
 ##### C.2 Global Search Rates by Language Group
-
+- [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
+  - [google_global_HR_yearly_trends_2013_2017_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2013_2017_weeks.R)
+  - [google_global_HR_yearly_trends_2014_2018_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2014_2018_weeks.R)
+  - [google_global_HR_yearly_trends_2015_2019_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2015_2019_weeks.R)
+  - [google_global_HR_yearly_trends_2016_2020_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2016_2020_weeks.R)
   - [Global_search_hits_mean_CI_2013_2017.pdf](./Rplots/Global_search_hits_mean_CI_2013_2017.pdf)
   - [Global_search_hits_mean_CI_2014_2018.pdf](./Rplots/Global_search_hits_mean_CI_2014_2018.pdf)
   - [Global_search_hits_mean_CI_2015_2019.pdf](./Rplots/Global_search_hits_mean_CI_2015_2019.pdf)
