@@ -121,18 +121,31 @@ There are many folders that contain many files. In an effort to make the product
   - [stats_2014_2018.tex](./Tex_tables/stats_2014_2018.tex)
   - [stats_2013_2017.tex](./Tex_tables/stats_2013_2017.tex)
   - [stats_2012_2016.tex](./Tex_tables/stats_2012_2016.tex)
-
-- [Tex_tables/](./Tex_tables/)
   - [cors_2015_2019.tex](./Tex_tables/cors_2015_2019.tex)
   - [cors_2014_2018.tex](./Tex_tables/cors_2014_2018.tex)
   - [cors_2013_2017.tex](./Tex_tables/cors_2013_2017.tex)
   - [cors_2012_2016.tex](./Tex_tables/cors_2012_2016.tex)
-  
-- [Tex_tables/](./Tex_tables/)
   - [cor_search_theta_2012_2016.tex](./Tex_tables/cor_search_theta_2012_2016.tex)
   - [cor_search_amnesty_attention_count_2012_2016.tex](./Tex_tables/cor_search_amnesty_attention_count_2012_2016.tex)
   - [cor_search_amnesty_attention_rate_2012_2016.tex](./Tex_tables/cor_search_amnesty_attention_rate_2012_2016.tex)
 
+#### Supplementary Appendix Section C: Global Search Rates
+
+#### Supplementary Appendix Section D: Examples of Related Searches
+
+#### Supplementary Appendix Section E: Mapping the Geographic Distribution of Google Searching
+
+#### Supplementary Appendix Section F: Variation in term usage for French Speakers
+
+#### Supplementary Appendix Section G: Searching for “human rights” and “rights” in English
+
+#### Supplementary Appendix Section H: Searching for “Amnesty International”
+
+#### Supplementary Appendix Section I: Validation: Google Searches for “malaria”  
+
+#### Supplementary Appendix Section J: Validation: Google Search Volumes vs. Competitor Search Volumes
+
+#### Supplementary Appendix Section K: Google n-grams (1800-2008)
 
 #### Supplementary Appendix Section L: Additional Regression Results
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
@@ -146,5 +159,6 @@ There are many folders that contain many files. In an effort to make the product
   - [google_search_cy_analysis_AI_search.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_AI_search.R)
   
 
+#### Supplementary Appendix Section M: Guatemala Week-Level Analysis
 
 
