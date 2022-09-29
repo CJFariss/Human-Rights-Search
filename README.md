@@ -67,7 +67,7 @@ There are many folders that contain many files. In an effort to make the product
 
 #### Article Figure 3: Rate of google searches for “human rights” in the english language across countries
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
-  - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_global/google_HR_language_maps.R)
+  - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_language_maps.R)
   - [Maps_Human_Rights_language_groups.pdf](./Rplots/Maps_Human_Rights_language_groups.pdf)
 
 #### Article Figure 4: Rate of google searches for “human rights” in the English language for country-weeks from 2015-2019
