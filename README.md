@@ -147,10 +147,12 @@ There are many folders that contain many files. In an effort to make the product
   - [google_global_HR_yearly_trends_2014_2018_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2014_2018_weeks.R)
   - [google_global_HR_yearly_trends_2015_2019_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2015_2019_weeks.R)
   - [google_global_HR_yearly_trends_2016_2020_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2016_2020_weeks.R)
+  - [google_global_HR_yearly_trends_2017_2021_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2017_2021_weeks.R)
   - [Global_search_hits_mean_CI_2013_2017.pdf](./Rplots/Global_search_hits_mean_CI_2013_2017.pdf)
   - [Global_search_hits_mean_CI_2014_2018.pdf](./Rplots/Global_search_hits_mean_CI_2014_2018.pdf)
   - [Global_search_hits_mean_CI_2015_2019.pdf](./Rplots/Global_search_hits_mean_CI_2015_2019.pdf)
   - [Global_search_hits_mean_CI_2016_2020.pdf](./Rplots/Global_search_hits_mean_CI_2016_2020.pdf)
+  - [Global_search_hits_mean_CI_2017_2021.pdf](./Rplots/Global_search_hits_mean_CI_2017_2021.pdf)
 
 #### Supplementary Appendix Section D: Examples of Related Searches
 - [Rcode_gtrends_related_topics/](./Rcode_gtrends_related_topics)
@@ -161,7 +163,15 @@ There are many folders that contain many files. In an effort to make the product
 
 
 #### Supplementary Appendix Section E: Mapping the Geographic Distribution of Google Searching
+- [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
+  - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_global/google_HR_language_maps.R)
+  - [Maps_Human_Rights_language_groups.pdf](./Rplots/Maps_Human_Rights_language_groups.pdf)
 
+- [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
+  - [google_search_data_country_Rplot_function.R](./Rcode_Human_Rights_google_search_country/google_search_data_country_Rplot_function.R)
+  - [human_rights_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/human_rights_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
+  - [derechos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/derechos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
+  
 #### Supplementary Appendix Section F: Variation in term usage for French Speakers
 
 #### Supplementary Appendix Section G: Searching for “human rights” and “rights” in English
