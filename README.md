@@ -175,8 +175,8 @@ There are many folders that contain many files. In an effort to make the product
   - [huquq_alansan_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/huquq_alansan_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
   
 #### Supplementary Appendix Section F: Variation in term usage for French Speakers
-- [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global/)
-  - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global/google_HR_french_validation_maps.R)
+- [Rcode_Human_Rights_google_search_Maps/](./Rcode_Human_Rights_google_search_Maps/)
+  - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_Maps/google_HR_french_validation_maps.R)
   - [Maps_French_validation.pdf](./Rplots/Maps_French_validation.pdf)
 
 
