@@ -93,7 +93,9 @@ There are many folders that contain many files. In an effort to make the product
 #### Article Figure 8: Human rights survey validation
 - [Rcode_Global_Survey_analysis/](./Rcode_Global_Survey_analysis)
   - [LAPOP_analysis_weighted_means.R](./Rcode_Global_Survey_analysis/LAPOP_analysis_weighted_means.R)
+  - [LAPOP_country_plots.pdf](./Rplots_survey_data/LAPOP_country_plots.pdf)
   - [WorldValuesSurvey_analysis_weighted.R](./Rcode_Global_Survey_analysis/WorldValuesSurvey_analysis_weighted_means.R)
+  - [WVS_LA_country_plots.pdf](./Rplots_survey_data/WVS_LA_country_plots.pdf)
 
 #### Article Figure 9: Google search proportions
 - [Rcode_Search_engine_use_analysis/](./Rcode_Search_engine_use_analysis)
