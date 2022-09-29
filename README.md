@@ -176,12 +176,14 @@ There are many folders that contain many files. In an effort to make the product
   
 #### Supplementary Appendix Section F: Variation in term usage for French Speakers
 - [Rcode_Human_Rights_google_search_Maps/](./Rcode_Human_Rights_google_search_Maps/)
-  - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_Maps/google_HR_french_validation_maps.R)
+  - [google_HR_french_validation_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_french_validation_maps.R)
   - [Maps_French_validation.pdf](./Rplots/Maps_French_validation.pdf)
 
 
-
 #### Supplementary Appendix Section G: Searching for “human rights” and “rights” in English
+- [Rcode_Human_Rights_google_search_Maps/](./Rcode_Human_Rights_google_search_Maps/)
+  - [google_HR_english_validation_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_english_validation_maps.R)
+  - [Maps_English_validation.pdf](./Rplots/Maps_English_validation.pdf)
 
 #### Supplementary Appendix Section H: Searching for “Amnesty International”
 
