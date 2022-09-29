@@ -202,8 +202,8 @@ There are many folders that contain many files. In an effort to make the product
 
 #### Supplementary Appendix Section K: Google n-grams (1800-2008)
 - [Rcode_Human_Rights_google_ngrams](./Rcode_Human_Rights_google_ngrams/)
-  - [google_book_ngrams.R](./Rcode_Human_Rights_google_ngrams/Rcode_Human_Rights_google_ngrams/google_book_ngrams.R)
-  - [Rplots/Google_book_corpus_ngram.pdf](./Rplots/Google_book_corpus_ngram.pdf)
+  - [google_book_ngrams.R](./Rcode_Human_Rights_google_ngrams/google_book_ngrams.R)
+  - [Google_book_corpus_ngram.pdf](./Rplots/Google_book_corpus_ngram.pdf)
 
 #### Supplementary Appendix Section L: Additional Regression Results
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
