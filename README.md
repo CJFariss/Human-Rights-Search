@@ -132,7 +132,7 @@ There are many folders that contain many files. In an effort to make the product
 #### Supplementary Appendix Section C: Global Search Rates
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_search_trends_paired_comparisons.R](./Rcode_Human_Rights_google_search_global/google_search_trends_paired_comparisons.R)
-  - [Google_search_term_pairs_shortlist.pdf](./Rplots/Rplots/Google_search_term_pairs.pdf)
+  - [Google_search_term_pairs.pdf](./Rplots/Rplots/Google_search_term_pairs.pdf)
 
 #### Supplementary Appendix Section D: Examples of Related Searches
 
