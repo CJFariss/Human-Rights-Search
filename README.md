@@ -109,7 +109,13 @@ There are many folders that contain many files. In an effort to make the product
 
 ### Supplementary Appendix Files
 
-#### Supplementary Appendix  Section L: Additional Regression Results
+#### Supplementary Appendix Section A: Min-max Normalization of Google Search Trends Data
+- [Rplot_search_rate_examples/](./Rplot_search_rate_examples/)
+  - [Rplot_search_rate_examples/Rplot_search_rate_examples.pdf](./Rplot_search_rate_examples/Rplot_search_rate_examples.pdf)
+
+#### Supplementary Appendix Section B:
+
+#### Supplementary Appendix Section L: Additional Regression Results
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis.R)
   - [google_search_cy_analysis_treaty_count_interaction.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_treaty_count_interaction.R)
