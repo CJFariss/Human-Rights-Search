@@ -100,7 +100,8 @@ There are many folders that contain many files. In an effort to make the product
 #### Article Figure 9: Google search proportions
 - [Rcode_Search_engine_use_analysis/](./Rcode_Search_engine_use_analysis)
   - [Rcode_Search_engine_use_analysis.R](./Rcode_Search_engine_use_analysis/Search_engine_use_analysis.R)
-
+  - [Rplot_search_months.pdf](./Rplots/Rplot_search_months.pdf)
+  
 #### Article Figure 10: Related co-occurring search queries (upper left panel), search topics (upper right panel) for Guatemala, and relative search rates for regions (lower left panel) and cities (lower right panel)
 - [Rcode_gtrends_related_topics/](./Rcode_gtrends_related_topics)
   - [gtrends_related_topics.R](./Rcode_gtrends_related_topics/gtrends_related_topics.R)
