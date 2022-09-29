@@ -196,8 +196,12 @@ There are many folders that contain many files. In an effort to make the product
   - [Maps_google_malaria.pdf](./Rplots/Maps_google_malaria.pdf)
 
 #### Supplementary Appendix Section J: Validation: Google Search Volumes vs. Competitor Search Volumes
+- [Rcode_Search_engine_use_analysis/](./Rcode_Search_engine_use_analysis)
+  - [Rcode_Search_engine_use_analysis.R](./Rcode_Search_engine_use_analysis/Search_engine_use_analysis.R)
+  - [Rplot_search_months.pdf](./Rplots/Rplot_search_months.pdf)
 
 #### Supplementary Appendix Section K: Google n-grams (1800-2008)
+  - [Rplots/Google_book_corpus_ngram.pdf](./Rplots/Rplots/Google_book_corpus_ngram.pdf)
 
 #### Supplementary Appendix Section L: Additional Regression Results
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
