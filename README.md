@@ -58,63 +58,63 @@ There are many folders that contain many files. In an effort to make the product
 #### Article Figure 1: Pairwise comparisons of relative search term rates
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_search_trends_paired_comparisons.R](./Rcode_Human_Rights_google_search_global/google_search_trends_paired_comparisons.R)
-- [Rplots](./Rplots)
+- [Rplots/](./Rplots)
   - [Google_search_term_pairs_shortlist.pdf](./Rplots/Google_search_term_pairs_shortlist.pdf)
 
 #### Article Figure 2: Global weekly search rates from Google Trends for five language groups (2015- 2019)
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_global_HR_yearly_trends_2015_2019_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2015_2019_weeks.R)
-- [Rplots](./Rplots)
+- [Rplots/](./Rplots)
   - [Global_search_hits_mean_CI_2015_2019.pdf](./Rplots/Global_search_hits_mean_CI_2015_2019.pdf)
 
 #### Article Figure 3: Rate of google searches for “human rights” in the english language across countries
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_language_maps.R)
-- [Rplots](./Rplots)
+- [Rplots/](./Rplots)
   - [Maps_Human_Rights_language_groups.pdf](./Rplots/Maps_Human_Rights_language_groups.pdf)
 
 #### Article Figure 4: Rate of google searches for “human rights” in the English language for country-weeks from 2015-2019
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_data_country_Rplot_function.R](./Rcode_Human_Rights_google_search_country/google_search_data_country_Rplots_function.R)
-- [Rplots_country_search_ranks](./Rplots_country_search_ranks)
+- [Rplots_country_search_ranks/](./Rplots_country_search_ranks)
   - [human_rights_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/human_rights_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
 
 #### Article Figure 5: Rate of google searches for “derechos humanos” in the Spanish language across countries
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_language_maps.R)
-- [Rplots](./Rplots)
+- [Rplots/](./Rplots)
   - [Maps_Human_Rights_language_groups.pdf](./Rplots/Maps_Human_Rights_language_groups.pdf)
 
 #### Article Figure 6: Rate of google searches for “derechos humanos” in the Spanish language for country-weeks from 2015-2019
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_data_country_Rplot_function.R](./Rcode_Human_Rights_google_search_country/google_search_data_country_Rplots_function.R)
-- [Rplots_country_search_ranks](./Rplots_country_search_ranks)
+- [Rplots_country_search_ranks/](./Rplots_country_search_ranks)
   - [derechos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/derechos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
 
 #### Article Figure 7: Results of Regression Models with Language Fixed Effects
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis.R)
-- [Rplots_coefplots](./Rplots_coefplots)
+- [Rplots_coefplots/](./Rplots_coefplots)
   - [coefs_lowsearch_amnesty_amnesty_report_rate_2015_2019_Rplot.pdf](./Rplots_coefplots/coefs_lowsearch_amnesty_amnesty_report_rate_2015_2019_Rplot.pdf)
 
 #### Article Figure 8: Human rights survey validation
 - [Rcode_Global_Survey_analysis/](./Rcode_Global_Survey_analysis)
   - [LAPOP_analysis_weighted_means.R](./Rcode_Global_Survey_analysis/LAPOP_analysis_weighted_means.R)
   - [WorldValuesSurvey_analysis_weighted.R](./Rcode_Global_Survey_analysis/WorldValuesSurvey_analysis_weighted_means.R)
-- [Rplots_survey_data](./Rplots_survey_data)
+- [Rplots_survey_data/](./Rplots_survey_data)
   - [LAPOP_country_plots.pdf](./Rplots_survey_data/LAPOP_country_plots.pdf)
   - [WVS_LA_country_plots.pdf](./Rplots_survey_data/WVS_LA_country_plots.pdf)
 
 #### Article Figure 9: Google search proportions
 - [Rcode_Search_engine_use_analysis/](./Rcode_Search_engine_use_analysis)
   - [Rcode_Search_engine_use_analysis.R](./Rcode_Search_engine_use_analysis/Search_engine_use_analysis.R)
-- [Rplots](./Rplots)
+- [Rplots/](./Rplots)
   - [Rplot_search_months.pdf](./Rplots/Rplot_search_months.pdf)
   
 #### Article Figure 10: Related co-occurring search queries (upper left panel), search topics (upper right panel) for Guatemala, and relative search rates for regions (lower left panel) and cities (lower right panel)
 - [Rcode_gtrends_related_topics/](./Rcode_gtrends_related_topics)
   - [gtrends_related_topics.R](./Rcode_gtrends_related_topics/gtrends_related_topics.R)
-- [Rplot_Related_Topics](./Rplot_Related_Topics)
+- [Rplot_Related_Topics/](./Rplot_Related_Topics)
   - [related_topics_gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf](./Rplot_Related_Topics/related_topics_gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf)
 
 #### Article Table 1: Results of Regression Models with Language Fixed Effects 
@@ -128,7 +128,7 @@ There are many folders that contain many files. In an effort to make the product
 #### Supplementary Appendix Section A: Min-max Normalization of Google Search Trends Data
 - [Rcode_min_max_examples/](./Rcode_min_max_examples/)
   - [Rcode_min_max_examples/Rplot_search_rate_examples.pdf](./Rplot_search_rate_examples/min_max_transformation_example.R)
-- [Rplot_search_rate_examples](./Rplot_search_rate_examples)
+- [Rplot_search_rate_examples/](./Rplot_search_rate_examples)
   - [Rplot_search_rate_examples/Rplot_search_rate_examples.pdf](./Rplot_search_rate_examples/Rplot_search_rate_examples.pdf)
 
 #### Supplementary Appendix Section B: Variable Definitions, References, and Summary Statistics
@@ -151,7 +151,7 @@ There are many folders that contain many files. In an effort to make the product
 ##### C.1 Global Pairwise Search Rates
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_search_trends_paired_comparisons.R](./Rcode_Human_Rights_google_search_global/google_search_trends_paired_comparisons.R)
-- [Rplots](./Rplots)
+- [Rplots/](./Rplots)
   - [Google_search_term_pairs.pdf](./Rplots/Google_search_term_pairs.pdf)
   - [Google_topic_pairs.pdf](./Rplots/Google_topic_pairs.pdf)
   
@@ -162,7 +162,7 @@ There are many folders that contain many files. In an effort to make the product
   - [google_global_HR_yearly_trends_2015_2019_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2015_2019_weeks.R)
   - [google_global_HR_yearly_trends_2016_2020_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2016_2020_weeks.R)
   - [google_global_HR_yearly_trends_2017_2021_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2017_2021_weeks.R)
-- [Rplots](./Rplots)
+- [Rplots/](./Rplots)
   - [Global_search_hits_mean_CI_2013_2017.pdf](./Rplots/Global_search_hits_mean_CI_2013_2017.pdf)
   - [Global_search_hits_mean_CI_2014_2018.pdf](./Rplots/Global_search_hits_mean_CI_2014_2018.pdf)
   - [Global_search_hits_mean_CI_2015_2019.pdf](./Rplots/Global_search_hits_mean_CI_2015_2019.pdf)
@@ -172,7 +172,7 @@ There are many folders that contain many files. In an effort to make the product
 #### Supplementary Appendix Section D: Examples of Related Searches
 - [Rcode_gtrends_related_topics/](./Rcode_gtrends_related_topics)
   - [gtrends_related_topics.R](./Rcode_gtrends_related_topics/gtrends_related_topics.R)
-- [Rplot_Related_Topics](./Rplot_Related_Topics)
+- [Rplot_Related_Topics/](./Rplot_Related_Topics)
   - [related_topics_gsearch_location_data_lists_human_rights_2015-01-01_2019-12-31_saved_2022-05-12.pdf](./Rplot_Related_Topics/related_topics_gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf)
   - [related_topics_gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf](./Rplot_Related_Topics/related_topics_gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf)
   - [related_topics_gsearch_location_data_lists_direitos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf](./Rplot_Related_Topics/related_topics_gsearch_location_data_lists_direitos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf)
@@ -184,7 +184,7 @@ There are many folders that contain many files. In an effort to make the product
   - [Maps_Human_Rights_language_groups.pdf](./Rplots/Maps_Human_Rights_language_groups.pdf)
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_data_country_Rplot_function.R](./Rcode_Human_Rights_google_search_country/google_search_data_country_Rplots_function.R)
--[Rplots_country_search_ranks](./Rplots_country_search_ranks)
+-[Rplots_country_search_ranks/](./Rplots_country_search_ranks)
   - [human_rights_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/human_rights_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
   - [derechos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/derechos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
   - [direitos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/direitos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
@@ -194,37 +194,37 @@ There are many folders that contain many files. In an effort to make the product
 #### Supplementary Appendix Section F: Variation in term usage for French Speakers
 - [Rcode_Human_Rights_google_search_Maps/](./Rcode_Human_Rights_google_search_Maps/)
   - [google_HR_french_validation_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_french_validation_maps.R)
-- [Rplots](./Rplots)
+- [Rplots/](./Rplots)
   - [Maps_French_validation.pdf](./Rplots/Maps_French_validation.pdf)
 
 #### Supplementary Appendix Section G: Searching for “human rights” and “rights” in English
 - [Rcode_Human_Rights_google_search_Maps/](./Rcode_Human_Rights_google_search_Maps/)
   - [google_HR_english_validation_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_english_validation_maps.R)
-- [Rplots](./Rplots)
+- [Rplots/](./Rplots)
   - [Maps_English_validation.pdf](./Rplots/Maps_English_validation.pdf)
 
 #### Supplementary Appendix Section H: Searching for “Amnesty International”
 - [Rcode_Human_Rights_google_search_Maps/](./Rcode_Human_Rights_google_search_Maps/)
   - [google_Amnesty_International_search_maps.R](./Rcode_Human_Rights_google_search_Maps/google_Amnesty_International_search_maps.R)
-- [Rplots](./Rplots)
+- [Rplots/](./Rplots)
   - [Maps_Amnesty_International_search.pdf](./Rplots/Maps_Amnesty_International_search.pdf)
 
 #### Supplementary Appendix Section I: Validation: Google Searches for “malaria”  
 - [Rcode_Human_Rights_google_search_Maps/](./Rcode_Human_Rights_google_search_Maps/)
   - [google_malaria_search_validation.R](./Rcode_Human_Rights_google_search_Maps/google_malaria_search_validation.R)
-- [Rplots](./Rplots)
+- [Rplots/](./Rplots)
   - [Maps_google_malaria.pdf](./Rplots/Maps_google_malaria.pdf)
 
 #### Supplementary Appendix Section J: Validation: Google Search Volumes vs. Competitor Search Volumes
 - [Rcode_Search_engine_use_analysis/](./Rcode_Search_engine_use_analysis)
   - [Rcode_Search_engine_use_analysis.R](./Rcode_Search_engine_use_analysis/Search_engine_use_analysis.R)
-- [Rplots](./Rplots)
+- [Rplots/](./Rplots)
   - [Rplot_search_months.pdf](./Rplots/Rplot_search_months.pdf)
 
 #### Supplementary Appendix Section K: Google n-grams (1800-2008)
 - [Rcode_Human_Rights_google_ngrams](./Rcode_Human_Rights_google_ngrams/)
   - [google_book_ngrams.R](./Rcode_Human_Rights_google_ngrams/google_book_ngrams.R)
-- [Rplots](./Rplots)
+- [Rplots/](./Rplots)
   - [Google_book_corpus_ngram.pdf](./Rplots/Google_book_corpus_ngram.pdf)
 
 #### Supplementary Appendix Section L: Additional Regression Results
