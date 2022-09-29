@@ -191,6 +191,9 @@ There are many folders that contain many files. In an effort to make the product
   - [Maps_Amnesty_International_search.pdf](./Rplots/Maps_Amnesty_International_search.pdf)
 
 #### Supplementary Appendix Section I: Validation: Google Searches for “malaria”  
+- [Rcode_Human_Rights_google_search_Maps/](./Rcode_Human_Rights_google_search_Maps/)
+  - [google_malaria_search_validation.R](./Rcode_Human_Rights_google_search_Maps/google_malaria_search_validation.R)
+  - [Maps_google_malaria.pdf](./Rplots/Maps_google_malaria.pdf)
 
 #### Supplementary Appendix Section J: Validation: Google Search Volumes vs. Competitor Search Volumes
 
