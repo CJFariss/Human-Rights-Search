@@ -218,8 +218,8 @@ There are many folders that contain many files. In an effort to make the product
   
 
 #### Supplementary Appendix Section M: Guatemala Week-Level Analysis
-- [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
-  - [acled_foo.R.R](./Rcode_Human_Rights_google_search_country/acled_foo.R)
+- [Rcode_Human_Rights_google_search_country/](./Rcode_ACLED_analysis)
+  - [acled_foo.R.R](./Rcode_ACLED_analysis/acled_foo.R)
 - [Rplots_acled/](./Rplots_acled)
   - [Cross_validated_predictions_Guatemala_v2.pdf](./Rplots_acled/Cross_validated_predictions_Guatemala_v2.pdf)
 
