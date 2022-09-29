@@ -113,7 +113,15 @@ There are many folders that contain many files. In an effort to make the product
 - [Rplot_search_rate_examples/](./Rplot_search_rate_examples/)
   - [Rplot_search_rate_examples/Rplot_search_rate_examples.pdf](./Rplot_search_rate_examples/Rplot_search_rate_examples.pdf)
 
-#### Supplementary Appendix Section B:
+#### Supplementary Appendix Section B: Variable Definitions, References, and Summary Statistics
+- [Rcode_Descriptive_Stats](./Rcode_Descriptive_Stats)
+  - [](./Rcode_Descriptive_Stats/)
+- [Tex_tables/](./Tex_tables/)
+  - [Tex_tables/](./Tex_tables/stats_2015_2019.tex)
+  - [Tex_tables/](./Tex_tables/stats_2014_2018.tex)
+  - [Tex_tables/](./Tex_tables/stats_2013_2017.tex)
+  - [Tex_tables/](./Tex_tables/stats_2012_2016.tex)
+
 
 #### Supplementary Appendix Section L: Additional Regression Results
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
