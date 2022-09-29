@@ -77,7 +77,7 @@ There are many folders that contain many files. In an effort to make the product
 
 #### Article Figure 5: Rate of google searches for “derechos humanos” in the Spanish language across countries
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
-  - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_global/google_HR_language_maps.R)
+  - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_language_maps.R)
   - [Maps_Human_Rights_language_groups.pdf](./Rplots/Maps_Human_Rights_language_groups.pdf)
 
 #### Article Figure 6: Rate of google searches for “derechos humanos” in the Spanish language for country-weeks from 2015-2019
@@ -164,7 +164,7 @@ There are many folders that contain many files. In an effort to make the product
 
 #### Supplementary Appendix Section E: Mapping the Geographic Distribution of Google Searching
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
-  - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_global/google_HR_language_maps.R)
+  - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_language_maps.R)
   - [Maps_Human_Rights_language_groups.pdf](./Rplots/Maps_Human_Rights_language_groups.pdf)
 
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
@@ -176,6 +176,10 @@ There are many folders that contain many files. In an effort to make the product
   - [huquq_alansan_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/huquq_alansan_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
   
 #### Supplementary Appendix Section F: Variation in term usage for French Speakers
+- [Rcode_Human_Rights_google_search_global/](./google_HR_french_validation_maps.R)
+  - [Maps_French_validation.pdf](./Rplots/Maps_French_validation.pdf)
+
+
 
 #### Supplementary Appendix Section G: Searching for “human rights” and “rights” in English
 
