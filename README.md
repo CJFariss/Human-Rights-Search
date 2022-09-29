@@ -105,6 +105,7 @@ There are many folders that contain many files. In an effort to make the product
 #### Article Figure 10: Related co-occurring search queries (upper left panel), search topics (upper right panel) for Guatemala, and relative search rates for regions (lower left panel) and cities (lower right panel)
 - [Rcode_gtrends_related_topics/](./Rcode_gtrends_related_topics)
   - [gtrends_related_topics.R](./Rcode_gtrends_related_topics/gtrends_related_topics.R)
+  - [related_topics_gsearch_location_data_lists_human_rights_2015-01-01_2019-12-31_saved_2022-05-12.pdf](./Rplot_Related_Topics/related_topics_gsearch_location_data_lists_human_rights_2015-01-01_2019-12-31_saved_2022-05-12.pdf)
 
 #### Article Table 1: Results of Regression Models with Language Fixed Effects 
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
