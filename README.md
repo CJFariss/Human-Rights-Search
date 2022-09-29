@@ -88,7 +88,7 @@ There are many folders that contain many files. In an effort to make the product
 #### Article Figure 7: Results of Regression Models with Language Fixed Effects
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis.R)
-  - [coefs_lowsearch_amnesty_amnesty_report_rate_2015_2019_Rplot.pdf](.Rplots_coefplots/coefs_lowsearch_amnesty_amnesty_report_rate_2015_2019_Rplot.pdf)
+  - [coefs_lowsearch_amnesty_amnesty_report_rate_2015_2019_Rplot.pdf](./Rplots_coefplots/coefs_lowsearch_amnesty_amnesty_report_rate_2015_2019_Rplot.pdf)
 
 #### Article Figure 8: Human rights survey validation
 - [Rcode_Global_Survey_analysis/](./Rcode_Global_Survey_analysis)
