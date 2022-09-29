@@ -139,9 +139,14 @@ There are many folders that contain many files. In an effort to make the product
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_search_trends_paired_comparisons.R](./Rcode_Human_Rights_google_search_global/google_search_trends_paired_comparisons.R)
   - [Google_search_term_pairs.pdf](./Rplots/Google_search_term_pairs.pdf)
-
+  - [Google_topic_pairs.pdf](./Rplots/Google_topic_pairs.pdf)
+  
 ##### C.2 Global Search Rates by Language Group
 
+  - [Global_search_hits_mean_CI_2013_2017.pdf](./Rplots/Global_search_hits_mean_CI_2013_2017.pdf)
+  - [Global_search_hits_mean_CI_2014_2018.pdf](./Rplots/Global_search_hits_mean_CI_2014_2018.pdf)
+  - [Global_search_hits_mean_CI_2015_2019.pdf](./Rplots/Global_search_hits_mean_CI_2015_2019.pdf)
+  - [Global_search_hits_mean_CI_2016_2020.pdf](./Rplots/Global_search_hits_mean_CI_2016_2020.pdf)
 
 #### Supplementary Appendix Section D: Examples of Related Searches
 - [Rcode_gtrends_related_topics/](./Rcode_gtrends_related_topics)
