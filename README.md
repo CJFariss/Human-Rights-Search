@@ -106,7 +106,7 @@ There are many folders that contain many files. In an effort to make the product
 #### Article Table 1: Results of Regression Models with Language Fixed Effects 
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis.R)
-
+  - [main_results_lowsearch_amnesty_report_rate_2015_2019.tex](./Tex_tables/main_results_lowsearch_amnesty_report_rate_2015_2019.tex)
 
 ### Supplementary Appendix Files
 
