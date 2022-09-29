@@ -114,13 +114,24 @@ There are many folders that contain many files. In an effort to make the product
   - [Rplot_search_rate_examples/Rplot_search_rate_examples.pdf](./Rplot_search_rate_examples/Rplot_search_rate_examples.pdf)
 
 #### Supplementary Appendix Section B: Variable Definitions, References, and Summary Statistics
-- [Rcode_Descriptive_Stats](./Rcode_Descriptive_Stats)
+- [Rcode_Descriptive_Stats/](./Rcode_Descriptive_Stats)
   - [Descriptive_Stats.R](./Rcode_Descriptive_Stats/Descriptive_Stats.R)
 - [Tex_tables/](./Tex_tables/)
   - [stats_2015_2019.tex](./Tex_tables/stats_2015_2019.tex)
   - [stats_2014_2018.tex](./Tex_tables/stats_2014_2018.tex)
   - [stats_2013_2017.tex](./Tex_tables/stats_2013_2017.tex)
   - [stats_2012_2016.tex](./Tex_tables/stats_2012_2016.tex)
+
+- [Tex_tables/](./Tex_tables/)
+  - [cors_2015_2019.tex](./Tex_tables/cors_2015_2019.tex)
+  - [cors_2014_2018.tex](./Tex_tables/cors_2014_2018.tex)
+  - [cors_2013_2017.tex](./Tex_tables/cors_2013_2017.tex)
+  - [cors_2012_2016.tex](./Tex_tables/cors_2012_2016.tex)
+  
+- [Tex_tables/](./Tex_tables/)
+  - [cor_search_theta_2012_2016.tex](./Tex_tables/cor_search_theta_2012_2016.tex)
+  - [cor_search_amnesty_attention_count_2012_2016.tex](./Tex_tables/cor_search_amnesty_attention_count_2012_2016.tex)
+  - [cor_search_amnesty_attention_rate_2012_2016.tex](./Tex_tables/cor_search_amnesty_attention_rate_2012_2016.tex)
 
 
 #### Supplementary Appendix Section L: Additional Regression Results
