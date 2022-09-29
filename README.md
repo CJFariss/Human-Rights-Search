@@ -115,12 +115,12 @@ There are many folders that contain many files. In an effort to make the product
 
 #### Supplementary Appendix Section B: Variable Definitions, References, and Summary Statistics
 - [Rcode_Descriptive_Stats](./Rcode_Descriptive_Stats)
-  - [](./Rcode_Descriptive_Stats/)
+  - [Descriptive_Stats.R](./Rcode_Descriptive_Stats/Descriptive_Stats.R)
 - [Tex_tables/](./Tex_tables/)
-  - [Tex_tables/](./Tex_tables/stats_2015_2019.tex)
-  - [Tex_tables/](./Tex_tables/stats_2014_2018.tex)
-  - [Tex_tables/](./Tex_tables/stats_2013_2017.tex)
-  - [Tex_tables/](./Tex_tables/stats_2012_2016.tex)
+  - [stats_2015_2019.tex](./Tex_tables/stats_2015_2019.tex)
+  - [stats_2014_2018.tex](./Tex_tables/stats_2014_2018.tex)
+  - [stats_2013_2017.tex](./Tex_tables/stats_2013_2017.tex)
+  - [stats_2012_2016.tex](./Tex_tables/stats_2012_2016.tex)
 
 
 #### Supplementary Appendix Section L: Additional Regression Results
