@@ -115,7 +115,9 @@ There are many folders that contain many files. In an effort to make the product
 ### Supplementary Appendix Files
 
 #### Supplementary Appendix Section A: Min-max Normalization of Google Search Trends Data
-- [Rplot_search_rate_examples/](./Rplot_search_rate_examples/)
+- [Rcode_min_max_examples/](./Rcode_min_max_examples/)
+  - [Rcode_min_max_examples/Rplot_search_rate_examples.pdf](./Rplot_search_rate_examples/min_max_transformation_example.R)
+- [Rplot_search_rate_examples](./Rplot_search_rate_examples)
   - [Rplot_search_rate_examples/Rplot_search_rate_examples.pdf](./Rplot_search_rate_examples/Rplot_search_rate_examples.pdf)
 
 #### Supplementary Appendix Section B: Variable Definitions, References, and Summary Statistics
@@ -138,6 +140,7 @@ There are many folders that contain many files. In an effort to make the product
 ##### C.1 Global Pairwise Search Rates
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_search_trends_paired_comparisons.R](./Rcode_Human_Rights_google_search_global/google_search_trends_paired_comparisons.R)
+- [Rplots](./Rplots)
   - [Google_search_term_pairs.pdf](./Rplots/Google_search_term_pairs.pdf)
   - [Google_topic_pairs.pdf](./Rplots/Google_topic_pairs.pdf)
   
@@ -148,6 +151,7 @@ There are many folders that contain many files. In an effort to make the product
   - [google_global_HR_yearly_trends_2015_2019_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2015_2019_weeks.R)
   - [google_global_HR_yearly_trends_2016_2020_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2016_2020_weeks.R)
   - [google_global_HR_yearly_trends_2017_2021_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2017_2021_weeks.R)
+- [Rplots](./Rplots)
   - [Global_search_hits_mean_CI_2013_2017.pdf](./Rplots/Global_search_hits_mean_CI_2013_2017.pdf)
   - [Global_search_hits_mean_CI_2014_2018.pdf](./Rplots/Global_search_hits_mean_CI_2014_2018.pdf)
   - [Global_search_hits_mean_CI_2015_2019.pdf](./Rplots/Global_search_hits_mean_CI_2015_2019.pdf)
@@ -157,6 +161,7 @@ There are many folders that contain many files. In an effort to make the product
 #### Supplementary Appendix Section D: Examples of Related Searches
 - [Rcode_gtrends_related_topics/](./Rcode_gtrends_related_topics)
   - [gtrends_related_topics.R](./Rcode_gtrends_related_topics/gtrends_related_topics.R)
+- [Rplot_Related_Topics](./Rplot_Related_Topics)
   - [related_topics_gsearch_location_data_lists_human_rights_2015-01-01_2019-12-31_saved_2022-05-12.pdf](./Rplot_Related_Topics/related_topics_gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf)
   - [related_topics_gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf](./Rplot_Related_Topics/related_topics_gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf)
   - [related_topics_gsearch_location_data_lists_direitos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf](./Rplot_Related_Topics/related_topics_gsearch_location_data_lists_direitos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf)
