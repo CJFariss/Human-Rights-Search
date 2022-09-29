@@ -166,7 +166,6 @@ There are many folders that contain many files. In an effort to make the product
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_language_maps.R)
   - [Maps_Human_Rights_language_groups.pdf](./Rplots/Maps_Human_Rights_language_groups.pdf)
-
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_data_country_Rplot_function.R](./Rcode_Human_Rights_google_search_country/google_search_data_country_Rplot_function.R)
   - [human_rights_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/human_rights_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
