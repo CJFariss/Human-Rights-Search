@@ -228,8 +228,23 @@ There are many folders that contain many files. In an effort to make the product
   - [Google_book_corpus_ngram.pdf](./Rplots/Google_book_corpus_ngram.pdf)
 
 #### Supplementary Appendix Section L: Additional Regression Results
+##### L.1 Regression Models from Early Time Periods
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis.R)
+- [Rplots_coefplots/](./Rplots_coefplots)
+  - [coefs_lowsearch_amnesty_amnesty_report_rate_2014_2018_Rplot.pdf](./Rplots_coefplots/coefs_lowsearch_amnesty_amnesty_report_rate_2014_2018_Rplot.pdf)
+- [Tex_tables/](./Tex_tables/)
+  - [main_results_lowsearch_amnesty_report_rate_2014_2018.tex](./Tex_tables/main_results_lowsearch_amnesty_report_rate_2014_2018.tex)
+
+##### L.2 Regression Models with Alternative Measure of Amnesty Report (Counts)
+- [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
+  - [google_search_cy_analysis.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis.R)
+- [Rplots_coefplots/](./Rplots_coefplots)
+  - [coefs_lowsearch_amnesty_amnesty_report_count_2015_2019_Rplot.pdf](./Rplots_coefplots/coefs_lowsearch_amnesty_amnesty_report_count_2015_2019_Rplot.pdf)
+- [Tex_tables/](./Tex_tables/)
+  - [main_results_lowsearch_amnesty_report_count_2015_2019.tex](./Tex_tables/main_results_lowsearch_amnesty_report_count_2015_2019.tex)
+
+##### L.3 
   - [google_search_cy_analysis_treaty_count_interaction.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_treaty_count_interaction.R)
   - [google_search_cy_analysis_NGO_interaction.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_NGO_interaction.R)
   - [google_search_cy_analysis_NGO_alt.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_NGO_alt.R)
@@ -237,7 +252,7 @@ There are many folders that contain many files. In an effort to make the product
   - [google_search_cy_analysis_excludeUS.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_excludeUS.R)
   - [google_search_cy_analysis_cross_validation.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_cross_validation.R)
   - [google_search_cy_analysis_AI_search.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_AI_search.R)
-  
+
 
 #### Supplementary Appendix Section M: Guatemala Week-Level Analysis
 - [Rcode_Human_Rights_google_search_country/](./Rcode_ACLED_analysis)
