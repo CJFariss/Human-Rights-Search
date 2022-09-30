@@ -244,12 +244,30 @@ There are many folders that contain many files. In an effort to make the product
 - [Tex_tables/](./Tex_tables/)
   - [main_results_lowsearch_amnesty_report_count_2015_2019.tex](./Tex_tables/main_results_lowsearch_amnesty_report_count_2015_2019.tex)
 
-##### L.3 
+##### L.3 Regression Models with Alternative Measure of Human Rights NGOs
+- [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
+  - [google_search_cy_analysis_NGO_alt.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_NGO_alt.R)
+- [Rplots_coefplots/](./Rplots_coefplots)
+  - [coefs_lowsearch_NGO_rate_2015_2019_Rplot.pdf](./Rplots_coefplots/coefs_lowsearch_NGO_rate_2015_2019_Rplot.pdf)
+  - [coefs_lowsearch_NGO_count_2015_2019_Rplot.pdf](./Rplots_coefplots/coefs_lowsearch_NGO_count_2015_2019_Rplot.pdf)
+- [Tex_tables/](./Tex_tables/)
+  - [main_results_lowsearch_NGO_rate_2015_2019.tex](./Tex_tables/main_results_lowsearch_NGO_rate_2015_2019.tex)
+  - [main_results_lowsearch_NGO_rate_2015_2019.tex](./Tex_tables/main_results_lowsearch_NGO_count_2015_2019.tex)
+
+##### L.4 Regression Models without the United States
+- [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
+  - [google_search_cy_analysis_excludeUS.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_excludeUS.R)
+- [Rplots_coefplots/](./Rplots_coefplots)
+  - [coefs_lowsearch_amnesty_amnesty_report_rate_excludeUS_2015_2019_Rplot.pdf](./Rplots_coefplots/coefs_lowsearch_amnesty_amnesty_report_rate_excludeUS_2015_2019_Rplot.pdf)
+  - [coefs_lowsearch_amnesty_amnesty_report_count_excludeUS_2015_2019_Rplot.pdf](./Rplots_coefplots/coefs_lowsearch_amnesty_amnesty_report_count_excludeUS_2015_2019_Rplot.pdf)
+- [Tex_tables/](./Tex_tables/)
+  - [main_results_lowsearch_amnesty_report_rate_excludeUS_2015_2019.tex](./Tex_tables/main_results_lowsearch_amnesty_report_rate_excludeUS_2015_2019.tex)
+  - [main_results_lowsearch_amnesty_report_count_excludeUS_2015_2019.tex](./Tex_tables/main_results_lowsearch_amnesty_report_count_excludeUS_2015_2019.tex)
+
+##### L.5
   - [google_search_cy_analysis_treaty_count_interaction.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_treaty_count_interaction.R)
   - [google_search_cy_analysis_NGO_interaction.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_NGO_interaction.R)
-  - [google_search_cy_analysis_NGO_alt.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_NGO_alt.R)
   - [google_search_cy_analysis_merges.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_merges.R)
-  - [google_search_cy_analysis_excludeUS.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_excludeUS.R)
   - [google_search_cy_analysis_cross_validation.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_cross_validation.R)
   - [google_search_cy_analysis_AI_search.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_AI_search.R)
 
