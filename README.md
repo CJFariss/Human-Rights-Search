@@ -228,6 +228,9 @@ There are many folders that contain many files. In an effort to make the product
   - [Google_book_corpus_ngram.pdf](./Rplots/Google_book_corpus_ngram.pdf)
 
 #### Supplementary Appendix Section L: Additional Regression Results
+- [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
+  - [google_search_cy_analysis_merges.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_merges.R)
+
 ##### L.1 Regression Models from Early Time Periods
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis.R)
@@ -264,11 +267,20 @@ There are many folders that contain many files. In an effort to make the product
   - [main_results_lowsearch_amnesty_report_rate_excludeUS_2015_2019.tex](./Tex_tables/main_results_lowsearch_amnesty_report_rate_excludeUS_2015_2019.tex)
   - [main_results_lowsearch_amnesty_report_count_excludeUS_2015_2019.tex](./Tex_tables/main_results_lowsearch_amnesty_report_count_excludeUS_2015_2019.tex)
 
-##### L.5
-  - [google_search_cy_analysis_treaty_count_interaction.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_treaty_count_interaction.R)
+##### L.5 Regression Models with Interaction Term between Amnesty Report Rate and Human Rights Protection Scores
+- [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis_NGO_interaction.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_NGO_interaction.R)
-  - [google_search_cy_analysis_merges.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_merges.R)
+
+##### L.6 Regression Models with Interaction Term between HR Treaty Ratifications and Human Rights Protection Scores
+ - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
+  - [google_search_cy_analysis_treaty_count_interaction.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_treaty_count_interaction.R)
+ 
+##### L.7 Google Search Models: Cross Validation using Leave-One-Out (loo) Country
+ - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis_cross_validation.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_cross_validation.R)
+
+##### L.8 Google Search Models with other Dependent Variable: Amnesty International Search Rates
+ - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis_AI_search.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_AI_search.R)
 
 
