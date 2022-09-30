@@ -272,17 +272,16 @@ There are many folders that contain many files. In an effort to make the product
   - [google_search_cy_analysis_NGO_interaction.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_NGO_interaction.R)
 
 ##### L.6 Regression Models with Interaction Term between HR Treaty Ratifications and Human Rights Protection Scores
- - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
+- [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis_treaty_count_interaction.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_treaty_count_interaction.R)
  
 ##### L.7 Google Search Models: Cross Validation using Leave-One-Out (loo) Country
- - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
+- [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis_cross_validation.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_cross_validation.R)
 
 ##### L.8 Google Search Models with other Dependent Variable: Amnesty International Search Rates
- - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
+- [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis_AI_search.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_AI_search.R)
-
 
 #### Supplementary Appendix Section M: Guatemala Week-Level Analysis
 - [Rcode_Human_Rights_google_search_country/](./Rcode_ACLED_analysis)
