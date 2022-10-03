@@ -287,7 +287,6 @@ There are many folders that contain many files. In an effort to make the product
   - [main_results_lowsearch_amnesty_report_rate_2015_2019_treaty_count_interaction.tex](./Tex_tables/main_results_lowsearch_amnesty_report_rate_2015_2019_treaty_count_interaction.tex)
   - [main_results_lowsearch_amnesty_report_count_2015_2019_treaty_count_interaction.tex](./Tex_tables/main_results_lowsearch_amnesty_report_count_2015_2019_treaty_count_interaction.tex)
  
- 
 ##### L.7 Google Search Models: Cross Validation using Leave-One-Out (loo) Country
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis_cross_validation.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_cross_validation.R)
@@ -295,10 +294,15 @@ There are many folders that contain many files. In an effort to make the product
   - [main_results_lowsearch_amnesty_report_rate_cross_validation_cor.tex](./Tex_tables/main_results_lowsearch_amnesty_report_rate_cross_validation_cor.tex)
   - [main_results_lowsearch_amnesty_report_rate_cross_validation_rmse.tex](./Tex_tables/main_results_lowsearch_amnesty_report_rate_cross_validation_rmse.tex)
 
-
 ##### L.8 Google Search Models with other Dependent Variable: Amnesty International Search Rates
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis_AI_search.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_AI_search.R)
+- [Rplots_coefplots/](./Rplots_coefplots)
+  - [coefs_lowsearch_AI_amnesty_amnesty_report_rate_2015_2019_Rplot.pdf](./Rplots_coefplots/coefs_lowsearch_AI_amnesty_amnesty_report_rate_2015_2019_Rplot.pdf)
+  - [coefs_lowsearch_AI_amnesty_amnesty_report_count_2015_2019_Rplot.pdf](./Rplots_coefplots/coefs_lowsearch_AI_amnesty_amnesty_report_count_2015_2019_Rplot.pdf)
+- [Tex_tables/](./Tex_tables/)
+  - [main_results_lowsearch_AI_amnesty_report_rate_2015_2019.tex](./Tex_tables/main_results_lowsearch_AI_amnesty_report_rate_2015_2019.tex)
+  - [main_results_lowsearch_AI_amnesty_report_count_2015_2019.tex](./Tex_tables/main_results_lowsearch_AI_amnesty_report_count_2015_2019.tex)
 
 #### Supplementary Appendix Section M: Guatemala Week-Level Analysis
 - [Rcode_Human_Rights_google_search_country/](./Rcode_ACLED_analysis)
