@@ -4,7 +4,7 @@
 Project files for an article titled: "The Search for Human Rights: A Global Analysis Using Google Data", conditionally accepted at *American Political Science Review*. The files in this reproduction archive exist here: https://github.com/CJFariss/Human-Rights-Search; and a static version exists at the APSR dataverse archive here: https://dataverse.harvard.edu/dataverse/the_review.
 
 ## Article Abstract
-Critics of the human rights discourse claim that it is losing global resonance, while supporters counter that the language of human rights remains politically relevant. In this article, we address this question using aggregated data from Google search trends. Specifically, we test two divergent accounts of why human rights might appeal in a population. The top-down model predicts that level of nationwide interest in human rights is attributable mainly to external factors like NGO campaigns, where the bottom-up model highlights the importance of internal factors like economic growth and repressive violence. In testing these models, this article confronts high-level debates over whether the human rights discourse is best conceived as a tool of outside imposition or of local resistance. We find more evidence for the latter: not only is interest in human rights more concentrated in the Global South, the discourse is most resonant where people face government violence.
+Where is the human rights discourse most resonant? We use aggregated cross-national Google search data to test two divergent accounts of why human rights appeal to some populations but not others. The top-down model predicts that nationwide interest in human rights is attributable mainly to external factors like foreign direct investment, transnational NGO campaigns, or international legalization, where the bottom-up model highlights the importance of internal factors like economic growth and persistent repression. We find more evidence for the latter model: not only is interest in human rights more concentrated in the Global South, the discourse is most resonant where people face regular violence at the hands of their home government. In drawing these inferences, this article confronts high-level debates over whether human rights will remain relevant in the future, and whether the discourse still animates counter-hegemonic modes of resistance. These answer to both questions, our research suggests, is “yes.”
 
 ## Replication and Reproduction File Descriptions
 
@@ -20,10 +20,10 @@ Note that lowsearch is in reference to the low_search_volume argument in the gtr
 
 - [Data_Input](./Data_input): contains datasets obtained from sources outside of our project code
 - [Data_Ouput](./Data_output): contains datasets produced or updated by our project code
-- [Data_output_global_search_lists](./Data_output_global_search_lists): RDS files that contain list objects with google trends search results for all countries in a given time period for a specific search term (lowsearch is off or set to FALSE)
-- [Data_output_global_search_lists_lowsearch](./Data_output_global_search_lists_lowsearch): RDS files that contain list objects with google trends search results for all countries in a given time period for a specific search term (lowsearch is on or set to TRUE) 
-- [Data_output_location_search_lists](./Data_output_location_search_lists): RDS files that contain list objects with google trends search results for country-weeks in a given time period for a specific search term (lowsearch is off or set to FALSE)
-- [Data_output_location_search_lists_lowsearch](./Data_output_location_search_lists_lowsearch): RDS files that contain list objects with google trends search results for country-weeks in a given time period for a specific search term (lowsearch is on or set to TRUE)
+- [Data_output_global_search_lists](./Data_output_global_search_lists): RDS files that contain list objects with google trends search results for all countries within a five-year range for a specific search term (lowsearch is off or set to FALSE)
+- [Data_output_global_search_lists_lowsearch](./Data_output_global_search_lists_lowsearch): RDS files that contain list objects with google trends search results for all countries within a five-year range for a specific search term (lowsearch is on or set to TRUE) 
+- [Data_output_location_search_lists](./Data_output_location_search_lists): RDS files that contain list objects with google trends search results for country-weeks within a five-year range for a specific search term (lowsearch is off or set to FALSE)
+- [Data_output_location_search_lists_lowsearch](./Data_output_location_search_lists_lowsearch): RDS files that contain list objects with google trends search results for country-weeks within a five-year range for a specific search term (lowsearch is on or set to TRUE)
 - [Data_output_search_cy_datasets](./Data_output_search_cy_datasets): csv dataset files for each search term, time period combination (search terms are 'human rights' in several languages) 
 - [Data_output_search_cy_datasets_lowsearch](./Data_output_search_cy_datasets_lowsearch): csv dataset files for each search term, time period combination (search terms are 'human rights' in several languages)
 - [Data_output_search_cy_datasets_lowsearch_AI](./Data_output_search_cy_datasets_lowsearch_AI): csv dataset files for each search term, time period combination (search terms are 'Amnesty International' in several languages) 
@@ -51,7 +51,7 @@ Note that lowsearch is in reference to the low_search_volume argument in the gtr
 ### Analysis Information
 There are many folders that contain many files. In an effort to make the production of each result presented in our article as transparent as possible, we describe the resources necessary (contained in the project folders described above) to reproduce each figure or table in the main article and by section in the supplementary appendix.
 
-[groundhog_library_func.R](./groundhog_library_func.R) is a function that loads all the necessary R libraries. There are three options in the function: load libraries using the version from when the scripts were originally run, load libraries using the current version, install the current version of the libraries. This function will hopefully ensure that all the results reported in the article and supplementary appendix can always be reproduced using the original function versions, even if any updated functions produce dissimilar results in the future.
+[groundhog_library_func.R](./groundhog_library_func.R) is a function that loads all the necessary R libraries. There are three options in the function: (1) load libraries using the version from when the scripts were originally run, (2) load libraries using their most recent versions, or (3) install the current version of all the libraries. This function will hopefully ensure that all the results reported in the article and supplementary appendix can always be reproduced using the original function versions, even if any updated functions produce dissimilar results in the future.
 
 ### Main Article Files
 
@@ -67,19 +67,19 @@ There are many folders that contain many files. In an effort to make the product
 - [Rplots/](./Rplots)
   - [Global_search_hits_mean_CI_2015_2019.pdf](./Rplots/Global_search_hits_mean_CI_2015_2019.pdf)
 
-#### Article Figure 3: Rate of google searches for “human rights” in the english language across countries
+#### Article Figure 3: Map of Google search rates for “human rights” in the English language (also for other language groups, Github only)
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_language_maps.R)
 - [Rplots/](./Rplots)
   - [Maps_Human_Rights_language_groups.pdf](./Rplots/Maps_Human_Rights_language_groups.pdf)
 
-#### Article Figure 4: Rate of google searches for “human rights” in the English language for country-weeks from 2015-2019
+#### Article Figure 4: Rate of Google searches for “human rights” in the English language for country-weeks from 2015-2019
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_data_country_Rplot_function.R](./Rcode_Human_Rights_google_search_country/google_search_data_country_Rplots_function.R)
 - [Rplots_country_search_ranks/](./Rplots_country_search_ranks)
   - [human_rights_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/human_rights_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
 
-#### Article Figure 5: Rate of google searches for “derechos humanos” in the Spanish language across countries
+#### Article Figure 5: Map of Google search rates for “derechos humanos” in the Spanish language (also for other language groups, Github only)
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_language_maps.R)
 - [Rplots/](./Rplots)
@@ -91,7 +91,7 @@ There are many folders that contain many files. In an effort to make the product
 - [Rplots_country_search_ranks/](./Rplots_country_search_ranks)
   - [derechos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/derechos_humanos_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
 
-#### Article Figure 7: Results of Regression Models with Language Fixed Effects
+#### Article Figure 7: Coefficient plot of results from regression models with language fixed effects
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis.R)
 - [Rplots_coefplots/](./Rplots_coefplots)
@@ -111,13 +111,13 @@ There are many folders that contain many files. In an effort to make the product
 - [Rplots/](./Rplots)
   - [Rplot_search_months.pdf](./Rplots/Rplot_search_months.pdf)
   
-#### Article Figure 10: Related co-occurring search queries (upper left panel), search topics (upper right panel) for Guatemala, and relative search rates for regions (lower left panel) and cities (lower right panel)
+#### Article Figure 10: Related co-occurring search queries and search topics for Guatemala (top row) and relative search rates by city and region (bottom row)
 - [Rcode_gtrends_related_topics/](./Rcode_gtrends_related_topics)
   - [gtrends_related_topics.R](./Rcode_gtrends_related_topics/gtrends_related_topics.R)
 - [Rplot_Related_Topics/](./Rplot_Related_Topics)
   - [related_topics_gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf](./Rplot_Related_Topics/related_topics_gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf)
 
-#### Article Table 1: Results of Regression Models with Language Fixed Effects 
+#### Article Table 1: Country-year regression analysis with language fixed effects 
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis.R)
 - [Tex_tables/](./Tex_tables/)
@@ -125,13 +125,13 @@ There are many folders that contain many files. In an effort to make the product
 
 ### Supplementary Appendix Files
 
-#### Supplementary Appendix Section A: Min-max Normalization of Google Search Trends Data
+#### Supplementary Appendix Section A: Min-max normalization of Google Trends search data
 - [Rcode_min_max_examples/](./Rcode_min_max_examples/)
   - [Rcode_min_max_examples/Rplot_search_rate_examples.pdf](./Rplot_search_rate_examples/min_max_transformation_example.R)
 - [Rplot_search_rate_examples/](./Rplot_search_rate_examples)
   - [Rplot_search_rate_examples/Rplot_search_rate_examples.pdf](./Rplot_search_rate_examples/Rplot_search_rate_examples.pdf)
 
-#### Supplementary Appendix Section B: Variable Definitions, References, and Summary Statistics
+#### Supplementary Appendix Section B: Variable definitions, references, and summary statistics
 - [Rcode_Descriptive_Stats/](./Rcode_Descriptive_Stats)
   - [Descriptive_Stats.R](./Rcode_Descriptive_Stats/Descriptive_Stats.R)
 - [Tex_tables/](./Tex_tables/)
@@ -147,7 +147,7 @@ There are many folders that contain many files. In an effort to make the product
   - [cor_search_amnesty_attention_count_2012_2016.tex](./Tex_tables/cor_search_amnesty_attention_count_2012_2016.tex)
   - [cor_search_amnesty_attention_rate_2012_2016.tex](./Tex_tables/cor_search_amnesty_attention_rate_2012_2016.tex)
 
-#### Supplementary Appendix Section C: Global Search Rates
+#### Supplementary Appendix Section C: Global search rates
 ##### C.1 Global Pairwise Search Rates
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_search_trends_paired_comparisons.R](./Rcode_Human_Rights_google_search_global/google_search_trends_paired_comparisons.R)
@@ -155,7 +155,7 @@ There are many folders that contain many files. In an effort to make the product
   - [Google_search_term_pairs.pdf](./Rplots/Google_search_term_pairs.pdf)
   - [Google_topic_pairs.pdf](./Rplots/Google_topic_pairs.pdf)
   
-##### C.2 Global Search Rates by Language Group
+##### C.2 Global search rates by language group
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_global_HR_yearly_trends_2013_2017_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2013_2017_weeks.R)
   - [google_global_HR_yearly_trends_2014_2018_weeks.R](./Rcode_Human_Rights_google_search_global/google_global_HR_yearly_trends_2014_2018_weeks.R)
@@ -169,7 +169,7 @@ There are many folders that contain many files. In an effort to make the product
   - [Global_search_hits_mean_CI_2016_2020.pdf](./Rplots/Global_search_hits_mean_CI_2016_2020.pdf)
   - [Global_search_hits_mean_CI_2017_2021.pdf](./Rplots/Global_search_hits_mean_CI_2017_2021.pdf)
 
-#### Supplementary Appendix Section D: Examples of Related Searches
+#### Supplementary Appendix Section D: Examples of related searches
 - [Rcode_gtrends_related_topics/](./Rcode_gtrends_related_topics)
   - [gtrends_related_topics.R](./Rcode_gtrends_related_topics/gtrends_related_topics.R)
 - [Rplot_Related_Topics/](./Rplot_Related_Topics)
@@ -177,8 +177,7 @@ There are many folders that contain many files. In an effort to make the product
   - [related_topics_gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf](./Rplot_Related_Topics/related_topics_gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf)
   - [related_topics_gsearch_location_data_lists_direitos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf](./Rplot_Related_Topics/related_topics_gsearch_location_data_lists_direitos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.pdf)
 
-
-#### Supplementary Appendix Section E: Mapping the Geographic Distribution of Google Searching
+#### Supplementary Appendix Section E: Mapping the geographic distribution of Google searching
 - [Rcode_Human_Rights_google_search_global/](./Rcode_Human_Rights_google_search_global)
   - [google_HR_language_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_language_maps.R)
   - [Maps_Human_Rights_language_groups.pdf](./Rplots/Maps_Human_Rights_language_groups.pdf)
@@ -191,7 +190,7 @@ There are many folders that contain many files. In an effort to make the product
   - [droit_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/droit_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
   - [huquq_alansan_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf](./Rplots_country_search_ranks/huquq_alansan_country_week_time_series_lowsearch_2015-01-01_2019-12-31.pdf)
   
-#### Supplementary Appendix Section F: Variation in term usage for French Speakers
+#### Supplementary Appendix Section F: Variation in term usage for French speakers
 - [Rcode_Human_Rights_google_search_Maps/](./Rcode_Human_Rights_google_search_Maps/)
   - [google_HR_french_validation_maps.R](./Rcode_Human_Rights_google_search_Maps/google_HR_french_validation_maps.R)
 - [Rplots/](./Rplots)
@@ -209,13 +208,13 @@ There are many folders that contain many files. In an effort to make the product
 - [Rplots/](./Rplots)
   - [Maps_Amnesty_International_search.pdf](./Rplots/Maps_Amnesty_International_search.pdf)
 
-#### Supplementary Appendix Section I: Validation: Google Searches for “malaria”  
+#### Supplementary Appendix Section I: Validation: Google searches for “malaria”  
 - [Rcode_Human_Rights_google_search_Maps/](./Rcode_Human_Rights_google_search_Maps/)
   - [google_malaria_search_validation.R](./Rcode_Human_Rights_google_search_Maps/google_malaria_search_validation.R)
 - [Rplots/](./Rplots)
   - [Maps_google_malaria.pdf](./Rplots/Maps_google_malaria.pdf)
 
-#### Supplementary Appendix Section J: Validation: Google Search Volumes vs. Competitor Search Volumes
+#### Supplementary Appendix Section J: Validation: Google search volumes vs. competitor search volumes
 - [Rcode_Search_engine_use_analysis/](./Rcode_Search_engine_use_analysis)
   - [Rcode_Search_engine_use_analysis.R](./Rcode_Search_engine_use_analysis/Search_engine_use_analysis.R)
 - [Rplots/](./Rplots)
@@ -227,11 +226,11 @@ There are many folders that contain many files. In an effort to make the product
 - [Rplots/](./Rplots)
   - [Google_book_corpus_ngram.pdf](./Rplots/Google_book_corpus_ngram.pdf)
 
-#### Supplementary Appendix Section L: Additional Regression Results
+#### Supplementary Appendix Section L: Additional regression results
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis_merges.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_merges.R)
 
-##### L.1 Regression Models from Early Time Periods
+##### L.1 Regression models from early time periods
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis.R)
 - [Rplots_coefplots/](./Rplots_coefplots)
@@ -304,7 +303,7 @@ There are many folders that contain many files. In an effort to make the product
   - [main_results_lowsearch_AI_amnesty_report_rate_2015_2019.tex](./Tex_tables/main_results_lowsearch_AI_amnesty_report_rate_2015_2019.tex)
   - [main_results_lowsearch_AI_amnesty_report_count_2015_2019.tex](./Tex_tables/main_results_lowsearch_AI_amnesty_report_count_2015_2019.tex)
 
-#### Supplementary Appendix Section M: Guatemala Week-Level Analysis
+#### Supplementary Appendix Section M: Guatemala week-level analysis
 - [Rcode_Human_Rights_google_search_country/](./Rcode_ACLED_analysis)
   - [acled_foo.R](./Rcode_ACLED_analysis/acled_foo.R)
 - [Rplots_acled/](./Rplots_acled)
