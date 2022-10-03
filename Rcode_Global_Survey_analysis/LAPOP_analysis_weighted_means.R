@@ -32,6 +32,11 @@ if(FALSE){
     library(MASS)
 }
 
+## load necessary libraries 
+## change groundhog to TRUE to install original versions of libraries from April-2022
+source("groundhog_library_func.R")
+groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
+
 
 ## load Stata 13 data version (this file is too big so use the binary version of the file below)
 #LAPOP_data <- read.dta13("2016_LAPOP_AmericasBarometer_Merge_v1.5_W.dta")
@@ -173,7 +178,7 @@ table(LAPOP_data$pais, human_rights)
 
 ## weight the values for mean calculation in the bootstrap function
 stats_list <- list()
-for(i in 1:length(LAPOP_country_ids)){
+for(i in length(LAPOP_country_ids):1){
     observed.values <- human_rights[LAPOP_data$pais %in% LAPOP_country_ids[i]]
     observed.weights <- LAPOP_data$wt[LAPOP_data$pais %in% LAPOP_country_ids[i]]
     observed.values <- observed.values[!is.na(observed.values)]
