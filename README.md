@@ -51,7 +51,7 @@ Note that lowsearch is in reference to the low_search_volume argument in the gtr
 ### Analysis Information
 There are many folders that contain many files. In an effort to make the production of each result presented in our article as transparent as possible, we describe the resources necessary (contained in the project folders described above) to reproduce each figure or table in the main article and by section in the supplementary appendix.
 
-[groundhog_library_func.R](./groundhog_library_func.R) Is a function that loads all the necessary R libraries. There are three options in the function, load libraries using the version from when the scripts were originally run, load libraries using the current version, install the current version of the libraries. This function will hopefully ensure that all the results reported in the article and supplementary appendix can always be reproduced using the original function versions if any updatd functions produce dissimilar results in the future.
+[groundhog_library_func.R](./groundhog_library_func.R) is a function that loads all the necessary R libraries. There are three options in the function: load libraries using the version from when the scripts were originally run, load libraries using the current version, install the current version of the libraries. This function will hopefully ensure that all the results reported in the article and supplementary appendix can always be reproduced using the original function versions, even if any updated functions produce dissimilar results in the future.
 
 ### Main Article Files
 
