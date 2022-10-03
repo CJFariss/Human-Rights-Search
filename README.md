@@ -8,13 +8,13 @@ Critics of the human rights discourse claim that it is losing global resonance, 
 
 ## Replication and Reproduction File Descriptions
 
-We have created this complete Github repository with all the R code and datasets necessary to replicate or reproduce all reported data analyses presented in the main manuscript and this appendix. Every single step in our data processing and analysis sequence is available in this repository such that all procedures and results are fully accessible to any interested reader.
+We have created this complete Github repository with all the R code and datasets necessary to replicate or reproduce all reported data analyses presented in the main manuscript and this appendix. Every single step in our data processing and analysis sequence is available in this repository, such that all procedures and results are fully accessible to any interested reader.
 
 
 ### Folder Descriptions 
-The primary datas source we use in this project is serach term rates from [trends.google.com](trends.google.com). We access the data available at this site through the API using the R package [gtrendsR](https://cran.r-project.org/web/packages/gtrendsR/gtrendsR.pdf), using the the gtrends() function. 
+The primary data source we use in this project is search term rates from [trends.google.com](trends.google.com). We access the data available at this site through the API using the R package [gtrendsR](https://cran.r-project.org/web/packages/gtrendsR/gtrendsR.pdf) and its gtrends() function. 
 
-Many of the folders below contain search term datasets or R files (.RDS files) necessary to create these datasets. When pulling datasets from the google trends APIs, specifically from [trends.google.com](trends.google.com) (the primary data source), we have saved the resulting datasets and the code that pulls the data. This will allow interested readers to reproduce the reported analyses with the same data we used or reproduce the search term datasets themselves. 
+Many of the folders below contain search term datasets or R files (.RDS files) necessary to create these datasets. When pulling datasets from the google trends APIs, specifically from [trends.google.com](trends.google.com) (the primary data source), we have saved the resulting datasets and the code that pulls the data. This will allow interested readers to reproduce the reported analyses with the same data we used, but readers can also reproduce the search term datasets themselves. 
   
 Note that lowsearch is in reference to the low_search_volume argument in the gtrends() function.
 
@@ -22,8 +22,8 @@ Note that lowsearch is in reference to the low_search_volume argument in the gtr
 - [Data_Ouput](./Data_output): contains datasets produced or updated by our project code
 - [Data_output_global_search_lists](./Data_output_global_search_lists): RDS files that contain list objects with google trends search results for all countries in a given time period for a specific search term (lowsearch is off or set to FALSE)
 - [Data_output_global_search_lists_lowsearch](./Data_output_global_search_lists_lowsearch): RDS files that contain list objects with google trends search results for all countries in a given time period for a specific search term (lowsearch is on or set to TRUE) 
-- [Data_output_location_search_lists](./Data_output_location_search_lists): RDS files that contain list objects with google trends search results for weeks for each country in a given time period for a specific search term (lowsearch is off or set to FALSE)
-- [Data_output_location_search_lists_lowsearch](./Data_output_location_search_lists_lowsearch): RDS files that contain list objects with google trends search results for weeks for each country in a given time period for a specific search term (lowsearch is on or set to TRUE)
+- [Data_output_location_search_lists](./Data_output_location_search_lists): RDS files that contain list objects with google trends search results for country-weeks in a given time period for a specific search term (lowsearch is off or set to FALSE)
+- [Data_output_location_search_lists_lowsearch](./Data_output_location_search_lists_lowsearch): RDS files that contain list objects with google trends search results for country-weeks in a given time period for a specific search term (lowsearch is on or set to TRUE)
 - [Data_output_search_cy_datasets](./Data_output_search_cy_datasets): csv dataset files for each search term, time period combination (search terms are 'human rights' in several languages) 
 - [Data_output_search_cy_datasets_lowsearch](./Data_output_search_cy_datasets_lowsearch): csv dataset files for each search term, time period combination (search terms are 'human rights' in several languages)
 - [Data_output_search_cy_datasets_lowsearch_AI](./Data_output_search_cy_datasets_lowsearch_AI): csv dataset files for each search term, time period combination (search terms are 'Amnesty International' in several languages) 
