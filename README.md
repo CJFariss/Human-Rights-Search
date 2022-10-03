@@ -280,7 +280,7 @@ There are many folders that contain many files. In an effort to make the product
 ##### L.6 Regression Models with Interaction Term between HR Treaty Ratifications and Human Rights Protection Scores
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis_treaty_count_interaction.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_treaty_count_interaction.R)
- - [Rplots_coefplots/](./Rplots_coefplots)
+- [Rplots_coefplots/](./Rplots_coefplots)
   - [coefs_lowsearch_amnesty_amnesty_report_rate_2015_2019_treaty_count_interaction_Rplot.pdf](./Rplots_coefplots/coefs_lowsearch_amnesty_amnesty_report_rate_2015_2019_treaty_count_interaction_Rplot.pdf)
   - [coefs_lowsearch_amnesty_amnesty_report_count_2015_2019_treaty_count_interaction_Rplot.pdf](./Rplots_coefplots/coefs_lowsearch_amnesty_amnesty_report_count_2015_2019_treaty_count_interaction_Rplot.pdf)
 - [Tex_tables/](./Tex_tables/)
@@ -291,6 +291,10 @@ There are many folders that contain many files. In an effort to make the product
 ##### L.7 Google Search Models: Cross Validation using Leave-One-Out (loo) Country
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
   - [google_search_cy_analysis_cross_validation.R](./Rcode_Human_Rights_google_search_country/google_search_cy_analysis_cross_validation.R)
+- [Tex_tables/](./Tex_tables/)
+  - [main_results_lowsearch_amnesty_report_rate_cross_validation_cor.tex](./Tex_tables/main_results_lowsearch_amnesty_report_rate_cross_validation_cor.tex)
+  - [main_results_lowsearch_amnesty_report_rate_cross_validation_rmse.tex](./Tex_tables/main_results_lowsearch_amnesty_report_rate_cross_validation_rmse.tex)
+
 
 ##### L.8 Google Search Models with other Dependent Variable: Amnesty International Search Rates
 - [Rcode_Human_Rights_google_search_country/](./Rcode_Human_Rights_google_search_country)
