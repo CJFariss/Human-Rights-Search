@@ -178,6 +178,8 @@ table(LAPOP_data$pais, human_rights)
 
 ## weight the values for mean calculation in the bootstrap function
 stats_list <- list()
+
+## switched to reverse order to match the order of presentation in the published article
 for(i in length(LAPOP_country_ids):1){
     observed.values <- human_rights[LAPOP_data$pais %in% LAPOP_country_ids[i]]
     observed.weights <- LAPOP_data$wt[LAPOP_data$pais %in% LAPOP_country_ids[i]]
