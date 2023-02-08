@@ -24,6 +24,7 @@ groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 source("Rcode_Human_Rights_google_search_country/star_cleaning_functions.R")
 
 ## keep these values the same (see the other files for alternative model specifications)
+## That is don't change these values look at the other files for the alternative model specifications 
 attention_rate <- TRUE ## set to FALSE for count
 NGO_amnesty <- FALSE ## set to FALSE for the alternative NGO variable
 lowsearch_option <- FALSE ## note that the lowsearch term in the file label means that the lowsearch argument is set to its default FALSE value in the gtrends() search function
@@ -192,7 +193,7 @@ for(i in 1:length(test_dat_language_pooled)){
   temp$hringo_inter <- scale(temp$hringo_inter)
   temp$hringo_inter_rate <- scale(temp$hringo_inter_rate)
   
-  if(attention_rate==FALSE & NGO_amnesty==FALSE) temp$NGO <- temp$amnesty_attention_count
+  if(attention_rate==FALSE & NGO_amnesty==TRUE) temp$NGO <- temp$amnesty_attention_count
   if(attention_rate==TRUE & NGO_amnesty==FALSE) temp$NGO <- temp$amnesty_attention_rate
   if(attention_rate==FALSE & NGO_amnesty==FALSE) temp$NGO <- temp$hringo_inter
   if(attention_rate==TRUE & NGO_amnesty==FALSE) temp$NGO <- temp$hringo_inter_rate
@@ -254,7 +255,7 @@ fit_median_robust[[4]][5,1] / fit_median_robust[[4]][2,1]
 ## save table output for latex 
 for(j in 1:4){
   
-  if(attention_rate==FALSE & NGO_amnesty==FALSE) LABELS <- c("FDI Inflows", "Amnesty Reports (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)")
+  if(attention_rate==FALSE & NGO_amnesty==TRUE) LABELS <- c("FDI Inflows", "Amnesty Reports (Count)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)")
   
   if(attention_rate==TRUE & NGO_amnesty==FALSE) LABELS <- c("FDI Inflows", "Amnesty Reports (Rate)", "HR Treaty Ratifications", "GDP Growth", "HR Violations", "Internet Censorship", "Spanish (derechos humanos)", "Portuguese (direitos humanos)", "French (droit)", "English (human rights)", "Arabic (huquq alansan)")
   
