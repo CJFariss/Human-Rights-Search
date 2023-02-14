@@ -220,6 +220,8 @@ for(j in 1:4){
   tab_output <- stargazer(fit_mean_robust[[j]], fit_median_robust[[j]], fit_max_robust[[j]], covariate.labels = LABELS, column.labels = c("Search Mean", "Search Median", "Search Max"), dep.var.caption = "Dependent Variable: Google Search Rate", no.space=TRUE, title="Country-Year Regression Analysis", notes=NOTES, notes.align="l", notes.append=FALSE)
 
   tab_output <- star_insert_row(tab_output, paste("R-squared  &", round(r_squared[[i]][1],3), "&", round(r_squared[[i]][2],3), "&", round(r_squared[[i]][3],3),"\\\\ "), insert.after=38) 
+
+  tab_output <- star_insert_row(tab_output, paste("sample size  &", unit_n[1], "&", unit_n[2], "&", unit_n[3],"\\\\ "), insert.after=39) 
   
   #tab_output
 

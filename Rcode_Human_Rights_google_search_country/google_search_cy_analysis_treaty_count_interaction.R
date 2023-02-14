@@ -6,7 +6,7 @@
 ## Title: "The Search for Human Rights: A Global Analysis Using Google Data"
 ##
 ## Contact Information: 
-##  Geoff Dancy <gdancy@tulane.edu>
+##  Geoff Dancy <geoff.dancy@utoronto.ca>
 ##  Christopher J. Fariss <cjf0006@gmail.com>
 ##  
 ##  Copyright (c) 2022, under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License.
@@ -213,6 +213,8 @@ for(j in 1:4){
   tab_output <- stargazer(fit_mean_robust[[j]], fit_median_robust[[j]], fit_max_robust[[j]], covariate.labels = LABELS, column.labels = c("Search Mean", "Search Median", "Search Max"), dep.var.caption = "Dependent Variable: Google Search Rate", no.space=TRUE, title="Country-Year Regression Analysis", notes=NOTES, notes.align="l", notes.append=FALSE)
   
   tab_output <- star_insert_row(tab_output, paste("R-squared  &", round(r_squared[[i]][1],3), "&", round(r_squared[[i]][2],3), "&", round(r_squared[[i]][3],3),"\\\\ "), insert.after=40) 
+  
+  tab_output <- star_insert_row(tab_output, paste("sample size  &", unit_n[1], "&", unit_n[2], "&", unit_n[3],"\\\\ "), insert.after=41) 
   
   if(j==1 & lowsearch_option==FALSE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2012_2016_treaty_count_interaction.tex")
   if(j==2 & lowsearch_option==FALSE & attention_rate==FALSE & NGO_amnesty==TRUE) write(tab_output, file="Tex_tables/main_results_lowsearch_amnesty_report_count_2013_2017_treaty_count_interaction.tex")
