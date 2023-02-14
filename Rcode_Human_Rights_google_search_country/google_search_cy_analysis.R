@@ -23,9 +23,11 @@ groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 ## additional functions to add content to the stargazer table output
 source("Rcode_Human_Rights_google_search_country/star_cleaning_functions.R")
 
+## change this logical-value for the alternative count variable
+attention_rate <- TRUE ## set to FALSE for count
+
 ## keep these values the same (see the other files for alternative model specifications)
 ## That is don't change these values look at the other files for the alternative model specifications 
-attention_rate <- TRUE ## set to FALSE for count
 NGO_amnesty <- TRUE ## set to FALSE for the alternative NGO variable
 lowsearch_option <- FALSE ## note that the lowsearch term in the file label means that the lowsearch argument is set to its default FALSE value in the gtrends() search function which is FALSE (sorry this is confusing)
 
