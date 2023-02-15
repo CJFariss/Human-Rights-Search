@@ -1,5 +1,20 @@
 ## ccf_foo.R
-
+##########################################################################
+##
+## Authors: Geoff Dancy and Christopher J. Fariss
+##
+## Title: "The Search for Human Rights: A Global Analysis Using Google Data"
+##
+## Contact Information: 
+##  Geoff Dancy <geoff.dancy@utoronto.ca>
+##  Christopher J. Fariss <cjf0006@gmail.com>
+##  
+##  Copyright (c) 2022, under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License.
+## For more information see: http://creativecommons.org/licenses/by-nc-sa/3.0/us/
+##  All rights reserved. 
+##
+##########################################################################
+##
 ## this is a year over year correlation function
 
 ccf_foo <- function(var1, var2, X){
