@@ -6,7 +6,7 @@
 ## Title: "The Search for Human Rights: A Global Analysis Using Google Data"
 ##
 ## Contact Information: 
-##  Geoff Dancy <gdancy@tulane.edu>
+##  Geoff Dancy <geoff.dancy@utoronto.ca>
 ##  Christopher J. Fariss <cjf0006@gmail.com>
 ##  
 ##  Copyright (c) 2022, under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License.
@@ -14,24 +14,11 @@
 ##  All rights reserved. 
 ##
 ##########################################################################
-
-
-## Do this (set to TRUE) to load libraries using the version from when the scripts were originally run
-if(FALSE){
-  ## load an older version of the libraries
-  remotes::install_github('CredibilityLab/groundhog')
-  library(groundhog)
-  pkgs <- c("gtrendsR", "foreign", "countrycode", "survey", "MASS")
-  groundhog.library(pkgs,'2022-04-19')
-} else{
-  ## or load the more recent version of the libraries
-  install.packages(c("gtrendsR", "foreign", "countrycode", "survey", "MASS"))
-  library(gtrendsR)
-  library(foreign)
-  library(countrycode)
-  library(survey)
-  library(MASS)
-}
+##
+## load necessary libraries 
+## change groundhog to TRUE to install original versions of libraries from April-2022
+source("groundhog_library_func.R")
+groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
 
 ## load spss  data version (this file is too big so use the binary version of the file below)

@@ -14,24 +14,11 @@
 ##  All rights reserved. 
 ##
 ##########################################################################
-
-
-## Do this (set to TRUE) to load libraries using the version from when the scripts were originally run
-if(FALSE){
-  ## load an older version of the libraries
-  remotes::install_github('CredibilityLab/groundhog')
-  library(groundhog)
-  pkgs <- c("gtrendsR", "foreign", "countrycode", "survey", "MASS")
-  groundhog.library(pkgs,'2022-04-19')
-} else{
-  ## or load the more recent version of the libraries
-  install.packages(c("gtrendsR", "foreign", "countrycode", "survey", "MASS"))
-  library(gtrendsR)
-  library(foreign)
-  library(countrycode)
-  library(survey)
-  library(MASS)
-}
+##
+## load necessary libraries 
+## change groundhog to TRUE to install original versions of libraries from April-2022
+source("groundhog_library_func.R")
+groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 
 
 ## load Stata 13 data version (this file is too big so use the binary version of the file below)
