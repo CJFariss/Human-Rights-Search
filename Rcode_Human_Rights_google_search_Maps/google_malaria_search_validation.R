@@ -7,7 +7,7 @@
 ##
 ## Contact Information: 
 ##  Geoff Dancy <gdancy@tulane.edu>
-##  Christopher J. Fariss <cjf0006@gmail.com>
+##  Geoff Dancy <geoff.dancy@utoronto.ca>
 ##  
 ##  Copyright (c) 2022, under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License.
 ## For more information see: http://creativecommons.org/licenses/by-nc-sa/3.0/us/
