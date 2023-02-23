@@ -5,6 +5,8 @@ Project files for an article titled: "The Search for Human Rights: A Global Anal
 
 Dancy, Geoff; Fariss, Christopher J., 2022, "Replication Data for: The Global Resonance of Human Rights: What Google Trends Can Tell Us", https://doi.org/10.7910/DVN/AV0CMJ, Harvard Dataverse
 
+Preprints of the article and appendix files are available at the Open Science Foundation here https://osf.io/78c5z/.
+
 ## Article Abstract
 Where is the human rights discourse most resonant? We use aggregated cross-national Google search data to test two divergent accounts of why human rights appeal to some populations but not others. The top-down model predicts that nationwide interest in human rights is attributable mainly to external factors like foreign direct investment, transnational NGO campaigns, or international legalization, where the bottom-up model highlights the importance of internal factors like economic growth and persistent repression. We find more evidence for the latter model: not only is interest in human rights more concentrated in the Global South, the discourse is most resonant where people face regular violence at the hands of their home government. In drawing these inferences, this article confronts high-level debates over whether human rights will remain relevant in the future, and whether the discourse still animates counter-hegemonic modes of resistance. These answer to both questions, our research suggests, is “yes.”
 
