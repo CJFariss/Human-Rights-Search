@@ -55,7 +55,7 @@ Note that lowsearch is in reference to the low_search_volume argument in the gtr
 - [Rplots_country_search_ranks](./Rplots_country_search_ranks): Rplot graphs of within-country weekly time series data, ranked by overall country search rates (all langugage groups and topics)
 - [Rplots_survey_data](./Rplots_survey_data): Rplot graphs from the analyses of the global survey datasets
 - [Supplementary_Appendices](./Supplementary_Appendices): contains both versions of the Supplementary Appendix document.
-- [Tex Tables](./Tex_Tables): contains all latex tablular output.
+- [Tex tables](./Tex_tables): contains all latex tablular output.
 
 ### Analysis Information
 There are many folders that contain many files. In an effort to make the production of each result presented in our article as transparent as possible, we describe the resources necessary (contained in the project folders described above) to reproduce each figure or table in the main article and by section in the supplementary appendix.
