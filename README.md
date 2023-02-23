@@ -5,13 +5,18 @@ Project files for an article titled: "The Search for Human Rights: A Global Anal
 
 Dancy, Geoff; Fariss, Christopher J., 2022, "Replication Data for: The Global Resonance of Human Rights: What Google Trends Can Tell Us", https://doi.org/10.7910/DVN/AV0CMJ, Harvard Dataverse
 
+Preprints of the article and appendix files are available at the Open Science Foundation here https://osf.io/78c5z/.
+
 ## Article Abstract
 Where is the human rights discourse most resonant? We use aggregated cross-national Google search data to test two divergent accounts of why human rights appeal to some populations but not others. The top-down model predicts that nationwide interest in human rights is attributable mainly to external factors like foreign direct investment, transnational NGO campaigns, or international legalization, where the bottom-up model highlights the importance of internal factors like economic growth and persistent repression. We find more evidence for the latter model: not only is interest in human rights more concentrated in the Global South, the discourse is most resonant where people face regular violence at the hands of their home government. In drawing these inferences, this article confronts high-level debates over whether human rights will remain relevant in the future, and whether the discourse still animates counter-hegemonic modes of resistance. These answer to both questions, our research suggests, is “yes.”
 
 ## Replication and Reproduction File Descriptions
 
-We have created this complete Github repository with all the R code and datasets necessary to replicate or reproduce all reported data analyses presented in the main manuscript and this appendix. Every single step in our data processing and analysis sequence is available in this repository, such that all procedures and results are fully accessible to any interested reader.
+We have created this complete Github repository with all the R code and datasets necessary to replicate or reproduce all reported data analyses presented in the main manuscript and the supplementary appendix. Every single step in our data processing and analysis sequence is available in this repository, such that all procedures and results are fully accessible to any interested reader.
 
+Note about the supplementary appendix: There are two versions of the supplmentary appendix. Both versions are identical with respect to the information contained in the first 25 pages of each document. The 25 page version does not included all tables. An extended, archive-only appendix located at the Github repository (https://github.com/CJFariss/Human-Rights-Search) and Dataverse repository (https://doi.org/10.7910/DVN/AV0CMJ) contains all tables that correspond to coefficient plots in the 25 page supplementary appendix. 
+
+- [Supplementary_Appendices](./Supplementary_Appendices): contains both versions of the Supplementary Appendix document.
 
 ### Folder Descriptions 
 The primary data source we use in this project is search term rates from [trends.google.com](trends.google.com). We access the data available at this site through the API using the R package [gtrendsR](https://cran.r-project.org/web/packages/gtrendsR/gtrendsR.pdf) and its gtrends() function. 
