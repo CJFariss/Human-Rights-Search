@@ -12,8 +12,11 @@ Where is the human rights discourse most resonant? We use aggregated cross-natio
 
 ## Replication and Reproduction File Descriptions
 
-We have created this complete Github repository with all the R code and datasets necessary to replicate or reproduce all reported data analyses presented in the main manuscript and this appendix. Every single step in our data processing and analysis sequence is available in this repository, such that all procedures and results are fully accessible to any interested reader.
+We have created this complete Github repository with all the R code and datasets necessary to replicate or reproduce all reported data analyses presented in the main manuscript and the supplementary appendix. Every single step in our data processing and analysis sequence is available in this repository, such that all procedures and results are fully accessible to any interested reader.
 
+Note about the supplementary appendix: There are two versions of the supplmentary appendix. Both versions are identical with respect to the information contained in the first 25 pages of each document. The 25 page version does not included all tables. An extended, archive-only appendix located at the Github repository (https://github.com/CJFariss/Human-Rights-Search) and Dataverse repository (https://doi.org/10.7910/DVN/AV0CMJ) contains all tables that correspond to coefficient plots in the 25 page supplementary appendix. 
+
+- [Supplementary_Appendices](./Supplementary_Appendices): contains both versions of the Supplementary Appendix document.
 
 ### Folder Descriptions 
 The primary data source we use in this project is search term rates from [trends.google.com](trends.google.com). We access the data available at this site through the API using the R package [gtrendsR](https://cran.r-project.org/web/packages/gtrendsR/gtrendsR.pdf) and its gtrends() function. 
