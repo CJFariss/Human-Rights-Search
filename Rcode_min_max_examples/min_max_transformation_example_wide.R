@@ -43,10 +43,10 @@ make_min_max_func <- function(search_volume = c(100,50,10), hr_search_volume = c
 
 pdf("Rplot_search_rate_examples/Rplot_search_rate_examples_wide.pdf", height=6, width=9)
 
-make_min_max_func(search_volume = c(100,50,10), hr_search_volume = c(5,1,1))
-make_min_max_func(search_volume = c(100,50,10), hr_search_volume = c(5,1,5))
-make_min_max_func(search_volume = c(100,50,10), hr_search_volume = c(5,5,5))
-make_min_max_func(search_volume = c(100,50,10), hr_search_volume = c(10,1,1))
-make_min_max_func(search_volume = c(100,50,10), hr_search_volume = c(10,5,5))
+make_min_max_func(search_volume = c(1000,500,100), hr_search_volume = c(50,10,10))
+make_min_max_func(search_volume = c(1000,500,100), hr_search_volume = c(50,10,50))
+make_min_max_func(search_volume = c(1000,500,100), hr_search_volume = c(50,50,50))
+make_min_max_func(search_volume = c(1000,500,100), hr_search_volume = c(100,10,10))
+make_min_max_func(search_volume = c(1000,500,100), hr_search_volume = c(100,50,50))
 
 dev.off()
