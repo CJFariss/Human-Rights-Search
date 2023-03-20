@@ -84,7 +84,7 @@ TERMS_long <- list(c("facebook", "google"),
 length(TERMS_long)
 
 TERMS <- TERMS_short
-TERMS <- TERMS_long
+#TERMS <- TERMS_long
 
 #TIME <- "2013-01-01 2017-12-31"
 TIME <- "2015-01-01 2019-12-31"
@@ -99,7 +99,7 @@ world <- gtrends(TERMS[[i]], time=TIME, low_search_volume=T)$interest_over_time
     world$hits[world$hits=="<1"] <- .5
     world$hits <- as.numeric(world$hits)
     
-    plot(world$hits[world$keyword==TERMS[[i]][1]], main=paste("Global:", TERMS[[i]][1], "vs.", TERMS[[i]][2]), lwd=1, col=grey(.75), ylim=c(0, 100), xaxt="n", yaxt="n", type="n")
+    plot(world$hits[world$keyword==TERMS[[i]][1]], main=paste("Global:", TERMS[[i]][1], "vs.", TERMS[[i]][2]), lwd=1, col=grey(.75), ylim=c(0, 100), xaxt="n", yaxt="n", type="n", ylab="")
     #lines(world$hits[world$keyword==TERMS[[i]][2]], type="l", ylim=c(0,100), col=2)
     #plot.window(xlim=c(1,length(world$hits[world$keyword==TERMS[[i]][1]])), ylim=c(0, 100))
     #mtext(side=3, text=paste("Global:", TERMS[[i]][1], "vs.", TERMS[[i]][2]), line=1)
