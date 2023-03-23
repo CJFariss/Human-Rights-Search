@@ -84,7 +84,7 @@ TERMS_long <- list(c("facebook", "google"),
 length(TERMS_long)
 
 TERMS <- TERMS_short
-#TERMS <- TERMS_long
+TERMS <- TERMS_long
 
 #TIME <- "2013-01-01 2017-12-31"
 TIME <- "2015-01-01 2019-12-31"
@@ -94,6 +94,8 @@ par(mfrow=c(1,1), mar=c(2,2.5,1,.5))
 
 for(i in 1:length(TERMS)){
 
+  #pdf(paste("Rplots/Google_search_term_pairs_shortlist_panel_",i,".pdf", sep=""), height=6, width=6)
+  
 world <- gtrends(TERMS[[i]], time=TIME, low_search_volume=T)$interest_over_time
 
     world$hits[world$hits=="<1"] <- .5
@@ -133,6 +135,8 @@ world <- gtrends(TERMS[[i]], time=TIME, low_search_volume=T)$interest_over_time
     legend("topleft", legend=c(TERMS[[i]][1]), text.col="#7b3294" ,bty="n")
     legend("bottomleft", legend=c(TERMS[[i]][2]), text.col="#008837", bty="n")
 
+    #dev.off()
+    
 }
 
 dev.off()
