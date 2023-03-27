@@ -46,7 +46,8 @@ fit_lm <- list()
 #par(mfrow=c(3,3), mar=c(2,2.5,1,.5))
 #par(mfrow=c(1,1), mar=c(2,2.5,1,.5))
 
-pdf("Rplots/Global_search_hits_mean_CI_2015_2019.pdf", height=6, width=6)
+#pdf("Rplots/Global_search_hits_mean_CI_2015_2019.pdf", height=6, width=6)
+pdf("Rplots/Global_search_hits_mean_CI_2015_2019_wide.pdf", height=4.5, width=8)
 
 
 par(mfrow=c(1,1), mar=c(2,2.5,1,.5))
