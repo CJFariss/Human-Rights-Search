@@ -23,8 +23,8 @@ groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 #pdf("Rplots/Google_search_term_pairs.pdf", height=6, width=6)
 #pdf("Rplots/Google_search_term_pairs_shortlist.pdf", height=6, width=6)
 #pdf("Rplots/Google_search_term_pairs_longlist.pdf", height=6, width=6)
-#pdf("Rplots/Google_search_term_pairs_presentation.pdf", height=4.5, width=8)
-pdf("Rplots/Google_search_term_pairs_2018_2022_presentation.pdf", height=4.5, width=8)
+pdf("Rplots/Google_search_term_pairs_presentation.pdf", height=4.5, width=8)
+#pdf("Rplots/Google_search_term_pairs_2018_2022_presentation.pdf", height=4.5, width=8)
 
 #time
 #war
@@ -42,8 +42,8 @@ pdf("Rplots/Google_search_term_pairs_2018_2022_presentation.pdf", height=4.5, wi
 #worker's rights
 
 TERMS_presentation <- list(c("war", "human rights"),
-                           c("human rights", "injustice"),
-                           c("human rights", "civil war"),
+                           c("injustice", "human rights"),
+                           c("civil war", "human rights"),
                             c("human rights", "malaria"),
                             c("human rights", "torture"),
                             c("human rights", "terrorism"),
@@ -108,7 +108,7 @@ TERMS <- TERMS_presentation
 
 #TIME <- "2013-01-01 2017-12-31"
 TIME <- "2015-01-01 2019-12-31"
-TIME <- "2018-01-01 2022-12-31"
+#TIME <- "2018-01-01 2022-12-31"
 
 #par(mfrow=c(3,3), mar=c(2,2.5,1,.5))
 par(mfrow=c(1,1), mar=c(2,2.5,1,.5), font=2)

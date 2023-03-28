@@ -46,8 +46,7 @@ fit_lm <- list()
 #par(mfrow=c(3,3), mar=c(2,2.5,1,.5))
 #par(mfrow=c(1,1), mar=c(2,2.5,1,.5))
 
-#pdf("Rplots/Global_search_hits_mean_CI_2018_2022.pdf", height=6, width=6)
-pdf("Rplots/Global_search_hits_mean_CI_2018_2022_wide.pdf", height=4.5, width=8)
+pdf("Rplots/Global_search_hits_mean_CI_2017_2021.pdf", height=6, width=6)
 
 
 par(mfrow=c(1,1), mar=c(2,2.5,1,.5))
@@ -60,7 +59,7 @@ data_list <- list()
 
 #i <- 1
 for(i in 1:length(TERMS)){
-    world <- gtrends(TERMS[i], time="2018-01-01 2022-12-31")$interest_over_time
+    world <- gtrends(TERMS[i], time="2017-01-01 2021-12-31")$interest_over_time
     data_list[[i]] <- world
     
     #if(i==4)
@@ -76,11 +75,10 @@ for(i in 1:length(TERMS)){
     id2019 <- which(as.Date(world$date) > as.Date("2018-12-31") & as.Date(world$date) <= as.Date("2019-12-31"))
     id2020 <- which(as.Date(world$date) > as.Date("2019-12-31") & as.Date(world$date) <= as.Date("2020-12-31"))
     id2021 <- which(as.Date(world$date) > as.Date("2020-12-31") & as.Date(world$date) <= as.Date("2021-12-31"))
-    id2022 <- which(as.Date(world$date) > as.Date("2021-12-31") & as.Date(world$date) <= as.Date("2022-12-31"))
     
     #polygon(x=c(min(id2013), min(id2013), max(id2013), max(id2013)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
     #polygon(x=c(min(id2015), min(id2015), max(id2015), max(id2015)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
-    #polygon(x=c(min(id2017), min(id2017), max(id2017), max(id2017)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
+    polygon(x=c(min(id2017), min(id2017), max(id2017), max(id2017)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
     #polygon(x=c(min(id2014), min(id2014), max(id2014), max(id2014)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
     #polygon(x=c(min(id2016), min(id2016), max(id2016), max(id2016)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
     #polygon(x=c(min(id2018), min(id2018), max(id2018), max(id2018)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
@@ -92,8 +90,7 @@ for(i in 1:length(TERMS)){
     axis(side=2, at=c(0,25,50,75,100), las=2)
     #axis(side=1, at=c(median(id2013),  median(id2014), median(id2015), median(id2016), median(id2017)), labels=c(2013, 2014, 2015, 2016, 2017), las=1)
     #axis(side=1, at=c(median(id2014), median(id2015), median(id2016), median(id2017), median(id2018)), labels=c(2014, 2015, 2016, 2017, 2018), las=1)
-    #axis(side=1, at=c(median(id2017), median(id2018), median(id2019), median(id2020), median(id2021)), labels=c(2017, 2018, 2019, 2020, 2021), las=1)
-    axis(side=1, at=c(median(id2018), median(id2019), median(id2020), median(id2021), median(id2022)), labels=c(2018, 2019, 2020, 2021, 2022), las=1)
+    axis(side=1, at=c(median(id2017), median(id2018), median(id2019), median(id2020), median(id2021)), labels=c(2017, 2018, 2019, 2020, 2021), las=1)
     model <- bcp(y=world$hits)
     lines(model$posterior.mean, lwd=.75, col="#08519c")
     
@@ -105,23 +102,21 @@ for(i in 1:length(TERMS)){
     #polygon(c(min(id2014), min(id2014), max(id2014), max(id2014)), c(as.numeric(t.test(world$hits[id2014])$conf.int)[1:2], as.numeric(t.test(world$hits[id2014])$conf.int)[2:1]), col=grey(.75), lwd=1, border=F, density=30)
     #polygon(c(min(id2015), min(id2015), max(id2015), max(id2015)), c(as.numeric(t.test(world$hits[id2015])$conf.int)[1:2], as.numeric(t.test(world$hits[id2015])$conf.int)[2:1]), col=grey(.75), lwd=1, border=F, density=30)
     #polygon(c(min(id2016), min(id2016), max(id2016), max(id2016)), c(as.numeric(t.test(world$hits[id2016])$conf.int)[1:2], as.numeric(t.test(world$hits[id2016])$conf.int)[2:1]), col=grey(.75), lwd=1, border=F, density=30)
-    #polygon(c(min(id2017), min(id2017), max(id2017), max(id2017)), c(as.numeric(t.test(world$hits[id2017])$conf.int)[1:2], as.numeric(t.test(world$hits[id2017])$conf.int)[2:1]), col=grey(.75), lwd=1, border=F, density=30)
+    polygon(c(min(id2017), min(id2017), max(id2017), max(id2017)), c(as.numeric(t.test(world$hits[id2017])$conf.int)[1:2], as.numeric(t.test(world$hits[id2017])$conf.int)[2:1]), col=grey(.75), lwd=1, border=F, density=30)
     polygon(c(min(id2018), min(id2018), max(id2018), max(id2018)), c(as.numeric(t.test(world$hits[id2018])$conf.int)[1:2], as.numeric(t.test(world$hits[id2018])$conf.int)[2:1]), col=grey(.75), lwd=1, border=F, density=30)
     polygon(c(min(id2019), min(id2019), max(id2019), max(id2019)), c(as.numeric(t.test(world$hits[id2019])$conf.int)[1:2], as.numeric(t.test(world$hits[id2019])$conf.int)[2:1]), col=grey(.75), lwd=1, border=F, density=30)
     polygon(c(min(id2020), min(id2020), max(id2020), max(id2020)), c(as.numeric(t.test(world$hits[id2020])$conf.int)[1:2], as.numeric(t.test(world$hits[id2020])$conf.int)[2:1]), col=grey(.75), lwd=1, border=F, density=30)
     polygon(c(min(id2021), min(id2021), max(id2021), max(id2021)), c(as.numeric(t.test(world$hits[id2021])$conf.int)[1:2], as.numeric(t.test(world$hits[id2021])$conf.int)[2:1]), col=grey(.75), lwd=1, border=F, density=30)
-    polygon(c(min(id2022), min(id2022), max(id2022), max(id2022)), c(as.numeric(t.test(world$hits[id2022])$conf.int)[1:2], as.numeric(t.test(world$hits[id2022])$conf.int)[2:1]), col=grey(.75), lwd=1, border=F, density=30)
     
     #lines(id2013, rep(mean(world$hits[id2013]),length(id2013)), col="darkorange4", lwd=2, lty=2)
     #lines(id2014, rep(mean(world$hits[id2014]),length(id2014)), col="darkorange4", lwd=2, lty=2)
     #lines(id2015, rep(mean(world$hits[id2015]),length(id2015)), col="darkorange4", lwd=2, lty=2)
     #lines(id2016, rep(mean(world$hits[id2016]),length(id2016)), col="darkorange4", lwd=2, lty=2)
-    #lines(id2017, rep(mean(world$hits[id2017]),length(id2017)), col="darkorange4", lwd=2, lty=2)
+    lines(id2017, rep(mean(world$hits[id2017]),length(id2017)), col="darkorange4", lwd=2, lty=2)
     lines(id2018, rep(mean(world$hits[id2018]),length(id2018)), col="darkorange4", lwd=2, lty=2)
     lines(id2019, rep(mean(world$hits[id2019]),length(id2019)), col="darkorange4", lwd=2, lty=2)
     lines(id2020, rep(mean(world$hits[id2020]),length(id2020)), col="darkorange4", lwd=2, lty=2)
     lines(id2021, rep(mean(world$hits[id2021]),length(id2021)), col="darkorange4", lwd=2, lty=2)
-    lines(id2022, rep(mean(world$hits[id2022]),length(id2022)), col="darkorange4", lwd=2, lty=2)
     
 #}
 
@@ -135,6 +130,6 @@ current_date
 
 ## save data.frame
 dat <- do.call("rbind", data_list)
-write.csv(dat, paste("Data_output/Google_search_world_2018_2022_weekly_", current_date, ".csv", sep=""), row.names=FALSE)
+write.csv(dat, paste("Data_output/Google_search_world_2017_2021_weekly_", current_date, ".csv", sep=""), row.names=FALSE)
 
 

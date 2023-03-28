@@ -34,8 +34,10 @@ wvs_data <- WVS
 
 LA_country_ids <- c("Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Guatemala", "Mexico", "Nicaragua", "Peru")
 LA_country_ids_colors <- c("#e9a3c9", "#f7f7f7", "#f7f7f7", "#f7f7f7", "#f7f7f7", "#f7f7f7", "#a1d76a", "#f7f7f7", "#f7f7f7", "#f7f7f7", "#f7f7f7")
+LA_country_ids_colors <- c("#f7f7f7", "#f7f7f7", "#f7f7f7", "#f7f7f7", "#f7f7f7", "#f7f7f7", "black", "#f7f7f7", "#f7f7f7", "#f7f7f7", "#f7f7f7")
 
-pdf("Rplots_survey_data/WVS_LA_country_plots.pdf", height=6, width=6)
+#pdf("Rplots_survey_data/WVS_LA_country_plots.pdf", height=6, width=6)
+pdf("Rplots_survey_data/WVS_LA_country_plots_wide.pdf", height=6.75, width=12)
 
 ##################################################
 # Q93 Here are some questions about international organizations. Many people don't know the answers to these questions, but if you do please tell me. Which of the following problems does the organization Amnesty International deal with?

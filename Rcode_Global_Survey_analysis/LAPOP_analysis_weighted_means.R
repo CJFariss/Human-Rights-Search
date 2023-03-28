@@ -33,8 +33,10 @@ LAPOP_data$pais <- as.factor(LAPOP_data$pais)
 ##  "Guyana", "Grenada", "Saint Lucia", "Dominica", "Saint Vincent and the Grenadines", "Saint Kitts and Nevis",
 LAPOP_country_ids <- c("Guatemala", "Argentina", "Mexico", "El Salvador", "Honduras", "Nicaragua", "Costa Rica", "Panama", "Colombia", "Ecuador", "Bolivia", "Peru", "Paraguay", "Chile", "Uruguay", "Brazil", "Venezuela", "Dominican Republic", "Haiti", "Jamaica","United States", "Canada")
 LAPOP_country_ids_colors <- c("#a1d76a", "#e9a3c9", rep("#f7f7f7", length(LAPOP_country_ids)-2))
+LAPOP_country_ids_colors <- c("black", rep("#f7f7f7", length(LAPOP_country_ids)-1))
 
-pdf("Rplots_survey_data/LAPOP_country_plots.pdf", height=6, width=6)
+#pdf("Rplots_survey_data/LAPOP_country_plots.pdf", height=6, width=6)
+pdf("Rplots_survey_data/LAPOP_country_plots_wide.pdf", height=6.75, width=12)
 
 ## country codes
 #data("countries")

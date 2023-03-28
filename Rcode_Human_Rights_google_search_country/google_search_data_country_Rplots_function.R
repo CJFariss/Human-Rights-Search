@@ -91,9 +91,11 @@ gsearch_cy_list_function <- function(cy_data_list, global_data_list){
 
 google_search_data_country_Rplot_function <- function(dat_list, file_name="temp.pdf"){
   
-  pdf(paste(file_name, sep=""), height=6, width=6)
+  #pdf(paste(file_name, sep=""), height=6, width=6)
+  pdf(paste(file_name, sep=""), height=4.5, width=8)
   
-  par(mfrow=c(4,3), mar=c(2,2.5,1,.5))
+  #par(mfrow=c(4,3), mar=c(2,2.5,1,.5))
+  par(mfrow=c(3,4), mar=c(2,2.5,1,.5))
   for(i in 1:length(dat_list)){
   if(length(dat_list[[1]])>1){
     LOCATION <- dat_list[[i]]$location[i][1]
@@ -159,7 +161,8 @@ google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rpl
 location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_human_rights_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
 global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_human_rights_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
 out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
-google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "human rights"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+#google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "human rights"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "human rights"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), "_wide.pdf", sep=""))
 
 
 ##########################################################################
@@ -191,7 +194,8 @@ google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rpl
 location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
 global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_derechos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
 out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
-google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "derechos humanos"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+#google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "derechos humanos"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "derechos humanos"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), "_wide.pdf", sep=""))
 
 
 ##########################################################################
@@ -223,7 +227,8 @@ google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rpl
 location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_direitos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
 global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_direitos_humanos_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
 out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
-google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "direitos humanos"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+#google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "direitos humanos"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "direitos humanos"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), "_wide.pdf", sep=""))
 
 
 ##########################################################################
@@ -255,7 +260,8 @@ google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rpl
 location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_droit_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
 global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_droit_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
 out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
-google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "droit"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+#google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "droit"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "droit"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), "_wide.pdf", sep=""))
 
 
 ##########################################################################
@@ -287,7 +293,8 @@ google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rpl
 location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_huquq_alansan_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
 global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_huquq_alansan_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
 out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
-google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq alansan"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+#google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq alansan"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq alansan"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), "_Wide.pdf", sep=""))
 
 
 ##########################################################################
