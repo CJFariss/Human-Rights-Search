@@ -54,7 +54,7 @@ par(mfrow=c(1,1), mar=c(2,2.5,1,.5))
 
 TERMS_LABLES <- c("'human rights'", "'derechos humanos'", "'direitos humanos'", "'huquq al'iinsan'", "'droits'", "'human rights' (topic)")
 
-TERMS_LABLES <- c("'human rights' (search term)", "'derechos humanos' (search term)", "'direitos humanos' (search term)", "'huquq al'iinsan' (search term)", "'droits' (search term)", "'human rights' (topic)")
+TERMS_LABLES <- c("'human rights' (search term)", "'derechos humanos' (search term)", "'direitos humanos' (search term)", "'huquq al-insan' (search term)", "'droits' (search term)", "'human rights' (topic)")
 
 data_list <- list()
 

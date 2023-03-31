@@ -97,7 +97,7 @@ expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colo
 
 
 ## ------------------------------------------------------------ ##
-## Portugese
+## Portuguese
 portugese.world <- gtrends(TERMS[3], time=TIME, low_search_volume=FALSE)
 portugese.world <- subset(portugese.world$interest_by_country)
 portugese.world$hits[portugese.world$hits=="<1"] <- .5
@@ -143,7 +143,7 @@ COLORS <- c("#f1eef6", "#d7b5d8", "#df65b0", "#dd1c77", "#980043", "black")
 map.world <- map_data("world")
 ggplot(data, aes(map_id = region)) +
 geom_map(aes(fill = hits), map = map.world) +
-ggtitle(paste("Arabic Language: '", "huquq al'iinsan", "'", sep="")) +
+ggtitle(paste("Arabic Language: '", "huquq al-insan", "'", sep="")) +
 xlab("Latitude") + ylab("Longitude") +
 coord_map("rectangular", lat0=0, xlim=c(-180,180), ylim=c(-60, 90)) +
 expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colours=COLORS, na.value=grey(.875), guide = "colourbar")

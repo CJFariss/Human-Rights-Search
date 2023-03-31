@@ -53,7 +53,8 @@ TERMS_presentation <- list(c("war", "human rights"),
                             c("human rights", "Amnesty International"),
                             c("human rights", "worker's rights"),
                            c("human rights", "rule of law"),
-                           c("human rights", "populism")
+                           c("human rights", "populism"),
+                           c("human rights", "latent variable model")
 )
 length(TERMS_presentation)
 

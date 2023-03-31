@@ -47,13 +47,13 @@ fit_lm <- list()
 #par(mfrow=c(1,1), mar=c(2,2.5,1,.5))
 
 
-pdf("Rplots/Global_search_hits_mean_CI_2012_2021.pdf", height=6, width=6)
+pdf("Rplots/Global_search_hits_mean_CI_2012_2022.pdf", height=6, width=6)
 
 par(mfrow=c(1,1), mar=c(2,2.5,1,.5))
 
 TERMS_LABLES <- c("'human rights'", "'derechos humanos'", "'direitos humanos'", "'huquq al'iinsan'", "'droits'", "'human rights' (topic)")
 
-TERMS_LABLES <- c("'human rights' (search term)", "'derechos humanos' (search term)", "'direitos humanos' (search term)", "'huquq al'iinsan' (search term)", "'droits' (search term)", "'human rights' (topic)")
+TERMS_LABLES <- c("'human rights' (search term)", "'derechos humanos' (search term)", "'direitos humanos' (search term)", "'huquq alansan' (search term)", "'droits' (search term)", "'human rights' (topic)")
 
 data_list <- list()
 
@@ -79,6 +79,7 @@ for(i in 1:length(TERMS)){
     id2019 <- which(as.Date(world$date) > as.Date("2018-12-31") & as.Date(world$date) <= as.Date("2019-12-31"))
     id2020 <- which(as.Date(world$date) > as.Date("2019-12-31") & as.Date(world$date) <= as.Date("2020-12-31"))
     id2021 <- which(as.Date(world$date) > as.Date("2020-12-31") & as.Date(world$date) <= as.Date("2021-12-31"))
+    id2022 <- which(as.Date(world$date) > as.Date("2021-12-31") & as.Date(world$date) <= as.Date("2022-12-31"))
     
     polygon(x=c(min(id2013), min(id2013), max(id2013), max(id2013)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
     polygon(x=c(min(id2015), min(id2015), max(id2015), max(id2015)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
@@ -137,6 +138,7 @@ current_date
 
 ## save data.frame
 dat <- do.call("rbind", data_list)
-write.csv(dat, paste("Data_output/Google_search_world_2012_2021_monthly_", current_date, ".csv", sep=""), row.names=FALSE)
+#write.csv(dat, paste("Data_output/Google_search_world_2012_2021_monthly_", current_date, ".csv", sep=""), row.names=FALSE)
+write.csv(dat, paste("Data_output/Google_search_world_2012_2022_monthly_", current_date, ".csv", sep=""), row.names=FALSE)
 
 

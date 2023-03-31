@@ -46,7 +46,7 @@ fit_lm <- list()
 #par(mfrow=c(3,3), mar=c(2,2.5,1,.5))
 #par(mfrow=c(1,1), mar=c(2,2.5,1,.5))
 
-#pdf("Rplots/Global_search_hits_mean_CI_2015_2019.pdf", height=6, width=6)
+#pdf("Rplots/Global_search_hits_mean_CI_2015_2019-Arabic.pdf", height=6, width=6)
 pdf("Rplots/Global_search_hits_mean_CI_2015_2019_wide.pdf", height=4.5, width=8)
 
 
@@ -54,12 +54,13 @@ par(mfrow=c(1,1), mar=c(2,2.5,1,.5))
 
 TERMS_LABLES <- c("'human rights'", "'derechos humanos'", "'direitos humanos'", "'huquq al'iinsan'", "'droits'", "'human rights' (topic)")
 
-TERMS_LABLES <- c("'human rights' (search term)", "'derechos humanos' (search term)", "'direitos humanos' (search term)", "'huquq al'iinsan' (search term)", "'droits' (search term)", "'human rights' (topic)")
+TERMS_LABLES <- c("'human rights' (search term)", "'derechos humanos' (search term)", "'direitos humanos' (search term)", "'huquq al-insan' (search term)", "'droits' (search term)", "'human rights' (topic)")
 
 data_list <- list()
 
 #i <- 1
 for(i in 1:length(TERMS)){
+#for(i in 4){
     #world <- gtrends(TERMS[i], time="2013-01-01 2017-12-31")$interest_over_time
     #world <- gtrends(TERMS[i], time="2014-01-01 2018-12-31")$interest_over_time
     world <- gtrends(TERMS[i], time="2015-01-01 2019-12-31")$interest_over_time

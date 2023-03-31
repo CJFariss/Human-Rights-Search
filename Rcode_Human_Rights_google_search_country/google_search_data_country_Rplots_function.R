@@ -268,36 +268,36 @@ google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rpl
 
 
 ##########################################################################
-## "huquq alansan"
+## "huquq al-insan"
 location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_huquq_alansan_2012-01-01_2016-12-31_saved_2022-05-11.RDS")
 global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_huquq_alansan_2012-01-01_2016-12-31_saved_2022-05-11.RDS")
 out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
-google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq alansan"), "_country_week_time_series_", gsub(" ", "_", "2012-01-01 2016-12-31"), ".pdf", sep=""))
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq al-insan"), "_country_week_time_series_", gsub(" ", "_", "2012-01-01 2016-12-31"), ".pdf", sep=""))
 
-## "huquq alansan"
+## "huquq al-insan"
 location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_huquq_alansan_2013-01-01_2017-12-31_saved_2022-05-11.RDS")
 global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_huquq_alansan_2013-01-01_2017-12-31_saved_2022-05-11.RDS")
 out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
-google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq alansan"), "_country_week_time_series_", gsub(" ", "_", "2013-01-01 2017-12-31"), ".pdf", sep=""))
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq al-insan"), "_country_week_time_series_", gsub(" ", "_", "2013-01-01 2017-12-31"), ".pdf", sep=""))
 
-## "huquq alansan"
+## "huquq al-insan"
 location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_huquq_alansan_2014-01-01_2018-12-31_saved_2022-05-11.RDS")
 global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_huquq_alansan_2014-01-01_2018-12-31_saved_2022-05-11.RDS")
 out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
-google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq alansan"), "_country_week_time_series_", gsub(" ", "_", "2014-01-01 2018-12-31"), ".pdf", sep=""))
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq al-insan"), "_country_week_time_series_", gsub(" ", "_", "2014-01-01 2018-12-31"), ".pdf", sep=""))
 
-## "huquq alansan"
+## "huquq al-insan"
 location_data <- readRDS("Data_output_location_search_lists/gsearch_location_data_lists_huquq_alansan_2015-01-01_2019-12-31_saved_2022-05-11.RDS")
 global_data <- readRDS("Data_output_global_search_lists/gsearch_global_data_lists_huquq_alansan_2015-01-01_2019-12-31_saved_2022-05-11.RDS")
 out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
-google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq alansan"), "_country_week_time_series_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq al-insan"), "_country_week_time_series_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
 
-## "huquq alansan" lowsearch=FALSE
+## "huquq al-insan" lowsearch=FALSE
 location_data <- readRDS("Data_output_location_search_lists_lowsearch/gsearch_location_data_lists_huquq_alansan_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
 global_data <- readRDS("Data_output_global_search_lists_lowsearch/gsearch_global_data_lists_huquq_alansan_2015-01-01_2019-12-31_saved_2022-05-12.RDS")
 out_dat <- gsearch_cy_list_function(cy_data_list=location_data, global_data_list=global_data)
-google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq alansan"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
-#google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq alansan"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), "_Wide.pdf", sep=""))
+google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq al-insan"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), ".pdf", sep=""))
+#google_search_data_country_Rplot_function(dat_list=out_dat, file_name=paste("Rplots_country_search_ranks/", gsub(" ", "_", "huquq al-insan"), "_country_week_time_series_lowsearch_", gsub(" ", "_", "2015-01-01 2019-12-31"), "_Wide.pdf", sep=""))
 
 
 ##########################################################################
