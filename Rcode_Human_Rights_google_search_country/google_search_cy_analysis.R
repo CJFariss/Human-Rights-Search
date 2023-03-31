@@ -24,7 +24,7 @@ groundhog_library_func(groundhog=FALSE, regular_install=FALSE)
 source("Rcode_Human_Rights_google_search_country/star_cleaning_functions.R")
 
 ## change this logical-value for the alternative count variable
-attention_rate <- TRUE ## set to FALSE for count
+attention_rate <- FALSE ## set to FALSE for count
 
 ## keep these values the same (see the other files for alternative model specifications)
 ## That is don't change these values look at the other files for the alternative model specifications 
@@ -119,7 +119,7 @@ for(i in 1:length(test_dat)){
   if(i>4 & i<=8) test_dat[[i]]$language <- "direitos_humanos"
   if(i>8 & i<=12) test_dat[[i]]$language <- "droit"
   if(i>12 & i<=16) test_dat[[i]]$language <- "human_rights"
-  if(i>16 & i<=20) test_dat[[i]]$language <- "huquq_alansan"
+  if(i>16 & i<=20) test_dat[[i]]$language <- "huquq_al-insan"
 }
 
 test_dat_language_pooled <- list()
@@ -334,11 +334,11 @@ for(j in 1:4){
 }
 
 
-
 ##########################################################################
 ## a bunch of alternative models (not reported; see other files)
 ##########################################################################
-
+if(FALSE){
+  
 ## panel linear models
 unit_n <- c()
 fit_mean_robust <- fit_median_robust <- fit_max_robust <- list()
@@ -558,3 +558,5 @@ print(temp)
 fit <- milm(fml="hits_max ~ theta_mean", midata=newdata)
 temp <- data.frame(fit$terms, fit$beta, fit$SE, fit$beta/fit$SE, pvalue=pvalue(x=fit$beta, x.se=fit$SE, N=N))
 print(temp)
+
+}

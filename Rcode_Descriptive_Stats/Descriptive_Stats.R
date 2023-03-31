@@ -37,7 +37,7 @@ for(i in 1:length(test_dat)){
 }
 cor_out <- data.frame(names(test_dat), do.call("rbind", cor_value))
 #cor_out
-cor_out[,1] <- c("derechos humanos", "derechos humanos", "derechos humanos", "derechos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "droit", "droit", "droit", "droit", "human rights", "human rights", "human rights", "human rights", "huquq alansan", "huquq alansan", "huquq alansan", "huquq alansan")
+cor_out[,1] <- c("derechos humanos", "derechos humanos", "derechos humanos", "derechos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "droit", "droit", "droit", "droit", "human rights", "human rights", "human rights", "human rights", "huquq al-insan", "huquq al-insan", "huquq al-insan", "huquq al-insan")
 cor_out$years <- c("2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019")
 cor_out <- cor_out[,c(1,5,2,3,4)]
 cor_out
@@ -55,7 +55,7 @@ for(i in 1:length(test_dat)){
 }
 cor_out <- data.frame(names(test_dat), do.call("rbind", cor_value))
 #cor_out
-cor_out[,1] <- c("derechos humanos", "derechos humanos", "derechos humanos", "derechos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "droit", "droit", "droit", "droit", "human rights", "human rights", "human rights", "human rights", "huquq alansan", "huquq alansan", "huquq alansan", "huquq alansan")
+cor_out[,1] <- c("derechos humanos", "derechos humanos", "derechos humanos", "derechos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "droit", "droit", "droit", "droit", "human rights", "human rights", "human rights", "human rights", "huquq al-insan", "huquq al-insan", "huquq al-insan", "huquq al-insan")
 cor_out$years <- c("2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019")
 cor_out <- cor_out[,c(1,5,2,3,4)]
 cor_out
@@ -73,7 +73,7 @@ for(i in 1:length(test_dat)){
 }
 cor_out <- data.frame(names(test_dat), do.call("rbind", cor_value))
 #cor_out
-cor_out[,1] <- c("derechos humanos", "derechos humanos", "derechos humanos", "derechos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "droit", "droit", "droit", "droit", "human rights", "human rights", "human rights", "human rights", "huquq alansan", "huquq alansan", "huquq alansan", "huquq alansan")
+cor_out[,1] <- c("derechos humanos", "derechos humanos", "derechos humanos", "derechos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "direitos humanos", "droit", "droit", "droit", "droit", "human rights", "human rights", "human rights", "human rights", "huquq al-insan", "huquq al-insan", "huquq al-insan", "huquq al-insan")
 cor_out$years <- c("2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019", "2012-2016", "2013-2017", "2014-2018", "2015-2019")
 cor_out <- cor_out[,c(1,5,2,3,4)]
 cor_out
@@ -90,7 +90,7 @@ for(i in 1:length(test_dat)){
   if(i>4 & i<=8) test_dat[[i]]$language <- "direitos_humanos"
   if(i>8 & i<=12) test_dat[[i]]$language <- "droit"
   if(i>12 & i<=16) test_dat[[i]]$language <- "human_rights"
-  if(i>16 & i<=20) test_dat[[i]]$language <- "huquq_alansan"
+  if(i>16 & i<=20) test_dat[[i]]$language <- "huquq_al-insan"
 }
 
 test_dat_language_pooled <- list()

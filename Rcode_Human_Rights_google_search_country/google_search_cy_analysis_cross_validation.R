@@ -112,7 +112,7 @@ for(i in 1:length(test_dat)){
   if(i>4 & i<=8) test_dat[[i]]$language <- "direitos_humanos"
   if(i>8 & i<=12) test_dat[[i]]$language <- "droit"
   if(i>12 & i<=16) test_dat[[i]]$language <- "human_rights"
-  if(i>16 & i<=20) test_dat[[i]]$language <- "huquq_alansan"
+  if(i>16 & i<=20) test_dat[[i]]$language <- "huquq_al-nsan"
 }
 
 test_dat_language_pooled <- list()
