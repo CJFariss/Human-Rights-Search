@@ -228,7 +228,8 @@ COLORS <- c("#ffffb2", "#fecc5c", "#fd8d3c", "#f03b20", "#bd0026", "black")
 map.world <- map_data("world")
 ggplot(data, aes(map_id = region)) +
 geom_map(aes(fill = hits), map = map.world) +
-ggtitle(paste("Chinese Language: '", TERMS[7], "'", sep="")) +
+#ggtitle(paste("Chinese Language: '", TERMS[7], "'", sep="")) +
+ggtitle(paste("Chinese Language: '", "", "'", sep="")) +
 xlab("Latitude") + ylab("Longitude") +
 theme(plot.title=element_text(family="Noto Sans CJK SC")) +
 coord_map("rectangular", lat0=0, xlim=c(-180,180), ylim=c(-60, 90)) +
