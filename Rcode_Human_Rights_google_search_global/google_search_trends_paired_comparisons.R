@@ -169,10 +169,12 @@ dev.off()
 ## example plot without trends showing
 ##################################################
 TERMS <- list(c("human rights", "other query"))
-par(mfrow=c(1,1), mar=c(2,2.5,1,.5), font=2)
 
 i <- 1
-  pdf(paste("Rplots/Google_search_term_pairs_shortlist_panel_example.pdf", sep=""), height=4.5, width=8)
+{
+  
+ pdf(paste("Rplots/Google_search_term_pairs_shortlist_panel_example.pdf", sep=""), height=4.5, width=8)
+  par(mfrow=c(1,1), mar=c(2,2.5,1,.5), font=2)
   
   world <- gtrends(TERMS[[i]], time=TIME, low_search_volume=T)$interest_over_time
   
@@ -199,7 +201,7 @@ i <- 1
   polygon(x=c(min(id2015), min(id2015), max(id2015), max(id2015)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
   polygon(x=c(min(id2017), min(id2017), max(id2017), max(id2017)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
   polygon(x=c(min(id2019), min(id2019), max(id2019), max(id2019)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
-  polygon(x=c(min(id2021), min(id2021), max(id2021), max(id2021)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
+  #polygon(x=c(min(id2021), min(id2021), max(id2021), max(id2021)), y=c(-10,110,110,-10), col=grey(.95), border=NA)
   box()
   
   #lines(world$hits[world$keyword==TERMS[[i]][1]], lwd=1, col="#c2a5cf")
@@ -216,5 +218,6 @@ i <- 1
   #legend("bottomleft", legend=c(TERMS[[i]][2]), text.col="#008837", bty="n", cex=1.5)
   
   #dev.off()
-  
+}
 dev.off()
+
