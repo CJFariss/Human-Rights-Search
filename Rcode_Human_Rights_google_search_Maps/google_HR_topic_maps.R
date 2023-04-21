@@ -65,9 +65,11 @@ COLORS <- c("#f0f9e8", "#bae4bc", "#7bccc4", "#43a2ca", "#0868ac", "black")
 map.world <- map_data("world")
 ggplot(data, aes(map_id = region)) +
   geom_map(aes(fill = hits), map = map.world) +
-  ggtitle(paste("Topic: '", "Human Rights", "'", sep="")) +
+  ggtitle(paste("", sep="")) +
   xlab("Latitude") + ylab("Longitude") +
   coord_map("rectangular", lat0=0, xlim=c(-180,180), ylim=c(-60, 90)) +
   expand_limits(x = map.world$long, y = map.world$lat) + scale_fill_gradientn(colours=COLORS, na.value=grey(.875), guide = "colourbar")
 
 dev.off()
+
+
